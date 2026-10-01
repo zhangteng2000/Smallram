@@ -1,0 +1,2414 @@
+⚠ [3482/3613] Replayed FewInflection.Nevanlinna
+warning: FewInflection/Nevanlinna.lean:104:44: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: FewInflection/Nevanlinna.lean:147:4: Unused tactic linter: `change meromorphicOrderAt (f.coord j)⁻¹ u ≠ (⊤ : WithTop ℤ)` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: FewInflection/Nevanlinna.lean:213:44: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: FewInflection/Nevanlinna.lean:223:63: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+ℹ [3583/3613] Replayed ModifiedCartan.DivisorPolynomial
+info: ModifiedCartan/DivisorPolynomial.lean:130:0: 'ModifiedCartan.exists_monic_polynomial_exp_factor_on_ball' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3584/3613] Replayed ModifiedCartan.EntireZeroCopies
+warning: ModifiedCartan/EntireZeroCopies.lean:56:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+info: ModifiedCartan/EntireZeroCopies.lean:68:0: 'ModifiedCartan.entireZeroCopies_countable' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3593/3613] Replayed ModifiedCartan.ScalarCurveBounds
+warning: ModifiedCartan/ScalarCurveBounds.lean:28:22: `if_false` has been deprecated: Use `ite_false` instead
+warning: ModifiedCartan/ScalarCurveBounds.lean:37:24: `if_true` has been deprecated: Use `ite_true` instead
+warning: ModifiedCartan/ScalarCurveBounds.lean:38:25: `if_false` has been deprecated: Use `ite_false` instead
+info: ModifiedCartan/ScalarCurveBounds.lean:97:0: 'ModifiedCartan.scalar_circle_log_le_curve_mean' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ModifiedCartan/ScalarCurveBounds.lean:98:0: 'ModifiedCartan.exists_scalar_zero_of_transcendental' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3594/3613] Replayed ModifiedCartan.EnvelopeKernel
+info: ModifiedCartan/EnvelopeKernel.lean:68:0: 'ModifiedCartan.envelope_integrand_integrable' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3595/3613] Replayed ModifiedCartan.ReciprocalTailIntegral
+warning: ModifiedCartan/ReciprocalTailIntegral.lean:27:30: Variable name `hC` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hC
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+info: ModifiedCartan/ReciprocalTailIntegral.lean:72:0: 'ModifiedCartan.finite_reciprocal_tail_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3600/3776] Replayed ModifiedCartan.ZeroCopiesCount
+warning: ModifiedCartan/ZeroCopiesCount.lean:49:6: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: ModifiedCartan/ZeroCopiesCount.lean:56:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+info: ModifiedCartan/ZeroCopiesCount.lean:68:0: 'ModifiedCartan.zeroCopiesInClosedBall_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3601/3776] Replayed ModifiedCartan.ZeroCopyLogCounting
+info: ModifiedCartan/ZeroCopyLogCounting.lean:75:0: 'ModifiedCartan.entire_logCounting_eq_tsum_zeroCopies' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3602/3776] Replayed ModifiedCartan.WeightedZeroCounting
+warning: ModifiedCartan/WeightedZeroCounting.lean:16:26: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: ModifiedCartan/WeightedZeroCounting.lean:72:28: `if_neg` has been deprecated: Use `ite_eq_right` instead
+info: ModifiedCartan/WeightedZeroCounting.lean:88:0: 'ModifiedCartan.entire_logCounting_eq_tsum_weights' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3603/3776] Replayed ModifiedCartan.TranslatedZeroCopies
+info: ModifiedCartan/TranslatedZeroCopies.lean:56:0: 'ModifiedCartan.zeroCopiesTranslateEquiv' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ModifiedCartan/TranslatedZeroCopies.lean:57:0: 'ModifiedCartan.translated_logCounting_eq_tsum' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3604/3776] Replayed ModifiedCartan.TranslationWeightBound
+warning: ModifiedCartan/TranslationWeightBound.lean:30:28: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: ModifiedCartan/TranslationWeightBound.lean:41:28: `if_neg` has been deprecated: Use `ite_eq_right` instead
+info: ModifiedCartan/TranslationWeightBound.lean:55:0: 'ModifiedCartan.rootCountingWeight_translate_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3605/3776] Replayed ModifiedCartan.ReciprocalRoots
+info: ModifiedCartan/ReciprocalRoots.lean:58:0: 'ModifiedCartan.entire_reciprocal_tail_of_count_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ModifiedCartan/ReciprocalRoots.lean:59:0: 'ModifiedCartan.entire_reciprocal_roots_summable_of_count_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [3606/3776] Replayed ModifiedCartan.MaximumModulus
+info: ModifiedCartan/MaximumModulus.lean:87:0: 'ModifiedCartan.maximumModulus_continuousOn' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ModifiedCartan/MaximumModulus.lean:88:0: 'ModifiedCartan.maximumModulus_eq_sphereSup' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3607/3776] Replayed ModifiedCartan.EntireOrder
+info: ModifiedCartan/EntireOrder.lean:98:0: 'ModifiedCartan.entireOrder_posLog_isLittleO' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ModifiedCartan/EntireOrder.lean:99:0: 'ModifiedCartan.entireOrder_exists_posLog_power_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3608/3776] Replayed ModifiedCartan.CurveCoordinateCounting
+info: ModifiedCartan/CurveCoordinateCounting.lean:105:0: 'ModifiedCartan.coordinate_logCounting_le_characteristic' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ModifiedCartan/CurveCoordinateCounting.lean:106:0: 'ModifiedCartan.coordinate_reciprocal_roots_summable' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3610/3776] Replayed ModifiedCartan.HarmonicBounds
+info: ModifiedCartan/HarmonicBounds.lean:85:0: 'ModifiedCartan.harmonic_harnack_48_32' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ModifiedCartan/HarmonicBounds.lean:86:0: 'ModifiedCartan.norm_canonicalFactor_ge_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3612/3776] Replayed ModifiedCartan.PoissonMajorant
+info: ModifiedCartan/PoissonMajorant.lean:128:0: 'ModifiedCartan.log_norm_le_poisson_log_majorant' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3614/3776] Replayed FewInflection.FundamentalAnalytic
+warning: FewInflection/FundamentalAnalytic.lean:208:35: This simp argument is unused:
+  hW
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [fundamentalCoefficients, not_ne_iff.mp hW]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [3615/3776] Replayed FewInflection.Gauge
+warning: FewInflection/Gauge.lean:52:4: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+warning: FewInflection/Gauge.lean:93:38: This simp argument is unused:
+  Finset.sum_mul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [matrixGauge, smul_eq_mul, Finset.mul_sum, mul_comm, mul_left_comm, mul_assoc] at hz
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: FewInflection/Gauge.lean:94:33: This simp argument is unused:
+  mul_assoc
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [matrixGauge, smul_eq_mul, Finset.sum_mul, Finset.mul_sum, mul_comm, mul_left_comm] at hz
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [3616/3776] Replayed FewInflection.ScalarWronskian
+warning: FewInflection/ScalarWronskian.lean:33:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+⚠ [3617/3776] Replayed FewInflection.CanonicalLocalGauge
+warning: FewInflection/CanonicalLocalGauge.lean:88:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [3623/3776] Replayed FewInflection.Dilation
+info: FewInflection/Dilation.lean:118:2: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+warning: FewInflection/Dilation.lean:155:37: Variable name `ht` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _ht
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+ℹ [3624/3776] Replayed ModifiedCartan.RescaledGauge
+info: ModifiedCartan/RescaledGauge.lean:158:0: 'ModifiedCartan.Paper.eq_localgauge' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ModifiedCartan/RescaledGauge.lean:159:0: 'ModifiedCartan.Paper.eq_canonical_coefficient_identification' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: ModifiedCartan/RescaledGauge.lean:160:0: 'ModifiedCartan.Paper.eq_meanidentity' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3625/3776] Replayed ModifiedCartan.HerglotzNormalization
+info: ModifiedCartan/HerglotzNormalization.lean:76:0: 'ModifiedCartan.rescaledHerglotz_normalization_norm_le_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3626/3776] Replayed ModifiedCartan.CharacteristicMonotone
+info: ModifiedCartan/CharacteristicMonotone.lean:33:0: 'ModifiedCartan.characteristic_monotoneOn' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3627/3776] Replayed ModifiedCartan.CurveOrderBasic
+warning: ModifiedCartan/CurveOrderBasic.lean:18:4: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+info: ModifiedCartan/CurveOrderBasic.lean:67:0: 'ModifiedCartan.order_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ModifiedCartan/CurveOrderBasic.lean:68:0: 'ModifiedCartan.entireOrder_le_of_posLog_power_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3629/3776] Replayed FewInflection.DerivativeMinors
+warning: FewInflection/DerivativeMinors.lean:123:41: This simp argument is unused:
+  dotProduct
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [D, M, Matrix.diagonal_apply]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+ℹ [3636/3776] Replayed ModifiedCartan.EntireTaylorBounds
+info: ModifiedCartan/EntireTaylorBounds.lean:60:0: 'ModifiedCartan.entire_taylorPolynomial_iteratedDeriv_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3640/3776] Replayed FewInflection.AffineDilation
+info: FewInflection/AffineDilation.lean:116:6: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+info: FewInflection/AffineDilation.lean:126:2: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+info: FewInflection/AffineDilation.lean:172:6: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+⚠ [3650/3776] Replayed FewInflection.MeasureConvergence
+warning: FewInflection/MeasureConvergence.lean:32:17: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: FewInflection/MeasureConvergence.lean:53:17: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: FewInflection/MeasureConvergence.lean:249:10: `ofReal_norm_eq_enorm` has been deprecated: Use `ofReal_norm` instead
+⚠ [3652/3776] Replayed ModifiedCartan.TaylorWronskianGrowth
+warning: ModifiedCartan/TaylorWronskianGrowth.lean:43:17: Variable name `hC` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hC
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+info: ModifiedCartan/TaylorWronskianGrowth.lean:124:0: 'ModifiedCartan.entire_taylorWronskian_posLog_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ModifiedCartan/TaylorWronskianGrowth.lean:125:0: 'ModifiedCartan.entire_wronskian_posLog_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3653/3776] Replayed ModifiedCartan.ShiftedCombinations
+info: ModifiedCartan/ShiftedCombinations.lean:86:0: 'ModifiedCartan.shiftedCombination_entireOrder_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3654/3776] Replayed ModifiedCartan.SystemMaximum
+info: ModifiedCartan/SystemMaximum.lean:118:0: 'ModifiedCartan.systemLogMaximum_isLittleO' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3655/3776] Replayed ModifiedCartan.EntireTaylorJets
+warning: ModifiedCartan/EntireTaylorJets.lean:23:4: `if_pos` has been deprecated: Use `ite_eq_left` instead
+info: ModifiedCartan/EntireTaylorJets.lean:45:0: 'ModifiedCartan.entire_taylorPolynomial_wronskian_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3656/3776] Replayed ModifiedCartan.NormalizedCoordinates
+info: ModifiedCartan/NormalizedCoordinates.lean:87:0: 'ModifiedCartan.normalizedCoordinates_initialJets' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ModifiedCartan/NormalizedCoordinates.lean:88:0: 'ModifiedCartan.normalizedCoordinates_entireOrder_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ModifiedCartan/NormalizedCoordinates.lean:89:0: 'ModifiedCartan.normalizedCoordinates_reconstruct' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ModifiedCartan/NormalizedCoordinates.lean:90:0: 'ModifiedCartan.normalizedCoordinates_wronskian' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3657/3776] Replayed ModifiedCartan.OpenDiskCounting
+info: ModifiedCartan/OpenDiskCounting.lean:163:0: 'ModifiedCartan.finiteDivisorPolynomial_degree_count_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ModifiedCartan/OpenDiskCounting.lean:164:0: 'ModifiedCartan.logCounting_eq_open_disk_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ModifiedCartan/OpenDiskCounting.lean:165:0: 'ModifiedCartan.exponential_factor_center_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3658/3776] Replayed ModifiedCartan.CountingDilation
+info: ModifiedCartan/CountingDilation.lean:143:0: 'ModifiedCartan.logCounting_wronskian_dilate' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ModifiedCartan/CountingDilation.lean:144:0: 'ModifiedCartan.log_trailingCoeff_wronskian_dilate' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3659/3776] Replayed ModifiedCartan.EntireCountGrowth
+info: ModifiedCartan/EntireCountGrowth.lean:44:0: 'ModifiedCartan.entire_zeroCount_power_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3660/3776] Replayed ModifiedCartan.WronskianReciprocalRoots
+info: ModifiedCartan/WronskianReciprocalRoots.lean:66:0: 'ModifiedCartan.normalized_entire_system_reciprocal_roots' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ModifiedCartan/WronskianReciprocalRoots.lean:67:0: 'ModifiedCartan.taylorWronskian_reciprocal_tail_uniform' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3663/3776] Replayed ModifiedCartan.SkewTableaux
+warning: ModifiedCartan/SkewTableaux.lean:106:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: ModifiedCartan/SkewTableaux.lean:108:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: ModifiedCartan/SkewTableaux.lean:113:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: ModifiedCartan/SkewTableaux.lean:118:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [3667/3776] Replayed ModifiedCartan.YoungPolytabloid
+warning: ModifiedCartan/YoungPolytabloid.lean:54:2: Try `simp at hc` instead of `simpa using hc`
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+⚠ [3807/4100] Replayed ModifiedCartan.CentralCharacterOperator
+warning: ModifiedCartan/CentralCharacterOperator.lean:18:0: automatically included section variable(s) unused in theorem `ModifiedCartan.characterWeightedOperator_commutes`:
+  [FiniteDimensional ℂ V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [FiniteDimensional ℂ V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [3810/4100] Replayed ModifiedCartan.CharacterScalarAction
+warning: ModifiedCartan/CharacterScalarAction.lean:13:0: automatically included section variable(s) unused in theorem `ModifiedCartan.characterWeightedOperator_trace`:
+  [FiniteDimensional ℂ V]
+  [FiniteDimensional ℂ W]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [FiniteDimensional ℂ V] [FiniteDimensional ℂ W] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: ModifiedCartan/CharacterScalarAction.lean:31:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: ModifiedCartan/CharacterScalarAction.lean:32:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: ModifiedCartan/CharacterScalarAction.lean:29:0: automatically included section variable(s) unused in theorem `ModifiedCartan.irreducible_finrank_ne_zero`:
+  [Fintype G]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype G] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: ModifiedCartan/CharacterScalarAction.lean:46:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: ModifiedCartan/CharacterScalarAction.lean:55:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: ModifiedCartan/CharacterScalarAction.lean:62:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+⚠ [3811/4100] Replayed ModifiedCartan.CharacterProjectorBasic
+warning: ModifiedCartan/CharacterProjectorBasic.lean:12:0: automatically included section variable(s) unused in theorem `ModifiedCartan.characterWeightedOperator_natural`:
+  [FiniteDimensional ℂ V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [FiniteDimensional ℂ V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [3812/4100] Replayed ModifiedCartan.CharacterProjectorFixed
+warning: ModifiedCartan/CharacterProjectorFixed.lean:12:0: automatically included section variable(s) unused in theorem `ModifiedCartan.intertwiner_apply_mem_isotypic`:
+  [Fintype G]
+  [FiniteDimensional ℂ V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype G] [FiniteDimensional ℂ V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [3813/4100] Replayed ModifiedCartan.CharacterOrthogonalInvariant
+warning: ModifiedCartan/CharacterOrthogonalInvariant.lean:39:0: automatically included section variable(s) unused in theorem `ModifiedCartan.invariant_orthogonal_of_unitary`:
+  [Fintype G]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype G] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [3828/4100] Replayed ModifiedCartan.YoungAlternatingRange
+warning: ModifiedCartan/YoungAlternatingRange.lean:23:4: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+⚠ [3832/4100] Replayed ModifiedCartan.SpechtRepresentation
+warning: ModifiedCartan/SpechtRepresentation.lean:22:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [3837/4100] Replayed ModifiedCartan.YoungFillings
+warning: ModifiedCartan/YoungFillings.lean:27:25: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+warning: ModifiedCartan/YoungFillings.lean:78:32: `if_pos` has been deprecated: Use `ite_eq_left` instead
+⚠ [3864/4100] Replayed ModifiedCartan.MinorGrowthPaths
+warning: ModifiedCartan/MinorGrowthPaths.lean:85:4: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [3865/4100] Replayed ModifiedCartan.MinorGrowthCount
+warning: ModifiedCartan/MinorGrowthCount.lean:18:4: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: ModifiedCartan/MinorGrowthCount.lean:20:4: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: ModifiedCartan/MinorGrowthCount.lean:24:4: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: ModifiedCartan/MinorGrowthCount.lean:30:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: ModifiedCartan/MinorGrowthCount.lean:36:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [3868/4100] Replayed ModifiedCartan.SkewAdditions
+warning: ModifiedCartan/SkewAdditions.lean:17:44: Variable name `a` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _a
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ModifiedCartan/SkewAdditions.lean:17:46: Variable name `b` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _b
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [3873/4100] Replayed ModifiedCartan.TableauCountRecurrence
+warning: ModifiedCartan/TableauCountRecurrence.lean:40:32: `if_pos` has been deprecated: Use `ite_eq_left` instead
+⚠ [3882/4100] Replayed ModifiedCartan.TableauCountPositive
+warning: ModifiedCartan/TableauCountPositive.lean:50:22: Unused tactic linter: `change partitionSize ν = partitionSize r.enlarged + k` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [3883/4100] Replayed ModifiedCartan.SchubertWronskianDegree
+warning: ModifiedCartan/SchubertWronskianDegree.lean:30:44: `if_neg` has been deprecated: Use `ite_eq_right` instead
+ℹ [3886/4100] Replayed ModifiedCartan.ColumnPartitionMinorOrders
+info: ModifiedCartan/ColumnPartitionMinorOrders.lean:58:0: 'ModifiedCartan.columnPartition_order_cycle' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3889/4100] Replayed ModifiedCartan.ColoringOrbits
+warning: ModifiedCartan/ColoringOrbits.lean:14:11: Variable name `f` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _f
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ModifiedCartan/ColoringOrbits.lean:15:11: Variable name `σ` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _σ
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ModifiedCartan/ColoringOrbits.lean:15:13: Variable name `τ` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _τ
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ModifiedCartan/ColoringOrbits.lean:15:15: Variable name `f` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _f
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [3890/4100] Replayed ModifiedCartan.CycleColorings
+warning: ModifiedCartan/CycleColorings.lean:20:0: automatically included section variable(s) unused in theorem `ModifiedCartan.permutationCycleClass_apply`:
+  [Fintype A]
+  [DecidableEq A]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype A] [DecidableEq A] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: ModifiedCartan/CycleColorings.lean:24:0: automatically included section variable(s) unused in theorem `ModifiedCartan.coloring_pow_eq`:
+  [Fintype A]
+  [DecidableEq A]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype A] [DecidableEq A] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [3892/4100] Replayed ModifiedCartan.RemovedBoxes
+warning: ModifiedCartan/RemovedBoxes.lean:41:11: Variable name `a` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _a
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ModifiedCartan/RemovedBoxes.lean:42:12: Variable name `a` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _a
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [3894/4100] Replayed ModifiedCartan.RemovedPermutations
+warning: ModifiedCartan/RemovedPermutations.lean:51:4: Unused tactic linter: `change f ((youngRemovalPermutationEquiv μ b p).val a) = f a` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [3896/4100] Replayed ModifiedCartan.FixedPointPermutationSums
+warning: ModifiedCartan/FixedPointPermutationSums.lean:51:12: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+⚠ [3897/4100] Replayed ModifiedCartan.CycleWeightedPowers
+warning: ModifiedCartan/CycleWeightedPowers.lean:15:0: automatically included section variable(s) unused in theorem `ModifiedCartan.coloring_product_eq_cycle_product`:
+  [DecidableEq A]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq A] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [3903/4100] Replayed ModifiedCartan.WeightColoringRepresentation
+warning: ModifiedCartan/WeightColoringRepresentation.lean:17:11: Variable name `f` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _f
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ModifiedCartan/WeightColoringRepresentation.lean:18:11: Variable name `σ` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _σ
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ModifiedCartan/WeightColoringRepresentation.lean:18:13: Variable name `τ` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _τ
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ModifiedCartan/WeightColoringRepresentation.lean:18:15: Variable name `f` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _f
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [3904/4100] Replayed ModifiedCartan.YoungColoringMinimum
+warning: ModifiedCartan/YoungColoringMinimum.lean:37:4: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+ℹ [3918/4100] Replayed ModifiedCartan.SingleVariableSeries
+info: ModifiedCartan/SingleVariableSeries.lean:66:0: 'ModifiedCartan.singleVariableSeries_coeff' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3919/4100] Replayed ModifiedCartan.SeparateVariableProducts
+warning: ModifiedCartan/SeparateVariableProducts.lean:14:35: This simp argument is unused:
+  Finsupp.finsetSum_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [singleVariableDegreeSplit, Finsupp.single_apply, eq_comm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ModifiedCartan/SeparateVariableProducts.lean:14:60: This simp argument is unused:
+  Finsupp.single_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [singleVariableDegreeSplit, Finsupp.finsetSum_apply, eq_comm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ModifiedCartan/SeparateVariableProducts.lean:14:82: This simp argument is unused:
+  eq_comm
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [singleVariableDegreeSplit, Finsupp.finsetSum_apply, Finsupp.single_apply]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+info: ModifiedCartan/SeparateVariableProducts.lean:62:0: 'ModifiedCartan.singleVariableSeries_coeff_prod' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3920/4100] Replayed ModifiedCartan.PolynomialDeterminantCoefficients
+info: ModifiedCartan/PolynomialDeterminantCoefficients.lean:78:0: 'ModifiedCartan.polynomialAlternant_coeff' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3922/4100] Replayed ModifiedCartan.MvDividedPowerNormalization
+info: ModifiedCartan/MvDividedPowerNormalization.lean:56:0: 'ModifiedCartan.mvDividedPowerNormalize_first_coeff' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3923/4100] Replayed ModifiedCartan.DividedPowerPolynomials
+info: ModifiedCartan/DividedPowerPolynomials.lean:57:0: 'ModifiedCartan.complexDividedPowerPolynomial_jet_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3925/4100] Replayed ModifiedCartan.ClassFunctionScalarAction
+warning: ModifiedCartan/ClassFunctionScalarAction.lean:14:0: automatically included section variable(s) unused in theorem `ModifiedCartan.classFunctionOperator_trace`:
+  [FiniteDimensional ℂ V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [FiniteDimensional ℂ V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [3926/4100] Replayed ModifiedCartan.CharacterIrreducibleImages
+warning: ModifiedCartan/CharacterIrreducibleImages.lean:24:0: automatically included section variable(s) unused in theorem `ModifiedCartan.intertwiner_apply_mem_isotypic_of_equiv`:
+  [FiniteDimensional ℂ W]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [FiniteDimensional ℂ W] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [3927/4100] Replayed ModifiedCartan.CharacterSimpleGeneration
+warning: ModifiedCartan/CharacterSimpleGeneration.lean:17:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [3928/4100] Replayed ModifiedCartan.GroupSubmoduleIntertwiners
+warning: ModifiedCartan/GroupSubmoduleIntertwiners.lean:35:0: automatically included section variable(s) unused in theorem `ModifiedCartan.groupSubmoduleIntertwiner_apply`:
+  [Fintype G]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype G] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: ModifiedCartan/GroupSubmoduleIntertwiners.lean:40:0: automatically included section variable(s) unused in theorem `ModifiedCartan.groupSubmoduleIntertwiner_injective`:
+  [Fintype G]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype G] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: ModifiedCartan/GroupSubmoduleIntertwiners.lean:55:0: automatically included section variable(s) unused in theorem `ModifiedCartan.groupSubmoduleRepresentationIrreducible`:
+  [Fintype G]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype G] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [3929/4100] Replayed ModifiedCartan.CharacterProjectorRange
+warning: ModifiedCartan/CharacterProjectorRange.lean:23:4: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: ModifiedCartan/CharacterProjectorRange.lean:24:4: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: ModifiedCartan/CharacterProjectorRange.lean:26:4: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [3931/4100] Replayed ModifiedCartan.CharacterProjectorOrthogonal
+warning: ModifiedCartan/CharacterProjectorOrthogonal.lean:23:45: `if_neg` has been deprecated: Use `ite_eq_right` instead
+⚠ [3955/4100] Replayed ModifiedCartan.SpechtFiniteAlphabetRepresentation
+warning: ModifiedCartan/SpechtFiniteAlphabetRepresentation.lean:24:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [3956/4100] Replayed ModifiedCartan.SpechtCharacterPairingStep
+warning: ModifiedCartan/SpechtCharacterPairingStep.lean:20:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: ModifiedCartan/SpechtCharacterPairingStep.lean:21:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: ModifiedCartan/SpechtCharacterPairingStep.lean:22:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [3978/4100] Replayed ModifiedCartan.ClassFunctionRegularCoefficients
+warning: ModifiedCartan/ClassFunctionRegularCoefficients.lean:17:4: This simp argument is unused:
+  MonoidAlgebra.coeff_smul_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [classFunctionOperator, LinearMap.sum_apply, LinearMap.smul_apply, Representation.leftRegular,
+    Representation.ofMulAction_single, MonoidAlgebra.coeff_sum, Finsupp.finsetSum_apply, MonoidAlgebra.coeff_single,
+    Finsupp.single_apply]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [3979/4100] Replayed ModifiedCartan.FixedColoringProduct
+warning: ModifiedCartan/FixedColoringProduct.lean:19:11: Variable name `f` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _f
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ModifiedCartan/FixedColoringProduct.lean:20:12: Variable name `p` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _p
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ModifiedCartan/FixedColoringProduct.lean:27:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+ℹ [3983/4100] Replayed ModifiedCartan.SeriesHomogenization
+info: ModifiedCartan/SeriesHomogenization.lean:67:0: 'ModifiedCartan.seriesHomogenization_coeff_coeff' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3985/4100] Replayed ModifiedCartan.FiniteGeometricSeries
+info: ModifiedCartan/FiniteGeometricSeries.lean:42:0: 'ModifiedCartan.geometricMvSeries_inverse' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ModifiedCartan/FiniteGeometricSeries.lean:43:0: 'ModifiedCartan.geometricMvSeries_coeff_prod' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3986/4100] Replayed ModifiedCartan.HomogenizedGeometricSeries
+warning: ModifiedCartan/HomogenizedGeometricSeries.lean:22:44: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+info: ModifiedCartan/HomogenizedGeometricSeries.lean:62:0: 'ModifiedCartan.seriesHomogenization_geometricMvSeries' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3987/4100] Replayed ModifiedCartan.GeometricProductCoefficients
+info: ModifiedCartan/GeometricProductCoefficients.lean:51:0: 'ModifiedCartan.geometricPowerSeries_prod_coeff' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3988/4100] Replayed ModifiedCartan.CauchyKernelCoefficients
+info: ModifiedCartan/CauchyKernelCoefficients.lean:44:0: 'ModifiedCartan.finiteCauchyCoefficientPolynomial_coeff' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3996/4100] Replayed ModifiedCartan.DeterminantFirstPivot
+info: ModifiedCartan/DeterminantFirstPivot.lean:67:0: 'ModifiedCartan.det_first_pivot' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3997/4100] Replayed ModifiedCartan.FiniteCauchyPivot
+info: ModifiedCartan/FiniteCauchyPivot.lean:52:0: 'ModifiedCartan.finiteCauchyMatrix_det_succ' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3998/4100] Replayed ModifiedCartan.FiniteCauchyDeterminant
+info: ModifiedCartan/FiniteCauchyDeterminant.lean:64:0: 'ModifiedCartan.finiteCauchyMatrix_det_mul_denominator' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4000/4100] Replayed ModifiedCartan.FiniteCauchyRing
+info: ModifiedCartan/FiniteCauchyRing.lean:71:0: 'ModifiedCartan.finiteCauchy_inverse_det' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [4003/4100] Replayed ModifiedCartan.MinorTranslation
+warning: ModifiedCartan/MinorTranslation.lean:30:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+⚠ [4004/4100] Replayed ModifiedCartan.FiniteGroupLinearCoefficients
+warning: ModifiedCartan/FiniteGroupLinearCoefficients.lean:17:35: This simp argument is unused:
+  MonoidAlgebra.coeff_smul_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [MonoidAlgebra.coeff_sum, MonoidAlgebra.coeff_single, Finsupp.finsetSum_apply, Finsupp.single_apply]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ModifiedCartan/FiniteGroupLinearCoefficients.lean:18:34: This simp argument is unused:
+  Finsupp.finsetSum_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [MonoidAlgebra.coeff_sum, MonoidAlgebra.coeff_smul_apply, MonoidAlgebra.coeff_single,
+    Finsupp.single_apply]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ModifiedCartan/FiniteGroupLinearCoefficients.lean:18:59: This simp argument is unused:
+  Finsupp.single_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [MonoidAlgebra.coeff_sum, MonoidAlgebra.coeff_smul_apply, MonoidAlgebra.coeff_single,
+    Finsupp.finsetSum_apply]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+info: ModifiedCartan/FiniteGroupLinearCoefficients.lean:61:0: 'ModifiedCartan.finiteGroup_polynomial_relation_linear' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [4007/4100] Replayed ModifiedCartan.SizedSubsetInsertion
+warning: ModifiedCartan/SizedSubsetInsertion.lean:40:0: automatically included section variable(s) unused in theorem `ModifiedCartan.sum_sizedLetterSubset`:
+  [DecidableEq A]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq A] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: ModifiedCartan/SizedSubsetInsertion.lean:45:0: automatically included section variable(s) unused in theorem `ModifiedCartan.sum_sizedLetterSubset_congr`:
+  [DecidableEq A]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq A] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [4008/4100] Replayed ModifiedCartan.FiniteInvolutionSum
+warning: ModifiedCartan/FiniteInvolutionSum.lean:19:17: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: ModifiedCartan/FiniteInvolutionSum.lean:19:28: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: ModifiedCartan/FiniteInvolutionSum.lean:21:19: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: ModifiedCartan/FiniteInvolutionSum.lean:21:30: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: ModifiedCartan/FiniteInvolutionSum.lean:22:19: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: ModifiedCartan/FiniteInvolutionSum.lean:22:30: `if_neg` has been deprecated: Use `ite_eq_right` instead
+⚠ [4009/4224] Replayed ModifiedCartan.YoungRowDegrees
+warning: ModifiedCartan/YoungRowDegrees.lean:30:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [4010/4224] Replayed ModifiedCartan.FinitePartitionDegrees
+warning: ModifiedCartan/FinitePartitionDegrees.lean:24:11: Variable name `b` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _b
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ModifiedCartan/FinitePartitionDegrees.lean:25:12: Variable name `p` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _p
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+info: ModifiedCartan/FinitePartitionDegrees.lean:57:0: 'ModifiedCartan.finiteColorWeight_partitionFiniteDegree' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ModifiedCartan/FinitePartitionDegrees.lean:58:0: 'ModifiedCartan.partitionFiniteDegree_mapDomain' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4011/4224] Replayed ModifiedCartan.StaircaseWeights
+info: ModifiedCartan/StaircaseWeights.lean:90:0: 'ModifiedCartan.finiteStaircaseDegree_weight_lt' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4012/4224] Replayed ModifiedCartan.FiniteAlternants
+info: ModifiedCartan/FiniteAlternants.lean:51:0: 'ModifiedCartan.finiteAlternant_eq_det' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4013/4224] Replayed ModifiedCartan.AlternantCoefficients
+info: ModifiedCartan/AlternantCoefficients.lean:89:0: 'ModifiedCartan.finiteAlternant_partition_coeff' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4014/4224] Replayed ModifiedCartan.OrderedPartitionExponents
+info: ModifiedCartan/OrderedPartitionExponents.lean:75:0: 'ModifiedCartan.exists_partitionAlternantExponent' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ModifiedCartan/OrderedPartitionExponents.lean:76:0: 'ModifiedCartan.exists_perm_strictAnti' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4015/4224] Replayed ModifiedCartan.AlternatingPolynomialExt
+info: ModifiedCartan/AlternatingPolynomialExt.lean:69:0: 'ModifiedCartan.alternatingPolynomial_ext' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [4026/4224] Replayed ModifiedCartan.SpechtRegularCompleteness
+warning: ModifiedCartan/SpechtRegularCompleteness.lean:28:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: ModifiedCartan/SpechtRegularCompleteness.lean:30:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+⚠ [4028/4224] Replayed ModifiedCartan.ClassFunctionSpechtExpansion
+warning: ModifiedCartan/ClassFunctionSpechtExpansion.lean:24:6: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [4029/4224] Replayed ModifiedCartan.SpechtFourierExpansion
+warning: ModifiedCartan/SpechtFourierExpansion.lean:17:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: ModifiedCartan/SpechtFourierExpansion.lean:27:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [4034/4224] Replayed ModifiedCartan.SeparatedFrobeniusCauchy
+warning: ModifiedCartan/SeparatedFrobeniusCauchy.lean:44:13: This simp argument is unused:
+  Fintype.card_fin
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [map_sum, map_mul, separateAlphabetPolynomial_rename_inl,
+    separateAlphabetPolynomial_rename_inr] at h
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+info: ModifiedCartan/SeparatedFrobeniusCauchy.lean:54:0: 'ModifiedCartan.finiteFrobeniusPolynomial_cauchy_separated' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4039/4224] Replayed ModifiedCartan.HomogeneousSeriesCoefficients
+info: ModifiedCartan/HomogeneousSeriesCoefficients.lean:35:0: 'ModifiedCartan.homogeneous_polynomial_mul_series_coeff' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4040/4224] Replayed ModifiedCartan.AlternantHomogeneity
+info: ModifiedCartan/AlternantHomogeneity.lean:54:0: 'ModifiedCartan.finiteVandermondeAlternant_isHomogeneous' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ModifiedCartan/AlternantHomogeneity.lean:55:0: 'ModifiedCartan.partitionAlternantExponent_degree' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4041/4224] Replayed ModifiedCartan.FormalFrobeniusKernel
+info: ModifiedCartan/FormalFrobeniusKernel.lean:48:0: 'ModifiedCartan.finiteCauchyKernelSeries_alternant_coeff' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4042/4224] Replayed ModifiedCartan.VandermondeAlternantMaps
+info: ModifiedCartan/VandermondeAlternantMaps.lean:40:0: 'ModifiedCartan.finiteVandermondeAlternant_map_mul' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [4046/4224] Replayed ModifiedCartan.FiniteCauchySeries
+warning: ModifiedCartan/FiniteCauchySeries.lean:36:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+info: ModifiedCartan/FiniteCauchySeries.lean:44:0: 'ModifiedCartan.finiteCauchySeriesMatrix_coeff_det' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ModifiedCartan/FiniteCauchySeries.lean:45:0: 'ModifiedCartan.finiteCauchySeriesMatrix_det' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4047/4224] Replayed ModifiedCartan.AlternantCauchyExpansion
+info: ModifiedCartan/AlternantCauchyExpansion.lean:55:0: 'ModifiedCartan.finiteAlternant_frobenius_expansion' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4048/4224] Replayed ModifiedCartan.DividedPowerAlternants
+info: ModifiedCartan/DividedPowerAlternants.lean:43:0: 'ModifiedCartan.finiteDividedAlternant_eq_det' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4050/4224] Replayed ModifiedCartan.DividedPowerPartitionMinors
+info: ModifiedCartan/DividedPowerPartitionMinors.lean:55:0: 'ModifiedCartan.dividedPowerPartitionMinor_eval' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4051/4224] Replayed ModifiedCartan.PolynomialAlternantTranslation
+info: ModifiedCartan/PolynomialAlternantTranslation.lean:117:0: 'ModifiedCartan.dividedAlternant_translate_partition_coeff' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4052/4224] Replayed ModifiedCartan.ReplacedMinorOrders
+info: ModifiedCartan/ReplacedMinorOrders.lean:88:0: 'ModifiedCartan.sortedReplacementOrders_partitionSize' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4053/4224] Replayed ModifiedCartan.DividedAlternantTranslation
+info: ModifiedCartan/DividedAlternantTranslation.lean:96:0: 'ModifiedCartan.finiteDividedAlternant_translation' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [4058/4224] Replayed ModifiedCartan.KPAlphaConjugation
+warning: ModifiedCartan/KPAlphaConjugation.lean:12:0: automatically included section variable(s) unused in theorem `ModifiedCartan.kpAlpha_conjugate`:
+  [Fintype A]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype A] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [4059/4224] Replayed ModifiedCartan.PermutationStar
+warning: ModifiedCartan/PermutationStar.lean:14:0: automatically included section variable(s) unused in theorem `ModifiedCartan.permutationElement_mul`:
+  [DecidableEq A]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq A] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: ModifiedCartan/PermutationStar.lean:18:0: automatically included section variable(s) unused in theorem `ModifiedCartan.permutationElement_one`:
+  [DecidableEq A]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq A] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [4060/4224] Replayed ModifiedCartan.KPAlphaEraseCommutator
+warning: ModifiedCartan/KPAlphaEraseCommutator.lean:10:0: automatically included section variable(s) unused in theorem `ModifiedCartan.transpositionElement_comm`:
+  [Fintype A]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype A] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [4061/4224] Replayed ModifiedCartan.KPSubsetWeights
+warning: ModifiedCartan/KPSubsetWeights.lean:51:12: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+warning: ModifiedCartan/KPSubsetWeights.lean:52:12: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+⚠ [4064/4224] Replayed ModifiedCartan.KPGaudinReduction
+warning: ModifiedCartan/KPGaudinReduction.lean:20:0: automatically included section variable(s) unused in theorem `ModifiedCartan.kpGaudin_weight_cancel`:
+  [Fintype A]
+  [DecidableEq A]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype A] [DecidableEq A] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [4067/4224] Replayed ModifiedCartan.GaudinDegenerationScalar
+warning: ModifiedCartan/GaudinDegenerationScalar.lean:40:39: `if_neg` has been deprecated: Use `ite_eq_right` instead
+⚠ [4073/4224] Replayed ModifiedCartan.KPAlphaCoefficients
+warning: ModifiedCartan/KPAlphaCoefficients.lean:16:8: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+warning: ModifiedCartan/KPAlphaCoefficients.lean:22:8: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+warning: ModifiedCartan/KPAlphaCoefficients.lean:60:8: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+warning: ModifiedCartan/KPAlphaCoefficients.lean:60:20: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+warning: ModifiedCartan/KPAlphaCoefficients.lean:63:8: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+warning: ModifiedCartan/KPAlphaCoefficients.lean:63:20: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+⚠ [4074/4224] Replayed ModifiedCartan.InducedSpechtClassFunction
+warning: ModifiedCartan/InducedSpechtClassFunction.lean:33:8: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+warning: ModifiedCartan/InducedSpechtClassFunction.lean:33:44: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+warning: ModifiedCartan/InducedSpechtClassFunction.lean:41:8: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+warning: ModifiedCartan/InducedSpechtClassFunction.lean:41:20: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+warning: ModifiedCartan/InducedSpechtClassFunction.lean:62:8: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+warning: ModifiedCartan/InducedSpechtClassFunction.lean:62:49: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+warning: ModifiedCartan/InducedSpechtClassFunction.lean:67:8: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+warning: ModifiedCartan/InducedSpechtClassFunction.lean:67:20: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+⚠ [4075/4224] Replayed ModifiedCartan.SpechtRestrictionPairing
+warning: ModifiedCartan/SpechtRestrictionPairing.lean:14:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: ModifiedCartan/SpechtRestrictionPairing.lean:17:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: ModifiedCartan/SpechtRestrictionPairing.lean:22:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+⚠ [4077/4224] Replayed ModifiedCartan.ClassScalarIsotypic
+warning: ModifiedCartan/ClassScalarIsotypic.lean:48:4: This simp argument is unused:
+  MonoidAlgebra.coeff_smul_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [classWeightedOperator, LinearMap.sum_apply, LinearMap.smul_apply, Representation.leftRegular,
+    MonoidAlgebra.coeff_sum, Finsupp.finsetSum_apply, MonoidAlgebra.coeff_single, Finsupp.single_apply]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ModifiedCartan/ClassScalarIsotypic.lean:50:0: automatically included section variable(s) unused in theorem `ModifiedCartan.characterProjector_regular_coefficient`:
+  [FiniteDimensional ℂ V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [FiniteDimensional ℂ V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [4080/4224] Replayed ModifiedCartan.KPAlphaFullInduction
+warning: ModifiedCartan/KPAlphaFullInduction.lean:40:0: automatically included section variable(s) unused in theorem `ModifiedCartan.kpSubsetExtension_full`:
+  [Fintype A]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype A] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [4083/4224] Replayed ModifiedCartan.TotalTranspositionDeletion
+warning: ModifiedCartan/TotalTranspositionDeletion.lean:13:0: automatically included section variable(s) unused in theorem `ModifiedCartan.supportedPermutation_extension_swap`:
+  [Fintype A]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype A] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [4085/4224] Replayed ModifiedCartan.IsotypicCopies
+warning: ModifiedCartan/IsotypicCopies.lean:29:0: automatically included section variable(s) unused in theorem `ModifiedCartan.nonempty_equiv_intertwiner_range`:
+  [Fintype G]
+  [FiniteDimensional ℂ V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype G] [FiniteDimensional ℂ V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [4087/4224] Replayed ModifiedCartan.SpechtRestrictionMultiplicity
+warning: ModifiedCartan/SpechtRestrictionMultiplicity.lean:30:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: ModifiedCartan/SpechtRestrictionMultiplicity.lean:51:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [4088/4224] Replayed ModifiedCartan.TotalTranspositionOperator
+warning: ModifiedCartan/TotalTranspositionOperator.lean:24:34: This simp argument is unused:
+  Representation.asAlgebraHom_single_one
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [h]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [4089/4224] Replayed ModifiedCartan.SubsetRepresentationOperators
+warning: ModifiedCartan/SubsetRepresentationOperators.lean:12:0: automatically included section variable(s) unused in theorem `ModifiedCartan.asAlgebraHom_subsetExtension`:
+  [Fintype A]
+  [DecidableEq A]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype A] [DecidableEq A] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [4095/4224] Replayed ModifiedCartan.YoungTranspositionScalar
+warning: ModifiedCartan/YoungTranspositionScalar.lean:43:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [4106/4224] Replayed ModifiedCartan.SpechtCornerDirectSum
+warning: ModifiedCartan/SpechtCornerDirectSum.lean:22:0: automatically included section variable(s) unused in theorem `ModifiedCartan.spechtCorner_finrank_sum`:
+  [DecidableEq A]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq A] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [4109/4224] Replayed ModifiedCartan.JucysMurphyBasisStep
+warning: ModifiedCartan/JucysMurphyBasisStep.lean:34:4: Unused tactic linter: `change
+  (spechtRepresentationOn μ h).asAlgebraHom (jucysMurphyElement i)
+      (spechtCornerEmbedding μ h a p.1 ((D p.1).basis p.2)) =
+    e p i • spechtCornerEmbedding μ h a p.1 ((D p.1).basis p.2)` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [4120/4224] Replayed ModifiedCartan.IsotypicAnnihilator
+warning: ModifiedCartan/IsotypicAnnihilator.lean:36:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [4121/4224] Replayed ModifiedCartan.SpechtAlgebraFaithful
+warning: ModifiedCartan/SpechtAlgebraFaithful.lean:24:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [4124/4224] Replayed ModifiedCartan.CommonEigenvectors
+warning: ModifiedCartan/CommonEigenvectors.lean:27:6: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+warning: ModifiedCartan/CommonEigenvectors.lean:32:6: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [4125/4224] Replayed ModifiedCartan.KPJointEigenspace
+warning: ModifiedCartan/KPJointEigenspace.lean:26:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [4127/4224] Replayed ModifiedCartan.CharacterProjectionBound
+warning: ModifiedCartan/CharacterProjectionBound.lean:12:0: automatically included section variable(s) unused in theorem `ModifiedCartan.characterWeightedOperator_eq_scaled_projector`:
+  [FiniteDimensional ℂ W]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [FiniteDimensional ℂ W] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [4128/4224] Replayed ModifiedCartan.SymmetricCharacterProjection
+warning: ModifiedCartan/SymmetricCharacterProjection.lean:14:0: automatically included section variable(s) unused in theorem `ModifiedCartan.permutation_character_inv`:
+  [FiniteDimensional ℂ V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [FiniteDimensional ℂ V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: ModifiedCartan/SymmetricCharacterProjection.lean:26:0: automatically included section variable(s) unused in theorem `ModifiedCartan.permutationCharacterOperator_eq_weighted`:
+  [FiniteDimensional ℂ W]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [FiniteDimensional ℂ W] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [4129/4224] Replayed ModifiedCartan.KPFullCharacterAction
+warning: ModifiedCartan/KPFullCharacterAction.lean:18:0: automatically included section variable(s) unused in theorem `ModifiedCartan.supportedPermutation_univ`:
+  [DecidableEq A]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq A] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: ModifiedCartan/KPFullCharacterAction.lean:49:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: ModifiedCartan/KPFullCharacterAction.lean:50:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [4132/4224] Replayed ModifiedCartan.KPSubsetInduction
+warning: ModifiedCartan/KPSubsetInduction.lean:17:0: automatically included section variable(s) unused in theorem `ModifiedCartan.kpSubsetExtension_erase`:
+  [Fintype A]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype A] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: ModifiedCartan/KPSubsetInduction.lean:64:14: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: ModifiedCartan/KPSubsetInduction.lean:64:25: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: ModifiedCartan/KPSubsetInduction.lean:66:14: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: ModifiedCartan/KPSubsetInduction.lean:66:25: `if_neg` has been deprecated: Use `ite_eq_right` instead
+⚠ [4135/4224] Replayed ModifiedCartan.LegalMinorRowCovers
+warning: ModifiedCartan/LegalMinorRowCovers.lean:53:11: `if_pos` has been deprecated: Use `ite_eq_left` instead
+⚠ [4136/4224] Replayed ModifiedCartan.KPCoefficientGrowthPaths
+warning: ModifiedCartan/KPCoefficientGrowthPaths.lean:35:4: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [4235/4532] Replayed ModifiedCartan.KPAlphaPositive
+warning: ModifiedCartan/KPAlphaPositive.lean:16:4: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+ℹ [4239/4532] Replayed ModifiedCartan.KPJointLinearValue
+info: ModifiedCartan/KPJointLinearValue.lean:28:0: 'ModifiedCartan.exists_kpJointLinearValue' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [4243/4532] Replayed ModifiedCartan.KPColumnSupportedExpansion
+warning: ModifiedCartan/KPColumnSupportedExpansion.lean:41:19: `if_true` has been deprecated: Use `ite_true` instead
+warning: ModifiedCartan/KPColumnSupportedExpansion.lean:43:19: `if_false` has been deprecated: Use `ite_false` instead
+⚠ [4244/4532] Replayed ModifiedCartan.MarkerAssignmentDegree
+warning: ModifiedCartan/MarkerAssignmentDegree.lean:42:78: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: ModifiedCartan/MarkerAssignmentDegree.lean:46:78: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: ModifiedCartan/MarkerAssignmentDegree.lean:55:10: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: ModifiedCartan/MarkerAssignmentDegree.lean:58:10: `if_neg` has been deprecated: Use `ite_eq_right` instead
+⚠ [4261/4532] Replayed ModifiedCartan.FixedColoringDirectSum
+warning: ModifiedCartan/FixedColoringDirectSum.lean:29:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [4262/4532] Replayed ModifiedCartan.SigmaFiberPermutations
+warning: ModifiedCartan/SigmaFiberPermutations.lean:41:17: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: ModifiedCartan/SigmaFiberPermutations.lean:42:37: `if_true` has been deprecated: Use `ite_true` instead
+warning: ModifiedCartan/SigmaFiberPermutations.lean:43:10: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: ModifiedCartan/SigmaFiberPermutations.lean:41:17: This simp argument is unused:
+  if_pos hal
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [sigmaFiberPermutation_other B c a (σ c) (σ a b) hac, List.mem_cons, hal, or_true, if_true]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ModifiedCartan/SigmaFiberPermutations.lean:57:53: `if_pos` has been deprecated: Use `ite_eq_left` instead
+⚠ [4277/4532] Replayed ModifiedCartan.InvariantCycleSets
+warning: ModifiedCartan/InvariantCycleSets.lean:14:0: automatically included section variable(s) unused in theorem `ModifiedCartan.mem_permutationCycleUnion`:
+  [DecidableEq A]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq A] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [4278/4532] Replayed ModifiedCartan.InvariantCycleSubsets
+warning: ModifiedCartan/InvariantCycleSubsets.lean:39:0: automatically included section variable(s) unused in theorem `ModifiedCartan.permutationCycleUnion_card`:
+  [DecidableEq A]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq A] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [4287/4532] Replayed ModifiedCartan.CompositionLaurentWeights
+warning: ModifiedCartan/CompositionLaurentWeights.lean:36:4: This simp argument is unused:
+  laurentMarkerEquiv_C_C
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [compositionJacobianWeight, map_mul, laurentMarkerEquiv_X, laurentMarkerEquiv_C_T, map_natCast]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [4289/4532] Replayed ModifiedCartan.NormalizedGeometricLaurent
+warning: ModifiedCartan/NormalizedGeometricLaurent.lean:33:54: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ModifiedCartan/NormalizedGeometricLaurent.lean:33:66: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [4291/4532] Replayed ModifiedCartan.ExtraColorEmbeddings
+warning: ModifiedCartan/ExtraColorEmbeddings.lean:16:22: This simp argument is unused:
+  Equiv.optionSubtypeNe_symm_self
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [extraColorAt]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [4295/4532] Replayed ModifiedCartan.EmbeddingMarkerAssignment
+warning: ModifiedCartan/EmbeddingMarkerAssignment.lean:14:35: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+warning: ModifiedCartan/EmbeddingMarkerAssignment.lean:23:39: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+⚠ [4302/4532] Replayed ModifiedCartan.MarkerSquarefreeJacobian
+warning: ModifiedCartan/MarkerSquarefreeJacobian.lean:27:10: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: ModifiedCartan/MarkerSquarefreeJacobian.lean:43:22: This simp argument is unused:
+  ← Finset.sum_filter
+
+Hint: Omit it from the simp argument list.
+  [apply] simp
+
+Note: Simp arguments with `←` have the additional effect of removing the other direction from the simp set, even if the simp argument itself is unused. If the hint above does not work, try replacing `←` with `-` to only get that effect and silence this warning.
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [4310/4532] Replayed ModifiedCartan.TransitivePermutationSign
+warning: ModifiedCartan/TransitivePermutationSign.lean:13:4: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: ModifiedCartan/TransitivePermutationSign.lean:14:4: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: ModifiedCartan/TransitivePermutationSign.lean:18:4: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [4314/4532] Replayed ModifiedCartan.TransitiveSigmaColorings
+warning: ModifiedCartan/TransitiveSigmaColorings.lean:28:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [4316/4532] Replayed ModifiedCartan.RightZFactorPolynomial
+warning: ModifiedCartan/RightZFactorPolynomial.lean:35:20: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [4319/4532] Replayed ModifiedCartan.RightZFactorLaurentSeries
+warning: ModifiedCartan/RightZFactorLaurentSeries.lean:13:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [4321/4532] Replayed ModifiedCartan.ComplementMarkerDegrees
+warning: ModifiedCartan/ComplementMarkerDegrees.lean:37:24: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [4322/4532] Replayed ModifiedCartan.SupportedPowerSumQuadratic
+warning: ModifiedCartan/SupportedPowerSumQuadratic.lean:44:12: `MonoidAlgebra.coeff_single_apply` has been deprecated: Use `Finsupp.single_apply` instead
+
+Note: The updated constant has a different type:
+  ∀ {α : Type u_1} {M : Type u_5} [inst : Zero M] {a a' : α} {b : M} [inst_1 : Decidable (a = a')],
+    (Finsupp.single a b) a' = if a = a' then b else 0
+instead of
+  ∀ {R : Type u_1} {M : Type u_4} [inst : Semiring R] {a a' : M} {b : R} [inst_1 : Decidable (a = a')],
+    (MonoidAlgebra.single a b).coeff a' = if a = a' then b else 0
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.coeff_single_apply` to `Finsupp.single_apply x`).
+warning: ModifiedCartan/SupportedPowerSumQuadratic.lean:44:46: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: ModifiedCartan/SupportedPowerSumQuadratic.lean:48:14: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: ModifiedCartan/SupportedPowerSumQuadratic.lean:48:25: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+warning: ModifiedCartan/SupportedPowerSumQuadratic.lean:50:14: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: ModifiedCartan/SupportedPowerSumQuadratic.lean:50:25: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+warning: ModifiedCartan/SupportedPowerSumQuadratic.lean:53:12: `MonoidAlgebra.coeff_single_apply` has been deprecated: Use `Finsupp.single_apply` instead
+
+Note: The updated constant has a different type:
+  ∀ {α : Type u_1} {M : Type u_5} [inst : Zero M] {a a' : α} {b : M} [inst_1 : Decidable (a = a')],
+    (Finsupp.single a b) a' = if a = a' then b else 0
+instead of
+  ∀ {R : Type u_1} {M : Type u_4} [inst : Semiring R] {a a' : M} {b : R} [inst_1 : Decidable (a = a')],
+    (MonoidAlgebra.single a b).coeff a' = if a = a' then b else 0
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.coeff_single_apply` to `Finsupp.single_apply x`).
+warning: ModifiedCartan/SupportedPowerSumQuadratic.lean:53:46: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: ModifiedCartan/SupportedPowerSumQuadratic.lean:53:82: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+⚠ [4327/4532] Replayed ModifiedCartan.KPColumnLaurentExpansion
+warning: ModifiedCartan/KPColumnLaurentExpansion.lean:20:20: This simp argument is unused:
+  Finset.sum_mul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [supportedColumnLaurentSeries, kpBeta_column_supported, MonoidAlgebra.coeff_sum,
+    Finsupp.finsetSum_apply, map_sum, Finset.mul_sum]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ModifiedCartan/KPColumnLaurentExpansion.lean:30:40: This simp argument is unused:
+  Finsupp.single_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [MonoidAlgebra.coeff_single, hg]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+info: ModifiedCartan/KPColumnLaurentExpansion.lean:40:0: 'ModifiedCartan.evaluatedColumnLaurentSeries_eq_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [4331/4532] Replayed ModifiedCartan.SupportedPowerSumEvaluation
+warning: ModifiedCartan/SupportedPowerSumEvaluation.lean:23:26: This simp argument is unused:
+  zero_mul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [MonoidAlgebra.coeff_single, Finsupp.single_apply, hg, ite_true, ite_false, map_zero, mul_zero,
+    evaluateSupportedMarkers_monomial, finiteCyclePolynomial, map_mul]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ModifiedCartan/SupportedPowerSumEvaluation.lean:24:15: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [4332/4532] Replayed ModifiedCartan.SizedPartitionsInSquare
+warning: ModifiedCartan/SizedPartitionsInSquare.lean:13:11: Variable name `μ` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _μ
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ModifiedCartan/SizedPartitionsInSquare.lean:14:12: Variable name `μ` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _μ
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [4336/4532] Replayed ModifiedCartan.FiniteSubtypeSupports
+warning: ModifiedCartan/FiniteSubtypeSupports.lean:70:11: Variable name `a` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _a
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ModifiedCartan/FiniteSubtypeSupports.lean:71:12: Variable name `a` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _a
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [4340/4532] Replayed ModifiedCartan.AmbientFactorizationLaurentSeries
+warning: ModifiedCartan/AmbientFactorizationLaurentSeries.lean:47:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: ModifiedCartan/AmbientFactorizationLaurentSeries.lean:54:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [4342/4532] Replayed ModifiedCartan.SupportedQuadraticMarkerCoefficients
+warning: ModifiedCartan/SupportedQuadraticMarkerCoefficients.lean:21:38: This simp argument is unused:
+  Finsupp.single_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [MonoidAlgebra.coeff_single, hm, hd]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+ℹ [4361/4532] Replayed ModifiedCartan.KPQuadraticFrobeniusExpansion
+info: ModifiedCartan/KPQuadraticFrobeniusExpansion.lean:52:0: 'ModifiedCartan.evaluatedSupportedProduct_frobenius' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4363/4532] Replayed ModifiedCartan.FiniteFinAlphabetShift
+info: ModifiedCartan/FiniteFinAlphabetShift.lean:80:0: 'ModifiedCartan.finiteBernstein_mul_vandermonde' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4365/4532] Replayed ModifiedCartan.FiniteBernsteinCoefficients
+info: ModifiedCartan/FiniteBernsteinCoefficients.lean:58:0: 'ModifiedCartan.finiteBernstein_residue_mul_vandermonde' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [4367/4532] Replayed ModifiedCartan.FrobeniusCoefficientMultiplicity
+warning: ModifiedCartan/FrobeniusCoefficientMultiplicity.lean:18:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [4368/4532] Replayed ModifiedCartan.YoungFrobeniusCoefficients
+warning: ModifiedCartan/YoungFrobeniusCoefficients.lean:31:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [4370/4532] Replayed ModifiedCartan.YoungSpechtGenerator
+warning: ModifiedCartan/YoungSpechtGenerator.lean:33:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [4374/4532] Replayed ModifiedCartan.FrobeniusAlternantTriangularity
+warning: ModifiedCartan/FrobeniusAlternantTriangularity.lean:22:10: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: ModifiedCartan/FrobeniusAlternantTriangularity.lean:24:10: `if_neg` has been deprecated: Use `ite_eq_right` instead
+info: ModifiedCartan/FrobeniusAlternantTriangularity.lean:51:0: 'ModifiedCartan.finiteVandermondeFrobenius_coeff_zero_of_le_ne' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: ModifiedCartan/FrobeniusAlternantTriangularity.lean:52:0: 'ModifiedCartan.finiteVandermondeFrobenius_diagonal_nat' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4375/4532] Replayed ModifiedCartan.WeightedOrthogonalTriangularity
+info: ModifiedCartan/WeightedOrthogonalTriangularity.lean:54:0: 'ModifiedCartan.weighted_triangular_orthogonal_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4376/4532] Replayed ModifiedCartan.FrobeniusAlternantOrthogonality
+info: ModifiedCartan/FrobeniusAlternantOrthogonality.lean:63:0: 'ModifiedCartan.frobeniusAlternantCoefficient_orthogonality' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ModifiedCartan/FrobeniusAlternantOrthogonality.lean:64:0: 'ModifiedCartan.frobeniusAlternantCoefficient_identity_of_size_le' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+⚠ [4377/4532] Replayed ModifiedCartan.YoungHeightCollision
+warning: ModifiedCartan/YoungHeightCollision.lean:17:2: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+info: ModifiedCartan/YoungHeightCollision.lean:32:0: 'ModifiedCartan.youngFirstColumn_color_collision' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4378/4532] Replayed ModifiedCartan.FrobeniusHeightVanishing
+info: ModifiedCartan/FrobeniusHeightVanishing.lean:34:0: 'ModifiedCartan.finiteFrobeniusPolynomial_eq_zero_of_height' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4379/4532] Replayed ModifiedCartan.FittingFrobeniusOrthogonality
+info: ModifiedCartan/FittingFrobeniusOrthogonality.lean:65:0: 'ModifiedCartan.frobeniusAlternantCoefficient_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4380/4532] Replayed ModifiedCartan.FiniteFrobeniusSchur
+info: ModifiedCartan/FiniteFrobeniusSchur.lean:52:0: 'ModifiedCartan.finiteFrobeniusPolynomial_mul_alternant' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ModifiedCartan/FiniteFrobeniusSchur.lean:53:0: 'ModifiedCartan.finiteFrobeniusPolynomial_schur_determinant' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4382/4532] Replayed ModifiedCartan.FrobeniusBernsteinCoefficients
+info: ModifiedCartan/FrobeniusBernsteinCoefficients.lean:32:0: 'ModifiedCartan.finiteFrobeniusBernsteinResidue_mul_vandermonde' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [4383/4532] Replayed ModifiedCartan.KPFrobeniusBernsteinResidue
+info: ModifiedCartan/KPFrobeniusBernsteinResidue.lean:36:0: 'ModifiedCartan.kpFrobeniusBernstein_residue' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4384/4532] Replayed ModifiedCartan.KPJointBernsteinResidue
+info: ModifiedCartan/KPJointBernsteinResidue.lean:62:0: 'ModifiedCartan.kpJointFrobeniusBernstein_residue' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4385/4532] Replayed ModifiedCartan.KPJointAlternantContraction
+info: ModifiedCartan/KPJointAlternantContraction.lean:49:0: 'ModifiedCartan.kpJointAlternant_contraction' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [4386/4532] Replayed ModifiedCartan.KPJointWronskian
+warning: ModifiedCartan/KPJointWronskian.lean:57:4: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+ℹ [4387/4532] Replayed ModifiedCartan.PartitionAlternatingPolynomial
+info: ModifiedCartan/PartitionAlternatingPolynomial.lean:87:0: 'ModifiedCartan.kpJointAlternatingPolynomial_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ModifiedCartan/PartitionAlternatingPolynomial.lean:88:0: 'ModifiedCartan.kpJointAlternatingPolynomial_first_contraction' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [4388/4532] Replayed ModifiedCartan.KPJointDividedContraction
+info: ModifiedCartan/KPJointDividedContraction.lean:41:0: 'ModifiedCartan.kpJointDividedPolynomial_first_contraction' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4390/4532] Replayed ModifiedCartan.MvPolynomialTranslationJets
+info: ModifiedCartan/MvPolynomialTranslationJets.lean:84:0: 'ModifiedCartan.finSuccEquiv_translate_factorial_coeff' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4412/4532] Replayed ModifiedCartan.PolynomialBasisReduction
+info: ModifiedCartan/PolynomialBasisReduction.lean:40:0: 'ModifiedCartan.basis_exists_elementary_subtraction' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ModifiedCartan/PolynomialBasisReduction.lean:41:0: 'ModifiedCartan.polynomial_natDegree_cancel_leading_lt' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4413/4532] Replayed ModifiedCartan.PolynomialDegreeBasis
+info: ModifiedCartan/PolynomialDegreeBasis.lean:63:0: 'ModifiedCartan.polynomialBasis_exists_strictMono_natDegree' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4417/4532] Replayed ModifiedCartan.PolynomialODEKernelBound
+info: ModifiedCartan/PolynomialODEKernelBound.lean:71:0: 'ModifiedCartan.polynomialDifferential_subspace_finrank_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4418/4532] Replayed ModifiedCartan.SchubertMonicWronskian
+info: ModifiedCartan/SchubertMonicWronskian.lean:69:0: 'ModifiedCartan.normalizedSchubertCoordinate_bot' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ModifiedCartan/SchubertMonicWronskian.lean:70:0: 'ModifiedCartan.schubertMonicWronskian_monic' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4419/4532] Replayed ModifiedCartan.PolynomialSpaceSchubert
+info: ModifiedCartan/PolynomialSpaceSchubert.lean:68:0: 'ModifiedCartan.polynomialSpace_exists_schubertFrame' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ModifiedCartan/PolynomialSpaceSchubert.lean:69:0: 'ModifiedCartan.schubertWronskiFibre_partitionSize' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4420/4532] Replayed ModifiedCartan.KPAlphaExpectation
+info: ModifiedCartan/KPAlphaExpectation.lean:30:0: 'ModifiedCartan.kpAlpha_expectation_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4421/4532] Replayed ModifiedCartan.KPExpectationExpansion
+info: ModifiedCartan/KPExpectationExpansion.lean:44:0: 'ModifiedCartan.kpBeta_expectation_div_product' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4422/4532] Replayed ModifiedCartan.CommonEigenspaceAlgebra
+info: ModifiedCartan/CommonEigenspaceAlgebra.lean:57:0: 'ModifiedCartan.kp_isCommonEigenspace_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4425/4532] Replayed ModifiedCartan.SymmetricPolynomialSpecialization
+info: ModifiedCartan/SymmetricPolynomialSpecialization.lean:62:0: 'ModifiedCartan.symmetricPolynomial_exists_specialization' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4426/4532] Replayed ModifiedCartan.SchubertChartSlots
+info: ModifiedCartan/SchubertChartSlots.lean:65:0: 'ModifiedCartan.schubertChartSlot_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4427/4532] Replayed ModifiedCartan.PolynomialJetMatrixGauge
+info: ModifiedCartan/PolynomialJetMatrixGauge.lean:73:0: 'ModifiedCartan.polynomialMatrixGauge_exists_identity_jets' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [4428/4532] Replayed ModifiedCartan.MonicPolynomialParameters
+warning: ModifiedCartan/MonicPolynomialParameters.lean:54:2: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+info: ModifiedCartan/MonicPolynomialParameters.lean:59:0: 'ModifiedCartan.complex_monic_eq_prod_linear' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4430/4532] Replayed ModifiedCartan.PolynomialTensorFunctional
+info: ModifiedCartan/PolynomialTensorFunctional.lean:88:0: 'ModifiedCartan.polynomialTensorFunctional_alternant' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4431/4532] Replayed ModifiedCartan.AlternatingDualDescent
+info: ModifiedCartan/AlternatingDualDescent.lean:84:0: 'ModifiedCartan.alternatingDual_descent' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4432/4532] Replayed ModifiedCartan.AlternatingDualDeterminant
+info: ModifiedCartan/AlternatingDualDeterminant.lean:43:0: 'ModifiedCartan.alternatingDual_eq_scalar_det' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4433/4532] Replayed ModifiedCartan.KPJointValueNormalization
+info: ModifiedCartan/KPJointValueNormalization.lean:48:0: 'ModifiedCartan.kpJointValuePolynomial_top' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4434/4532] Replayed ModifiedCartan.PolynomialPrimitives
+info: ModifiedCartan/PolynomialPrimitives.lean:62:0: 'ModifiedCartan.complexPolynomialPrimitive_derivative' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4435/4532] Replayed ModifiedCartan.MinorDimensionStep
+info: ModifiedCartan/MinorDimensionStep.lean:76:0: 'ModifiedCartan.partitionPolynomialMinor_cons_constant' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4438/4532] Replayed ModifiedCartan.PolynomialMapDensity
+info: ModifiedCartan/PolynomialMapDensity.lean:81:0: 'ModifiedCartan.polynomial_eq_zero_of_zero_on_every_fibre' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4439/4532] Replayed ModifiedCartan.ClosedJointEigenprofiles
+info: ModifiedCartan/ClosedJointEigenprofiles.lean:62:0: 'ModifiedCartan.isClosed_commonEigenvector_parameters' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4450/4532] Replayed ModifiedCartan.KPJointProfileClosed
+info: ModifiedCartan/KPJointProfileClosed.lean:81:0: 'ModifiedCartan.isClosed_kpJointProfiles' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ModifiedCartan/KPJointProfileClosed.lean:82:0: 'ModifiedCartan.kpJointEigenspace_ne_bot_of_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4451/4532] Replayed ModifiedCartan.KPParameterPermutation
+info: ModifiedCartan/KPParameterPermutation.lean:78:0: 'ModifiedCartan.kpJointEigenspace_permute_ne_bot_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4452/4532] Replayed ModifiedCartan.SymmetricOrbitPolynomial
+info: ModifiedCartan/SymmetricOrbitPolynomial.lean:63:0: 'ModifiedCartan.eval₂_eq_zero_of_symmetricOrbitPolynomial' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4453/4532] Replayed ModifiedCartan.JointEigenvectorDeterminants
+info: ModifiedCartan/JointEigenvectorDeterminants.lean:67:0: 'ModifiedCartan.commonEigenvector_iff_forall_det_eq_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4454/4532] Replayed ModifiedCartan.SchubertMinorRatios
+info: ModifiedCartan/SchubertMinorRatios.lean:40:0: 'ModifiedCartan.normalizedSchubertCoordinate_div_bot' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [4455/4532] Replayed FewInflection.PluckerBounds
+warning: FewInflection/PluckerBounds.lean:44:4: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+ℹ [4460/4532] Replayed ModifiedCartan.PolynomialApproximationCounting
+info: ModifiedCartan/PolynomialApproximationCounting.lean:170:0: 'ModifiedCartan.exists_monic_polynomial_growth_center' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ModifiedCartan/PolynomialApproximationCounting.lean:171:0: 'ModifiedCartan.polynomial_approximation_divisor_count_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4461/4532] Replayed ModifiedCartan.PolynomialRootCount
+info: ModifiedCartan/PolynomialRootCount.lean:164:0: 'ModifiedCartan.polynomial_root_list_count' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ModifiedCartan/PolynomialRootCount.lean:165:0: 'ModifiedCartan.exists_normalized_polynomial_root_list' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ModifiedCartan/PolynomialRootCount.lean:166:0: 'ModifiedCartan.polynomial_approximation_root_count_tendsto_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+⚠ [4462/4532] Replayed ModifiedCartan.RootKernelPrimitive
+warning: ModifiedCartan/RootKernelPrimitive.lean:27:2: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ModifiedCartan/RootKernelPrimitive.lean:51:8: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ModifiedCartan/RootKernelPrimitive.lean:51:8: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: ModifiedCartan/RootKernelPrimitive.lean:40:4: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+info: ModifiedCartan/RootKernelPrimitive.lean:76:0: 'ModifiedCartan.root_log_kernel_integrable_and_integral' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4463/4532] Replayed ModifiedCartan.RootKernel
+info: ModifiedCartan/RootKernel.lean:48:0: 'ModifiedCartan.root_kernel_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4464/4532] Replayed ModifiedCartan.PolynomialRootLogCounting
+info: ModifiedCartan/PolynomialRootLogCounting.lean:74:0: 'ModifiedCartan.polynomial_root_list_logCounting' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ModifiedCartan/PolynomialRootLogCounting.lean:75:0: 'ModifiedCartan.polynomial_root_list_kernel_integral' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4465/4532] Replayed ModifiedCartan.LogCountingLimit
+info: ModifiedCartan/LogCountingLimit.lean:71:0: 'ModifiedCartan.logCounting_tendsto_of_uniform_sphere' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4466/4532] Replayed ModifiedCartan.WronskianUniform
+info: ModifiedCartan/WronskianUniform.lean:75:0: 'ModifiedCartan.taylorWronskian_tendstoLocallyUniformlyOn' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4467/4532] Replayed ModifiedCartan.ExceptionalRadii
+info: ModifiedCartan/ExceptionalRadii.lean:61:0: 'ModifiedCartan.entire_ae_sphere_no_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ModifiedCartan/ExceptionalRadii.lean:62:0: 'ModifiedCartan.taylorWronskian_logCounting_ae_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [4468/4532] Replayed ModifiedCartan.CountingPowerEnvelope
+warning: ModifiedCartan/CountingPowerEnvelope.lean:19:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+info: ModifiedCartan/CountingPowerEnvelope.lean:86:0: 'ModifiedCartan.logCounting_le_power_envelope' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ModifiedCartan/CountingPowerEnvelope.lean:87:0: 'ModifiedCartan.power_counting_kernel_integrable' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4469/4532] Replayed ModifiedCartan.WronskianCountingIntegralLimit
+info: ModifiedCartan/WronskianCountingIntegralLimit.lean:50:0: 'ModifiedCartan.taylorWronskian_counting_integral_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4473/4532] Replayed ModifiedCartan.IntegrableSum
+info: ModifiedCartan/IntegrableSum.lean:35:0: 'ModifiedCartan.integrable_real_tsum_of_summable_integral_norm' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [4475/4532] Replayed ModifiedCartan.EntirePoissonBound
+info: ModifiedCartan/EntirePoissonBound.lean:78:0: 'ModifiedCartan.entire_posLog_maximumModulus_le_three_characteristic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [4476/4617] Replayed ModifiedCartan.KPDividedPolynomialTranslation
+info: ModifiedCartan/KPDividedPolynomialTranslation.lean:92:0: 'ModifiedCartan.finitePartitionDividedPolynomial_translation' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4477/4617] Replayed ModifiedCartan.PolynomialAlternantMinors
+info: ModifiedCartan/PolynomialAlternantMinors.lean:51:0: 'ModifiedCartan.finitePartitionDividedPolynomial_representation_minor' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [4478/4617] Replayed ModifiedCartan.PolynomialJetSupport
+info: ModifiedCartan/PolynomialJetSupport.lean:62:0: 'ModifiedCartan.polynomialJetDet_zero_of_order_sum_gt' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [4479/4617] Replayed ModifiedCartan.PolynomialJetDegreeProfile
+warning: ModifiedCartan/PolynomialJetDegreeProfile.lean:69:12: `if_pos` has been deprecated: Use `ite_eq_left` instead
+info: ModifiedCartan/PolynomialJetDegreeProfile.lean:75:0: 'ModifiedCartan.polynomial_natDegree_eq_of_identity_jets_support' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [4480/4617] Replayed ModifiedCartan.SchubertFrameReconstruction
+info: ModifiedCartan/SchubertFrameReconstruction.lean:60:0: 'ModifiedCartan.polynomialSchubertFrame_exists_of_minor_support' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [4481/4617] Replayed ModifiedCartan.SchubertChartPolynomials
+info: ModifiedCartan/SchubertChartPolynomials.lean:112:0: 'ModifiedCartan.schubertChartSpace_mem' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4482/4617] Replayed ModifiedCartan.SchubertCoordinatePolynomials
+info: ModifiedCartan/SchubertCoordinatePolynomials.lean:120:0: 'ModifiedCartan.normalizedSchubertCoordinate_chart' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ModifiedCartan/SchubertCoordinatePolynomials.lean:121:0: 'ModifiedCartan.schubertWronskiCoefficientPolynomial_eval' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4483/4617] Replayed ModifiedCartan.KPJointShiftedContraction
+info: ModifiedCartan/KPJointShiftedContraction.lean:55:0: 'ModifiedCartan.kpJointDividedPolynomial_translated_contraction' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [4484/4617] Replayed ModifiedCartan.TranslatedDifferentialKernel
+info: ModifiedCartan/TranslatedDifferentialKernel.lean:63:0: 'ModifiedCartan.kpJointDividedPolynomial_differential_eq_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [4485/4617] Replayed ModifiedCartan.PolynomialLinearCoefficients
+info: ModifiedCartan/PolynomialLinearCoefficients.lean:61:0: 'ModifiedCartan.polynomialFirstDifferential_linearCoefficientMap' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [4486/4617] Replayed ModifiedCartan.PolynomialCoefficientSpace
+info: ModifiedCartan/PolynomialCoefficientSpace.lean:80:0: 'ModifiedCartan.polynomialCoefficientSpace_finrank_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4487/4617] Replayed ModifiedCartan.PolynomialTensorContraction
+info: ModifiedCartan/PolynomialTensorContraction.lean:90:0: 'ModifiedCartan.polynomialTensorFunctional_first' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4488/4617] Replayed ModifiedCartan.PartitionAlternatingDualForm
+info: ModifiedCartan/PartitionAlternatingDualForm.lean:84:0: 'ModifiedCartan.finitePartitionAlternatingDualForm_annihilator' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [4489/4617] Replayed ModifiedCartan.PolynomialAlternantSeparation
+info: ModifiedCartan/PolynomialAlternantSeparation.lean:97:0: 'ModifiedCartan.polynomialBasis_subspace_eq_of_alternant_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4490/4617] Replayed ModifiedCartan.SchubertCoordinateInjectivity
+info: ModifiedCartan/SchubertCoordinateInjectivity.lean:85:0: 'ModifiedCartan.polynomialSchubertSpace_eq_of_coordinates' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4491/4617] Replayed ModifiedCartan.SchubertChartSurjectivity
+info: ModifiedCartan/SchubertChartSurjectivity.lean:78:0: 'ModifiedCartan.polynomialSchubertSpace_exists_chart' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4492/4617] Replayed ModifiedCartan.KPJointCoefficientSpace
+info: ModifiedCartan/KPJointCoefficientSpace.lean:77:0: 'ModifiedCartan.kpJointCoefficientSpace_finrank_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ModifiedCartan/KPJointCoefficientSpace.lean:78:0: 'ModifiedCartan.kpJointCoefficientSpace_ne_bot' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4493/4617] Replayed ModifiedCartan.KPJointCoefficientDimension
+info: ModifiedCartan/KPJointCoefficientDimension.lean:55:0: 'ModifiedCartan.kpJointCoefficientSpace_finrank_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4494/4617] Replayed ModifiedCartan.KPJointDecomposability
+info: ModifiedCartan/KPJointDecomposability.lean:58:0: 'ModifiedCartan.kpJointDividedPolynomial_decomposable' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4495/4617] Replayed ModifiedCartan.KPJointPolynomialTuple
+info: ModifiedCartan/KPJointPolynomialTuple.lean:66:0: 'ModifiedCartan.kpJointPolynomialTuple_exists' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ModifiedCartan/KPJointPolynomialTuple.lean:67:0: 'ModifiedCartan.kpJointPolynomialTuple_normalized' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4496/4617] Replayed ModifiedCartan.KPJointSchubertSpace
+info: ModifiedCartan/KPJointSchubertSpace.lean:44:0: 'ModifiedCartan.kpJointSchubertSpace_exists_card_dimension' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4497/4617] Replayed ModifiedCartan.KPJointWronskiFibre
+info: ModifiedCartan/KPJointWronskiFibre.lean:33:0: 'ModifiedCartan.kpJointWronskiFibre_exists_card_dimension' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4498/4617] Replayed ModifiedCartan.SchubertDimensionStep
+info: ModifiedCartan/SchubertDimensionStep.lean:89:0: 'ModifiedCartan.polynomialSchubertFrame_raise_dimension' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ModifiedCartan/SchubertDimensionStep.lean:90:0: 'ModifiedCartan.polynomialSchubertFrame_lower_dimension' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4499/4617] Replayed ModifiedCartan.SchubertDimensionTransfer
+info: ModifiedCartan/SchubertDimensionTransfer.lean:52:0: 'ModifiedCartan.polynomialSchubertFrame_exists_dimension' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4500/4617] Replayed ModifiedCartan.KPForwardCorrespondence
+info: ModifiedCartan/KPForwardCorrespondence.lean:57:0: 'ModifiedCartan.kpJointSchubertSpace_exists' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ModifiedCartan/KPForwardCorrespondence.lean:58:0: 'ModifiedCartan.kpJointWronskiFibre_exists' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4501/4617] Replayed ModifiedCartan.KPWronskiMapDominance
+info: ModifiedCartan/KPWronskiMapDominance.lean:85:0: 'ModifiedCartan.kpJointSchubertChart_exists' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ModifiedCartan/KPWronskiMapDominance.lean:86:0: 'ModifiedCartan.polynomial_eq_zero_of_kpJointSchubertCharts' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4502/4617] Replayed ModifiedCartan.KPSymmetricEquationTransfer
+info: ModifiedCartan/KPSymmetricEquationTransfer.lean:51:0: 'ModifiedCartan.kpSymmetricEquation_vanishes_on_wronskiFibre' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4503/4617] Replayed ModifiedCartan.KPPolynomialEquationTransfer
+info: ModifiedCartan/KPPolynomialEquationTransfer.lean:64:0: 'ModifiedCartan.kpPolynomialEquation_vanishes_on_wronskiFibre' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [4504/4617] Replayed ModifiedCartan.FiniteKPJointEquation
+info: ModifiedCartan/FiniteKPJointEquation.lean:72:0: 'ModifiedCartan.kpJointEigenspace_chart_ne_bot_iff_finite_det' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [4505/4617] Replayed ModifiedCartan.KPEquationPolynomials
+info: ModifiedCartan/KPEquationPolynomials.lean:119:0: 'ModifiedCartan.kpEquationDeterminantPolynomial_eval₂' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4506/4617] Replayed ModifiedCartan.KPInverseCorrespondence
+info: ModifiedCartan/KPInverseCorrespondence.lean:68:0: 'ModifiedCartan.kpJointEigenspace_of_schubertWronskiFibre' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4507/4617] Replayed ModifiedCartan.KPCorrespondenceEigenspaces
+info: ModifiedCartan/KPCorrespondenceEigenspaces.lean:93:0: 'ModifiedCartan.Paper.lem_KP_correspondence_ii' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4508/4617] Replayed ModifiedCartan.KPSchubertUnitVector
+info: ModifiedCartan/KPSchubertUnitVector.lean:56:0: 'ModifiedCartan.schubertWronskiFibre_exists_unit_kpEigenvector' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [4509/4617] Replayed ModifiedCartan.KPSchubertConstantVector
+info: ModifiedCartan/KPSchubertConstantVector.lean:56:0: 'ModifiedCartan.schubertWronskiFibre_exists_unit_kpEigenvector_all' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [4510/4617] Replayed ModifiedCartan.SchubertUniversalMinors
+info: ModifiedCartan/SchubertUniversalMinors.lean:84:0: 'ModifiedCartan.schubertUniversalMinors' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ModifiedCartan/SchubertUniversalMinors.lean:85:0: 'ModifiedCartan.schubertMinor_norm_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4511/4617] Replayed ModifiedCartan.UniversalPolynomialMinors
+info: ModifiedCartan/UniversalPolynomialMinors.lean:74:0: 'ModifiedCartan.Paper.lem_universal_minors' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ModifiedCartan/UniversalPolynomialMinors.lean:75:0: 'ModifiedCartan.Paper.eq_minor_es_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4512/4617] Replayed ModifiedCartan.InitialPolynomialJetBounds
+info: ModifiedCartan/InitialPolynomialJetBounds.lean:83:0: 'ModifiedCartan.initialPolynomialBasis_jet_norm_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4513/4617] Replayed ModifiedCartan.InitialPolynomialTaylorCoefficients
+info: ModifiedCartan/InitialPolynomialTaylorCoefficients.lean:75:0: 'ModifiedCartan.initialPolynomialBasis_taylorCoeff_norm_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4514/4617] Replayed ModifiedCartan.PolynomialInitialBasisMajorant
+info: ModifiedCartan/PolynomialInitialBasisMajorant.lean:73:0: 'ModifiedCartan.Paper.prop_initial_basis' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4515/4617] Replayed ModifiedCartan.PolynomialNormalizedMajorant
+info: ModifiedCartan/PolynomialNormalizedMajorant.lean:57:0: 'ModifiedCartan.normalized_polynomial_tuple_majorant' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4516/4617] Replayed ModifiedCartan.PolynomialIntegralMajorant
+info: ModifiedCartan/PolynomialIntegralMajorant.lean:37:0: 'ModifiedCartan.normalized_polynomial_tuple_integral_majorant' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [4518/4617] Replayed ModifiedCartan.RootMajorantProduct
+info: ModifiedCartan/RootMajorantProduct.lean:56:0: 'ModifiedCartan.rootMajorantProduct_eq_exp' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ModifiedCartan/RootMajorantProduct.lean:57:0: 'ModifiedCartan.log_rootMajorantProduct' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [4519/4617] Replayed ModifiedCartan.RootConvolution
+warning: ModifiedCartan/RootConvolution.lean:22:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+info: ModifiedCartan/RootConvolution.lean:66:0: 'ModifiedCartan.entire_root_product_convolution' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ModifiedCartan/RootConvolution.lean:67:0: 'ModifiedCartan.normalized_wronskian_product_convolution' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [4520/4617] Replayed ModifiedCartan.EntireMajorant
+warning: ModifiedCartan/EntireMajorant.lean:57:17: This simp argument is unused:
+  hj
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [hj0, Ne.symm hj, hv, rootMajorantProduct]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+info: ModifiedCartan/EntireMajorant.lean:65:0: 'ModifiedCartan.entire_component_integral_majorant' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ModifiedCartan/EntireMajorant.lean:66:0: 'ModifiedCartan.Paper.lem_entire_majorant' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4521/4617] Replayed ModifiedCartan.Convolution
+info: ModifiedCartan/Convolution.lean:59:0: 'ModifiedCartan.Paper.cor_convolution' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4523/4617] Replayed ModifiedCartan.GenusZeroProduct
+info: ModifiedCartan/GenusZeroProduct.lean:73:0: 'ModifiedCartan.genusZeroProduct_differentiable' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ModifiedCartan/GenusZeroProduct.lean:74:0: 'ModifiedCartan.genusZeroProduct_norm_le_rootMajorant' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [4524/4617] Replayed ModifiedCartan.CanonicalProductGrowth
+warning: ModifiedCartan/CanonicalProductGrowth.lean:23:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: ModifiedCartan/CanonicalProductGrowth.lean:24:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: ModifiedCartan/CanonicalProductGrowth.lean:28:31: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: ModifiedCartan/CanonicalProductGrowth.lean:58:31: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: ModifiedCartan/CanonicalProductGrowth.lean:65:18: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: ModifiedCartan/CanonicalProductGrowth.lean:65:30: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: ModifiedCartan/CanonicalProductGrowth.lean:68:10: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: ModifiedCartan/CanonicalProductGrowth.lean:68:22: `if_pos` has been deprecated: Use `ite_eq_left` instead
+info: ModifiedCartan/CanonicalProductGrowth.lean:145:0: 'ModifiedCartan.log_rootMajorantProduct_le_split' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ModifiedCartan/CanonicalProductGrowth.lean:146:0: 'ModifiedCartan.Paper.eq_canonical_product_growth' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ModifiedCartan/CanonicalProductGrowth.lean:147:0: 'ModifiedCartan.genusZeroProduct_posLog_power_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4525/4617] Replayed ModifiedCartan.GenusZeroSubproduct
+info: ModifiedCartan/GenusZeroSubproduct.lean:72:0: 'ModifiedCartan.genusZeroSubproduct_differentiable' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ModifiedCartan/GenusZeroSubproduct.lean:73:0: 'ModifiedCartan.genusZeroSubproduct_mul_compl' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4526/4617] Replayed ModifiedCartan.GenusZeroZeros
+info: ModifiedCartan/GenusZeroZeros.lean:57:0: 'ModifiedCartan.genusZeroProduct_eq_zero_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4527/4617] Replayed ModifiedCartan.GenusZeroMultiplicity
+info: ModifiedCartan/GenusZeroMultiplicity.lean:88:0: 'ModifiedCartan.genusZeroProduct_factor_fiber' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ModifiedCartan/GenusZeroMultiplicity.lean:89:0: 'ModifiedCartan.genusZeroProduct_analyticOrderAt' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4528/4617] Replayed ModifiedCartan.GenusZeroGauge
+info: ModifiedCartan/GenusZeroGauge.lean:84:0: 'ModifiedCartan.exists_genusZeroProduct_exp_factor' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4529/4617] Replayed ModifiedCartan.GaugedCoordinateBounds
+info: ModifiedCartan/GaugedCoordinateBounds.lean:136:0: 'ModifiedCartan.gaugedCoordinates_characteristic_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ModifiedCartan/GaugedCoordinateBounds.lean:137:0: 'ModifiedCartan.coordinate_genusZeroProduct_power_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ModifiedCartan/GaugedCoordinateBounds.lean:138:0: 'ModifiedCartan.gaugedCoordinates_posLog_power_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4530/4617] Replayed ModifiedCartan.SmallOrderGauge
+info: ModifiedCartan/SmallOrderGauge.lean:43:0: 'ModifiedCartan.exists_small_order_entire_gauge' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [4531/4617] Replayed FewInflection.ScalarGauge
+warning: FewInflection/ScalarGauge.lean:120:43: This simp argument is unused:
+  mul_comm
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [smul_eq_mul, Finset.mul_sum, mul_left_comm, mul_assoc]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: FewInflection/ScalarGauge.lean:120:68: This simp argument is unused:
+  mul_assoc
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [smul_eq_mul, Finset.mul_sum, mul_comm, mul_left_comm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: FewInflection/ScalarGauge.lean:139:43: This simp argument is unused:
+  mul_comm
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [smul_eq_mul, Finset.mul_sum, mul_left_comm, mul_assoc]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: FewInflection/ScalarGauge.lean:139:68: This simp argument is unused:
+  mul_assoc
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [smul_eq_mul, Finset.mul_sum, mul_comm, mul_left_comm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [4533/4617] Replayed ModifiedCartan.ExponentialGauge
+warning: ModifiedCartan/ExponentialGauge.lean:32:51: Variable name `z` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _z
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+info: ModifiedCartan/ExponentialGauge.lean:61:0: 'ModifiedCartan.characteristic_scalarGauge' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ModifiedCartan/ExponentialGauge.lean:62:0: 'ModifiedCartan.exponentialGauge_ramification' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ModifiedCartan/ExponentialGauge.lean:63:0: 'ModifiedCartan.exponentialGauge_exists_regular_point' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4534/4617] Replayed ModifiedCartan.NormalizedCharacteristic
+info: ModifiedCartan/NormalizedCharacteristic.lean:111:0: 'ModifiedCartan.normalizedCoordinates_characteristic_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [4535/4617] Replayed ModifiedCartan.EnvelopeConstantLimit
+warning: ModifiedCartan/EnvelopeConstantLimit.lean:17:87: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+info: ModifiedCartan/EnvelopeConstantLimit.lean:64:0: 'ModifiedCartan.envelopeConstant_tendsto_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4536/4617] Replayed ModifiedCartan.EnvelopeRadii
+info: ModifiedCartan/EnvelopeRadii.lean:75:0: 'ModifiedCartan.exists_power_envelope_sequence' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4537/4617] Replayed ModifiedCartan.EnvelopeIntegration
+info: ModifiedCartan/EnvelopeIntegration.lean:74:0: 'ModifiedCartan.integral_envelope_at_radius' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4538/4617] Replayed ModifiedCartan.Envelope
+info: ModifiedCartan/Envelope.lean:29:0: 'ModifiedCartan.Paper.lem_envelope' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4539/4617] Replayed ModifiedCartan.Tonelli
+info: ModifiedCartan/Tonelli.lean:21:0: 'ModifiedCartan.Paper.lem_Tonelli' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [4540/4617] Replayed ModifiedCartan.GaugeCoefficientAlgebra
+warning: ModifiedCartan/GaugeCoefficientAlgebra.lean:207:51: This simp argument is unused:
+  Matrix.one_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [finiteJetTransitionMatrix, zeroGaugeJet]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ModifiedCartan/GaugeCoefficientAlgebra.lean:210:69: This simp argument is unused:
+  Matrix.one_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [finiteJetTransitionMatrix, Nat.choose_eq_zero_of_lt hlt, hki]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ModifiedCartan/GaugeCoefficientAlgebra.lean:212:59: This simp argument is unused:
+  Matrix.one_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [finiteJetTransitionMatrix, zeroGaugeJet, hpos, hki]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+info: ModifiedCartan/GaugeCoefficientAlgebra.lean:245:0: 'ModifiedCartan.canonical_coefficient_triangular_relation' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ModifiedCartan/GaugeCoefficientAlgebra.lean:246:0: 'ModifiedCartan.canonical_normalized_coefficient_adjugate' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ModifiedCartan/GaugeCoefficientAlgebra.lean:247:0: 'ModifiedCartan.canonical_normalized_coefficient_eq_polynomial' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [4541/4617] Replayed ModifiedCartan.CoefficientMeasurability
+info: ModifiedCartan/CoefficientMeasurability.lean:43:0: 'ModifiedCartan.fundamentalCoefficient_aestronglyMeasurable' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ModifiedCartan/CoefficientMeasurability.lean:44:0: 'ModifiedCartan.logarithmicJet_aestronglyMeasurable' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [4608/4617] Replayed ModifiedCartan.SobolevLocality
+warning: ModifiedCartan/SobolevLocality.lean:46:6: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+warning: ModifiedCartan/SobolevLocality.lean:105:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [4629/4847] Replayed ModifiedCartan.LocalLogHypotheses
+warning: ModifiedCartan/LocalLogHypotheses.lean:19:2: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+ℹ [4645/4847] Replayed ModifiedCartan.RootDistanceSums
+info: ModifiedCartan/RootDistanceSums.lean:145:0: 'ModifiedCartan.eLpNorm_scaled_reciprocalDistanceSum_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ModifiedCartan/RootDistanceSums.lean:146:0: 'ModifiedCartan.reciprocalDistanceSum_exterior_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ModifiedCartan/RootDistanceSums.lean:147:0: 'ModifiedCartan.inner_root_sum_eLpNorm_tendsto_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ModifiedCartan/RootDistanceSums.lean:148:0: 'ModifiedCartan.inner_root_sum_localMeasure_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4648/4847] Replayed ModifiedCartan.LocalRootSeparation
+info: ModifiedCartan/LocalRootSeparation.lean:116:0: 'ModifiedCartan.Paper.eq_rootbounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4649/4847] Replayed ModifiedCartan.SubsetProductBounds
+info: ModifiedCartan/SubsetProductBounds.lean:221:0: 'ModifiedCartan.powersetCard_product_difference_le_exp_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ModifiedCartan/SubsetProductBounds.lean:222:0: 'ModifiedCartan.norm_marked_powersetCard_product_sum_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4650/4847] Replayed ModifiedCartan.ColumnMinorCramer
+info: ModifiedCartan/ColumnMinorCramer.lean:88:0: 'ModifiedCartan.fundamentalCoefficients_eq_columnMinor' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4651/4847] Replayed ModifiedCartan.PolynomialCoefficientExpansion
+info: ModifiedCartan/PolynomialCoefficientExpansion.lean:86:0: 'ModifiedCartan.Paper.prop_polynomialcoeff' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4652/4847] Replayed ModifiedCartan.PolynomialFamilyExpansion
+info: ModifiedCartan/PolynomialFamilyExpansion.lean:51:0: 'ModifiedCartan.polynomialFamily_product_expansion' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4653/4847] Replayed ModifiedCartan.LocalCoefficientSplit
+info: ModifiedCartan/LocalCoefficientSplit.lean:267:0: 'ModifiedCartan.rootSubsetSum_split' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ModifiedCartan/LocalCoefficientSplit.lean:268:0: 'ModifiedCartan.norm_interiorRootSubsetSum_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ModifiedCartan/LocalCoefficientSplit.lean:269:0: 'ModifiedCartan.exteriorRootSubsetSum_analytic' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ModifiedCartan/LocalCoefficientSplit.lean:270:0: 'ModifiedCartan.interiorRootSubsetSum_localMeasure_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [4654/4847] Replayed ModifiedCartan.MeasureLimitTransfer
+warning: ModifiedCartan/MeasureLimitTransfer.lean:25:24: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+info: ModifiedCartan/MeasureLimitTransfer.lean:28:65: Try this:
+  [apply] abel_nf
+warning: ModifiedCartan/MeasureLimitTransfer.lean:28:61: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+info: ModifiedCartan/MeasureLimitTransfer.lean:116:0: 'ModifiedCartan.tendstoInMeasure_add' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ModifiedCartan/MeasureLimitTransfer.lean:117:0: 'ModifiedCartan.uniformlyOn_localMeasureConvergence' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4655/4847] Replayed ModifiedCartan.SmallRootPoleSums
+info: ModifiedCartan/SmallRootPoleSums.lean:111:0: 'ModifiedCartan.finite_root_distance_sum_localMeasure_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ModifiedCartan/SmallRootPoleSums.lean:112:0: 'ModifiedCartan.finite_pole_sum_normalized_localMeasure_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4656/4847] Replayed ModifiedCartan.FiniteMeasureTuples
+info: ModifiedCartan/FiniteMeasureTuples.lean:46:0: 'ModifiedCartan.tendstoInMeasure_finite_pi' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4661/4847] Replayed ModifiedCartan.BoundedWronskian
+info: ModifiedCartan/BoundedWronskian.lean:55:0: 'ModifiedCartan.norm_wronskian_le_of_unit_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4662/4847] Replayed ModifiedCartan.MonicCircleMean
+info: ModifiedCartan/MonicCircleMean.lean:75:0: 'ModifiedCartan.analytic_exp_factor_re_le_log_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4663/4847] Replayed ModifiedCartan.RepresentationCenter
+info: ModifiedCartan/RepresentationCenter.lean:119:0: 'ModifiedCartan.Paper.eq_centeridentity' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4664/4847] Replayed ModifiedCartan.RepresentationAsymptotics
+info: ModifiedCartan/RepresentationAsymptotics.lean:145:0: 'ModifiedCartan.rescaledWronskianPolynomial_degree_small' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ModifiedCartan/RepresentationAsymptotics.lean:146:0: 'ModifiedCartan.Paper.representation_step_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4665/4847] Replayed ModifiedCartan.RepresentationBound
+info: ModifiedCartan/RepresentationBound.lean:120:0: 'ModifiedCartan.Paper.eq_representationbounds_norm' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4666/4847] Replayed ModifiedCartan.LocalMeasureUniqueness
+info: ModifiedCartan/LocalMeasureUniqueness.lean:27:0: 'ModifiedCartan.LocalMeasureConvergence.ae_unique' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4667/4847] Replayed ModifiedCartan.WeakGradientZeroTests
+info: ModifiedCartan/WeakGradientZeroTests.lean:61:0: 'ModifiedCartan.HasWeakComplexGradient.integral_mul_fderiv_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [4668/4847] Replayed ModifiedCartan.WeakGradientSmoothing
+info: ModifiedCartan/WeakGradientSmoothing.lean:47:0: 'ModifiedCartan.HasWeakComplexGradient.fderiv_convolution_eq_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [4669/4847] Replayed ModifiedCartan.WeakZeroCutoff
+info: ModifiedCartan/WeakZeroCutoff.lean:52:0: 'ModifiedCartan.weak_zero_smooth_constant' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4672/4847] Replayed ModifiedCartan.WeakGradientConstancy
+info: ModifiedCartan/WeakGradientConstancy.lean:70:0: 'ModifiedCartan.HasWeakComplexGradient.exists_ae_const_of_gradient_ae_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [4673/4847] Replayed ModifiedCartan.LogAreaJensen
+info: ModifiedCartan/LogAreaJensen.lean:110:0: 'ModifiedCartan.integral_norm_log_ball_le_of_log_upper' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4681/4847] Replayed ModifiedCartan.FiniteSubsequenceExtraction
+info: ModifiedCartan/FiniteSubsequenceExtraction.lean:36:0: 'ModifiedCartan.finite_subsequence_extraction' depends on axioms: [propext, Quot.sound]
+ℹ [4682/4847] Replayed ModifiedCartan.ZeroJensenLowerBound
+info: ModifiedCartan/ZeroJensenLowerBound.lean:49:0: 'ModifiedCartan.scalar_logarithmic_circle_lower_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4683/4847] Replayed ModifiedCartan.NeighborGrowth
+info: ModifiedCartan/NeighborGrowth.lean:57:0: 'ModifiedCartan.neighbor_growth_dichotomy' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4684/4847] Replayed ModifiedCartan.TiltedIntervalSup
+info: ModifiedCartan/TiltedIntervalSup.lean:77:0: 'ModifiedCartan.tiltedIntervalSup_neighbor_gap' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4685/4847] Replayed ModifiedCartan.StrongGrowthIndices
+info: ModifiedCartan/StrongGrowthIndices.lean:99:0: 'ModifiedCartan.strongUpperIndex_uniform_upper' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ModifiedCartan/StrongGrowthIndices.lean:100:0: 'ModifiedCartan.strongLowerIndex_uniform_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4686/4847] Replayed ModifiedCartan.StrongIndexPowerBounds
+info: ModifiedCartan/StrongIndexPowerBounds.lean:80:0: 'ModifiedCartan.strongUpperIndex_le_of_uniform_upper' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ModifiedCartan/StrongIndexPowerBounds.lean:81:0: 'ModifiedCartan.le_strongLowerIndex_of_uniform_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4687/4847] Replayed ModifiedCartan.CharacteristicZero
+info: ModifiedCartan/CharacteristicZero.lean:110:0: 'ModifiedCartan.hasPolynomialRepresentation_of_characteristic_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: ModifiedCartan/CharacteristicZero.lean:111:0: 'ModifiedCartan.characteristic_pos_of_transcendental' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4688/4847] Replayed ModifiedCartan.OrdinaryGrowthOrders
+info: ModifiedCartan/OrdinaryGrowthOrders.lean:69:0: 'ModifiedCartan.upperGrowthOrder_le_of_log_upper' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ModifiedCartan/OrdinaryGrowthOrders.lean:70:0: 'ModifiedCartan.le_lowerGrowthOrder_of_log_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4689/4847] Replayed ModifiedCartan.IsometryVectorTransport
+info: ModifiedCartan/IsometryVectorTransport.lean:47:0: 'ModifiedCartan.exists_linearIsometry_map_of_norm_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4690/4847] Replayed ModifiedCartan.EuclideanCoordinateNormalization
+info: ModifiedCartan/EuclideanCoordinateNormalization.lean:84:0: 'ModifiedCartan.exists_euclidean_matrix_nonzero_coordinates' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [4691/4847] Replayed FewInflection.GaugeTranscendental
+warning: FewInflection/GaugeTranscendental.lean:28:31: `Polynomial.eval_finset_sum` has been deprecated: Use `Polynomial.eval_finsetSum` instead
+ℹ [4692/4847] Replayed ModifiedCartan.MeasureDilationCompatibility
+info: ModifiedCartan/MeasureDilationCompatibility.lean:41:0: 'ModifiedCartan.LocalMeasureConvergence.dilation_compatible' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4693/4847] Replayed ModifiedCartan.PeakRescaling
+info: ModifiedCartan/PeakRescaling.lean:34:0: 'ModifiedCartan.peak_rescaling_relation' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4694/4847] Replayed ModifiedCartan.AllScaleCauchyBounds
+info: ModifiedCartan/AllScaleCauchyBounds.lean:89:0: 'ModifiedCartan.dilation_weight_eq_nat_of_uniform_local_bounds' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [4695/4847] Replayed ModifiedCartan.AdmissibleInterval
+info: ModifiedCartan/AdmissibleInterval.lean:37:0: 'ModifiedCartan.admissible_interval_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4696/4847] Replayed ModifiedCartan.GrowthMultiplierBounds
+info: ModifiedCartan/GrowthMultiplierBounds.lean:69:0: 'ModifiedCartan.extend_growth_upper_to_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ModifiedCartan/GrowthMultiplierBounds.lean:70:0: 'ModifiedCartan.extend_growth_lower_to_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4697/4847] Replayed ModifiedCartan.GrowthPowerSymmetry
+info: ModifiedCartan/GrowthPowerSymmetry.lean:64:0: 'ModifiedCartan.symmetric_growth_power_bounds_of_ge_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4698/4847] Replayed ModifiedCartan.EventualTaylor
+info: ModifiedCartan/EventualTaylor.lean:99:0: 'ModifiedCartan.Paper.eq_taylorerror_eventual' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ModifiedCartan/EventualTaylor.lean:100:0: 'ModifiedCartan.determinant_error_of_taylor_jets' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4699/4847] Replayed ModifiedCartan.SeparatingRadius
+info: ModifiedCartan/SeparatingRadius.lean:77:0: 'ModifiedCartan.exists_separating_radius_root_indices' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4700/4847] Replayed ModifiedCartan.SmallPolynomialLog
+info: ModifiedCartan/SmallPolynomialLog.lean:108:0: 'ModifiedCartan.Paper.eq_small_polynomial_log' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4701/4847] Replayed ModifiedCartan.PolynomialValueSpan
+info: ModifiedCartan/PolynomialValueSpan.lean:47:0: 'ModifiedCartan.polynomialCombination_coeff_mem' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [4702/4847] Replayed ModifiedCartan.KPGeneratedCommutative
+warning: ModifiedCartan/KPGeneratedCommutative.lean:17:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+ℹ [4703/4847] Replayed ModifiedCartan.KPPolynomialParameters
+info: ModifiedCartan/KPPolynomialParameters.lean:83:0: 'ModifiedCartan.kpParameterEvaluation_ext_pos_real' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [4707/4864] Replayed ModifiedCartan.LogDerivativeLimit
+warning: ModifiedCartan/LogDerivativeLimit.lean:59:57: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: ModifiedCartan/LogDerivativeLimit.lean:62:36: `if_false` has been deprecated: Use `ite_false` instead
+ℹ [4708/4864] Replayed ModifiedCartan.PolynomialGaugeSmallness
+info: ModifiedCartan/PolynomialGaugeSmallness.lean:127:0: 'ModifiedCartan.polynomial_logDeriv_jet_eq_root_sum_ae' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ModifiedCartan/PolynomialGaugeSmallness.lean:128:0: 'ModifiedCartan.canonicalLogDerivative_eq_polynomial' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ModifiedCartan/PolynomialGaugeSmallness.lean:129:0: 'ModifiedCartan.Paper.eq_gaugesmall' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4709/4864] Replayed ModifiedCartan.CanonicalJetSmallness
+info: ModifiedCartan/CanonicalJetSmallness.lean:134:0: 'ModifiedCartan.canonical_logarithmicJet_normalized_eq_partition' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: ModifiedCartan/CanonicalJetSmallness.lean:135:0: 'ModifiedCartan.canonical_logarithmicJet_localMeasure_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4716/4864] Replayed ModifiedCartan.NormalizedFundamentalODE
+info: ModifiedCartan/NormalizedFundamentalODE.lean:84:0: 'ModifiedCartan.normalized_ode_weak_gradient_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4717/4864] Replayed ModifiedCartan.AnalyticLogDiskMean
+info: ModifiedCartan/AnalyticLogDiskMean.lean:92:0: 'ModifiedCartan.analytic_log_le_disk_mean' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4719/4864] Replayed ModifiedCartan.AnalyticLogSubharmonic
+info: ModifiedCartan/AnalyticLogSubharmonic.lean:47:0: 'ModifiedCartan.normalizedExtendedLog_isSubharmonicOn' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [4722/4864] Replayed ModifiedCartan.SubharmonicLocalIntegrability
+warning: ModifiedCartan/SubharmonicLocalIntegrability.lean:56:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+ℹ [4728/4864] Replayed ModifiedCartan.TiltedBlockGrowth
+info: ModifiedCartan/TiltedBlockGrowth.lean:133:0: 'ModifiedCartan.tiltedBlockSup_growth_slope' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ModifiedCartan/TiltedBlockGrowth.lean:134:0: 'ModifiedCartan.tiltedBlockSup_decay_slope' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4729/4864] Replayed ModifiedCartan.LogGrowthProfile
+info: ModifiedCartan/LogGrowthProfile.lean:75:0: 'ModifiedCartan.strongUpperIndex_le_of_log_slope' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ModifiedCartan/LogGrowthProfile.lean:76:0: 'ModifiedCartan.le_strongLowerIndex_of_log_slope' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4730/4864] Replayed ModifiedCartan.ApproximateGrowthPeaks
+info: ModifiedCartan/ApproximateGrowthPeaks.lean:52:0: 'ModifiedCartan.exists_logarithmic_growth_peak' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4731/4864] Replayed ModifiedCartan.MultiplicativePeak
+info: ModifiedCartan/MultiplicativePeak.lean:60:0: 'ModifiedCartan.multiplicative_peak_of_logarithmic_peak' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ModifiedCartan/MultiplicativePeak.lean:61:0: 'ModifiedCartan.polyaPeakEpsilon_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4732/4864] Replayed ModifiedCartan.PolyaPeaks
+info: ModifiedCartan/PolyaPeaks.lean:46:0: 'ModifiedCartan.Paper.lem_peaks' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4733/4864] Replayed ModifiedCartan.PeakScaleBounds
+info: ModifiedCartan/PeakScaleBounds.lean:66:0: 'ModifiedCartan.peak_fixed_scale_eventual_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ModifiedCartan/PeakScaleBounds.lean:67:0: 'ModifiedCartan.peak_fixed_scale_ratio_limsup' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4734/4864] Replayed ModifiedCartan.CharacteristicLogLower
+info: ModifiedCartan/CharacteristicLogLower.lean:42:0: 'ModifiedCartan.characteristic_log_lower_of_transcendental' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ModifiedCartan/CharacteristicLogLower.lean:43:0: 'ModifiedCartan.characteristic_tendsto_atTop_of_transcendental' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+⚠ [4735/4864] Replayed ModifiedCartan.UniformPowerLogBounds
+warning: ModifiedCartan/UniformPowerLogBounds.lean:11:18: Variable name `hX` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hX
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ModifiedCartan/UniformPowerLogBounds.lean:31:18: Variable name `hX` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hX
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+info: ModifiedCartan/UniformPowerLogBounds.lean:65:0: 'ModifiedCartan.log_upper_of_uniform_power_upper' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ModifiedCartan/UniformPowerLogBounds.lean:66:0: 'ModifiedCartan.log_lower_of_uniform_power_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ModifiedCartan/UniformPowerLogBounds.lean:67:0: 'ModifiedCartan.strongLowerIndex_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4736/4864] Replayed ModifiedCartan.IndexOrderBounds
+info: ModifiedCartan/IndexOrderBounds.lean:40:0: 'ModifiedCartan.strong_index_order_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4737/4864] Replayed ModifiedCartan.CharacteristicIndices
+info: ModifiedCartan/CharacteristicIndices.lean:45:0: 'ModifiedCartan.Paper.eq_index_order_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ModifiedCartan/CharacteristicIndices.lean:46:0: 'ModifiedCartan.Paper.eq_index_order_bounds_of_transcendental' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [4738/4864] Replayed ModifiedCartan.PeakLogNormalization
+info: ModifiedCartan/PeakLogNormalization.lean:59:0: 'ModifiedCartan.peak_log_radius_div_scale_tendsto_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4739/4864] Replayed ModifiedCartan.CharacteristicPeaks
+info: ModifiedCartan/CharacteristicPeaks.lean:92:0: 'ModifiedCartan.characteristic_peaks_with_normalization' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ModifiedCartan/CharacteristicPeaks.lean:93:0: 'ModifiedCartan.characteristic_peak_scale_hypotheses' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4740/4864] Replayed ModifiedCartan.NormalizedLogUpper
+info: ModifiedCartan/NormalizedLogUpper.lean:40:0: 'ModifiedCartan.normalized_log_eventually_small_on_unit_disk' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4741/4864] Replayed ModifiedCartan.CurveCoordinateNormalization
+info: ModifiedCartan/CurveCoordinateNormalization.lean:59:0: 'ModifiedCartan.exists_normalized_curve' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4742/4864] Replayed ModifiedCartan.PeakScaleQuantization
+info: ModifiedCartan/PeakScaleQuantization.lean:31:0: 'ModifiedCartan.admissibleOrder_of_nonzero_scale_model' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4743/4864] Replayed ModifiedCartan.UniformPowerBounds
+info: ModifiedCartan/UniformPowerBounds.lean:53:0: 'ModifiedCartan.Paper.lem_power_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4744/4864] Replayed ModifiedCartan.ReplacementRootData
+info: ModifiedCartan/ReplacementRootData.lean:63:0: 'ModifiedCartan.replacement_root_data' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4745/4864] Replayed ModifiedCartan.PolynomialApproximationLog
+info: ModifiedCartan/PolynomialApproximationLog.lean:102:0: 'ModifiedCartan.polynomial_approximation_log_localL1_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4749/4864] Replayed ModifiedCartan.QuotientWronskian
+info: ModifiedCartan/QuotientWronskian.lean:88:0: 'ModifiedCartan.rescaled_negative_norm_le_quotient_wronskian' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4750/4864] Replayed ModifiedCartan.BetheAlgebra
+info: ModifiedCartan/BetheAlgebra.lean:101:0: 'ModifiedCartan.betheAlgebra_eq_adjoin_coefficients' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ModifiedCartan/BetheAlgebra.lean:102:0: 'ModifiedCartan.betheAlgebra_le_kpGeneratedAlgebra' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4751/4864] Replayed ModifiedCartan.KPPolynomialCoefficientAction
+info: ModifiedCartan/KPPolynomialCoefficientAction.lean:66:0: 'ModifiedCartan.kpBetaPowerCoefficient_action' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4752/4864] Replayed ModifiedCartan.KPParameterBetheAlgebra
+info: ModifiedCartan/KPParameterBetheAlgebra.lean:91:0: 'ModifiedCartan.kpParameterBetheAlgebra_isMulCommutative' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4756/4864] Replayed ModifiedCartan.KPParameterDifferentialCoefficients
+info: ModifiedCartan/KPParameterDifferentialCoefficients.lean:91:0: 'ModifiedCartan.kpParameterColumnPolynomial_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ModifiedCartan/KPParameterDifferentialCoefficients.lean:92:0: 'ModifiedCartan.kpParameterDifferentialCoefficients_leading' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4757/4864] Replayed ModifiedCartan.ColumnMinorDifferentialEquation
+info: ModifiedCartan/ColumnMinorDifferentialEquation.lean:55:0: 'ModifiedCartan.polynomial_columnMinor_differential_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4758/4864] Replayed ModifiedCartan.SchubertColumnDifferentialEquation
+info: ModifiedCartan/SchubertColumnDifferentialEquation.lean:68:0: 'ModifiedCartan.schubert_columnValues_differential_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4759/4864] Replayed ModifiedCartan.PolynomialODEJetMatrix
+info: ModifiedCartan/PolynomialODEJetMatrix.lean:87:0: 'ModifiedCartan.polynomialODEJetMatrix_det' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4760/4864] Replayed ModifiedCartan.PolynomialODEAdjugate
+info: ModifiedCartan/PolynomialODEAdjugate.lean:81:0: 'ModifiedCartan.polynomialODEJetMatrix_ofFn_adjugate_solution' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+⚠ [4761/4864] Replayed ModifiedCartan.SchubertDegreeInitialCoefficients
+warning: ModifiedCartan/SchubertDegreeInitialCoefficients.lean:40:11: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: ModifiedCartan/SchubertDegreeInitialCoefficients.lean:40:26: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: ModifiedCartan/SchubertDegreeInitialCoefficients.lean:42:10: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: ModifiedCartan/SchubertDegreeInitialCoefficients.lean:43:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: ModifiedCartan/SchubertDegreeInitialCoefficients.lean:45:10: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: ModifiedCartan/SchubertDegreeInitialCoefficients.lean:52:14: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: ModifiedCartan/SchubertDegreeInitialCoefficients.lean:53:10: `if_neg` has been deprecated: Use `ite_eq_right` instead
+info: ModifiedCartan/SchubertDegreeInitialCoefficients.lean:77:0: 'ModifiedCartan.PolynomialSchubertFrame.natDegree_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ModifiedCartan/SchubertDegreeInitialCoefficients.lean:78:0: 'ModifiedCartan.polynomialODE_identityJets_adjugate_solution' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4762/4864] Replayed ModifiedCartan.PolynomialCoefficientMinors
+info: ModifiedCartan/PolynomialCoefficientMinors.lean:91:0: 'ModifiedCartan.partitionCoefficientMinor_map' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ModifiedCartan/PolynomialCoefficientMinors.lean:92:0: 'ModifiedCartan.partitionCoefficientMinor_smul' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ModifiedCartan/PolynomialCoefficientMinors.lean:93:0: 'ModifiedCartan.partitionCoefficientMinor_eq_eval' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4763/4864] Replayed ModifiedCartan.KPParameterCharacters
+info: ModifiedCartan/KPParameterCharacters.lean:113:0: 'ModifiedCartan.kpParameterDifferentialCoefficients_character' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [4764/4864] Replayed ModifiedCartan.PolynomialODEAdjugateMap
+info: ModifiedCartan/PolynomialODEAdjugateMap.lean:60:0: 'ModifiedCartan.polynomialODEAdjugatePolynomial_map' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4765/4864] Replayed ModifiedCartan.SchubertAdjugateReconstruction
+info: ModifiedCartan/SchubertAdjugateReconstruction.lean:76:0: 'ModifiedCartan.schubert_columnValues_adjugate_solution' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ModifiedCartan/SchubertAdjugateReconstruction.lean:77:0: 'ModifiedCartan.schubert_columnValues_adjugate_minor' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4766/4864] Replayed ModifiedCartan.KPParameterAdjugateReconstruction
+info: ModifiedCartan/KPParameterAdjugateReconstruction.lean:145:0: 'ModifiedCartan.kpParameterODEDeterminant_eval_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ModifiedCartan/KPParameterAdjugateReconstruction.lean:146:0: 'ModifiedCartan.kpParameterAdjugatePolynomial_character' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ModifiedCartan/KPParameterAdjugateReconstruction.lean:147:0: 'ModifiedCartan.kpParameterScalarODEJetMatrix_det' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4767/4864] Replayed ModifiedCartan.PolynomialInitialBasisExistence
+info: ModifiedCartan/PolynomialInitialBasisExistence.lean:63:0: 'ModifiedCartan.polynomialBasis_exists_identity_jets' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4768/4864] Replayed ModifiedCartan.KPJointInitialBasis
+info: ModifiedCartan/KPJointInitialBasis.lean:56:0: 'ModifiedCartan.kpJoint_identityBasis_exists' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4769/4864] Replayed ModifiedCartan.KPAdjugateMinorCharacters
+info: ModifiedCartan/KPAdjugateMinorCharacters.lean:50:0: 'ModifiedCartan.kpParameterAdjugateMinor_character' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4770/4864] Replayed ModifiedCartan.KPRealJointActionExt
+info: ModifiedCartan/KPRealJointActionExt.lean:47:0: 'ModifiedCartan.kpRealJointAction_ext' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4771/4864] Replayed ModifiedCartan.KPUniversalAdjugateIdentity
+info: ModifiedCartan/KPUniversalAdjugateIdentity.lean:62:0: 'ModifiedCartan.kpParameterAdjugateMinor_positive' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ModifiedCartan/KPUniversalAdjugateIdentity.lean:63:0: 'ModifiedCartan.kpParameterAdjugateMinor_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4773/4864] Replayed ModifiedCartan.PolynomialInitialBasisCoordinates
+info: ModifiedCartan/PolynomialInitialBasisCoordinates.lean:54:0: 'ModifiedCartan.polynomialBasis_existsUnique_identity_jets' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4774/4864] Replayed ModifiedCartan.PolynomialInitialValueBound
+info: ModifiedCartan/PolynomialInitialValueBound.lean:82:0: 'ModifiedCartan.Paper.eq_initial_value_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [4781/4864] Replayed ModifiedCartan.BlockSuccessorClassification
+warning: ModifiedCartan/BlockSuccessorClassification.lean:81:11: Variable name `σ` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _σ
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [4789/4864] Replayed ModifiedCartan.PairSubsetSum
+warning: ModifiedCartan/PairSubsetSum.lean:17:35: This simp argument is unused:
+  hji
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Finset.mem_powersetCard, Ne.symm hji]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [4795/4864] Replayed ModifiedCartan.SpechtIrreducibleExhaustion
+warning: ModifiedCartan/SpechtIrreducibleExhaustion.lean:19:43: `if_neg` has been deprecated: Use `ite_eq_right` instead
+⚠ [4796/4864] Replayed ModifiedCartan.SpechtCharacterProjection
+warning: ModifiedCartan/SpechtCharacterProjection.lean:19:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: ModifiedCartan/SpechtCharacterProjection.lean:32:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [4811/4864] Replayed FewInflection.PolynomialSpaces
+warning: FewInflection/PolynomialSpaces.lean:57:48: This simp argument is unused:
+  smul_eq_mul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Pi.zero_apply, Finset.sum_apply]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [4818/4864] Replayed FewInflection.PolynomialRootMinors
+warning: FewInflection/PolynomialRootMinors.lean:78:4: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+warning: FewInflection/PolynomialRootMinors.lean:73:37: This simp argument is unused:
+  add_comm
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sub_eq_add_neg, add_assoc, add_left_comm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: FewInflection/PolynomialRootMinors.lean:73:47: This simp argument is unused:
+  add_left_comm
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sub_eq_add_neg, add_assoc, add_comm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+ℹ [4825/4889] Replayed ModifiedCartan.HolomorphicCompactness
+info: ModifiedCartan/HolomorphicCompactness.lean:162:0: 'ModifiedCartan.exists_uniformly_convergent_subsequence_of_lipschitzOn' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: ModifiedCartan/HolomorphicCompactness.lean:163:0: 'ModifiedCartan.holomorphic_deriv_bound_on_inner_disk' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ModifiedCartan/HolomorphicCompactness.lean:164:0: 'ModifiedCartan.exists_holomorphic_uniform_limit_on_inner_disk' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: ModifiedCartan/HolomorphicCompactness.lean:165:0: 'ModifiedCartan.exists_simultaneous_holomorphic_uniform_limits' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [4826/4889] Replayed ModifiedCartan.LocalCoefficientCompactness
+info: ModifiedCartan/LocalCoefficientCompactness.lean:196:0: 'ModifiedCartan.Paper.eq_splitcoeff' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ModifiedCartan/LocalCoefficientCompactness.lean:197:0: 'ModifiedCartan.Paper.local_coefficient_relative_compactness' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4827/4889] Replayed ModifiedCartan.LocalCompactness
+info: ModifiedCartan/LocalCompactness.lean:158:0: 'ModifiedCartan.Paper.eq_gaugecomparison' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ModifiedCartan/LocalCompactness.lean:159:0: 'ModifiedCartan.Paper.prop_localcompact' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4828/4889] Replayed ModifiedCartan.EventualCoefficientComparison
+info: ModifiedCartan/EventualCoefficientComparison.lean:98:0: 'ModifiedCartan.Paper.eq_gaugecomparison_eventual' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ModifiedCartan/EventualCoefficientComparison.lean:99:0: 'ModifiedCartan.cramer_comparison_of_polynomial_approximation' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [4829/4889] Replayed ModifiedCartan.CanonicalCompactness
+info: ModifiedCartan/CanonicalCompactness.lean:56:0: 'ModifiedCartan.canonical_coefficient_relative_compactness_eventual' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [4830/4889] Replayed ModifiedCartan.RescaledRepresentation
+info: ModifiedCartan/RescaledRepresentation.lean:97:0: 'ModifiedCartan.Paper.prop_representation' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4831/4889] Replayed ModifiedCartan.RescaledZeroCoefficients
+info: ModifiedCartan/RescaledZeroCoefficients.lean:80:0: 'ModifiedCartan.rescaled_fundamental_coefficients_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4849/4889] Replayed ModifiedCartan.NormalizedLogCompactness
+info: ModifiedCartan/NormalizedLogCompactness.lean:51:0: 'ModifiedCartan.exists_normalized_log_subsequence' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4850/4889] Replayed ModifiedCartan.FiniteLogCompactness
+info: ModifiedCartan/FiniteLogCompactness.lean:59:0: 'ModifiedCartan.exists_common_normalized_log_subsequence_eventual' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [4851/4889] Replayed ModifiedCartan.DiskCircleUpper
+info: ModifiedCartan/DiskCircleUpper.lean:69:0: 'ModifiedCartan.diskAverage_le_of_circleAverage_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4852/4889] Replayed ModifiedCartan.PeakConstantSign
+info: ModifiedCartan/PeakConstantSign.lean:101:0: 'ModifiedCartan.peak_coordinate_constant_nonpos' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4853/4889] Replayed ModifiedCartan.RepresentationMeanContradiction
+info: ModifiedCartan/RepresentationMeanContradiction.lean:78:0: 'ModifiedCartan.representation_mean_contradicts_nonpositive_constants' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+⚠ [4854/4889] Replayed ModifiedCartan.PeakNonvanishing
+warning: ModifiedCartan/PeakNonvanishing.lean:125:2: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+info: ModifiedCartan/PeakNonvanishing.lean:133:0: 'ModifiedCartan.peak_coefficient_limit_nonzero' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4855/4889] Replayed ModifiedCartan.PeakCoefficientCompactness
+info: ModifiedCartan/PeakCoefficientCompactness.lean:55:0: 'ModifiedCartan.peak_coefficient_relative_compactness' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4856/4889] Replayed ModifiedCartan.PeakLimitScaleModels
+info: ModifiedCartan/PeakLimitScaleModels.lean:66:0: 'ModifiedCartan.peak_coefficient_limit_scale_models' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4857/4889] Replayed ModifiedCartan.Indices
+info: ModifiedCartan/Indices.lean:65:0: 'ModifiedCartan.positive_index_order_admissible' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ModifiedCartan/Indices.lean:66:0: 'ModifiedCartan.Paper.prop_indices' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4858/4889] Replayed ModifiedCartan.ReplacementTaylorData
+info: ModifiedCartan/ReplacementTaylorData.lean:101:0: 'ModifiedCartan.replacement_taylor_data' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4859/4889] Replayed ModifiedCartan.ReplacementCoefficientData
+info: ModifiedCartan/ReplacementCoefficientData.lean:84:0: 'ModifiedCartan.replacement_scaled_coefficient_comparison' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4860/4889] Replayed ModifiedCartan.PolynomialReplacement
+info: ModifiedCartan/PolynomialReplacement.lean:150:0: 'ModifiedCartan.Paper.lem_replacement' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [4861/4889] Replayed ModifiedCartan.BetheAlgebraIdentification
+warning: ModifiedCartan/BetheAlgebraIdentification.lean:42:2: Try this: intro i _ h
+info: ModifiedCartan/BetheAlgebraIdentification.lean:62:0: 'ModifiedCartan.kpBeta_zero_mem_bethe_of_prod_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ModifiedCartan/BetheAlgebraIdentification.lean:63:0: 'ModifiedCartan.kpGeneratedAlgebra_eq_betheAlgebra' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4862/4889] Replayed ModifiedCartan.KPCorrespondence
+info: ModifiedCartan/KPCorrespondence.lean:46:0: 'ModifiedCartan.Paper.lem_KP_correspondence' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [4866/4889] Replayed FewInflection.Nevanlinna.PoissonKernelBounds
+warning: FewInflection/Nevanlinna/PoissonKernelBounds.lean:268:12: This simp argument is unused:
+  norm_div
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [norm_mul, Complex.norm_natCast, div_eq_mul_inv, mul_assoc]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: FewInflection/Nevanlinna/PoissonKernelBounds.lean:268:22: This simp argument is unused:
+  norm_mul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [norm_div, Complex.norm_natCast, div_eq_mul_inv, mul_assoc]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: FewInflection/Nevanlinna/PoissonKernelBounds.lean:268:32: This simp argument is unused:
+  Complex.norm_natCast
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [norm_div, norm_mul, div_eq_mul_inv, mul_assoc]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: FewInflection/Nevanlinna/PoissonKernelBounds.lean:322:22: This simp argument is unused:
+  norm_mul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Complex.norm_intCast, Real.norm_eq_abs]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: FewInflection/Nevanlinna/PoissonKernelBounds.lean:322:54: This simp argument is unused:
+  Real.norm_eq_abs
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [norm_mul, Complex.norm_intCast]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: FewInflection/Nevanlinna/PoissonKernelBounds.lean:364:18: This simp argument is unused:
+  norm_mul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [norm_div, norm_pow, Complex.norm_natCast, div_eq_mul_inv, mul_assoc, mul_left_comm, mul_comm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: FewInflection/Nevanlinna/PoissonKernelBounds.lean:364:28: This simp argument is unused:
+  norm_div
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [norm_mul, norm_pow, Complex.norm_natCast, div_eq_mul_inv, mul_assoc, mul_left_comm, mul_comm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: FewInflection/Nevanlinna/PoissonKernelBounds.lean:364:48: This simp argument is unused:
+  Complex.norm_natCast
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [norm_mul, norm_div, norm_pow, div_eq_mul_inv, mul_assoc, mul_left_comm, mul_comm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [4872/4889] Replayed FewInflection.Nevanlinna.PoissonLogFactor
+warning: FewInflection/Nevanlinna/PoissonLogFactor.lean:48:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [4880/4889] Replayed FewInflection.Nevanlinna.AbsoluteDivisorCount
+warning: FewInflection/Nevanlinna/AbsoluteDivisorCount.lean:172:18: `if_pos` has been deprecated: Use `ite_eq_left` instead
+⚠ [4881/4889] Replayed FewInflection.Nevanlinna.CharacteristicMassBound
+warning: FewInflection/Nevanlinna/CharacteristicMassBound.lean:117:51: Variable name `hR` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hR
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: FewInflection/Nevanlinna/CharacteristicMassBound.lean:187:39: This simp argument is unused:
+  dist_comm
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Metric.mem_ball, dist_eq_norm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [4882/4889] Replayed FewInflection.Nevanlinna.PoissonHigherDerivative
+warning: FewInflection/Nevanlinna/PoissonHigherDerivative.lean:54:6: Try this: intro a z hz
+ℹ [4883/4889] Replayed FewInflection.ExplicitExamples
+info: FewInflection/ExplicitExamples.lean:393:2: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+⚠ [4885/4889] Replayed FewInflection.ExplicitExponentialFamily
+warning: FewInflection/ExplicitExponentialFamily.lean:57:39: This simp argument is unused:
+  mul_left_comm
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [exponentialRate, mul_comm, mul_assoc]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: FewInflection/ExplicitExponentialFamily.lean:57:54: This simp argument is unused:
+  mul_assoc
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [exponentialRate, mul_comm, mul_left_comm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: FewInflection/ExplicitExponentialFamily.lean:159:39: This simp argument is unused:
+  Curve.vector
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [exponentialFamilyCurve, exponentialFamily, Complex.norm_exp]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+info: FewInflection/ExplicitExponentialFamily.lean:240:4: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+ℹ [4887/4889] Built ModifiedCartan.TranslatedCounting (18s)
+info: ModifiedCartan/TranslatedCounting.lean:13:0: Summable.tsum_le_tsum.{u_1, u_3} {ι : Type u_1} {α : Type u_3} {L : SummationFilter ι} [AddCommMonoid α] [Preorder α]
+  [IsOrderedAddMonoid α] [TopologicalSpace α] [OrderClosedTopology α] {f g : ι → α} [L.NeBot] (h : ∀ (i : ι), f i ≤ g i)
+  (hf : Summable f L) (hg : Summable g L) : ∑'[L] (i : ι), f i ≤ ∑'[L] (i : ι), g i
+info: ModifiedCartan/TranslatedCounting.lean:14:0: Summable.tsum_add.{u_1, u_2} {α : Type u_1} {β : Type u_2} [AddCommMonoid α] [TopologicalSpace α] {f g : β → α}
+  {L : SummationFilter β} [T2Space α] [ContinuousAdd α] [L.NeBot] (hf : Summable f L) (hg : Summable g L) :
+  ∑'[L] (b : β), (f b + g b) = ∑'[L] (b : β), f b + ∑'[L] (b : β), g b
+info: ModifiedCartan/TranslatedCounting.lean:15:0: Summable.mul_left.{u_1, u_3} {ι : Type u_1} {α : Type u_3} {L : SummationFilter ι} [NonUnitalNonAssocSemiring α]
+  [TopologicalSpace α] [IsTopologicalSemiring α] {f : ι → α} (a : α) (hf : Summable f L) : Summable (fun i => a * f i) L
+info: ModifiedCartan/TranslatedCounting.lean:81:0: 'ModifiedCartan.translated_logCounting_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ModifiedCartan/TranslatedCounting.lean:82:0: 'ModifiedCartan.normalizedCoordinates_counting_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+✔ [4888/4889] Built ModifiedCartan (19s)
+Build completed successfully (4889 jobs).

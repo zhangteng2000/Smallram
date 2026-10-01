@@ -1,0 +1,855 @@
+⚠ [3151/3231] Replayed ModifiedCartan.CentralCharacterOperator
+warning: ModifiedCartan/CentralCharacterOperator.lean:18:0: automatically included section variable(s) unused in theorem `ModifiedCartan.characterWeightedOperator_commutes`:
+  [FiniteDimensional ℂ V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [FiniteDimensional ℂ V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [3533/3620] Replayed ModifiedCartan.CharacterScalarAction
+warning: ModifiedCartan/CharacterScalarAction.lean:13:0: automatically included section variable(s) unused in theorem `ModifiedCartan.characterWeightedOperator_trace`:
+  [FiniteDimensional ℂ V]
+  [FiniteDimensional ℂ W]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [FiniteDimensional ℂ V] [FiniteDimensional ℂ W] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: ModifiedCartan/CharacterScalarAction.lean:31:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: ModifiedCartan/CharacterScalarAction.lean:32:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: ModifiedCartan/CharacterScalarAction.lean:29:0: automatically included section variable(s) unused in theorem `ModifiedCartan.irreducible_finrank_ne_zero`:
+  [Fintype G]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype G] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: ModifiedCartan/CharacterScalarAction.lean:46:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: ModifiedCartan/CharacterScalarAction.lean:55:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: ModifiedCartan/CharacterScalarAction.lean:62:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+⚠ [3534/3620] Replayed ModifiedCartan.CharacterProjectorBasic
+warning: ModifiedCartan/CharacterProjectorBasic.lean:12:0: automatically included section variable(s) unused in theorem `ModifiedCartan.characterWeightedOperator_natural`:
+  [FiniteDimensional ℂ V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [FiniteDimensional ℂ V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [3535/3620] Replayed ModifiedCartan.CharacterProjectorFixed
+warning: ModifiedCartan/CharacterProjectorFixed.lean:12:0: automatically included section variable(s) unused in theorem `ModifiedCartan.intertwiner_apply_mem_isotypic`:
+  [Fintype G]
+  [FiniteDimensional ℂ V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype G] [FiniteDimensional ℂ V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [3536/3620] Replayed ModifiedCartan.CharacterIrreducibleImages
+warning: ModifiedCartan/CharacterIrreducibleImages.lean:24:0: automatically included section variable(s) unused in theorem `ModifiedCartan.intertwiner_apply_mem_isotypic_of_equiv`:
+  [FiniteDimensional ℂ W]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [FiniteDimensional ℂ W] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [3537/3620] Replayed ModifiedCartan.CharacterSimpleGeneration
+warning: ModifiedCartan/CharacterSimpleGeneration.lean:17:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [3538/3620] Replayed ModifiedCartan.GroupSubmoduleIntertwiners
+warning: ModifiedCartan/GroupSubmoduleIntertwiners.lean:35:0: automatically included section variable(s) unused in theorem `ModifiedCartan.groupSubmoduleIntertwiner_apply`:
+  [Fintype G]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype G] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: ModifiedCartan/GroupSubmoduleIntertwiners.lean:40:0: automatically included section variable(s) unused in theorem `ModifiedCartan.groupSubmoduleIntertwiner_injective`:
+  [Fintype G]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype G] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: ModifiedCartan/GroupSubmoduleIntertwiners.lean:55:0: automatically included section variable(s) unused in theorem `ModifiedCartan.groupSubmoduleRepresentationIrreducible`:
+  [Fintype G]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype G] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [3539/3620] Replayed ModifiedCartan.CharacterProjectorRange
+warning: ModifiedCartan/CharacterProjectorRange.lean:23:4: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: ModifiedCartan/CharacterProjectorRange.lean:24:4: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: ModifiedCartan/CharacterProjectorRange.lean:26:4: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [3549/3620] Replayed ModifiedCartan.SkewTableaux
+warning: ModifiedCartan/SkewTableaux.lean:106:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: ModifiedCartan/SkewTableaux.lean:108:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: ModifiedCartan/SkewTableaux.lean:113:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: ModifiedCartan/SkewTableaux.lean:118:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [3552/3620] Replayed ModifiedCartan.RemovedBoxes
+warning: ModifiedCartan/RemovedBoxes.lean:41:11: Variable name `a` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _a
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ModifiedCartan/RemovedBoxes.lean:42:12: Variable name `a` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _a
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [3554/3620] Replayed ModifiedCartan.YoungFillings
+warning: ModifiedCartan/YoungFillings.lean:27:25: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+warning: ModifiedCartan/YoungFillings.lean:78:32: `if_pos` has been deprecated: Use `ite_eq_left` instead
+⚠ [3555/3620] Replayed ModifiedCartan.YoungPolytabloid
+warning: ModifiedCartan/YoungPolytabloid.lean:54:2: Try `simp at hc` instead of `simpa using hc`
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+⚠ [3556/3620] Replayed ModifiedCartan.CharacterOrthogonalInvariant
+warning: ModifiedCartan/CharacterOrthogonalInvariant.lean:39:0: automatically included section variable(s) unused in theorem `ModifiedCartan.invariant_orthogonal_of_unitary`:
+  [Fintype G]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype G] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [3671/3857] Replayed ModifiedCartan.CharacterProjectorOrthogonal
+warning: ModifiedCartan/CharacterProjectorOrthogonal.lean:23:45: `if_neg` has been deprecated: Use `ite_eq_right` instead
+⚠ [3677/3857] Replayed ModifiedCartan.ClassScalarIsotypic
+warning: ModifiedCartan/ClassScalarIsotypic.lean:48:4: This simp argument is unused:
+  MonoidAlgebra.coeff_smul_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [classWeightedOperator, LinearMap.sum_apply, LinearMap.smul_apply, Representation.leftRegular,
+    MonoidAlgebra.coeff_sum, Finsupp.finsetSum_apply, MonoidAlgebra.coeff_single, Finsupp.single_apply]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ModifiedCartan/ClassScalarIsotypic.lean:50:0: automatically included section variable(s) unused in theorem `ModifiedCartan.characterProjector_regular_coefficient`:
+  [FiniteDimensional ℂ V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [FiniteDimensional ℂ V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [3679/3857] Replayed ModifiedCartan.IsotypicCopies
+warning: ModifiedCartan/IsotypicCopies.lean:29:0: automatically included section variable(s) unused in theorem `ModifiedCartan.nonempty_equiv_intertwiner_range`:
+  [Fintype G]
+  [FiniteDimensional ℂ V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype G] [FiniteDimensional ℂ V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [3686/3889] Replayed FewInflection.DerivativeMinors
+warning: FewInflection/DerivativeMinors.lean:123:41: This simp argument is unused:
+  dotProduct
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [D, M, Matrix.diagonal_apply]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [3691/3889] Replayed FewInflection.FundamentalAnalytic
+warning: FewInflection/FundamentalAnalytic.lean:208:35: This simp argument is unused:
+  hW
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [fundamentalCoefficients, not_ne_iff.mp hW]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [3697/3889] Replayed ModifiedCartan.YoungAlternatingRange
+warning: ModifiedCartan/YoungAlternatingRange.lean:23:4: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+⚠ [3700/3889] Replayed ModifiedCartan.SpechtRepresentation
+warning: ModifiedCartan/SpechtRepresentation.lean:22:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [3714/3889] Replayed ModifiedCartan.MinorGrowthPaths
+warning: ModifiedCartan/MinorGrowthPaths.lean:85:4: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [3715/3889] Replayed ModifiedCartan.MinorGrowthCount
+warning: ModifiedCartan/MinorGrowthCount.lean:18:4: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: ModifiedCartan/MinorGrowthCount.lean:20:4: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: ModifiedCartan/MinorGrowthCount.lean:24:4: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: ModifiedCartan/MinorGrowthCount.lean:30:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: ModifiedCartan/MinorGrowthCount.lean:36:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [3716/3889] Replayed ModifiedCartan.SkewAdditions
+warning: ModifiedCartan/SkewAdditions.lean:17:44: Variable name `a` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _a
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ModifiedCartan/SkewAdditions.lean:17:46: Variable name `b` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _b
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [3721/3889] Replayed ModifiedCartan.TableauCountRecurrence
+warning: ModifiedCartan/TableauCountRecurrence.lean:40:32: `if_pos` has been deprecated: Use `ite_eq_left` instead
+⚠ [3729/3889] Replayed ModifiedCartan.TableauCountPositive
+warning: ModifiedCartan/TableauCountPositive.lean:50:22: Unused tactic linter: `change partitionSize ν = partitionSize r.enlarged + k` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [3730/3889] Replayed ModifiedCartan.SchubertWronskianDegree
+warning: ModifiedCartan/SchubertWronskianDegree.lean:30:44: `if_neg` has been deprecated: Use `ite_eq_right` instead
+⚠ [3752/3889] Replayed ModifiedCartan.FiniteInvolutionSum
+warning: ModifiedCartan/FiniteInvolutionSum.lean:19:17: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: ModifiedCartan/FiniteInvolutionSum.lean:19:28: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: ModifiedCartan/FiniteInvolutionSum.lean:21:19: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: ModifiedCartan/FiniteInvolutionSum.lean:21:30: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: ModifiedCartan/FiniteInvolutionSum.lean:22:19: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: ModifiedCartan/FiniteInvolutionSum.lean:22:30: `if_neg` has been deprecated: Use `ite_eq_right` instead
+⚠ [3753/3889] Replayed ModifiedCartan.LegalMinorRowCovers
+warning: ModifiedCartan/LegalMinorRowCovers.lean:53:11: `if_pos` has been deprecated: Use `ite_eq_left` instead
+⚠ [3755/3889] Replayed ModifiedCartan.MinorTranslation
+warning: ModifiedCartan/MinorTranslation.lean:30:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+⚠ [3757/3889] Replayed ModifiedCartan.CharacterProjectionBound
+warning: ModifiedCartan/CharacterProjectionBound.lean:12:0: automatically included section variable(s) unused in theorem `ModifiedCartan.characterWeightedOperator_eq_scaled_projector`:
+  [FiniteDimensional ℂ W]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [FiniteDimensional ℂ W] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [3758/3889] Replayed ModifiedCartan.SymmetricCharacterProjection
+warning: ModifiedCartan/SymmetricCharacterProjection.lean:14:0: automatically included section variable(s) unused in theorem `ModifiedCartan.permutation_character_inv`:
+  [FiniteDimensional ℂ V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [FiniteDimensional ℂ V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: ModifiedCartan/SymmetricCharacterProjection.lean:26:0: automatically included section variable(s) unused in theorem `ModifiedCartan.permutationCharacterOperator_eq_weighted`:
+  [FiniteDimensional ℂ W]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [FiniteDimensional ℂ W] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [3770/3889] Replayed FewInflection.Nevanlinna
+warning: FewInflection/Nevanlinna.lean:104:44: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: FewInflection/Nevanlinna.lean:147:4: Unused tactic linter: `change meromorphicOrderAt (f.coord j)⁻¹ u ≠ (⊤ : WithTop ℤ)` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: FewInflection/Nevanlinna.lean:213:44: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: FewInflection/Nevanlinna.lean:223:63: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [3798/3926] Replayed ModifiedCartan.RemovedPermutations
+warning: ModifiedCartan/RemovedPermutations.lean:51:4: Unused tactic linter: `change f ((youngRemovalPermutationEquiv μ b p).val a) = f a` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [3808/3926] Replayed ModifiedCartan.KPAlphaConjugation
+warning: ModifiedCartan/KPAlphaConjugation.lean:12:0: automatically included section variable(s) unused in theorem `ModifiedCartan.kpAlpha_conjugate`:
+  [Fintype A]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype A] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [3809/3926] Replayed ModifiedCartan.PermutationStar
+warning: ModifiedCartan/PermutationStar.lean:14:0: automatically included section variable(s) unused in theorem `ModifiedCartan.permutationElement_mul`:
+  [DecidableEq A]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq A] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: ModifiedCartan/PermutationStar.lean:18:0: automatically included section variable(s) unused in theorem `ModifiedCartan.permutationElement_one`:
+  [DecidableEq A]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq A] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [3811/3926] Replayed ModifiedCartan.KPAlphaCoefficients
+warning: ModifiedCartan/KPAlphaCoefficients.lean:16:8: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+warning: ModifiedCartan/KPAlphaCoefficients.lean:22:8: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+warning: ModifiedCartan/KPAlphaCoefficients.lean:60:8: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+warning: ModifiedCartan/KPAlphaCoefficients.lean:60:20: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+warning: ModifiedCartan/KPAlphaCoefficients.lean:63:8: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+warning: ModifiedCartan/KPAlphaCoefficients.lean:63:20: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+⚠ [3812/3926] Replayed ModifiedCartan.FixedPointPermutationSums
+warning: ModifiedCartan/FixedPointPermutationSums.lean:51:12: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+⚠ [3835/3926] Replayed ModifiedCartan.InducedSpechtClassFunction
+warning: ModifiedCartan/InducedSpechtClassFunction.lean:33:8: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+warning: ModifiedCartan/InducedSpechtClassFunction.lean:33:44: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+warning: ModifiedCartan/InducedSpechtClassFunction.lean:41:8: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+warning: ModifiedCartan/InducedSpechtClassFunction.lean:41:20: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+warning: ModifiedCartan/InducedSpechtClassFunction.lean:62:8: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+warning: ModifiedCartan/InducedSpechtClassFunction.lean:62:49: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+warning: ModifiedCartan/InducedSpechtClassFunction.lean:67:8: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+warning: ModifiedCartan/InducedSpechtClassFunction.lean:67:20: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+⚠ [3836/3926] Replayed ModifiedCartan.SpechtFiniteAlphabetRepresentation
+warning: ModifiedCartan/SpechtFiniteAlphabetRepresentation.lean:24:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [3837/3926] Replayed ModifiedCartan.SpechtCharacterPairingStep
+warning: ModifiedCartan/SpechtCharacterPairingStep.lean:20:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: ModifiedCartan/SpechtCharacterPairingStep.lean:21:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: ModifiedCartan/SpechtCharacterPairingStep.lean:22:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [3847/3926] Replayed ModifiedCartan.TotalTranspositionOperator
+warning: ModifiedCartan/TotalTranspositionOperator.lean:24:34: This simp argument is unused:
+  Representation.asAlgebraHom_single_one
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [h]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [3848/3926] Replayed ModifiedCartan.YoungTranspositionScalar
+warning: ModifiedCartan/YoungTranspositionScalar.lean:43:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [3852/3926] Replayed ModifiedCartan.SizedSubsetInsertion
+warning: ModifiedCartan/SizedSubsetInsertion.lean:40:0: automatically included section variable(s) unused in theorem `ModifiedCartan.sum_sizedLetterSubset`:
+  [DecidableEq A]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq A] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: ModifiedCartan/SizedSubsetInsertion.lean:45:0: automatically included section variable(s) unused in theorem `ModifiedCartan.sum_sizedLetterSubset_congr`:
+  [DecidableEq A]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq A] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [3854/3926] Replayed ModifiedCartan.KPAlphaEraseCommutator
+warning: ModifiedCartan/KPAlphaEraseCommutator.lean:10:0: automatically included section variable(s) unused in theorem `ModifiedCartan.transpositionElement_comm`:
+  [Fintype A]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype A] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [3855/3926] Replayed ModifiedCartan.KPSubsetWeights
+warning: ModifiedCartan/KPSubsetWeights.lean:51:12: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+warning: ModifiedCartan/KPSubsetWeights.lean:52:12: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+⚠ [3858/3926] Replayed ModifiedCartan.KPGaudinReduction
+warning: ModifiedCartan/KPGaudinReduction.lean:20:0: automatically included section variable(s) unused in theorem `ModifiedCartan.kpGaudin_weight_cancel`:
+  [Fintype A]
+  [DecidableEq A]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype A] [DecidableEq A] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [3861/3926] Replayed ModifiedCartan.SpechtCharacterProjection
+warning: ModifiedCartan/SpechtCharacterProjection.lean:19:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: ModifiedCartan/SpechtCharacterProjection.lean:32:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [3880/3926] Replayed FewInflection.Gauge
+warning: FewInflection/Gauge.lean:52:4: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+warning: FewInflection/Gauge.lean:93:38: This simp argument is unused:
+  Finset.sum_mul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [matrixGauge, smul_eq_mul, Finset.mul_sum, mul_comm, mul_left_comm, mul_assoc] at hz
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: FewInflection/Gauge.lean:94:33: This simp argument is unused:
+  mul_assoc
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [matrixGauge, smul_eq_mul, Finset.sum_mul, Finset.mul_sum, mul_comm, mul_left_comm] at hz
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [3881/3926] Replayed FewInflection.ScalarWronskian
+warning: FewInflection/ScalarWronskian.lean:33:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+⚠ [3882/3926] Replayed FewInflection.CanonicalLocalGauge
+warning: FewInflection/CanonicalLocalGauge.lean:88:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [3896/3981] Replayed ModifiedCartan.SpechtRestrictionPairing
+warning: ModifiedCartan/SpechtRestrictionPairing.lean:14:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: ModifiedCartan/SpechtRestrictionPairing.lean:17:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: ModifiedCartan/SpechtRestrictionPairing.lean:22:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+⚠ [3898/3981] Replayed ModifiedCartan.SpechtRegularCompleteness
+warning: ModifiedCartan/SpechtRegularCompleteness.lean:28:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: ModifiedCartan/SpechtRegularCompleteness.lean:30:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+⚠ [3902/3981] Replayed ModifiedCartan.KPAlphaFullInduction
+warning: ModifiedCartan/KPAlphaFullInduction.lean:40:0: automatically included section variable(s) unused in theorem `ModifiedCartan.kpSubsetExtension_full`:
+  [Fintype A]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype A] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [3903/3981] Replayed ModifiedCartan.TotalTranspositionDeletion
+warning: ModifiedCartan/TotalTranspositionDeletion.lean:13:0: automatically included section variable(s) unused in theorem `ModifiedCartan.supportedPermutation_extension_swap`:
+  [Fintype A]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype A] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [3904/3981] Replayed ModifiedCartan.SpechtRestrictionMultiplicity
+warning: ModifiedCartan/SpechtRestrictionMultiplicity.lean:30:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: ModifiedCartan/SpechtRestrictionMultiplicity.lean:51:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [3905/3981] Replayed ModifiedCartan.SubsetRepresentationOperators
+warning: ModifiedCartan/SubsetRepresentationOperators.lean:12:0: automatically included section variable(s) unused in theorem `ModifiedCartan.asAlgebraHom_subsetExtension`:
+  [Fintype A]
+  [DecidableEq A]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype A] [DecidableEq A] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [3907/3981] Replayed ModifiedCartan.KPSubsetInduction
+warning: ModifiedCartan/KPSubsetInduction.lean:17:0: automatically included section variable(s) unused in theorem `ModifiedCartan.kpSubsetExtension_erase`:
+  [Fintype A]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype A] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: ModifiedCartan/KPSubsetInduction.lean:64:14: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: ModifiedCartan/KPSubsetInduction.lean:64:25: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: ModifiedCartan/KPSubsetInduction.lean:66:14: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: ModifiedCartan/KPSubsetInduction.lean:66:25: `if_neg` has been deprecated: Use `ite_eq_right` instead
+⚠ [3910/3981] Replayed ModifiedCartan.KPCoefficientGrowthPaths
+warning: ModifiedCartan/KPCoefficientGrowthPaths.lean:35:4: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [3916/3981] Replayed ModifiedCartan.SpechtIrreducibleExhaustion
+warning: ModifiedCartan/SpechtIrreducibleExhaustion.lean:19:43: `if_neg` has been deprecated: Use `ite_eq_right` instead
+⚠ [4060/4146] Replayed ModifiedCartan.LocalLogHypotheses
+warning: ModifiedCartan/LocalLogHypotheses.lean:19:2: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+⚠ [4062/4146] Replayed ModifiedCartan.SobolevLocality
+warning: ModifiedCartan/SobolevLocality.lean:46:6: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+warning: ModifiedCartan/SobolevLocality.lean:105:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [4098/4146] Replayed FewInflection.GaugeTranscendental
+warning: FewInflection/GaugeTranscendental.lean:28:31: `Polynomial.eval_finset_sum` has been deprecated: Use `Polynomial.eval_finsetSum` instead
+⚠ [4101/4202] Replayed ModifiedCartan.LogDerivativeLimit
+warning: ModifiedCartan/LogDerivativeLimit.lean:59:57: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: ModifiedCartan/LogDerivativeLimit.lean:62:36: `if_false` has been deprecated: Use `ite_false` instead
+⚠ [4109/4202] Replayed ModifiedCartan.SubharmonicLocalIntegrability
+warning: ModifiedCartan/SubharmonicLocalIntegrability.lean:56:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [4142/4202] Replayed FewInflection.ScalarGauge
+warning: FewInflection/ScalarGauge.lean:120:43: This simp argument is unused:
+  mul_comm
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [smul_eq_mul, Finset.mul_sum, mul_left_comm, mul_assoc]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: FewInflection/ScalarGauge.lean:120:68: This simp argument is unused:
+  mul_assoc
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [smul_eq_mul, Finset.mul_sum, mul_comm, mul_left_comm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: FewInflection/ScalarGauge.lean:139:43: This simp argument is unused:
+  mul_comm
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [smul_eq_mul, Finset.mul_sum, mul_left_comm, mul_assoc]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: FewInflection/ScalarGauge.lean:139:68: This simp argument is unused:
+  mul_assoc
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [smul_eq_mul, Finset.mul_sum, mul_comm, mul_left_comm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [4147/4202] Replayed FewInflection.PolynomialSpaces
+warning: FewInflection/PolynomialSpaces.lean:57:48: This simp argument is unused:
+  smul_eq_mul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Pi.zero_apply, Finset.sum_apply]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [4151/4202] Replayed FewInflection.Dilation
+info: FewInflection/Dilation.lean:118:2: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+warning: FewInflection/Dilation.lean:155:37: Variable name `ht` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _ht
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+ℹ [4152/4202] Replayed FewInflection.AffineDilation
+info: FewInflection/AffineDilation.lean:116:6: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+info: FewInflection/AffineDilation.lean:126:2: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+info: FewInflection/AffineDilation.lean:172:6: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+⚠ [4160/4202] Replayed FewInflection.PluckerBounds
+warning: FewInflection/PluckerBounds.lean:44:4: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+⚠ [4161/4202] Replayed FewInflection.PolynomialRootMinors
+warning: FewInflection/PolynomialRootMinors.lean:78:4: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+warning: FewInflection/PolynomialRootMinors.lean:73:37: This simp argument is unused:
+  add_comm
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sub_eq_add_neg, add_assoc, add_left_comm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: FewInflection/PolynomialRootMinors.lean:73:47: This simp argument is unused:
+  add_left_comm
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sub_eq_add_neg, add_assoc, add_comm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [4162/4202] Replayed FewInflection.MeasureConvergence
+warning: FewInflection/MeasureConvergence.lean:32:17: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: FewInflection/MeasureConvergence.lean:53:17: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: FewInflection/MeasureConvergence.lean:249:10: `ofReal_norm_eq_enorm` has been deprecated: Use `ofReal_norm` instead
+⚠ [4175/4202] Replayed FewInflection.Nevanlinna.PoissonKernelBounds
+warning: FewInflection/Nevanlinna/PoissonKernelBounds.lean:268:12: This simp argument is unused:
+  norm_div
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [norm_mul, Complex.norm_natCast, div_eq_mul_inv, mul_assoc]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: FewInflection/Nevanlinna/PoissonKernelBounds.lean:268:22: This simp argument is unused:
+  norm_mul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [norm_div, Complex.norm_natCast, div_eq_mul_inv, mul_assoc]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: FewInflection/Nevanlinna/PoissonKernelBounds.lean:268:32: This simp argument is unused:
+  Complex.norm_natCast
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [norm_div, norm_mul, div_eq_mul_inv, mul_assoc]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: FewInflection/Nevanlinna/PoissonKernelBounds.lean:322:22: This simp argument is unused:
+  norm_mul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Complex.norm_intCast, Real.norm_eq_abs]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: FewInflection/Nevanlinna/PoissonKernelBounds.lean:322:54: This simp argument is unused:
+  Real.norm_eq_abs
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [norm_mul, Complex.norm_intCast]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: FewInflection/Nevanlinna/PoissonKernelBounds.lean:364:18: This simp argument is unused:
+  norm_mul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [norm_div, norm_pow, Complex.norm_natCast, div_eq_mul_inv, mul_assoc, mul_left_comm, mul_comm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: FewInflection/Nevanlinna/PoissonKernelBounds.lean:364:28: This simp argument is unused:
+  norm_div
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [norm_mul, norm_pow, Complex.norm_natCast, div_eq_mul_inv, mul_assoc, mul_left_comm, mul_comm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: FewInflection/Nevanlinna/PoissonKernelBounds.lean:364:48: This simp argument is unused:
+  Complex.norm_natCast
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [norm_mul, norm_div, norm_pow, div_eq_mul_inv, mul_assoc, mul_left_comm, mul_comm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [4188/4202] Replayed FewInflection.Nevanlinna.PoissonLogFactor
+warning: FewInflection/Nevanlinna/PoissonLogFactor.lean:48:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [4196/4202] Replayed FewInflection.Nevanlinna.AbsoluteDivisorCount
+warning: FewInflection/Nevanlinna/AbsoluteDivisorCount.lean:172:18: `if_pos` has been deprecated: Use `ite_eq_left` instead
+⚠ [4197/4202] Replayed FewInflection.Nevanlinna.CharacteristicMassBound
+warning: FewInflection/Nevanlinna/CharacteristicMassBound.lean:117:51: Variable name `hR` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hR
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: FewInflection/Nevanlinna/CharacteristicMassBound.lean:187:39: This simp argument is unused:
+  dist_comm
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Metric.mem_ball, dist_eq_norm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [4199/4207] Replayed FewInflection.Nevanlinna.PoissonHigherDerivative
+warning: FewInflection/Nevanlinna/PoissonHigherDerivative.lean:54:6: Try this: intro a z hz
+ℹ [4200/4207] Replayed FewInflection.ExplicitExamples
+info: FewInflection/ExplicitExamples.lean:393:2: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+⚠ [4202/4207] Replayed FewInflection.ExplicitExponentialFamily
+warning: FewInflection/ExplicitExponentialFamily.lean:57:39: This simp argument is unused:
+  mul_left_comm
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [exponentialRate, mul_comm, mul_assoc]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: FewInflection/ExplicitExponentialFamily.lean:57:54: This simp argument is unused:
+  mul_assoc
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [exponentialRate, mul_comm, mul_left_comm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: FewInflection/ExplicitExponentialFamily.lean:159:39: This simp argument is unused:
+  Curve.vector
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [exponentialFamilyCurve, exponentialFamily, Complex.norm_exp]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+info: FewInflection/ExplicitExponentialFamily.lean:240:4: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+✔ [4204/4207] Built ModifiedCartan.EigenblockBasis (12s)
+⚠ [4205/4207] Built ModifiedCartan.SpechtCornerDirectSum (12s)
+warning: ModifiedCartan/SpechtCornerDirectSum.lean:22:0: automatically included section variable(s) unused in theorem `ModifiedCartan.spechtCorner_finrank_sum`:
+  [DecidableEq A]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq A] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+✔ [4206/4207] Built ModifiedCartan (12s)
+Build completed successfully (4207 jobs).

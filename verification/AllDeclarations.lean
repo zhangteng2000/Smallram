@@ -1,0 +1,994 @@
+import ModifiedCartan
+import Lean.Util.CollectAxioms
+
+set_option maxHeartbeats 0 in
+open Lean Elab Command in
+run_cmd do
+  let env ← getEnv
+  let allowed : Array Name := #[``Classical.choice, ``propext, ``Quot.sound]
+  let mut count : Nat := 0
+  let mut proofs : Nat := 0
+  let mut pending : Array Name := #[]
+  for idx in [:env.header.moduleNames.size] do
+    let modName := env.header.moduleNames[idx]!
+    unless (`FewInflection).isPrefixOf modName || (`ModifiedCartan).isPrefixOf modName do
+      continue
+    let modData := env.header.moduleData[idx]!
+    for idx in [:modData.constNames.size] do
+      count := count + 1
+      if modData.constants[idx]!.isTheorem then proofs := proofs + 1
+      pending := pending.push modData.constNames[idx]!
+  if proofs == 0 then throwError "No project proofs were audited"
+  -- Same dependency edges as Lean.Util.CollectAxioms, shared across all roots.
+  let mut seen : NameSet := {}
+  let mut used : NameSet := {}
+  while !pending.isEmpty do
+    let name := pending.back!
+    pending := pending.pop
+    if seen.contains name then continue
+    seen := seen.insert name
+    let some info := env.checked.get.find? name
+      | throwError "Missing kernel declaration: {name}"
+    pending := pending ++ info.type.getUsedConstants
+    match info with
+    | .axiomInfo _ =>
+      unless allowed.contains name do
+        throwError "Forbidden logical dependency: {name}"
+      used := used.insert name
+    | .defnInfo v => pending := pending ++ v.value.getUsedConstants
+    | .thmInfo v => pending := pending ++ v.value.getUsedConstants
+    | .opaqueInfo v => pending := pending ++ v.value.getUsedConstants
+    | .inductInfo v => pending := pending ++ v.ctors.toArray
+    | _ => pure ()
+  logInfo m!"AUDIT PASSED: {count} declarations, including {proofs} theorem declarations."
+  logInfo m!"Actual logical dependencies: {used.toArray}."
+
+#print axioms FewInflection.fundamental_last_coefficient_eq_neg_deriv_div
+#print axioms FewInflection.exists_canonical_gauge
+#print axioms FewInflection.quotient_characteristic_le_curve
+#print axioms ModifiedCartan.characteristic_abs_sub_le
+#print axioms ModifiedCartan.Paper.eq_zerojensen
+#print axioms ModifiedCartan.Paper.eq_countbound
+#print axioms ModifiedCartan.Paper.eq_quotientbound
+#print axioms ModifiedCartan.Paper.eq_zero_count_definition
+#print axioms ModifiedCartan.ramification_eq_integralZeroCounting
+#print axioms ModifiedCartan.characteristic_nonneg
+#print axioms ModifiedCartan.Paper.lem_fundamental_operator
+#print axioms ModifiedCartan.canonical_gauge_coefficients_independent
+#print axioms ModifiedCartan.canonicalCoefficient_eq_normalized
+#print axioms ModifiedCartan.meromorphicAt_canonicalCoefficient
+#print axioms ModifiedCartan.canonicalCoefficient_last_eq_zero
+#print axioms ModifiedCartan.canonicalCoefficient_scalar_mul
+#print axioms ModifiedCartan.canonicalCoefficient_matrix
+#print axioms ModifiedCartan.Paper.eq_scalecoeff
+#print axioms ModifiedCartan.Paper.lem_canonical_gauge
+#print axioms ModifiedCartan.curve_wronskian_nontrivial
+#print axioms ModifiedCartan.linear_relation_of_wronskian_eq_zero
+#print axioms ModifiedCartan.LocalLpConvergence.inMeasure
+#print axioms ModifiedCartan.LocalLpConvergence.compactlySupported_test_integral
+#print axioms ModifiedCartan.memLp_cauchyKernel_on_compact
+#print axioms ModifiedCartan.integral_norm_neg_rpow_tendsto_zero
+#print axioms ModifiedCartan.integrableOn_log_norm_on_compact
+#print axioms ModifiedCartan.memLp_logKernel_on_compact
+#print axioms ModifiedCartan.integral_shifted_norm_neg_rpow_exact
+#print axioms ModifiedCartan.eLpNorm_sum_nearCauchyKernel_le
+#print axioms ModifiedCartan.uniform_cauchy_truncation
+#print axioms ModifiedCartan.LocalMeasureConvergence.exists_seq_tendsto_ae
+#print axioms ModifiedCartan.LocalLpConvergence.exists_seq_tendsto_ae
+#print axioms ModifiedCartan.memLp_logDeriv_on_compact
+#print axioms ModifiedCartan.memLp_log_norm_on_compact
+#print axioms ModifiedCartan.eLpNorm_integral_finite_le
+#print axioms ModifiedCartan.eLpNorm_integral_nearCauchyKernel_le
+#print axioms ModifiedCartan.ae_integrable_nearCauchyKernel
+#print axioms ModifiedCartan.uniform_cauchy_truncation_measures
+#print axioms ModifiedCartan.ae_integrable_cauchyKernel
+#print axioms ModifiedCartan.eLpNorm_cauchyTransform_sub_regularized_le
+#print axioms ModifiedCartan.memLp_cauchyTransform_on_compact
+#print axioms ModifiedCartan.cauchyTransform_tendsto_eLpNorm
+#print axioms ModifiedCartan.cauchyTransform_localLpConvergence
+#print axioms ModifiedCartan.eLpNorm_cappedLogPotential_sub_regularized_le
+#print axioms ModifiedCartan.memLp_cappedLogPotential_on_compact
+#print axioms ModifiedCartan.ae_mem_closed_of_weak_tendsto
+#print axioms ModifiedCartan.logPotential_localL1Convergence
+#print axioms ModifiedCartan.integral_logKernel_mul_fderiv_one
+#print axioms ModifiedCartan.integral_logKernel_mul_fderiv_I
+#print axioms ModifiedCartan.integrable_prod_logKernel_mul_test
+#print axioms ModifiedCartan.integrable_prod_test_smul_cauchyKernel
+#print axioms ModifiedCartan.integral_logPotential_mul_fderiv_one
+#print axioms ModifiedCartan.integral_logPotential_mul_fderiv_I
+#print axioms ModifiedCartan.memLp_logPotential_of_pos
+#print axioms ModifiedCartan.logPotential_hasWeakComplexGradient
+#print axioms ModifiedCartan.logPotential_memW1pLoc
+#print axioms ModifiedCartan.HasWeakComplexGradient.of_localL1_limit
+#print axioms ModifiedCartan.integral_logGradientPair
+#print axioms ModifiedCartan.integral_logKernel_mul_laplacian
+#print axioms ModifiedCartan.integral_logPotential_mul_laplacian
+#print axioms ModifiedCartan.integral_harmonic_mul_laplacian_test
+#print axioms ModifiedCartan.LocalLpConvergence.laplacian_test_integral
+#print axioms ModifiedCartan.integral_logNorm_mul_laplacian_eq_divisor
+#print axioms ModifiedCartan.integral_logNorm_mul_laplacian_on_ball
+#print axioms ModifiedCartan.logNorm_eq_logPotential_add_harmonic_on_ball
+#print axioms ModifiedCartan.exists_smooth_disk_cutoff
+#print axioms ModifiedCartan.localizedZeroMeasure_mass_eq
+#print axioms ModifiedCartan.LocalLpConvergence.localizedZeroMeasure_mass_tendsto
+#print axioms ModifiedCartan.LocalLpConvergence.localizedZeroMeasure_mass_bounded
+#print axioms ModifiedCartan.finiteMeasure_tendsto_subseq_of_compact_support
+#print axioms ModifiedCartan.LocalLpConvergence.localizedZeroMeasure_tendsto_subseq
+#print axioms ModifiedCartan.LocalLpConvergence.localizedZeroMeasure_potentials_subseq
+#print axioms ModifiedCartan.logNorm_eq_localized_potential_add_harmonic
+#print axioms ModifiedCartan.integral_radial_mul_harmonic
+#print axioms ModifiedCartan.radialKernel_contDiff
+#print axioms ModifiedCartan.radialKernel_integral
+#print axioms ModifiedCartan.scalarConvolution_radialKernel_eq
+#print axioms ModifiedCartan.scalarConvolution_tendstoUniformly
+#print axioms ModifiedCartan.scalarConvolution_fderiv_tendstoUniformly
+#print axioms ModifiedCartan.scalarConvolution_laplacian_tendsto
+#print axioms ModifiedCartan.LocalLpConvergence.sub
+#print axioms ModifiedCartan.LocalLpConvergence.congr_ae
+#print axioms ModifiedCartan.LocalLpConvergence.integral_norm_sub_tendsto_zero
+#print axioms ModifiedCartan.LocalLpConvergence.harmonic_representative_on_interior
+#print axioms ModifiedCartan.LocalLpConvergence.harmonic_representative_on_ball
+#print axioms ModifiedCartan.LocalLpConvergence.log_limit_representation_on_ball
+#print axioms ModifiedCartan.LocalLpConvergence.exists_log_potential_harmonic_on_ball
+#print axioms ModifiedCartan.contDiff_hasWeakComplexGradient
+#print axioms ModifiedCartan.MemW1pLoc.congr_ae
+#print axioms ModifiedCartan.HasWeakComplexGradient.add
+#print axioms ModifiedCartan.LocalLpConvergence.log_limit_memW1pLoc_on_ball
+#print axioms ModifiedCartan.HasWeakComplexGradient.unique
+#print axioms ModifiedCartan.scalarConvolution_iteratedFDeriv_tendstoUniformly
+#print axioms ModifiedCartan.LocalLpConvergence.harmonic_representative_all_derivatives_on_ball
+#print axioms ModifiedCartan.LocalLpConvergence.log_limit_locally_memW1pLoc
+#print axioms ModifiedCartan.exists_finite_smooth_test_decomposition
+#print axioms ModifiedCartan.HasWeakComplexGradient.of_locally
+#print axioms ModifiedCartan.MemW1pLoc.of_locally
+#print axioms ModifiedCartan.LocalLpConvergence.log_limit_memW1pLoc
+#print axioms ModifiedCartan.LocalLpConvergence.log_limit_weak_gradient
+#print axioms ModifiedCartan.localLpConvergence_of_tendstoUniformlyOn
+#print axioms ModifiedCartan.localLpConvergence_of_subseq
+#print axioms ModifiedCartan.classicalComplexGradient_log_norm
+#print axioms ModifiedCartan.contDiffOn_hasWeakComplexGradient
+#print axioms ModifiedCartan.HasWeakComplexGradient.const_mul
+#print axioms ModifiedCartan.logNorm_hasWeakComplexGradient
+#print axioms ModifiedCartan.harmonicGradient_localLpConvergence
+#print axioms ModifiedCartan.localLpConvergence_of_locally
+#print axioms ModifiedCartan.LocalLpConvergence.logDeriv_subseq_on_ball
+
+#print axioms ModifiedCartan.LocalLpConvergence.logDeriv_localLpConvergence
+#print axioms ModifiedCartan.Paper.eq_first_logderiv_limit
+
+#print axioms ModifiedCartan.tendstoInMeasure_continuous_map₂
+#print axioms ModifiedCartan.LocalMeasureConvergence.continuous_map₂
+
+#print axioms ModifiedCartan.integral_norm_weighted_poles_rpow_le
+
+#print axioms ModifiedCartan.harmonicGradient_iteratedDeriv_tendsto
+#print axioms ModifiedCartan.iteratedDeriv_eqOn_of_ae_eq
+
+#print axioms ModifiedCartan.LocalLpConvergence.zero_fractional_mass_bounded
+#print axioms ModifiedCartan.cauchyTransform_localizedZeroMeasure
+#print axioms ModifiedCartan.iteratedDeriv_finite_cauchy_sum
+
+#print axioms ModifiedCartan.normalized_weighted_poles_tendstoInMeasure
+
+#print axioms ModifiedCartan.normalized_iterated_logDeriv_singular_ae
+#print axioms ModifiedCartan.localMeasureConvergence_of_locally
+#print axioms ModifiedCartan.uniform_diverging_scale_tendstoInMeasure
+
+#print axioms ModifiedCartan.LocalLpConvergence.higher_logDeriv_subseq_on_ball
+
+#print axioms ModifiedCartan.Paper.eq_higher_logderiv_measure
+
+#print axioms ModifiedCartan.tendstoInMeasure_finsetProd
+#print axioms ModifiedCartan.tendstoInMeasure_finsetSum
+
+#print axioms ModifiedCartan.iteratedDeriv_div_eq_partition
+#print axioms ModifiedCartan.partitionPolynomial_constant_jet
+#print axioms ModifiedCartan.normalized_iteratedDeriv_eq_partition
+
+#print axioms ModifiedCartan.LocalLpConvergence.iteratedDeriv_div_localMeasure
+#print axioms ModifiedCartan.Paper.lem_logderivlimit
+
+#print axioms ModifiedCartan.LocalERealLpConvergence.normalizedLog_nontrivial
+#print axioms ModifiedCartan.LocalERealMeasureConvergence.normalizedLog_eventually_nontrivial
+
+#print axioms ModifiedCartan.normalizedWronskian_eq_div
+#print axioms ModifiedCartan.normalizedWronskian_localMeasure
+#print axioms ModifiedCartan.tendstoInMeasure_scaled_logPlus
+#print axioms ModifiedCartan.LocalLpConvergence.real_sum_localMeasure
+
+#print axioms ModifiedCartan.wronskian_log_sum_lower_bound
+
+#print axioms ModifiedCartan.Paper.lem_sum
+
+#print axioms ModifiedCartan.Paper.eq_sandwich
+
+#print axioms ModifiedCartan.IsSubharmonicOn.ae_finite_on_ball
+#print axioms ModifiedCartan.IsSubharmonicOn.integrableOn_toReal_ball
+
+#print axioms ModifiedCartan.IsSubharmonicOn.ae_finite
+#print axioms ModifiedCartan.IsSubharmonicOn.locallyIntegrableOn_toReal
+
+#print axioms ModifiedCartan.IsSubharmonicOn.le_diskAverage
+#print axioms ModifiedCartan.IsSubharmonicOn.le_diskAverage_of_ae_eq
+
+#print axioms ModifiedCartan.Paper.lem_subharmonic_compactness_upper_bound
+#print axioms ModifiedCartan.IsSubharmonicOn.le_of_ae_le_upperSemicontinuous
+#print axioms ModifiedCartan.IsSubharmonicOn.eqOn_of_ae_eq
+
+#print axioms ModifiedCartan.IsSubharmonicOn.integral_norm_le_of_lower_anchor
+#print axioms ModifiedCartan.IsSubharmonicOn.l1_bound_of_anchor_in_ball
+
+#print axioms ModifiedCartan.subharmonic_exists_subsequence_one_disk_l1_bound
+
+#print axioms ModifiedCartan.subharmonic_uniform_l1_locally_of_one_open_set
+#print axioms ModifiedCartan.subharmonic_uniform_l1_on_compacts_of_one_open_set
+
+#print axioms ModifiedCartan.subharmonic_collapse_or_l1_bounded_subsequence
+
+#print axioms ModifiedCartan.norm_diskAverage_sub_le
+#print axioms ModifiedCartan.LocalLpConvergence.diskAverage_tendstoUniformlyOn
+
+#print axioms ModifiedCartan.diskAverage_eq_scalarConvolution
+#print axioms ModifiedCartan.integral_diskAverage
+
+#print axioms ModifiedCartan.integral_mul_diskAverage
+#print axioms ModifiedCartan.norm_diskAverage_le_of_bound
+
+#print axioms ModifiedCartan.lipschitz_norm_diskAverage_twice_sub_le
+#print axioms ModifiedCartan.integral_mul_diskAverage_twice
+
+#print axioms ModifiedCartan.norm_integral_mul_diskAverage_twice_sub_le
+
+#print axioms ModifiedCartan.norm_disk_integral_sub_le
+#print axioms ModifiedCartan.diskAverage_twice_lipschitzWith
+
+#print axioms ModifiedCartan.integral_norm_diskAverage_twice_sub_le
+
+#print axioms ModifiedCartan.IsSubharmonicOn.toReal_le_diskAverage_twice
+#print axioms ModifiedCartan.exists_lipschitz_cutoff
+
+#print axioms ModifiedCartan.subharmonic_uniform_averaging_approximation_on_disk
+
+#print axioms ModifiedCartan.exists_uniformly_convergent_subsequence_of_lipschitz
+
+#print axioms ModifiedCartan.totallyBounded_range_of_uniform_approximation
+#print axioms ModifiedCartan.totallyBounded_of_cauchy_subsequences
+
+#print axioms ModifiedCartan.uniformCauchySeqOn_toL1
+
+#print axioms ModifiedCartan.totallyBounded_l1_range_diskAverage_twice
+
+#print axioms ModifiedCartan.subharmonic_l1_subsequence_on_disk
+
+#print axioms ModifiedCartan.exists_common_l1_subsequence
+#print axioms ModifiedCartan.exists_localL1_limit_of_countable_cover
+
+#print axioms ModifiedCartan.subharmonic_localL1_subsequence
+
+#print axioms ModifiedCartan.exists_compact_disk_neighborhood
+#print axioms ModifiedCartan.continuous_diskAverage
+
+#print axioms ModifiedCartan.continuousAt_diskAverage_of_locallyIntegrableOn
+
+#print axioms ModifiedCartan.ae_tendsto_diskAverage_of_locallyIntegrableOn
+#print axioms ModifiedCartan.upperSemicontinuousOn_submeanEnvelope
+#print axioms ModifiedCartan.ae_le_diskAverage_of_subharmonic_limit
+
+#print axioms ModifiedCartan.isSubharmonicOn_of_real_disk_means
+#print axioms ModifiedCartan.submeanEnvelope_ae_eq
+
+#print axioms ModifiedCartan.exists_nontrivial_subharmonic_representative_of_localL1_limit
+
+#print axioms ModifiedCartan.Paper.lem_subharmonic_compactness
+#print axioms ModifiedCartan.Paper.lem_subharmonic_compactness_upper_bound
+#print axioms ModifiedCartan.derivative_polynomialDerivativeMinor
+#print axioms ModifiedCartan.rowLen_addPartitionBox
+#print axioms ModifiedCartan.derivative_partitionPolynomialMinor
+#print axioms ModifiedCartan.partitionSize_eq_sum_rowLen
+#print axioms ModifiedCartan.strictMono_skew_iff_row_column
+#print axioms ModifiedCartan.standardSkewTableauCount_self
+#print axioms ModifiedCartan.StandardSkewTableau.firstBox_addable
+#print axioms ModifiedCartan.iterate_derivative_partitionPolynomialMinor
+#print axioms ModifiedCartan.StandardSkewTableau.initialDiagramCells_isLowerSet
+#print axioms ModifiedCartan.StandardSkewTableau.initialDiagram_succ_at_label
+#print axioms ModifiedCartan.minorGrowthBoxes_index_le_of_le
+#print axioms ModifiedCartan.minorGrowthTableau_label
+#print axioms ModifiedCartan.skewCells_card_addPartitionBox
+#print axioms ModifiedCartan.StandardSkewTableau.tailTableau_label
+#print axioms ModifiedCartan.StandardSkewTableau.prependTableau_first_label
+#print axioms ModifiedCartan.StandardSkewTableau.firstBoxEquiv
+#print axioms ModifiedCartan.StandardSkewTableau.firstAddition_eq_iff_label_zero
+#print axioms ModifiedCartan.standardSkewTableauCount_rec
+#print axioms ModifiedCartan.legalMinorRowSkewAdditionEquiv
+#print axioms ModifiedCartan.minorGrowthCount_succ
+#print axioms ModifiedCartan.minorGrowthCount_eq_standardSkewTableauCount
+#print axioms ModifiedCartan.exists_order_above_permuted_bound
+#print axioms ModifiedCartan.iterate_derivative_partitionPolynomialMinor_tableaux
+#print axioms ModifiedCartan.partitionPolynomialMinor_eq_zero_of_not_le
+#print axioms ModifiedCartan.partitionPolynomialMinor_natDegree_le
+#print axioms ModifiedCartan.partitionPolynomialMinor_top_eval_ne_zero
+#print axioms ModifiedCartan.standardSkewTableauCount_pos
+#print axioms ModifiedCartan.iterate_derivative_partitionPolynomialMinor_subpartitions
+#print axioms ModifiedCartan.partitionPolynomialMinor_translation
+#print axioms ModifiedCartan.normalizedPartitionMinor_translation
+#print axioms ModifiedCartan.partitionPolynomialMinor_basis_change
+#print axioms ModifiedCartan.polynomialWronskian_natDegree_eq_partitionSize
+#print axioms ModifiedCartan.normalizedSchubertCoordinate_eq_basis
+#print axioms ModifiedCartan.Paper.lem_plucker_translation
+#print axioms ModifiedCartan.characterWeightedOperator_commutes
+#print axioms ModifiedCartan.characterWeightedOperator_on_irreducible
+#print axioms ModifiedCartan.characterProjector_apply_intertwiner
+#print axioms ModifiedCartan.linearMap_eq_zero_of_group_simples
+#print axioms ModifiedCartan.characterProjector_fixed_on_isotypic
+#print axioms ModifiedCartan.groupSubmoduleIntertwiner
+#print axioms ModifiedCartan.groupSubmoduleRepresentationIrreducible
+#print axioms ModifiedCartan.characterProjector_range_eq_isotypic
+#print axioms ModifiedCartan.characterProjector_idempotent
+#print axioms ModifiedCartan.characterProjector_preserves_orthogonal
+#print axioms ModifiedCartan.characterProjector_eq_starProjection
+#print axioms ModifiedCartan.representationIsotypic_eq_sum_copies
+#print axioms ModifiedCartan.norm_characterWeightedOperator_expectation_le_card
+#print axioms ModifiedCartan.Paper.lem_character_projection
+#print axioms ModifiedCartan.permutation_character_expectation_bound
+#print axioms ModifiedCartan.young_column_tabloid_injective
+#print axioms ModifiedCartan.youngPolytabloid_ne_zero
+#print axioms ModifiedCartan.youngPolytabloid_column_action
+#print axioms ModifiedCartan.youngSpechtSubrepresentation_ne_bot
+#print axioms ModifiedCartan.youngTabloidRows_injective
+#print axioms ModifiedCartan.finset_nat_mem_lt_card_of_sum_eq
+#print axioms ModifiedCartan.youngColumn_assignment_mem
+#print axioms ModifiedCartan.youngTabloid_eq_column_of_injective
+#print axioms ModifiedCartan.youngColumnAlternatingOperator_mul_column
+#print axioms ModifiedCartan.youngColumnAlternatingOperator_kills_collision
+#print axioms ModifiedCartan.youngColumnAlternatingOperator_range
+#print axioms ModifiedCartan.youngTabloidRepresentation_unitary
+#print axioms ModifiedCartan.youngColumnAlternatingOperator_inner
+#print axioms ModifiedCartan.young_specht_submodule_theorem
+#print axioms ModifiedCartan.youngSpechtRepresentation_irreducible
+#print axioms ModifiedCartan.representation_irreducible_reindex
+#print axioms ModifiedCartan.spechtRepresentation_irreducible
+#print axioms ModifiedCartan.spechtRepresentation_unitary
+#print axioms ModifiedCartan.standardYoungTableau_card
+#print axioms ModifiedCartan.youngFillingPolytabloids_span
+#print axioms ModifiedCartan.youngFillingPolytabloid_column
+#print axioms ModifiedCartan.youngSortedColumnEquiv_strict
+#print axioms ModifiedCartan.youngColumnSort_standard
+#print axioms ModifiedCartan.youngColumnStandardPolytabloids_span
+#print axioms ModifiedCartan.supportedPermutation_card
+#print axioms ModifiedCartan.youngSubgroupAlternatingOperator_zero_of_odd_stabilizer
+#print axioms ModifiedCartan.youngSubsetAlternatingOperator_zero_of_row_bound
+#print axioms ModifiedCartan.garnirBelt_card
+#print axioms ModifiedCartan.garnirBelt_alternation_polytabloid_zero
+#print axioms ModifiedCartan.garnir_filling_relation
+#print axioms ModifiedCartan.garnir_filling_mem_of_mixed
+#print axioms ModifiedCartan.finset_sum_lt_of_equal_card_exchange
+#print axioms ModifiedCartan.garnir_labels_separated
+#print axioms ModifiedCartan.garnir_mixing_left_sum_lt
+#print axioms ModifiedCartan.two_block_weighted_sum_lt
+#print axioms ModifiedCartan.youngFillingWeight_garnir_lt
+#print axioms ModifiedCartan.youngStandardPolytabloids_span
+#print axioms ModifiedCartan.youngStandardTableau_tabloid_injective
+#print axioms ModifiedCartan.youngColumn_total_weighted_sum_lt
+#print axioms ModifiedCartan.youngFillingPolytabloid_nonleading_weight_lt
+#print axioms ModifiedCartan.linearIndependent_of_strict_leading_weight
+#print axioms ModifiedCartan.youngStandardPolytabloids_linearIndependent
+#print axioms ModifiedCartan.finrank_specht_eq_standardTableauCount
+#print axioms ModifiedCartan.spechtCharacter_one_eq_standardTableauCount
+#print axioms ModifiedCartan.specht_character_projection
+#print axioms ModifiedCartan.specht_character_expectation_bound
+#print axioms ModifiedCartan.partitionSize_removePartitionBox_add_one
+#print axioms ModifiedCartan.youngTableauLastBox
+#print axioms ModifiedCartan.youngTableauCornerEquiv
+#print axioms ModifiedCartan.standardTableauCount_remove_recurrence
+#print axioms ModifiedCartan.finrank_specht_remove_recurrence
+#print axioms ModifiedCartan.youngStandardPolytabloid_support_last_row
+#print axioms ModifiedCartan.youngTabloidRowCutoff
+#print axioms ModifiedCartan.youngSpechtRowFiltration
+#print axioms ModifiedCartan.youngTableauRowSpan_le_filtration
+#print axioms ModifiedCartan.youngRemovalPermutationEquiv
+#print axioms ModifiedCartan.youngTabloidInsertEquiv
+#print axioms ModifiedCartan.youngTabloidInsert_action
+#print axioms ModifiedCartan.youngTabloidDeleteLinear_kernel_cutoff
+#print axioms ModifiedCartan.youngTabloidDeleteLinear_action
+#print axioms ModifiedCartan.youngTabloidDeleteLinear_polytabloid
+#print axioms ModifiedCartan.youngSpecht_le_deletionImage
+#print axioms ModifiedCartan.youngSpechtRowFiltration_finrank_letter_independent
+#print axioms ModifiedCartan.submodule_finrank_map_add_of_kernel
+#print axioms ModifiedCartan.youngSpechtRowIncrement_sum
+#print axioms ModifiedCartan.youngDeletionImage_finrank_eq_increment
+#print axioms ModifiedCartan.youngSpechtRowIncrement_corner_lower_bound
+#print axioms ModifiedCartan.youngSpechtRowIncrement_eq_cornerDimension
+#print axioms ModifiedCartan.youngDeletionImage_eq_specht
+
+#print axioms ModifiedCartan.youngSpechtBranchingMap_surjective
+#print axioms ModifiedCartan.youngSpechtBranchingMap_action
+#print axioms ModifiedCartan.youngSpechtCornerQuotientEquiv
+
+#print axioms ModifiedCartan.youngSpechtBranchingEquiv
+#print axioms ModifiedCartan.youngSpechtCornerQuotient_character
+#print axioms ModifiedCartan.trace_eq_kernel_add_of_surjective
+#print axioms ModifiedCartan.trace_eq_submodule_add_of_surjective
+#print axioms ModifiedCartan.trace_restrict_nested
+
+#print axioms ModifiedCartan.youngSpechtRowCharacter_corner
+#print axioms ModifiedCartan.youngSpechtRowFiltration_eq_of_no_corner
+#print axioms ModifiedCartan.youngSpechtRowFiltrationRelabelEquiv
+#print axioms ModifiedCartan.youngSpechtRowFiltration_character_relabel
+#print axioms ModifiedCartan.youngSpechtRowCharacter_step
+#print axioms ModifiedCartan.youngCornerCharacterAtRow_sum
+
+#print axioms ModifiedCartan.youngSpechtCharacter_branching
+#print axioms ModifiedCartan.spechtCharacterOn_eq_young
+#print axioms ModifiedCartan.spechtCharacterOn_relabel
+
+#print axioms ModifiedCartan.youngCornerRemainingEquiv_permCongr
+#print axioms ModifiedCartan.youngSpechtCharacter_branching_remaining
+#print axioms ModifiedCartan.deleteFixedPoint_relabel
+#print axioms ModifiedCartan.spechtCharacterOn_branching
+
+#print axioms ModifiedCartan.kpAlpha_empty
+#print axioms ModifiedCartan.kpBeta_empty
+#print axioms ModifiedCartan.kpBeta_of_size_gt
+
+#print axioms ModifiedCartan.partition_eq_of_same_predecessors_two_corners
+#print axioms ModifiedCartan.unique_corners_ordered_coordinates
+#print axioms ModifiedCartan.partition_eq_of_same_predecessors
+#print axioms ModifiedCartan.spechtRepresentationOn_irreducible
+#print axioms ModifiedCartan.spechtRepresentationOn_unitary
+
+#print axioms ModifiedCartan.youngSpecht_character_of_polytabloid_scalars
+#print axioms ModifiedCartan.youngSpecht_character_single_row
+#print axioms ModifiedCartan.youngSpecht_character_single_column
+#print axioms ModifiedCartan.spechtCharacterOn_row_column_ne
+
+#print axioms ModifiedCartan.two_box_unique_corner_characters_ne
+#print axioms ModifiedCartan.partition_eq_of_predecessors_and_character
+#print axioms ModifiedCartan.spechtCharacterOn_shape_injective
+#print axioms ModifiedCartan.spechtRepresentationOn_equiv_shape
+#print axioms ModifiedCartan.spechtCharacterOn_orthogonality
+
+#print axioms ModifiedCartan.partitionCovers_iff_corner_removal
+#print axioms ModifiedCartan.partition_le_square
+#print axioms ModifiedCartan.youngAddableRow_card
+#print axioms ModifiedCartan.PartitionCovers.exists_row_addition
+#print axioms ModifiedCartan.youngSuccessor_card
+
+#print axioms ModifiedCartan.youngCornerEquivPredecessor
+#print axioms ModifiedCartan.common_inf_covers_of_upper
+#print axioms ModifiedCartan.common_sup_covers_of_lower
+#print axioms ModifiedCartan.young_lattice_differential_card
+#print axioms ModifiedCartan.finite_weighted_common_neighbors
+#print axioms ModifiedCartan.young_lattice_weighted_differential
+#print axioms ModifiedCartan.youngTableauDimension_upward
+#print axioms ModifiedCartan.sum_specht_finrank_sq_eq_card_perm
+#print axioms ModifiedCartan.characterProjector_mul_eq_zero
+#print axioms ModifiedCartan.sum_spechtProjector_regular
+#print axioms ModifiedCartan.sum_spechtProjector
+#print axioms ModifiedCartan.classWeightedOperator_on_irreducible
+#print axioms ModifiedCartan.classWeightedOperator_mul_projector
+#print axioms ModifiedCartan.specht_class_function_expansion
+#print axioms ModifiedCartan.exists_spechtRepresentationOn_equiv
+#print axioms ModifiedCartan.sum_fixedPointPermutations
+#print axioms ModifiedCartan.inducedSpechtCharacter_pairing
+#print axioms ModifiedCartan.inducedSpechtCharacter_eq_sum_covers
+#print axioms ModifiedCartan.kpAlpha_sum_erase
+#print axioms ModifiedCartan.supportedPermutation_nested_erase
+#print axioms ModifiedCartan.kpAlpha_sum_erase_subset
+#print axioms ModifiedCartan.kpBetaCoefficientPolynomial_derivative
+#print axioms ModifiedCartan.iterate_derivative_kpBetaCoefficientPolynomial
+#print axioms ModifiedCartan.kpBetaCoefficientPolynomial_natDegree_le
+#print axioms ModifiedCartan.iterate_derivative_kpBetaCoefficientPolynomial_tableaux
+#print axioms ModifiedCartan.Paper.eq_KP_translation
+#print axioms ModifiedCartan.kpBeta_mem_generated
+
+#print axioms ModifiedCartan.kpGeneratedAlgebra_shift
+#print axioms ModifiedCartan.supportedPermutation_image_conjugate
+#print axioms ModifiedCartan.kpAlpha_conjugate
+#print axioms ModifiedCartan.kpAlpha_commutes_of_stabilizes_set
+
+#print axioms ModifiedCartan.kpAlpha_commutes_permutationStar
+#print axioms ModifiedCartan.kpAlpha_erase_commutator_sum
+#print axioms ModifiedCartan.kpWeight_swap_difference
+#print axioms ModifiedCartan.sum_involution_cut
+#print axioms ModifiedCartan.kpBeta_transposition_commutator
+
+#print axioms ModifiedCartan.sum_subset_insert_with_letter
+#print axioms ModifiedCartan.kpGaudin_beta_commutator_subsets
+#print axioms ModifiedCartan.kpGaudin_commutes_kpBeta
+
+#print axioms ModifiedCartan.youngPolytabloid_swap_coefficient
+#print axioms ModifiedCartan.totalTranspositionElement_conjugate
+#print axioms ModifiedCartan.young_totalTransposition_scalar
+
+#print axioms ModifiedCartan.sum_youngPairContent
+#print axioms ModifiedCartan.youngTranspositionScalar_corner
+#print axioms ModifiedCartan.youngCorner_content_injective
+
+#print axioms ModifiedCartan.centralizer_commutative_of_cyclic
+#print axioms ModifiedCartan.hasPolynomialCyclicVector_of_power_span
+#print axioms ModifiedCartan.spechtRepresentationOn_totalTransposition_scalar
+
+#print axioms ModifiedCartan.totalTranspositionElement_delete
+#print axioms ModifiedCartan.isotypic_finrank_of_character_pairing
+#print axioms ModifiedCartan.exists_intertwiner_range_of_isotypic_finrank
+#print axioms ModifiedCartan.specht_restriction_isotypic_finrank
+#print axioms ModifiedCartan.exists_specht_restriction_embedding
+
+#print axioms ModifiedCartan.specht_corner_star_eigenvalue
+#print axioms ModifiedCartan.hasPolynomialCyclicVector_of_simple_eigenbasis
+#print axioms ModifiedCartan.exists_separating_finite_weights
+#print axioms ModifiedCartan.exists_cyclic_linearCombination_of_joint_eigenbasis
+#print axioms ModifiedCartan.eigenblockSumEquiv
+
+#print axioms ModifiedCartan.eigenblockBasis_apply
+#print axioms ModifiedCartan.spechtCornerSumEquiv
+#print axioms ModifiedCartan.spechtCornerBasis_apply
+
+#print axioms ModifiedCartan.kpSubsetExtension_jucysMurphy_erase
+#print axioms ModifiedCartan.jucysMurphy_corner_restriction
+#print axioms ModifiedCartan.jucysMurphy_corner_max
+#print axioms ModifiedCartan.lastLetterSpectrum_injective
+#print axioms ModifiedCartan.simpleJucysMurphyBasisStep
+#print axioms ModifiedCartan.simpleJucysMurphyBasisZero
+#print axioms ModifiedCartan.exists_simpleJucysMurphyBasis
+#print axioms ModifiedCartan.specht_exists_cyclic_jucysMurphy_combination
+#print axioms ModifiedCartan.cyclic_of_polynomialOrbitColumns_det_ne_zero
+#print axioms ModifiedCartan.hasPolynomialCyclicVector_toMatrix_iff
+#print axioms ModifiedCartan.eventually_hasPolynomialCyclicVector_matrix
+#print axioms ModifiedCartan.eventually_hasPolynomialCyclicVector_of_matrix_continuousAt
+#print axioms ModifiedCartan.gaudinDegenerationCoefficient_zero
+#print axioms ModifiedCartan.gaudinDegenerationDenominator_eventually_ne_zero
+#print axioms ModifiedCartan.gaudinDegenerationCoefficient_eq
+#print axioms ModifiedCartan.gaudinDeformedParameters_injective
+#print axioms ModifiedCartan.gaudinDegenerationElement_eq
+#print axioms ModifiedCartan.gaudinDegenerationCombination_matrix_continuousAt_zero
+#print axioms ModifiedCartan.specht_eventually_cyclic_gaudin_combination
+#print axioms ModifiedCartan.specht_kpBeta_deformed_eventually_commute
+#print axioms ModifiedCartan.polynomial_eq_zero_of_eventually_inverse_eval_zero
+#print axioms ModifiedCartan.kpCurveWeightPolynomial_eval
+#print axioms ModifiedCartan.kpCurveCommutatorPolynomial_eval
+#print axioms ModifiedCartan.specht_kpBeta_commute
+#print axioms ModifiedCartan.asAlgebraHom_eq_zero_of_all_specht_eq_zero
+#print axioms ModifiedCartan.eq_zero_of_all_specht_actions_zero
+#print axioms ModifiedCartan.kpBeta_commute
+#print axioms ModifiedCartan.Paper.lem_KP_correspondence_commutativity
+#print axioms ModifiedCartan.kpGeneratedAlgebra_isMulCommutative
+#print axioms ModifiedCartan.kpFullCharacterSum_action_on_specht
+#print axioms ModifiedCartan.specht_kpBeta_full_size
+#print axioms ModifiedCartan.characterWeightedOperator_isPositive
+#print axioms ModifiedCartan.kpAlpha_action_isPositive
+#print axioms ModifiedCartan.specht_sum_kpAlpha_eq_zero_of_not_le
+#print axioms ModifiedCartan.specht_kpAlpha_eq_zero_of_not_le
+#print axioms ModifiedCartan.specht_kpBeta_eq_zero_of_not_le
+#print axioms ModifiedCartan.exists_commonEigenvector
+#print axioms ModifiedCartan.specht_exists_kpJointEigenspace
+#print axioms ModifiedCartan.scalar_action_of_mem_adjoin
+#print axioms ModifiedCartan.kpJointEigenvalue_top
+#print axioms ModifiedCartan.kpJointEigenvalue_eq_zero_of_not_le
+#print axioms ModifiedCartan.kpJointEigenvector_translation
+#print axioms ModifiedCartan.kpJointValuePolynomial_bot
+#print axioms ModifiedCartan.kpJointEigenvalue_top_ne_zero
+#print axioms ModifiedCartan.scalarActionCharacter
+#print axioms ModifiedCartan.exists_kpJointCharacter
+#print axioms ModifiedCartan.kpJointEigenspace_inf_eq_bot_of_ne
+#print axioms ModifiedCartan.spechtCharacterOn_columnPartition
+#print axioms ModifiedCartan.permutation_univ_of_card_two
+#print axioms ModifiedCartan.kpAlpha_column_two_pair
+#print axioms ModifiedCartan.sum_two_subsets_containing
+#print axioms ModifiedCartan.kpWeight_pair_at_root
+#print axioms ModifiedCartan.kpBeta_column_two_at_root
+#print axioms ModifiedCartan.kpGaudin_mem_generated
+#print axioms ModifiedCartan.specht_eventually_generated_cyclic
+#print axioms ModifiedCartan.commutative_subalgebra_eq_centralizer_of_cyclic
+#print axioms ModifiedCartan.finrank_commutative_subalgebra_of_cyclic
+#print axioms ModifiedCartan.kpSpechtAlgebra_elements_commute
+#print axioms ModifiedCartan.specht_eventually_generated_centralizer
+#print axioms ModifiedCartan.specht_kpBeta_isSymmetric_of_real
+#print axioms ModifiedCartan.kpJointEigenspaces_real_iSup
+#print axioms ModifiedCartan.kpJointEigenspaces_real_isInternal
+#print axioms ModifiedCartan.signed_color_stabilizer_sum
+#print axioms ModifiedCartan.signed_fixed_coloring_sum
+#print axioms ModifiedCartan.cycleColoringEquiv
+#print axioms ModifiedCartan.fixed_coloring_sum_eq_cycle_powers
+#print axioms ModifiedCartan.scaledMonomialPolynomial_power_sum
+#print axioms ModifiedCartan.extraColorEmbedding_injective
+#print axioms ModifiedCartan.extraColorEquiv
+#print axioms ModifiedCartan.sum_injective_extra_color
+#print axioms ModifiedCartan.scaledMonomialPolynomial_add_variable
+#print axioms ModifiedCartan.finiteAlphabetShift_powerSum
+#print axioms ModifiedCartan.finiteBernstein_powerSum_factor
+#print axioms ModifiedCartan.finiteBernstein_scaledMonomial
+#print axioms ModifiedCartan.finiteBernstein_one_residue
+#print axioms ModifiedCartan.one_sub_mul_positiveGeometricSum
+#print axioms ModifiedCartan.finiteCompositionMonomialSum_eq
+#print axioms ModifiedCartan.elementary_product_mul_composition_sum
+#print axioms ModifiedCartan.laurentDerivative_residue
+#print axioms ModifiedCartan.laurentDerivative_mul
+#print axioms ModifiedCartan.laurentDerivation
+#print axioms ModifiedCartan.laurent_residue_derivative_mul_affine_product
+#print axioms ModifiedCartan.compositionMarkerSubstitution_derivative
+#print axioms ModifiedCartan.compositionMarkerResidue
+#print axioms ModifiedCartan.addMonoidAlgebra_comm_coeff
+#print axioms ModifiedCartan.laurentMarkerEquiv_coeff
+#print axioms ModifiedCartan.markerAssignmentDegree_eq_iff
+#print axioms ModifiedCartan.markerAssignmentOfEmbedding_degree
+#print axioms ModifiedCartan.markerAssignmentEquiv
+#print axioms ModifiedCartan.markerAffineProduct_coeff
+#print axioms ModifiedCartan.markerAffineProduct_squarefree_coeff
+#print axioms ModifiedCartan.markerAffineProduct_jacobian_coeff
+#print axioms ModifiedCartan.laurentMarkerEquiv_boundary
+#print axioms ModifiedCartan.compositionBoundaryResidue
+#print axioms ModifiedCartan.normalizedGeometricColor_boundary
+#print axioms ModifiedCartan.normalizedCompositionSum_residue
+#print axioms ModifiedCartan.sum_embedding_products_erase
+#print axioms ModifiedCartan.weightedCompositionLaurent_eq
+#print axioms ModifiedCartan.weightedCompositionLaurent_shifted_residue
+#print axioms ModifiedCartan.weightedCompositionLaurent_residue
+#print axioms ModifiedCartan.scaledMonomialPolynomial_map
+#print axioms ModifiedCartan.finiteBernstein_bounded_composition_residue
+#print axioms ModifiedCartan.laurent_eval₂_variable_T
+#print axioms ModifiedCartan.finiteBernsteinLaurent_T_mul
+#print axioms ModifiedCartan.finiteCompositionSeries_Bernstein_residue
+#print axioms ModifiedCartan.finiteBernsteinLaurent_powerSumFactors
+#print axioms ModifiedCartan.finiteBernsteinLaurent_strip_factors_residue
+#print axioms ModifiedCartan.finiteBernstein_factored_composition_residue
+#print axioms ModifiedCartan.zFactorLeftSet_unique
+#print axioms ModifiedCartan.isRightZFactor_iff
+#print axioms ModifiedCartan.rightZFactor_predecessor_mem
+#print axioms ModifiedCartan.zStripLength_minimal
+#print axioms ModifiedCartan.zStrip_pow_eq_iff
+#print axioms ModifiedCartan.zStripEmbedding
+#print axioms ModifiedCartan.zStripUnion_apply_iff
+#print axioms ModifiedCartan.zStripUnion_card
+#print axioms ModifiedCartan.zStripComplementPerm
+#print axioms ModifiedCartan.zStripLengths_add_complement_card
+#print axioms ModifiedCartan.zAdmissible_strip_downward
+#print axioms ModifiedCartan.zAdmissible_complement_apply_iff
+#print axioms ModifiedCartan.zAdmissible_strip_mem_iff
+#print axioms ModifiedCartan.zAdmissibleComposition_part
+#print axioms ModifiedCartan.zPrefixSet_strip_mem_iff
+#print axioms ModifiedCartan.zPrefixSet_card
+#print axioms ModifiedCartan.zPrefixSet_union_isZAdmissible
+#print axioms ModifiedCartan.zAdmissible_reconstruction
+#print axioms ModifiedCartan.zAdmissibleSupportEquiv
+#print axioms ModifiedCartan.invariantFinsetCycleEquiv
+#print axioms ModifiedCartan.blockInflation_block_step
+#print axioms ModifiedCartan.blockInflation_injective
+#print axioms ModifiedCartan.blockSuccessorEquiv
+#print axioms ModifiedCartan.zPrefixPermutation_predecessor
+#print axioms ModifiedCartan.invariantSupportedPermutation_mem
+#print axioms ModifiedCartan.zConstructedRightFactor_isRight
+#print axioms ModifiedCartan.exists_rightZFactor_iff
+#print axioms ModifiedCartan.rightZFactor_support_classification
+#print axioms ModifiedCartan.rightZFactor_endpoint_mem_Z
+#print axioms ModifiedCartan.rightZFactorEndPermutation
+#print axioms ModifiedCartan.rightZFactorEquiv
+#print axioms ModifiedCartan.invariantSubsetCycleEquiv
+#print axioms ModifiedCartan.permutationCycleUnion_card
+#print axioms ModifiedCartan.sigmaFiberPermutation_list_product
+#print axioms ModifiedCartan.sign_sigmaCongrRight
+#print axioms ModifiedCartan.blockInflation_sign
+#print axioms ModifiedCartan.blockInflationColoringEquiv
+#print axioms ModifiedCartan.blockConstant_coloring_product
+#print axioms ModifiedCartan.blockInflation_cycle_power_sums
+#print axioms ModifiedCartan.signed_blockInflation_cycle_power_sum
+#print axioms ModifiedCartan.zSupportSplitEquiv
+#print axioms ModifiedCartan.supportedPermutationRestriction_sign
+#print axioms ModifiedCartan.zConstructedRightFactor_restriction_eq
+#print axioms ModifiedCartan.zConstructedRightFactor_sign
+#print axioms ModifiedCartan.permutationFixedColoringSum_cycles
+#print axioms ModifiedCartan.permutationFixedColoringSum_conjugate
+#print axioms ModifiedCartan.permutationFixedColoringSum_sumCongr
+#print axioms ModifiedCartan.zConstructedRightFactor_fixedColoringSum
+#print axioms ModifiedCartan.signed_blockInflation_fixedColoring_sum
+#print axioms ModifiedCartan.rightZFactor_signed_coloring_sum
+#print axioms ModifiedCartan.permutationCycleFiber_sameCycle
+#print axioms ModifiedCartan.permutationCycleFiber_card
+#print axioms ModifiedCartan.transitivePermutation_sign
+#print axioms ModifiedCartan.cycleUnion_restriction_eq
+#print axioms ModifiedCartan.cycleUnion_restriction_sign
+#print axioms ModifiedCartan.permutationFixedColoringSum_sigma_transitive
+#print axioms ModifiedCartan.cycleUnion_restriction_fixedColoringSum
+#print axioms ModifiedCartan.cycleUnion_restriction_sign_twist_complex
+#print axioms ModifiedCartan.cycleUnion_signed_powerSumPolynomial
+#print axioms ModifiedCartan.sum_signed_laurent_subsets
+#print axioms ModifiedCartan.zAdmissibleCycleSupportEquiv
+#print axioms ModifiedCartan.zCycleSupport_laurentExponent
+#print axioms ModifiedCartan.zCycleSupport_sign_balance
+#print axioms ModifiedCartan.rightZFactorPolynomial_normalized
+#print axioms ModifiedCartan.rightZFactorLaurentSeries_parameters
+#print axioms ModifiedCartan.zSupportLaurentTerm_normalized
+#print axioms ModifiedCartan.zComplementLaurentProduct
+#print axioms ModifiedCartan.rightZFactorLaurentSeries_factorized
+#print axioms ModifiedCartan.finiteBernsteinLaurent_scalar_residue
+#print axioms ModifiedCartan.rightZFactorLaurentSeries_residue
+#print axioms ModifiedCartan.zFactorizationRightEquiv
+#print axioms ModifiedCartan.zFactorizationLaurentSeries_eq
+#print axioms ModifiedCartan.zFactorizationLaurentSeries_residue
+#print axioms ModifiedCartan.complementMarkerDegree_squarefree_iff
+#print axioms ModifiedCartan.supportedPowerSumQuadratic_squarefree_coeff
+#print axioms ModifiedCartan.supportedPowerSumQuadratic_eq_product
+#print axioms ModifiedCartan.supportedPowerSumQuadratic_squarefree_residue
+#print axioms ModifiedCartan.finiteSubtypeSupportEquiv
+#print axioms ModifiedCartan.supportedPermutationDataSubtypeEquiv
+#print axioms ModifiedCartan.extendSupportedPermutationData_fixedColoringSum
+#print axioms ModifiedCartan.complementMarkerDegree_eq_iff
+#print axioms ModifiedCartan.complementMarkerDegree_active_overlap
+#print axioms ModifiedCartan.ambientFactorizationRestrictionEquiv
+#print axioms ModifiedCartan.ambientFactorizationLaurentSeries_restrict
+#print axioms ModifiedCartan.ambientFactorizationLaurentSeries_residue
+#print axioms ModifiedCartan.supportedPowerSumQuadratic_union_inter_coeff
+#print axioms ModifiedCartan.supportedPowerSumQuadratic_residue
+#print axioms ModifiedCartan.kpAlpha_column_supported
+#print axioms ModifiedCartan.kpBeta_column_supported
+#print axioms ModifiedCartan.markerSquarefreeMonomial_eval₂
+#print axioms ModifiedCartan.evaluateSupportedMarkers_monomial
+#print axioms ModifiedCartan.laurentColumnWeight_coeff
+#print axioms ModifiedCartan.supportedColumnLaurentSeries_coeff
+#print axioms ModifiedCartan.classFunctionOperator_commutes
+#print axioms ModifiedCartan.classFunctionOperator_on_irreducible
+#print axioms ModifiedCartan.classFunctionOperator_mul_characterProjector
+#print axioms ModifiedCartan.classFunctionOperator_specht_expansion
+#print axioms ModifiedCartan.classFunctionOperator_regular_coeff
+#print axioms ModifiedCartan.classFunction_specht_fourier
+#print axioms ModifiedCartan.polynomial_specht_fourier
+#print axioms ModifiedCartan.finiteCyclePolynomial_conjugate
+#print axioms ModifiedCartan.finiteFrobeniusPolynomialOn_relabel
+#print axioms ModifiedCartan.finiteCyclePolynomial_frobenius
+#print axioms ModifiedCartan.subgroup_finite_sum_coefficient
+#print axioms ModifiedCartan.supportedPermutationRestriction_eq_symm
+#print axioms ModifiedCartan.supportedCycleSum_frobenius_coeff
+#print axioms ModifiedCartan.sum_sizedYoungDiagram_in_square
+#print axioms ModifiedCartan.supportedCycleSum_bounded_frobenius_coeff
+#print axioms ModifiedCartan.evaluateSupportedPowerSumSeries
+#print axioms ModifiedCartan.evaluatedPowerSumSeries_frobenius
+#print axioms ModifiedCartan.evaluateSupportedMarkers_expansion
+#print axioms ModifiedCartan.finiteBernstein_residue_evaluateMarkers
+#print axioms ModifiedCartan.supportedPowerSumQuadratic_evaluated_residue
+#print axioms ModifiedCartan.supportedPowerSumProduct_evaluated_residue
+#print axioms ModifiedCartan.sum_fixedBy_orbit_weights
+#print axioms ModifiedCartan.coloringMultiset_eq_iff_permutation
+#print axioms ModifiedCartan.coloringMultiset_surjective
+#print axioms ModifiedCartan.coloringOrbitMultiset_bijective
+#print axioms ModifiedCartan.sum_permutationFixedColoringSum
+#print axioms ModifiedCartan.finiteCyclePolynomial_average
+#print axioms ModifiedCartan.finiteFrobeniusPolynomial_single_row
+#print axioms ModifiedCartan.permutationFixedColoringSum_product
+#print axioms ModifiedCartan.polynomial_specht_kernel
+#print axioms ModifiedCartan.finiteCyclePolynomial_inv
+#print axioms ModifiedCartan.finiteCyclePolynomial_rename
+#print axioms ModifiedCartan.permutationFixedColoringSum_average
+#print axioms ModifiedCartan.finiteFrobeniusPolynomial_cauchy
+#print axioms ModifiedCartan.finitePermutationRepresentation_character
+#print axioms ModifiedCartan.coloringDegree_weight
+#print axioms ModifiedCartan.weightColoringRepresentation_character
+#print axioms ModifiedCartan.finiteCyclePolynomial_coeff_character
+#print axioms ModifiedCartan.finiteFrobeniusPolynomialOn_coeff_finrank
+#print axioms ModifiedCartan.finiteFrobeniusPolynomial_coeff_nat
+#print axioms ModifiedCartan.finiteFrobeniusPolynomial_coeff_finrank_young
+#print axioms ModifiedCartan.weightColoring_column_collision
+#print axioms ModifiedCartan.columnSignVector_collision_coeff
+#print axioms ModifiedCartan.youngSpechtIntertwiner_eq_zero_of_generator
+#print axioms ModifiedCartan.youngSpecht_weightColoring_intertwiner_zero
+#print axioms ModifiedCartan.finiteFrobeniusPolynomial_coeff_zero_of_weight_lt
+#print axioms ModifiedCartan.partitionRowDegree_injective
+#print axioms ModifiedCartan.weightColoring_minimum_degree
+#print axioms ModifiedCartan.finiteFrobeniusPolynomial_coeff_zero_of_weight_le_ne
+#print axioms ModifiedCartan.finiteFrobeniusPolynomial_isSymmetric
+#print axioms ModifiedCartan.finiteFrobeniusPolynomial_isHomogeneous
+#print axioms ModifiedCartan.finiteColorWeight_partitionFiniteDegree
+#print axioms ModifiedCartan.partitionFiniteDegree_mapDomain
+#print axioms ModifiedCartan.det_first_pivot
+#print axioms ModifiedCartan.finiteCauchyMatrix_det_mul_denominator
+#print axioms ModifiedCartan.finiteStaircaseDegree_weight_lt
+#print axioms ModifiedCartan.staircase_sub_weight_lt
+#print axioms ModifiedCartan.finiteAlternant_eq_det
+#print axioms ModifiedCartan.finiteVandermondeFrobenius_coeff_zero_of_le_ne
+#print axioms ModifiedCartan.finiteVandermondeFrobenius_diagonal_nat
+#print axioms ModifiedCartan.finiteAlternant_partition_coeff
+#print axioms ModifiedCartan.singleVariableSeries_coeff_prod
+#print axioms ModifiedCartan.geometricMvSeries_inverse
+#print axioms ModifiedCartan.finiteCauchy_inverse_det
+#print axioms ModifiedCartan.finiteCauchySeriesMatrix_coeff_det
+#print axioms ModifiedCartan.finiteCauchySeriesMatrix_det
+#print axioms ModifiedCartan.seriesHomogenization_coeff_coeff
+#print axioms ModifiedCartan.geometricPowerSeries_prod_coeff
+#print axioms ModifiedCartan.finiteCauchyCoefficientPolynomial_coeff
+#print axioms ModifiedCartan.finiteFrobeniusPolynomial_cauchy_separated
+#print axioms ModifiedCartan.homogeneous_polynomial_mul_series_coeff
+#print axioms ModifiedCartan.finiteVandermondeAlternant_isHomogeneous
+#print axioms ModifiedCartan.finiteCauchyKernelSeries_alternant_coeff
+#print axioms ModifiedCartan.finiteVandermondeAlternant_map_mul
+#print axioms ModifiedCartan.finiteAlternant_frobenius_expansion
+#print axioms ModifiedCartan.weighted_triangular_orthogonal_identity
+
+#print axioms ModifiedCartan.youngFirstColumn_color_collision
+#print axioms ModifiedCartan.finiteFrobeniusPolynomial_eq_zero_of_height
+#print axioms ModifiedCartan.frobeniusAlternantCoefficient_orthogonality
+#print axioms ModifiedCartan.frobeniusAlternantCoefficient_identity
+#print axioms ModifiedCartan.finiteFrobeniusPolynomial_mul_alternant
+#print axioms ModifiedCartan.finiteFrobeniusPolynomial_schur_determinant
+
+#print axioms ModifiedCartan.finiteFrobeniusPolynomial_rename_equiv
+#print axioms ModifiedCartan.finiteBernstein_mul_vandermonde
+#print axioms ModifiedCartan.finiteBernstein_residue_mul_vandermonde
+#print axioms ModifiedCartan.evaluatedColumnLaurentSeries_eq_sum
+#print axioms ModifiedCartan.evaluatedSupportedProduct_frobenius
+#print axioms ModifiedCartan.finiteFrobeniusBernsteinResidue_mul_vandermonde
+#print axioms ModifiedCartan.kpFrobeniusBernstein_residue
+
+#print axioms ModifiedCartan.finiteGroup_polynomial_relation_linear
+#print axioms ModifiedCartan.exists_kpJointLinearValue
+#print axioms ModifiedCartan.kpJointFrobeniusBernstein_residue
+#print axioms ModifiedCartan.kpJointAlternant_contraction
+#print axioms ModifiedCartan.polynomialWronskian_ne_zero_of_linearIndependent
+#print axioms ModifiedCartan.polynomialDifferential_subspace_finrank_le
+
+#print axioms ModifiedCartan.kpJointAlternatingPolynomial_ne_zero
+#print axioms ModifiedCartan.kpJointAlternatingPolynomial_first_contraction
+#print axioms ModifiedCartan.complexDividedPowerPolynomial_jet_zero
+#print axioms ModifiedCartan.dividedPowerPartitionMinor_eval
+#print axioms ModifiedCartan.mvDividedPowerNormalize_ne_zero
+#print axioms ModifiedCartan.mvDividedPowerNormalize_first_coeff
+
+#print axioms ModifiedCartan.finiteDividedAlternant_eq_det
+#print axioms ModifiedCartan.kpJointDividedPolynomial_ne_zero
+#print axioms ModifiedCartan.kpJointDividedPolynomial_first_contraction
+
+#print axioms ModifiedCartan.alternatingPolynomial_ext
+#print axioms ModifiedCartan.finiteDividedAlternant_translation
+#print axioms ModifiedCartan.finitePartitionDividedPolynomial_translation
+#print axioms ModifiedCartan.kpJointDividedPolynomial_translated_contraction
+
+#print axioms ModifiedCartan.finSuccEquiv_translate_factorial_coeff
+#print axioms ModifiedCartan.kpJointDividedPolynomial_differential_eq_zero
+
+#print axioms ModifiedCartan.polynomialCoefficientSpace_finrank_le
+#print axioms ModifiedCartan.kpJointCoefficientSpace_finrank_le
+#print axioms ModifiedCartan.kpJointCoefficientSpace_ne_bot
+
+#print axioms ModifiedCartan.polynomialTensorFunctional_first
+#print axioms ModifiedCartan.finitePartitionAlternatingDualForm_annihilator
+#print axioms ModifiedCartan.alternatingDual_descent
+#print axioms ModifiedCartan.kpJointCoefficientSpace_finrank_eq
+
+#print axioms ModifiedCartan.alternatingDual_eq_scalar_det
+#print axioms ModifiedCartan.kpJointDividedPolynomial_decomposable
+#print axioms ModifiedCartan.finitePartitionDividedPolynomial_representation_minor
+#print axioms ModifiedCartan.kpJointPolynomialTuple_exists
+#print axioms ModifiedCartan.kpJointPolynomialTuple_normalized
+
+#print axioms ModifiedCartan.polynomial_natDegree_eq_of_identity_jets_support
+#print axioms ModifiedCartan.polynomialSchubertFrame_exists_of_minor_support
+
+#print axioms ModifiedCartan.normalizedSchubertCoordinate_bot
+#print axioms ModifiedCartan.schubertMonicWronskian_monic
+#print axioms ModifiedCartan.kpJointWronskiFibre_exists_card_dimension
+
+#print axioms ModifiedCartan.partitionPolynomialMinor_cons_constant
+#print axioms ModifiedCartan.polynomialSchubertFrame_exists_dimension
+
+#print axioms ModifiedCartan.kpJointSchubertSpace_exists
+#print axioms ModifiedCartan.kpJointWronskiFibre_exists
+
+#print axioms ModifiedCartan.polynomialBasis_subspace_eq_of_alternant_eq
+#print axioms ModifiedCartan.polynomialSchubertSpace_eq_of_coordinates
+
+#print axioms ModifiedCartan.isClosed_commonEigenvector_parameters
+#print axioms ModifiedCartan.isClosed_kpJointProfiles
+#print axioms ModifiedCartan.kpJointEigenspace_ne_bot_of_tendsto
+
+#print axioms ModifiedCartan.polynomial_eq_zero_of_zero_on_every_fibre
+#print axioms ModifiedCartan.schubertChartSlot_card
+#print axioms ModifiedCartan.schubertChartSpace_mem
+#print axioms ModifiedCartan.polynomialSchubertSpace_exists_chart
+
+#print axioms ModifiedCartan.normalizedSchubertCoordinate_chart
+
+#print axioms ModifiedCartan.schubertWronskiCoefficientPolynomial_eval
+
+#print axioms ModifiedCartan.complex_monic_eq_prod_linear
+
+#print axioms ModifiedCartan.kpJointSchubertChart_exists
+
+#print axioms ModifiedCartan.polynomial_eq_zero_of_kpJointSchubertCharts
+
+#print axioms ModifiedCartan.commonEigenvector_iff_forall_det_eq_zero
+
+#print axioms ModifiedCartan.kpJointEigenspace_permute_ne_bot_iff
+
+#print axioms ModifiedCartan.eval₂_eq_zero_of_symmetricOrbitPolynomial
+
+#print axioms ModifiedCartan.symmetricPolynomial_exists_specialization
+
+#print axioms ModifiedCartan.kpSymmetricEquation_vanishes_on_wronskiFibre
+
+#print axioms ModifiedCartan.kpPolynomialEquation_vanishes_on_wronskiFibre
+
+#print axioms ModifiedCartan.kpJointEigenspace_chart_ne_bot_iff_finite_det
+
+#print axioms ModifiedCartan.kpEquationDeterminantPolynomial_eval₂
+
+#print axioms ModifiedCartan.kpJointEigenspace_of_schubertWronskiFibre
+
+#print axioms ModifiedCartan.kp_isCommonEigenspace_iff
+#print axioms ModifiedCartan.Paper.lem_KP_correspondence_ii
+
+#print axioms ModifiedCartan.kpAlpha_expectation_bound
+#print axioms ModifiedCartan.kpBeta_expectation_div_product
+#print axioms ModifiedCartan.schubertWronskiFibre_exists_unit_kpEigenvector_all
+#print axioms ModifiedCartan.normalizedSchubertCoordinate_div_bot
+#print axioms ModifiedCartan.schubertUniversalMinors
+#print axioms ModifiedCartan.schubertMinor_norm_le
+#print axioms ModifiedCartan.polynomialBasis_exists_strictMono_natDegree
+#print axioms ModifiedCartan.polynomialSpace_exists_schubertFrame
+#print axioms ModifiedCartan.schubertWronskiFibre_partitionSize
+#print axioms ModifiedCartan.Paper.lem_universal_minors
+#print axioms ModifiedCartan.Paper.eq_minor_es_bound
+#print axioms ModifiedCartan.columnPartition_order_cycle
+#print axioms ModifiedCartan.fundamentalCoefficients_eq_columnMinor
+#print axioms ModifiedCartan.Paper.prop_polynomialcoeff
+#print axioms ModifiedCartan.sortedReplacementOrders_partitionSize
+#print axioms ModifiedCartan.initialPolynomialBasis_jet_norm_le
+#print axioms ModifiedCartan.initialPolynomialBasis_taylorCoeff_norm_le
+#print axioms ModifiedCartan.Paper.prop_initial_basis#print axioms ModifiedCartan.polynomialBasis_existsUnique_identity_jets
+#print axioms ModifiedCartan.Paper.eq_initial_value_bound
+#print axioms ModifiedCartan.betheAlgebra_eq_adjoin_coefficients
+#print axioms ModifiedCartan.polynomialODEJetMatrix_det
+#print axioms ModifiedCartan.kpParameterEvaluation_ext_pos_real
+#print axioms ModifiedCartan.kpParameterBetheAlgebra_isMulCommutative
+#print axioms ModifiedCartan.polynomialODEJetMatrix_ofFn_adjugate_solution
+#print axioms ModifiedCartan.polynomialODEAdjugatePolynomial_map
+#print axioms ModifiedCartan.kpBetaPowerCoefficient_action
+#print axioms ModifiedCartan.kpParameterColumnPolynomial_zero
+#print axioms ModifiedCartan.kpParameterDifferentialCoefficients_leading
+#print axioms ModifiedCartan.polynomial_columnMinor_differential_identity
+#print axioms ModifiedCartan.schubert_columnValues_differential_identity
+#print axioms ModifiedCartan.PolynomialSchubertFrame.natDegree_le
+#print axioms ModifiedCartan.polynomialODE_identityJets_adjugate_solution
+#print axioms ModifiedCartan.partitionCoefficientMinor_map
+#print axioms ModifiedCartan.partitionCoefficientMinor_smul
+#print axioms ModifiedCartan.partitionCoefficientMinor_eq_eval
+#print axioms ModifiedCartan.kpParameterDifferentialCoefficients_character
+#print axioms ModifiedCartan.schubert_columnValues_adjugate_solution
+#print axioms ModifiedCartan.schubert_columnValues_adjugate_minor
+#print axioms ModifiedCartan.kpParameterODEDeterminant_eval_ne_zero
+#print axioms ModifiedCartan.kpParameterAdjugatePolynomial_character
+#print axioms ModifiedCartan.kpParameterScalarODEJetMatrix_det
+#print axioms ModifiedCartan.kpJoint_identityBasis_exists
+#print axioms ModifiedCartan.kpParameterAdjugateMinor_character
+#print axioms ModifiedCartan.kpRealJointAction_ext
+#print axioms ModifiedCartan.kpParameterAdjugateMinor_positive
+#print axioms ModifiedCartan.kpParameterAdjugateMinor_identity
+#print axioms ModifiedCartan.kpBeta_zero_mem_bethe_of_prod_ne_zero
+#print axioms ModifiedCartan.kpGeneratedAlgebra_eq_betheAlgebra
+#print axioms ModifiedCartan.Paper.lem_KP_correspondence
+
+#print axioms ModifiedCartan.integral_negativeLogNorm_sub
+#print axioms ModifiedCartan.Paper.eq_polynomial_negative_area
+#print axioms ModifiedCartan.monic_polynomial_small_value_area_le
+#print axioms ModifiedCartan.monic_polynomial_small_value_area_tendsto_zero
+
+#print axioms ModifiedCartan.norm_quotient_difference_le_of_error
+#print axioms ModifiedCartan.tendstoInMeasure_zero_of_exceptional_sets
+#print axioms ModifiedCartan.monic_quotient_comparison_inMeasure
+#print axioms ModifiedCartan.monic_quotient_comparison_localMeasure
+
+#print axioms ModifiedCartan.norm_taylorPolynomial_sub_le
+#print axioms ModifiedCartan.norm_taylor_derivative_remainder_disk
+#print axioms ModifiedCartan.exists_geometric_linear_cutoff
+#print axioms ModifiedCartan.Paper.eq_taylorerror
+
+#print axioms ModifiedCartan.norm_matrix_det_sub_le_of_entry_error
+#print axioms ModifiedCartan.norm_wronskian_sub_le_of_jet_error
+#print axioms ModifiedCartan.norm_fundamentalNumerator_le_of_jet_bound
+#print axioms ModifiedCartan.norm_fundamentalNumerator_sub_le_of_jet_error
+
+#print axioms ModifiedCartan.local_jet_exponential_margin
+#print axioms ModifiedCartan.exists_fundamentalNumerator_exponential_bound
+#print axioms ModifiedCartan.exists_polynomial_determinant_approximation
+
+#print axioms ModifiedCartan.polynomial_ne_zero_of_small_error_monic
+#print axioms ModifiedCartan.Paper.eq_wronskiapprox
+
+#print axioms ModifiedCartan.Paper.eq_cramercomparison

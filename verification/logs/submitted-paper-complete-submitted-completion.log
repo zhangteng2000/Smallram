@@ -1,0 +1,510 @@
+SUBMITTED COVERAGE PASSED: 35 labelled theorem declarations.
+ModifiedCartan.Paper.thm_A (f : ℂ → ℂ) : ModifiedCartan.ScalarTheoremATarget f
+'ModifiedCartan.Paper.thm_A' depends on axioms: [propext, Classical.choice, Quot.sound]
+ModifiedCartan.Paper.thm_main {n : ℕ} (f : ModifiedCartan.Curve n) : ModifiedCartan.MainTheoremTarget f
+'ModifiedCartan.Paper.thm_main' depends on axioms: [propext, Classical.choice, Quot.sound]
+ModifiedCartan.Paper.cor_zero_ratio {n : ℕ} (f : ModifiedCartan.Curve n) : ModifiedCartan.ZeroRatioTarget f
+'ModifiedCartan.Paper.cor_zero_ratio' depends on axioms: [propext, Classical.choice, Quot.sound]
+ModifiedCartan.Paper.lem_fundamental_operator {n : ℕ} {U : Set ℂ} (hUo : IsOpen U) (hUc : IsConnected U)
+  {g : ModifiedCartan.Index n → ℂ → ℂ} (hg : ∀ (j : ModifiedCartan.Index n), DifferentiableOn ℂ (g j) U)
+  (hW : ∃ z ∈ U, FewInflection.wronskian n g z ≠ 0) :
+  ∃ b,
+    (∀ (i : ModifiedCartan.Index n), MeromorphicOn (b i) U) ∧
+      ModifiedCartan.Annihilates U g b ∧
+        (∀ (i : ModifiedCartan.Index n), ∀ z ∈ U, FewInflection.wronskian n g z ≠ 0 → AnalyticAt ℂ (b i) z) ∧
+          (b (Fin.last n) =ᶠ[Filter.codiscreteWithin U] fun z =>
+              -deriv (fun w => FewInflection.wronskian n g w) z / FewInflection.wronskian n g z) ∧
+            ∀ (c : ModifiedCartan.Index n → ℂ → ℂ),
+              (∀ (i : ModifiedCartan.Index n), MeromorphicOn (c i) U) →
+                ModifiedCartan.Annihilates U g c → ∀ (i : ModifiedCartan.Index n), c i =ᶠ[Filter.codiscreteWithin U] b i
+'ModifiedCartan.Paper.lem_fundamental_operator' depends on axioms: [propext, Classical.choice, Quot.sound]
+ModifiedCartan.Paper.lem_canonical_gauge {n : ℕ} {Ω : Set ℂ} (hΩ : IsOpen Ω) (_hΩc : IsConnected Ω)
+  {g : ModifiedCartan.Index n → ℂ → ℂ} (hg : ∀ (j : ModifiedCartan.Index n), DifferentiableOn ℂ (g j) Ω)
+  (_hW : ∃ z ∈ Ω, FewInflection.wronskian n g z ≠ 0) :
+  (∀ (i : ModifiedCartan.Index n), MeromorphicOn (ModifiedCartan.canonicalCoefficient n g i) Ω) ∧
+    (∀ (i : ModifiedCartan.Index n),
+        AnalyticOnNhd ℂ (ModifiedCartan.canonicalCoefficient n g i) {z | z ∈ Ω ∧ FewInflection.wronskian n g z ≠ 0}) ∧
+      (∀ z ∈ Ω, ModifiedCartan.canonicalCoefficient n g (Fin.last n) z = 0) ∧
+        (∀ (U : Set ℂ),
+            IsSimplyConnected U →
+              IsOpen U →
+                U ⊆ Ω →
+                  (∀ z ∈ U, FewInflection.wronskian n g z ≠ 0) →
+                    ∃ η,
+                      AnalyticOnNhd ℂ η U ∧
+                        (∀ (z : ℂ), η z ≠ 0) ∧
+                          (∀ z ∈ U, η z ^ (n + 1) * FewInflection.wronskian n g z = 1) ∧
+                            (∀ z ∈ U, FewInflection.wronskian n (fun j w => η w * g j w) z = 1) ∧
+                              (∀ (i : ModifiedCartan.Index n),
+                                  ∀ z ∈ U,
+                                    ModifiedCartan.canonicalCoefficient n g i z =
+                                      FewInflection.fundamentalCoefficients n (fun j w => η w * g j w) z i) ∧
+                                ∀ (j : ModifiedCartan.Index n),
+                                  ∀ z ∈ U,
+                                    iteratedDeriv (n + 1) (fun w => η w * g j w) z +
+                                        ∑ i,
+                                          ModifiedCartan.canonicalCoefficient n g i z *
+                                            iteratedDeriv (↑i) (fun w => η w * g j w) z =
+                                      0) ∧
+          (∀ (U : Set ℂ),
+              IsOpen U →
+                U ⊆ Ω →
+                  ∀ (η : ℂ → ℂ),
+                    AnalyticOnNhd ℂ η U →
+                      (∀ z ∈ U, η z ≠ 0) →
+                        (∀ z ∈ U, η z ^ (n + 1) * FewInflection.wronskian n g z = 1) →
+                          ∀ (i : ModifiedCartan.Index n),
+                            ∀ z ∈ U,
+                              ModifiedCartan.canonicalCoefficient n g i z =
+                                FewInflection.fundamentalCoefficients n (fun j w => η w * g j w) z i) ∧
+            (∀ (A : Matrix (ModifiedCartan.Index n) (ModifiedCartan.Index n) ℂ),
+                A.det ≠ 0 →
+                  ∀ (i : ModifiedCartan.Index n),
+                    ∀ z ∈ Ω,
+                      ModifiedCartan.canonicalCoefficient n (fun j w => ∑ k, g k w * A k j) i z =
+                        ModifiedCartan.canonicalCoefficient n g i z) ∧
+              (∀ (s : ℂ → ℂ),
+                  AnalyticOnNhd ℂ s Ω →
+                    (∀ z ∈ Ω, s z ≠ 0) →
+                      ∀ (i : ModifiedCartan.Index n),
+                        ∀ z ∈ Ω,
+                          ModifiedCartan.canonicalCoefficient n (fun j w => s w * g j w) i z =
+                            ModifiedCartan.canonicalCoefficient n g i z) ∧
+                ∀ (t : ℝ),
+                  0 < t →
+                    ∀ (i : ModifiedCartan.Index n) (z : ℂ),
+                      ↑t * z ∈ Ω →
+                        ModifiedCartan.canonicalCoefficient n (fun j w => g j (↑t * w)) i z =
+                          ↑t ^ (n + 1 - ↑i) * ModifiedCartan.canonicalCoefficient n g i (↑t * z)
+'ModifiedCartan.Paper.lem_canonical_gauge' depends on axioms: [propext, Classical.choice, Quot.sound]
+ModifiedCartan.Paper.lem_NH (k : ℕ) (_hk : 1 ≤ k) :
+  ∃ C,
+    0 < C ∧
+      ∀ (f : ℂ → ℂ) (r ρ : ℝ) (R : ENNReal),
+        0 < r →
+          r < ρ →
+            ENNReal.ofReal ρ < R →
+              MeromorphicOn f (Metric.eball 0 R) →
+                AnalyticAt ℂ f 0 →
+                  f 0 ≠ 0 →
+                    ValueDistribution.proximity (fun z => iteratedDeriv k f z / f z) ⊤ r ≤
+                      C *
+                        (1 + (ModifiedCartan.diskCharacteristic f ρ).posLog + (1 / ‖f 0‖).posLog.posLog + ρ.posLog +
+                            (1 / (ρ - r)).posLog +
+                          (1 / r).posLog)
+'ModifiedCartan.Paper.lem_NH' depends on axioms: [propext, Classical.choice, Quot.sound]
+ModifiedCartan.Paper.lem_logderivlimit {U : Set ℂ} (hU : IsOpen U) (hUc : IsPreconnected U) {f : ℕ → ℂ → ℂ} {s : ℕ → ℝ}
+  {u : ℂ → ℝ} (hu : ModifiedCartan.LocalLpConvergence 1 U (fun n z => (s n)⁻¹ * Real.log ‖f n z‖) u)
+  (hf : ∀ (n : ℕ), DifferentiableOn ℂ (f n) U) (hnonzero : ∀ (n : ℕ), ∃ b ∈ U, f n b ≠ 0)
+  (hs : Filter.Tendsto s Filter.atTop Filter.atTop) :
+  ∃ g,
+    ModifiedCartan.HasWeakComplexGradient U u g ∧
+      (∀ (p : ℝ), 1 ≤ p → p < 2 → ModifiedCartan.MemW1pLoc (ENNReal.ofReal p) U u) ∧
+        (∀ (k : ℕ),
+            1 ≤ k →
+              ModifiedCartan.LocalMeasureConvergence U (fun n z => iteratedDeriv k (f n) z / (↑(s n) ^ k * f n z))
+                fun z => g z ^ k) ∧
+          ∀ (p : ℝ),
+            1 ≤ p →
+              p < 2 →
+                ModifiedCartan.LocalLpConvergence (ENNReal.ofReal p) U (fun n z => deriv (f n) z / (↑(s n) * f n z)) g
+'ModifiedCartan.Paper.lem_logderivlimit' depends on axioms: [propext, Classical.choice, Quot.sound]
+ModifiedCartan.Paper.lem_sum {n : ℕ} {U : Set ℂ} (hU : IsOpen U) (hUc : IsPreconnected U)
+  {f : ℕ → FewInflection.Index n → ℂ → ℂ} {s : ℕ → ℝ} {v : FewInflection.Index n → ℂ → ℝ}
+  (hf : ∀ (ν : ℕ) (j : FewInflection.Index n), DifferentiableOn ℂ (f ν j) U)
+  (hs : Filter.Tendsto s Filter.atTop Filter.atTop)
+  (hv :
+    ∀ (j : FewInflection.Index n),
+      ModifiedCartan.LocalERealLpConvergence 1 U (fun ν => ModifiedCartan.normalizedExtendedLog (s ν) (f ν j)) (v j))
+  (hW :
+    ModifiedCartan.LocalERealMeasureConvergence U
+      (fun ν => ModifiedCartan.normalizedExtendedLog (s ν) (FewInflection.wronskian n (f ν))) fun x => 0) :
+  ∀ᵐ (z : ℂ) ∂MeasureTheory.volume.restrict U, 0 ≤ ∑ j, v j z
+'ModifiedCartan.Paper.lem_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+ModifiedCartan.Paper.lem_subharmonic_compactness {U : Set ℂ} (hU : IsOpen U) (hUc : IsPreconnected U) (hne : U.Nonempty)
+  {u : ℕ → ℂ → EReal} (hu : ∀ (n : ℕ), ModifiedCartan.IsSubharmonicOn U (u n))
+  (hbdd : ∀ (K : Set ℂ), IsCompact K → K ⊆ U → ∃ M, ∀ (n : ℕ), ∀ z ∈ K, u n z ≤ ↑M) :
+  ∃ ns,
+    StrictMono ns ∧
+      ((ModifiedCartan.LocalUniformlyToBot U fun n => u (ns n)) ∨
+        ∃ v,
+          ModifiedCartan.IsSubharmonicOn U v ∧
+            (∃ z ∈ U, v z ≠ ⊥) ∧
+              ∃ f,
+                (v =ᵐ[MeasureTheory.volume.restrict U] fun z => ↑(f z)) ∧
+                  ModifiedCartan.LocalERealLpConvergence 1 U (fun n => u (ns n)) f)
+'ModifiedCartan.Paper.lem_subharmonic_compactness' depends on axioms: [propext, Classical.choice, Quot.sound]
+ModifiedCartan.Paper.lem_plucker_translation {n m : ℕ} {ω : YoungDiagram} {V : Submodule ℂ (Polynomial ℂ)}
+  (hV : V ∈ ModifiedCartan.polynomialSchubertCell n m ω) (μ : YoungDiagram) (a t : ℂ) :
+  ModifiedCartan.normalizedSchubertCoordinate hV μ (a + t) =
+    ∑ ν,
+      ↑(ModifiedCartan.standardSkewTableauCount (↑ν) μ) /
+            ↑(ModifiedCartan.partitionSize ↑ν - ModifiedCartan.partitionSize μ).factorial *
+          t ^ (ModifiedCartan.partitionSize ↑ν - ModifiedCartan.partitionSize μ) *
+        ModifiedCartan.normalizedSchubertCoordinate hV (↑ν) a
+'ModifiedCartan.Paper.lem_plucker_translation' depends on axioms: [propext, Classical.choice, Quot.sound]
+ModifiedCartan.Paper.lem_KP_correspondence {M n D : ℕ} (hM : 0 < M) (τ : YoungDiagram)
+  (hτ : Fintype.card (Fin M) = ModifiedCartan.partitionSize τ) (hf : ModifiedCartan.PartitionFits n τ)
+  (hD : n + 1 + τ.rowLen 0 ≤ D) (z : Fin M → ℂ) :
+  (∀ (μ ν : YoungDiagram) (a b : ℂ),
+      ModifiedCartan.kpBeta μ z a * ModifiedCartan.kpBeta ν z b =
+        ModifiedCartan.kpBeta ν z b * ModifiedCartan.kpBeta μ z a) ∧
+    (∀ (μ : YoungDiagram) (a : ℂ), ModifiedCartan.kpBeta μ z a ∈ ModifiedCartan.kpGeneratedAlgebra z) ∧
+      ModifiedCartan.kpGeneratedAlgebra z = ModifiedCartan.betheAlgebra z ∧
+        (∀ (μ : YoungDiagram) (a t : ℂ),
+            ModifiedCartan.kpBeta μ z (a + t) =
+              ∑ ν,
+                (↑(ModifiedCartan.standardSkewTableauCount (↑ν) μ) /
+                      ↑(ModifiedCartan.partitionSize ↑ν - ModifiedCartan.partitionSize μ).factorial *
+                    t ^ (ModifiedCartan.partitionSize ↑ν - ModifiedCartan.partitionSize μ)) •
+                  ModifiedCartan.kpBeta (↑ν) z a) ∧
+          (∀ (E : Submodule ℂ ↥(ModifiedCartan.YoungSpechtModule τ)),
+              ModifiedCartan.IsCommonEigenspace (ModifiedCartan.spechtRepresentationOn τ hτ).asAlgebraHom
+                  (ModifiedCartan.kpGeneratedAlgebra z) E →
+                ∃ V,
+                  ∃ (hV : V ∈ ModifiedCartan.polynomialSchubertCell n D τ),
+                    (∀ (μ : YoungDiagram),
+                        ∀ v ∈ E,
+                          ((ModifiedCartan.spechtRepresentationOn τ hτ).asAlgebraHom (ModifiedCartan.kpBeta μ z 0)) v =
+                            ModifiedCartan.normalizedSchubertCoordinate hV μ 0 • v) ∧
+                      ModifiedCartan.schubertMonicWronskian hV = ∏ i, (Polynomial.X + Polynomial.C (z i))) ∧
+            ∀ (V : Submodule ℂ (Polynomial ℂ)) (hV : V ∈ ModifiedCartan.polynomialSchubertCell n D τ),
+              ModifiedCartan.schubertMonicWronskian hV = ∏ i, (Polynomial.X + Polynomial.C (z i)) →
+                ∃ E,
+                  ModifiedCartan.IsCommonEigenspace (ModifiedCartan.spechtRepresentationOn τ hτ).asAlgebraHom
+                      (ModifiedCartan.kpGeneratedAlgebra z) E ∧
+                    ∀ (μ : YoungDiagram),
+                      ∀ v ∈ E,
+                        ((ModifiedCartan.spechtRepresentationOn τ hτ).asAlgebraHom (ModifiedCartan.kpBeta μ z 0)) v =
+                          ModifiedCartan.normalizedSchubertCoordinate hV μ 0 • v
+'ModifiedCartan.Paper.lem_KP_correspondence' depends on axioms: [propext, Classical.choice, Quot.sound]
+ModifiedCartan.Paper.lem_character_projection.{u_1, u_2, u_3} {ι : Type u_1} {V : Type u_2} {W : Type u_3} [Fintype ι]
+  [DecidableEq ι] [AddCommGroup V] [Module ℂ V] [FiniteDimensional ℂ V] [NormedAddCommGroup W] [InnerProductSpace ℂ W]
+  [FiniteDimensional ℂ W] (ρ : Representation ℂ (Equiv.Perm ι) V) (π : Representation ℂ (Equiv.Perm ι) W)
+  [ρ.IsIrreducible] (hπ : ModifiedCartan.IsUnitaryRepresentation π) :
+  (ρ.character 1 / ↑(Fintype.card ι).factorial) • ModifiedCartan.permutationCharacterOperator ρ π =
+    ↑(ModifiedCartan.irreducibleCopiesSubmodule ρ π).starProjection
+'ModifiedCartan.Paper.lem_character_projection' depends on axioms: [propext, Classical.choice, Quot.sound]
+ModifiedCartan.Paper.lem_universal_minors {M n : ℕ} {V : Submodule ℂ (Polynomial ℂ)}
+  (b₀ : Module.Basis (Fin (n + 1)) ℂ ↥V) (roots : Fin M → ℂ)
+  (hW : normalize (FewInflection.polynomialWronskian fun j => ↑(b₀ j)) = ∏ i, (Polynomial.X - Polynomial.C (roots i))) :
+  ∃ τ,
+    ∃ (hτ : Fintype.card (Fin M) = ModifiedCartan.partitionSize τ),
+      ModifiedCartan.IsUnitaryRepresentation (ModifiedCartan.spechtRepresentationOn τ hτ) ∧
+        ∃ v,
+          ‖v‖ = 1 ∧
+            (∀ (b : Module.Basis (Fin (n + 1)) ℂ ↥V) (μ : YoungDiagram) (a : ℂ),
+                ∏ i, (a - roots i) ≠ 0 →
+                  Polynomial.eval a (ModifiedCartan.partitionPolynomialMinor μ fun j => ↑(b j)) /
+                      Polynomial.eval a (FewInflection.polynomialWronskian fun j => ↑(b j)) =
+                    ∑ I ∈ Finset.powersetCard (ModifiedCartan.partitionSize μ) Finset.univ,
+                      inner ℂ v
+                          (((ModifiedCartan.spechtRepresentationOn τ hτ).asAlgebraHom (ModifiedCartan.kpAlpha μ I)) v) /
+                        ∏ i ∈ I, (a - roots i)) ∧
+              ∀ (μ : YoungDiagram) (I : Finset (Fin M)),
+                ‖inner ℂ v
+                      (((ModifiedCartan.spechtRepresentationOn τ hτ).asAlgebraHom (ModifiedCartan.kpAlpha μ I)) v)‖ ≤
+                  ↑(ModifiedCartan.partitionSize μ).factorial
+'ModifiedCartan.Paper.lem_universal_minors' depends on axioms: [propext, Classical.choice, Quot.sound]
+ModifiedCartan.Paper.prop_polynomialcoeff {M n : ℕ} {V : Submodule ℂ (Polynomial ℂ)}
+  (b : Module.Basis (Fin (n + 1)) ℂ ↥V) (roots : Fin M → ℂ)
+  (hW : normalize (FewInflection.polynomialWronskian fun j => ↑(b j)) = ∏ i, (Polynomial.X - Polynomial.C (roots i))) :
+  ∃ γ,
+    (∀ (q : ℕ) (I : Finset (Fin M)), ‖γ q I‖ ≤ ↑q.factorial) ∧
+      ∀ (q : ℕ) (hq0 : 1 ≤ q) (hqn : q ≤ n + 1),
+        (∀ (a : ℂ),
+            ∏ i, (a - roots i) ≠ 0 →
+              FewInflection.fundamentalCoefficients n (fun j z => Polynomial.eval z ↑(b j)) a ⟨n + 1 - q, ⋯⟩ =
+                (-1) ^ q * ∑ I ∈ Finset.powersetCard q Finset.univ, γ q I / ∏ i ∈ I, (a - roots i)) ∧
+          (fun a =>
+              FewInflection.fundamentalCoefficients n (fun j z => Polynomial.eval z ↑(b j)) a
+                ⟨n + 1 - q, ⋯⟩) =ᶠ[Filter.codiscreteWithin Set.univ]
+            fun a => (-1) ^ q * ∑ I ∈ Finset.powersetCard q Finset.univ, γ q I / ∏ i ∈ I, (a - roots i)
+'ModifiedCartan.Paper.prop_polynomialcoeff' depends on axioms: [propext, Classical.choice, Quot.sound]
+ModifiedCartan.Paper.prop_initial_basis {M n : ℕ} {V : Submodule ℂ (Polynomial ℂ)} (b : Module.Basis (Fin (n + 1)) ℂ ↥V)
+  (roots : Fin M → ℂ)
+  (hW : normalize (FewInflection.polynomialWronskian fun j => ↑(b j)) = ∏ i, (Polynomial.X - Polynomial.C (roots i)))
+  (a : ℂ) (ha : ∏ i, (a - roots i) ≠ 0)
+  (hb : ∀ (i j : Fin (n + 1)), Polynomial.eval a ((⇑Polynomial.derivative)^[↑i] ↑(b j)) = if i = j then 1 else 0)
+  (j : Fin (n + 1)) (z : ℂ) :
+  ‖Polynomial.eval (a + z) ↑(b j)‖ ≤ ‖z‖ ^ ↑j / ↑(↑j).factorial * ∏ i, (1 + ‖z‖ / ‖a - roots i‖)
+'ModifiedCartan.Paper.prop_initial_basis' depends on axioms: [propext, Classical.choice, Quot.sound]
+ModifiedCartan.Paper.prop_localcompact (n : ℕ) (C : ℝ) :
+  ∃ K,
+    0 < K ∧
+      ∀ (g : ℕ → ModifiedCartan.Index n → ℂ → ℂ) (s : ℕ → ℝ) (P : ℕ → Polynomial ℂ),
+        (∀ (ν : ℕ) (j : ModifiedCartan.Index n), AnalyticOnNhd ℂ (g ν j) (Metric.ball 0 32)) →
+          Filter.Tendsto s Filter.atTop Filter.atTop →
+            (∀ (ν : ℕ), (P ν).Monic) →
+              (∀ (ν : ℕ), ∀ z ∈ Metric.ball 0 32, FewInflection.wronskian n (g ν) z = Polynomial.eval z (P ν)) →
+                (∀ (ν : ℕ),
+                    ∀ z ∈ Metric.ball 0 32, (ModifiedCartan.euclideanNorm fun j => g ν j z) ≤ Real.exp (C * s ν)) →
+                  Filter.Tendsto (fun ν => ↑(P ν).natDegree / s ν) Filter.atTop (nhds 0) →
+                    (∀ (ρ : ℕ → ℕ),
+                        StrictMono ρ →
+                          ∃ σ,
+                            StrictMono σ ∧
+                              ∃ b,
+                                ∀ (i : ModifiedCartan.Index n),
+                                  AnalyticOnNhd ℂ (b i) (Metric.ball 0 4) ∧
+                                    ModifiedCartan.LocalMeasureConvergence (Metric.ball 0 4)
+                                        (fun ν z =>
+                                          FewInflection.fundamentalCoefficients n (g (ρ (σ ν))) z i /
+                                            ↑(s (ρ (σ ν))) ^ (n + 1 - ↑i))
+                                        (b i) ∧
+                                      ∀ z ∈ Metric.ball 0 1, ‖b i z‖ ≤ K) ∧
+                      (∀ (ν : ℕ),
+                          ∀ z ∈ Metric.ball 0 32, ModifiedCartan.canonicalCoefficient n (g ν) (Fin.last n) z = 0) ∧
+                        ∀ (i : ModifiedCartan.Index n),
+                          ModifiedCartan.LocalMeasureConvergence (Metric.ball 0 4)
+                            (fun ν z =>
+                              (ModifiedCartan.canonicalCoefficient n (g ν) i z -
+                                  FewInflection.fundamentalCoefficients n (g ν) z i) /
+                                ↑(s ν) ^ (n + 1 - ↑i))
+                            fun x => 0
+'ModifiedCartan.Paper.prop_localcompact' depends on axioms: [propext, Classical.choice, Quot.sound]
+ModifiedCartan.Paper.prop_representation (n : ℕ) (C : ℝ) (_hC : 0 < C) :
+  ∃ K,
+    0 < K ∧
+      ∀ (f : ModifiedCartan.Curve n),
+        FewInflection.Curve.linearlyNonDegenerate f →
+          (∀ (j : FewInflection.Index n), f.coord j 0 ≠ 0) →
+            ∀ (t s : ℕ → ℝ),
+              Filter.Tendsto t Filter.atTop Filter.atTop →
+                Filter.Tendsto s Filter.atTop Filter.atTop →
+                  Filter.Tendsto (fun ν => Real.log (t ν) / s ν) Filter.atTop (nhds 0) →
+                    (∀ᶠ (ν : ℕ) in Filter.atTop, ModifiedCartan.characteristic f (256 * t ν) ≤ C * s ν) →
+                      Filter.Tendsto
+                          (fun ν =>
+                            ValueDistribution.logCounting (FewInflection.wronskian n f.coord) 0 (256 * t ν) / s ν)
+                          Filter.atTop (nhds 0) →
+                        ∃ H P c,
+                          (∀ᶠ (ν : ℕ) in Filter.atTop,
+                              AnalyticOnNhd ℂ (H ν) (Metric.ball 0 64) ∧
+                                (P ν).Monic ∧
+                                  (∀ (z : ℂ), Polynomial.eval z (P ν) = 0 → z ∈ Metric.ball 0 64) ∧
+                                    (∀ z ∈ Metric.ball 0 64,
+                                        FewInflection.wronskian n (ModifiedCartan.rescaledRepresentation f (t ν) (H ν))
+                                            z =
+                                          Polynomial.eval z (P ν)) ∧
+                                      (∀ z ∈ Metric.ball 0 32,
+                                          (ModifiedCartan.euclideanNorm fun j =>
+                                              ModifiedCartan.rescaledRepresentation f (t ν) (H ν) j z) ≤
+                                            Real.exp ((5 * C + 1) * s ν)) ∧
+                                        ∀ (R : ℝ),
+                                          0 < R →
+                                            R < 64 →
+                                              Real.circleAverage
+                                                  (fun z =>
+                                                    Real.log
+                                                      (ModifiedCartan.euclideanNorm fun j =>
+                                                        ModifiedCartan.rescaledRepresentation f (t ν) (H ν) j z))
+                                                  0 R =
+                                                ModifiedCartan.characteristic f (R * t ν) + c ν) ∧
+                            Filter.Tendsto (fun ν => ↑(P ν).natDegree / s ν) Filter.atTop (nhds 0) ∧
+                              (∀ (j : ModifiedCartan.Index n),
+                                  Filter.Tendsto
+                                    (fun ν => Real.log ‖ModifiedCartan.rescaledRepresentation f (t ν) (H ν) j 0‖ / s ν)
+                                    Filter.atTop (nhds 0)) ∧
+                                Filter.Tendsto (fun ν => c ν / s ν) Filter.atTop (nhds 0) ∧
+                                  ∀ (ρ : ℕ → ℕ),
+                                    StrictMono ρ →
+                                      ∃ σ,
+                                        StrictMono σ ∧
+                                          ∃ b,
+                                            ∀ (i : Fin n),
+                                              AnalyticOnNhd ℂ (b i) (Metric.ball 0 4) ∧
+                                                ModifiedCartan.LocalMeasureConvergence (Metric.ball 0 4)
+                                                    (fun ν z =>
+                                                      ↑(t (ρ (σ ν)) / s (ρ (σ ν))) ^ (n + 1 - ↑i) *
+                                                        ModifiedCartan.canonicalCoefficient n f.coord i.castSucc
+                                                          (↑(t (ρ (σ ν))) * z))
+                                                    (b i) ∧
+                                                  ∀ z ∈ Metric.ball 0 1, ‖b i z‖ ≤ K
+'ModifiedCartan.Paper.prop_representation' depends on axioms: [propext, Classical.choice, Quot.sound]
+ModifiedCartan.Paper.lem_replacement (n : ℕ) (C : ℝ) (_hC : 0 < C) :
+  ∃ A0,
+    0 < A0 ∧
+      ∀ (A : ℝ),
+        A0 ≤ A →
+          ∃ L,
+            0 < L ∧
+              ∀ (f : ModifiedCartan.Curve n),
+                FewInflection.Curve.linearlyNonDegenerate f →
+                  (∀ (j : FewInflection.Index n), f.coord j 0 ≠ 0) →
+                    ∀ (t s : ℕ → ℝ),
+                      Filter.Tendsto t Filter.atTop Filter.atTop →
+                        Filter.Tendsto s Filter.atTop Filter.atTop →
+                          Filter.Tendsto (fun ν => Real.log (t ν) / s ν) Filter.atTop (nhds 0) →
+                            (∀ᶠ (ν : ℕ) in Filter.atTop, ModifiedCartan.characteristic f (256 * t ν) ≤ C * s ν) →
+                              Filter.Tendsto
+                                  (fun ν =>
+                                    ValueDistribution.logCounting (FewInflection.wronskian n f.coord) 0 (256 * t ν) /
+                                      s ν)
+                                  Filter.atTop (nhds 0) →
+                                ∃ H p a η, ModifiedCartan.PolynomialReplacementData f t s C A L H p a η
+'ModifiedCartan.Paper.lem_replacement' depends on axioms: [propext, Classical.choice, Quot.sound]
+ModifiedCartan.Paper.lem_peaks (T : ℝ → ℝ) (hT : ∀ (r : ℝ), 0 < r → 0 < T r) (hm : MonotoneOn T (Set.Ioi 0))
+  (_hunbounded : ∀ (M : ℝ), ∃ r, 0 < r ∧ M < T r) {μ : ℝ} (hμ : 0 < μ) (hlower : ModifiedCartan.strongLowerIndex T ≤ ↑μ)
+  (hupper : ↑μ ≤ ModifiedCartan.strongUpperIndex T) :
+  ∃ r ε,
+    (∀ (n : ℕ), 0 < r n) ∧
+      Filter.Tendsto r Filter.atTop Filter.atTop ∧
+        (∀ (n : ℕ), 0 < ε n) ∧
+          StrictAnti ε ∧
+            Filter.Tendsto ε Filter.atTop (nhds 0) ∧
+              ∀ (n : ℕ) (t : ℝ), ε n ≤ t → t ≤ (ε n)⁻¹ → T (t * r n) ≤ (1 + ε n) * t ^ μ * T (r n)
+'ModifiedCartan.Paper.lem_peaks' depends on axioms: [propext, Classical.choice, Quot.sound]
+ModifiedCartan.Paper.prop_indices {n : ℕ} (f : ModifiedCartan.Curve n) (htrans : FewInflection.Curve.Transcendental f)
+  (hlin : FewInflection.Curve.linearlyNonDegenerate f) (hfinite : ModifiedCartan.FiniteLowerOrder f)
+  (hsmall : ModifiedCartan.SmallRamification f) :
+  ∃ ρ,
+    ModifiedCartan.strongLowerIndex (ModifiedCartan.characteristic f) = ↑ρ ∧
+      ModifiedCartan.lowerOrder f = ↑ρ ∧
+        ModifiedCartan.order f = ↑ρ ∧
+          ModifiedCartan.strongUpperIndex (ModifiedCartan.characteristic f) = ↑ρ ∧
+            (ρ = 0 ∨ FewInflection.AdmissibleOrder n ρ)
+'ModifiedCartan.Paper.prop_indices' depends on axioms: [propext, Classical.choice, Quot.sound]
+ModifiedCartan.Paper.lem_power_bounds (T : ℝ → ℝ) (hT : ∀ (r : ℝ), 0 < r → 0 < T r) (hmono : MonotoneOn T (Set.Ioi 0))
+  (_hunbounded : ∀ (M : ℝ), ∃ r, 0 < r ∧ M < T r) {ρ ε : ℝ} (_hρ : 0 < ρ)
+  (hlower : ModifiedCartan.strongLowerIndex T = ↑ρ) (hupper : ModifiedCartan.strongUpperIndex T = ↑ρ) (hε : 0 < ε)
+  (hερ : ε < ρ) :
+  ∃ C r0,
+    1 ≤ C ∧
+      0 < r0 ∧
+        ∀ (t r : ℝ),
+          r0 ≤ r →
+            r0 ≤ t * r →
+              C⁻¹ * min (t ^ (ρ - ε)) (t ^ (ρ + ε)) ≤ T (t * r) / T r ∧
+                T (t * r) / T r ≤ C * max (t ^ (ρ - ε)) (t ^ (ρ + ε))
+'ModifiedCartan.Paper.lem_power_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+ModifiedCartan.Paper.lem_entire_majorant {n : ℕ} {y : Fin (n + 1) → ℂ → ℂ}
+  (hy : ∀ (j : Fin (n + 1)), Differentiable ℂ (y j))
+  (horder : ∀ (j : Fin (n + 1)), ModifiedCartan.entireOrder (y j) < 1)
+  (hjets : ∀ (i j : Fin (n + 1)), iteratedDeriv (↑i) (y j) 0 = if i = j then 1 else 0) :
+  (Summable fun a => ‖a.fst‖⁻¹) ∧
+    ∀ (j : Fin (n + 1)) (z : ℂ),
+      ‖y j z‖ ≤ ‖z‖ ^ ↑j / ↑(↑j).factorial * ModifiedCartan.rootMajorantProduct (FewInflection.wronskian n y) ‖z‖
+'ModifiedCartan.Paper.lem_entire_majorant' depends on axioms: [propext, Classical.choice, Quot.sound]
+ModifiedCartan.Paper.lem_Tonelli.{u_1, u_2} {X : Type u_1} {Y : Type u_2} [MeasurableSpace X] [MeasurableSpace Y]
+  (μ : MeasureTheory.Measure X) (ν : MeasureTheory.Measure Y) [MeasureTheory.SigmaFinite μ]
+  [MeasureTheory.SigmaFinite ν] {Φ : X × Y → ENNReal} (hΦ : Measurable Φ) :
+  (Measurable fun x => ∫⁻ (y : Y), Φ (x, y) ∂ν) ∧
+    (Measurable fun y => ∫⁻ (x : X), Φ (x, y) ∂μ) ∧
+      ∫⁻ (x : X), ∫⁻ (y : Y), Φ (x, y) ∂ν ∂μ = ∫⁻ (p : X × Y), Φ p ∂μ.prod ν ∧
+        ∫⁻ (p : X × Y), Φ p ∂μ.prod ν = ∫⁻ (y : Y), ∫⁻ (x : X), Φ (x, y) ∂μ ∂ν
+'ModifiedCartan.Paper.lem_Tonelli' depends on axioms: [propext, Classical.choice, Quot.sound]
+ModifiedCartan.Paper.cor_convolution {n : ℕ} {y : Fin (n + 1) → ℂ → ℂ}
+  (hy : ∀ (j : Fin (n + 1)), Differentiable ℂ (y j))
+  (horder : ∀ (j : Fin (n + 1)), ModifiedCartan.entireOrder (y j) < 1)
+  (hjets : ∀ (i j : Fin (n + 1)), iteratedDeriv (↑i) (y j) 0 = if i = j then 1 else 0) {r : ℝ} (hr : 0 < r) :
+  MeasureTheory.IntegrableOn (fun t => ModifiedCartan.systemCounting y t / (r + t) ^ 2) (Set.Ioi 0)
+      MeasureTheory.volume ∧
+    ModifiedCartan.systemLogMaximum y r ≤
+      ↑n * r.posLog + r * ∫ (t : ℝ) in Set.Ioi 0, ModifiedCartan.systemCounting y t / (r + t) ^ 2
+'ModifiedCartan.Paper.cor_convolution' depends on axioms: [propext, Classical.choice, Quot.sound]
+ModifiedCartan.Paper.lem_envelope {H : ℝ → ℝ} {α : ℝ} (hH : ContinuousOn H (Set.Ioi 0))
+  (hn : ∀ (t : ℝ), 0 < t → 0 ≤ H t) (hm : MonotoneOn H (Set.Ioi 0)) (hp : ∀ᶠ (t : ℝ) in Filter.atTop, 0 < H t)
+  (hα : 0 < α) (hα1 : α < 1) (ho : H =o[Filter.atTop] fun t => t ^ α) :
+  MeasureTheory.IntegrableOn (ModifiedCartan.envelopeIntegrand α) (Set.Ioi 0) MeasureTheory.volume ∧
+    Filter.Tendsto ModifiedCartan.envelopeConstant (nhdsWithin 0 (Set.Ioi 0)) (nhds 1) ∧
+      ∃ r,
+        (∀ (ν : ℕ), 0 < r ν) ∧
+          Filter.Tendsto r Filter.atTop Filter.atTop ∧
+            (∀ (ν : ℕ), 0 < H (r ν)) ∧
+              ∀ (ν : ℕ),
+                MeasureTheory.IntegrableOn (fun t => H (3 * t) / (r ν + t) ^ 2) (Set.Ioi 0) MeasureTheory.volume ∧
+                  r ν * ∫ (t : ℝ) in Set.Ioi 0, H (3 * t) / (r ν + t) ^ 2 ≤ ModifiedCartan.envelopeConstant α * H (r ν)
+'ModifiedCartan.Paper.lem_envelope' depends on axioms: [propext, Classical.choice, Quot.sound]
+ModifiedCartan.Paper.lem_small_order_coordinates {n : ℕ} (f : ModifiedCartan.Curve n)
+  (hlin : FewInflection.Curve.linearlyNonDegenerate f) (horder : ModifiedCartan.order f < 1) (h0 : f.coord 0 0 ≠ 0) :
+  ∃ G,
+    Differentiable ℂ G ∧
+      (∀ (z : ℂ), f.coord 0 z = ModifiedCartan.genusZeroProduct (f.coord 0) z * Complex.exp (G z)) ∧
+        (∀ (j : ModifiedCartan.Index n),
+            ModifiedCartan.entireOrder (ModifiedCartan.gaugedCoordinates f G j) ≤ ModifiedCartan.order f) ∧
+          (∃ b, FewInflection.wronskian n (ModifiedCartan.gaugedCoordinates f G) b ≠ 0) ∧
+            ∀ (b : ℂ),
+              FewInflection.wronskian n (ModifiedCartan.gaugedCoordinates f G) b ≠ 0 →
+                (∀ (i j : ModifiedCartan.Index n),
+                    iteratedDeriv (↑i) (ModifiedCartan.normalizedCoordinates (ModifiedCartan.gaugedCoordinates f G) b j)
+                        0 =
+                      if i = j then 1 else 0) ∧
+                  (∀ (j : ModifiedCartan.Index n),
+                      ModifiedCartan.entireOrder
+                          (ModifiedCartan.normalizedCoordinates (ModifiedCartan.gaugedCoordinates f G) b j) ≤
+                        ModifiedCartan.order f) ∧
+                    (∃ C,
+                        ∀ (s : ℝ),
+                          1 ≤ s →
+                            ModifiedCartan.characteristic f s ≤
+                              ModifiedCartan.systemLogMaximum
+                                  (ModifiedCartan.normalizedCoordinates (ModifiedCartan.gaugedCoordinates f G) b)
+                                  (s + ‖b‖) +
+                                C) ∧
+                      ∃ Cb,
+                        ∀ (t : ℝ),
+                          1 ≤ t →
+                            ModifiedCartan.systemCounting
+                                (ModifiedCartan.normalizedCoordinates (ModifiedCartan.gaugedCoordinates f G) b) t ≤
+                              ModifiedCartan.ramification f (t + ‖b‖) + Cb
+'ModifiedCartan.Paper.lem_small_order_coordinates' depends on axioms: [propext, Classical.choice, Quot.sound]
+ModifiedCartan.Paper.prop_small_order {n : ℕ} (f : ModifiedCartan.Curve n) : ModifiedCartan.SmallOrderTarget f
+'ModifiedCartan.Paper.prop_small_order' depends on axioms: [propext, Classical.choice, Quot.sound]
+ModifiedCartan.Paper.prop_zero_order_ramification {n : ℕ} (f : ModifiedCartan.Curve n) :
+  ModifiedCartan.ZeroRatioTarget f
+'ModifiedCartan.Paper.prop_zero_order_ramification' depends on axioms: [propext, Classical.choice, Quot.sound]
+ModifiedCartan.Paper.lem_basis_at_point {n : ℕ} {f : ModifiedCartan.Curve n} {r : ℕ → ℝ} {ρ : ℝ}
+  (d : ModifiedCartan.ArbitraryRadiusLimitData f r ρ) (a : ℂ) (ha : a ∈ d.good_centers.centers) :
+  ∃ ns,
+    StrictMono ns ∧
+      ∃ V u v,
+        (∀ (j : ModifiedCartan.Index n),
+            ModifiedCartan.IsSubharmonicOn (Metric.ball 0 4) (u j) ∧
+              (∃ z ∈ Metric.ball 0 4, u j z ≠ ⊥) ∧
+                (u j =ᵐ[MeasureTheory.volume.restrict (Metric.ball 0 4)] fun z => ↑(v j z)) ∧
+                  ModifiedCartan.LocalERealLpConvergence 1 (Metric.ball 0 4)
+                    (fun ν =>
+                      ModifiedCartan.normalizedExtendedLog (ModifiedCartan.characteristic f (r (d.subseq (ns ν))))
+                        fun z =>
+                        Polynomial.eval z (ModifiedCartan.polynomialMatrixGauge (d.polynomial (ns ν)) (↑(V ν)) j))
+                    (v j)) ∧
+          Set.EqOn d.U (fun z => Finset.univ.sup fun j => u j z) (Metric.ball 0 4) ∧
+            (∀ᵐ (z : ℂ) ∂MeasureTheory.volume.restrict (Metric.ball 0 4), 0 ≤ ∑ j, u j z) ∧ ∑ j, u j a = 0
+'ModifiedCartan.Paper.lem_basis_at_point' depends on axioms: [propext, Classical.choice, Quot.sound]
+ModifiedCartan.Paper.lem_finite_gradient_convex {G : Set ℂ} (hG : IsOpen G) (hGc : Convex ℝ G) {u : ℂ → EReal}
+  {v : ℂ → ℝ} {g : ℂ → ℂ} (hu : ModifiedCartan.IsSubharmonicOn G u)
+  (hrep : u =ᵐ[MeasureTheory.volume.restrict G] fun z => ↑(v z)) (hg : ModifiedCartan.HasWeakComplexGradient G v g)
+  (A : Finset ℂ) (hA : ∀ᵐ (z : ℂ) ∂MeasureTheory.volume.restrict G, g z ∈ A) :
+  (∀ z ∈ G, u z = ↑(u z).toReal) ∧ ConvexOn ℝ G fun z => (u z).toReal
+'ModifiedCartan.Paper.lem_finite_gradient_convex' depends on axioms: [propext, Classical.choice, Quot.sound]
+ModifiedCartan.Paper.prop_homogeneity {n : ℕ} {f : ModifiedCartan.Curve n} {r : ℕ → ℝ} {ρ : ℝ} (hρ : 0 < ρ)
+  (d : ModifiedCartan.ArbitraryRadiusLimitData f r ρ) {t : ℝ} (ht : 0 < t) {z : ℂ} (hz : z ∈ Metric.ball 0 2)
+  (htz : ↑t * z ∈ Metric.ball 0 2) : d.U (↑t * z) = ↑(t ^ ρ) * d.U z
+'ModifiedCartan.Paper.prop_homogeneity' depends on axioms: [propext, Classical.choice, Quot.sound]
+ModifiedCartan.Paper.prop_regular_variation {n : ℕ} (f : ModifiedCartan.Curve n)
+  (htrans : FewInflection.Curve.Transcendental f) (hlin : FewInflection.Curve.linearlyNonDegenerate f)
+  (hsmall : ModifiedCartan.SmallRamification f) {ρ : ℝ} (hρ : FewInflection.AdmissibleOrder n ρ)
+  (hl : ModifiedCartan.strongLowerIndex (ModifiedCartan.characteristic f) = ↑ρ)
+  (hu : ModifiedCartan.strongUpperIndex (ModifiedCartan.characteristic f) = ↑ρ) :
+  FewInflection.RegularlyVarying (ModifiedCartan.characteristic f) ρ
+'ModifiedCartan.Paper.prop_regular_variation' depends on axioms: [propext, Classical.choice, Quot.sound]
+ModifiedCartan.Paper.lem_integrable_system {q : ℕ} (hq : 1 ≤ q) (lam : Fin q → ℂ)
+  (hlam : Function.Injective fun j => (lam j).re) (E : ℝ → Matrix (Fin q) (Fin q) ℂ) (t0 : ℝ)
+  (hE : ContinuousOn (fun t => Matrix.toEuclideanCLM (E t)) (Set.Ici t0))
+  (hEi : MeasureTheory.IntegrableOn (fun t => Matrix.toEuclideanCLM (E t)) (Set.Ici t0) MeasureTheory.volume) :
+  ∃ X,
+    (∀ (j : Fin q) (t : ℝ),
+        t0 ≤ t → HasDerivWithinAt (X j) ((Matrix.toEuclideanCLM (Matrix.diagonal lam + E t)) (X j t)) (Set.Ici t0) t) ∧
+      (∀ (t : ℝ), t0 ≤ t → LinearIndependent ℂ fun j => X j t) ∧
+        ∀ (j : Fin q),
+          Filter.Tendsto (fun t => Complex.exp (-lam j * ↑t) • X j t) Filter.atTop
+            (nhds (WithLp.toLp 2 (Pi.single j 1)))
+'ModifiedCartan.Paper.lem_integrable_system' depends on axioms: [propext, Classical.choice, Quot.sound]
+ModifiedCartan.Paper.prop_sharpness_orders (n k q : ℕ) (g : ModifiedCartan.Index n → ℂ → ℂ) :
+  ModifiedCartan.SharpnessOrdersTarget n k q g
+'ModifiedCartan.Paper.prop_sharpness_orders' depends on axioms: [propext, Classical.choice, Quot.sound]
+ModifiedCartan.Paper.prop_sharpness_zero (n : ℕ) : ModifiedCartan.SharpnessZeroTarget n
+'ModifiedCartan.Paper.prop_sharpness_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.sharpnessSystem_exists' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.Paper.thm_A_deficiency_sum' depends on axioms: [propext, Classical.choice, Quot.sound]

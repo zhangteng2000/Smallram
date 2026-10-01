@@ -1,0 +1,5786 @@
+\documentclass[12pt,letterpaper,reqno]{amsart}
+\usepackage{tikz}
+\usetikzlibrary{positioning, shapes.geometric, arrows.meta}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{bm}
+\IfFileExists{bbm.sty}{\usepackage{bbm}}{}
+\usepackage{enumitem}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{booktabs,tabularx,array}
+\usepackage{graphicx}
+\usepackage[T1]{fontenc}
+\usepackage{doi}
+\usepackage{float}
+
+\usepackage[dvipsnames]{xcolor}
+\usepackage{bookmark}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,
+citecolor=ForestGreen!65!white,
+urlcolor=BrickRed}
+\addtolength{\hoffset}{-2.00cm}
+\addtolength{\textwidth}{3.9cm}
+\addtolength{\voffset}{-1.45cm}
+\addtolength{\textheight}{2.9cm}
+\setlength{\parindent}{12pt}
+\setlength{\parskip}{0pt}
+
+\allowdisplaybreaks
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{conj}[thm]{Conjecture}
+
+\newtheorem{thmA}{Theorem}
+\renewcommand{\thethmA}{A}
+\theoremstyle{definition}
+\newtheorem{rem}[thm]{Remark}
+\newtheorem{eg}[thm]{Example}
+\numberwithin{equation}{section}
+\newcommand{\C}{\mathbb C}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\PP}{\mathbb P}
+\newcommand{\dd}{\,\mathrm d}
+\newcommand{\dA}{\,\mathrm dA}
+\newcommand{\loc}{\mathrm{loc}}
+\newcommand{\NN}{N}
+\newcommand{\TN}{T_{\mathrm N}}
+\newcommand{\mean}[2]{\mathcal M_{#1}\!\left[#2\right]}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\convmeas}{\xrightarrow{\,\mathrm{meas}\,}}
+\newcommand{\av}{\frac{1}{2\pi}\int_{-\pi}^{\pi}}
+\DeclareMathOperator{\Wr}{W}
+\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\spanop}{span}
+\DeclareMathOperator{\Ree}{Re}
+\DeclareMathOperator{\ord}{ord}
+\DeclareMathOperator{\meas}{area}
+\newcommand{\Gn}{\mathcal R_{n+1}}
+\newcommand{\fv}{\bm f}
+\newcommand{\gv}{\bm g}
+\newcommand{\pv}{\bm p}
+\newcommand{\hv}{\bm h}
+\newcommand{\yv}{\bm y}
+\newcommand{\ev}{\bm  e}
+\newcommand{\revision}[1]{\textcolor{red}{#1}}
+
+\begin{document}
+\title[Curves with few inflection points]{Holomorphic curves of finite lower order with few inflection points}
+\author[A.~Eremenko]{Alexandre Eremenko}
+
+\address{Mathematics Department, Purdue University,
+	West Lafayette, IN 47907, USA}
+\email{eremenko@purdue.edu}
+
+\author[T.~Zhang]{Teng Zhang}
+\address{School of Mathematics and Statistics, Xi'an Jiaotong University,
+Xi'an 710049, P. R. China}
+\email{teng.zhang@stu.xjtu.edu.cn}
+\date{}
+\subjclass[2020]{Primary 30D35; Secondary 30D15, 31A05, 34M05, 14M15}
+\keywords{Holomorphic curve, ramification, Wronskian, regular variation,
+Cartan-Nevanlinna theory}
+\begin{abstract}
+We prove a conjecture of the first-named author posed in 1998.
+Let $f:\C\to\mathbb P^{n}$ be a transcendental linearly non-degenerate
+holomorphic curve of finite lower order with small ramification,
+that is,
+$
+N_1(r,f)=o(T(r,f)),
+$
+where $N_1$ is the counting function of the zeros of the Wronskian and
+$T$ is the Cartan--Nevanlinna characteristic.
+Then the order and lower order of $f$ coincide, their common value belongs to
+$
+\left\{1+k/q: k\in\mathbb Z_{\ge0},\ 2\le q\le n+1\right\},
+$
+and $T(r,f)$ is regularly varying.
+
+\end{abstract}
+\maketitle
+
+\tableofcontents
+
+\section{Introduction}\label{sec:intro}
+
+We use the standard terminology and facts of Nevanlinna theory in
+one complex variable; see, for example, \cite{Hay64}. The main definitions
+will be recalled below for holomorphic curves in projective space.
+The lower order and order of a meromorphic function $f$ are defined by
+\[
+ \lambda:=\liminf_{r\to\infty}\frac{\log T(r,f)}{\log r}
+ \leq\limsup_{r\to\infty}\frac{\log T(r,f)}{\log r}=: \rho.
+\]
+Thus $0\leq\lambda\leq\rho\leq+\infty$.
+
+The simplest prototype of the results considered here is the following
+classical elementary fact. If $f$ is a transcendental entire function of
+finite lower order such that $f'(z)\ne0$ for every $z\in\C$, then
+\[
+ f(z)=\int_0^z\exp P(\zeta)\,\mathrm d\zeta+C,
+\]
+where $P$ is a nonconstant polynomial. In particular,
+$
+ \rho(f)=\lambda(f)=\deg P\geq1.
+$
+
+For meromorphic functions, the
+\revision{similar} argument is somewhat harder. If $f$ is a transcendental
+meromorphic function of finite lower order with no critical points, then
+its Schwarzian derivative is entire, and the lemma on the
+logarithmic derivative
+shows that the Schwarzian derivative is a polynomial. Consequently $f=w_1/w_0$, where
+$w_0,w_1$ are linearly independent entire solutions of
+\[
+ w''+Pw=0
+\]
+with a polynomial coefficient $P$. In the transcendental case $P\not\equiv0$.
+The asymptotic integration theory of such equations \cite{Was65} shows
+that the lower order and order coincide and are equal to
+$(\deg P+2)/2\geq1$.
+This observation is due to Frithiof Nevanlinna \cite{Nev30}, who conjectured
+that finite order together with the weaker condition
+$N_1(r)=o(T(r))$ on critical points suffices for the same conclusion about
+regularity of growth. When discussing a fixed function, we omit it from
+the notation when no confusion can arise.
+
+In what follows we assume that $f$ is transcendental.
+Recall the Second Fundamental Theorem of Nevanlinna:
+\begin{equation}\label{1}
+ \sum_{j=1}^q m(r,a_j)+N_1(r)\leq(2+o(1))T(r),\qquad r\to\infty.
+\end{equation}
+Here the $a_j$ are distinct points of $\PP^1=\C\cup\{\infty\}$,
+$m(r,a_j)$ are proximity functions, $T(r)$ is the Nevanlinna
+characteristic, and
+\[
+ N_1(r):=N(r,0,f')-N(r,f')+2N(r,f)
+\]
+is the counting function of critical points. For functions of finite order,
+\eqref{1} holds as written; in general one excludes a set of $r$'s of
+finite length.
+
+The \emph{deficiency} is defined as
+\[
+ \delta(a,f)=\liminf_{r\to\infty}\frac{m(r,a)}{T(r)}
+ =1-\limsup_{r\to\infty}\frac{N(r,a)}{T(r)}.
+\]
+The equality follows from the First Main Theorem, and
+$0\leq\delta(a,f)\leq1$. For functions of finite order, \eqref{1} gives
+the defect relation
+\begin{equation}\label{2}
+ \sum_{a\in\PP^1}\delta(a,f)
+ +\limsup_{r\to\infty}\frac{N_1(r)}{T(r)}\leq2.
+\end{equation}
+In particular, the maximal sum of deficiencies condition
+\begin{equation}\label{sum}
+ \sum_a\delta(a,f)=2
+\end{equation}
+implies F.~Nevanlinna's small-ramification condition
+\begin{equation}\label{smal}
+ N_1(r)=o(T(r)).
+\end{equation}
+
+There is a substantial literature on the consequences of \eqref{sum}
+for functions of finite order
+\cite{Pfl46,Wei69,Dra81,Ere89a,Ere89b,ES91}; for further discussion, see
+\cite{Ere93,Ere02}. The final result was proved by Drasin \cite{Dra87}.
+
+\medskip\noindent
+\textbf{Drasin's Theorem.} \emph{Let $f$ be a transcendental meromorphic
+function of finite order $\rho$ satisfying \eqref{sum}. Then:
+\begin{itemize}
+\item[(i)] $2\rho$ is an integer not less than $2$;
+\item[(ii)] $\delta(a,f)=p(a)/\rho$, where the $p(a)$ are nonnegative integers.
+\end{itemize}}
+
+Drasin's theorem also has a third conclusion, about asymptotic values,
+that is not needed
+for our discussion.
+The first-named author, in collaboration with M.~Sodin, developed an
+alternative approach to \revision{Drasin's} theorem in \cite{Ere89a,Ere89b,ES91},
+culminating in the
+following result from \cite[p.~1196]{Ere93}.
+
+A positive continuous function $\ell:(0,\infty)\to(0,\infty)$ is called
+\emph{slowly varying}, in the sense of Karamata, if
+$\ell(cr)/\ell(r)\to1$ uniformly for $c\in[1,2]$ as $r\to\infty$.
+
+\begin{thmA}\label{thm:A}
+Let $f$ be a transcendental meromorphic function
+of finite lower order $\lambda$ satisfying \eqref{smal}. Then:
+\begin{itemize}
+\item[(a)] $\rho=\lambda=m/2$, where $m\geq2$ is an integer, and
+$T(r)\sim r^\rho\ell(r)$ for a slowly varying function $\ell$;
+\item[(b)] $\delta(a,f)=p(a)/\lambda$, $a\in\PP^1$,
+where the $p(a)$ are nonnegative
+integers satisfying
+\[
+ \sum_{a\in\PP^1}p(a)=2\lambda,
+\]
+so that \eqref{sum} holds.
+\end{itemize}
+\end{thmA}
+
+Since conclusion (b) implies the hypothesis of Drasin's theorem,
+Theorem~\ref{thm:A} is both a strengthening and a generalization of that theorem.
+Its proof is based on potential theory and does not use Drasin's theorem.
+
+One remarkable consequence is that, for transcendental meromorphic functions of
+finite lower order, \eqref{sum} and \eqref{smal} are {\em equivalent}.
+This
+consequence follows from Theorem~\ref{thm:A}, no other proof of the
+implication (\ref{smal})$\rightarrow$(\ref{sum}) for functions of finite
+order
+is known.
+As we explain below, this equivalence is specific
+to the scalar case. The paper \cite{Ere93} also describes the asymptotic
+behavior of these functions in more detail.
+
+We now pass to holomorphic curves. \revision{Throughout the rest of the paper we
+assume $n\geq1$ and} denote the complex projective space of dimension $n$ by
+$\PP^n$. 
+A \emph{reduced homogeneous representation} of a curve
+$f:\C\to\PP^{n}$ is a vector
+\[
+ \fv=(f_0,\ldots,f_{n}),\qquad f=[\fv],
+\]
+of entire functions with no zeros common to all of them.
+Two reduced representations of
+the same curve differ by multiplication by a zero-free entire function.
+A curve is \emph{linearly non-degenerate} if its image is not contained in
+a hyperplane, equivalently if its coordinate functions are linearly
+independent. A curve is called \emph{rational}
+if it extends holomorphically to
+$\PP^1$; otherwise it is \emph{transcendental}. Rational curves are exactly
+those which allow homogeneous representations with all polynomial coordinates.
+
+The Cartan--Nevanlinna characteristic is
+\[
+ T(r,f)=T(r,\fv):=
+ \frac1{2\pi}\int_{-\pi}^{\pi}\log\norm{\fv(re^{it})}\,\mathrm dt
+ -\log\norm{\fv(0)},
+\]
+where $\norm{\cdot}$ is the Euclidean norm. This definition does not
+depend on the reduced representation. The order and lower order of the
+curve are defined in terms of this characteristic as in the scalar case.
+
+For a rational curve we have $T(r,f)=O(\log r)$, while for a transcendental
+one,\newline
+$T(r,f)/\log r\to\infty$, $r\to\infty$.
+
+The analog of the critical-point counting function is the counting
+function of inflection points. Following the established tradition,
+we call it the \emph{ramification term}. More precisely, let
+\[
+ W_{\fv}=W(f_0,\ldots,f_{n})
+ :=\det\bigl(f_j^{(i)}\bigr)_{0\leq i,j\le n}
+\]
+be the Wronskian of a reduced representation. If $n_1(r)$ counts its zeros
+in $|z|\leq r$, with multiplicity, then
+\[
+ \begin{split}
+ N_1(r,f)&=\int_0^r\bigl(n_1(t)-n_1(0)\bigr)\frac{\mathrm dt}{t}
+                 +n_1(0)\log r\\
+ &=\frac1{2\pi}\int_{-\pi}^{\pi}\log|W_{\fv}(re^{it})|\,\mathrm dt+c(\fv).
+ \end{split}
+\]
+This counting function is independent of the reduced representation.
+Indeed, if $\widetilde{\fv}=g\fv$ is another reduced representation,
+where $g$ is an entire function without zeros, then
+\[
+W_{\widetilde{\fv}}=g^{n+1}W_{\fv},
+\]
+so $W_{\widetilde{\fv}}$ and $W_{\fv}$ have the same divisor of zeros.
+Except in one paragraph below explicitly mentioning degenerate curves, all
+curves in this paper are assumed to be linearly non-degenerate; thus
+$W_{\fv}\not\equiv0$.
+
+Proximity functions and deficiencies are defined for hyperplanes in
+$\PP^{n}$; see \cite{Car33,Ru21}. Cartan's generalization of \eqref{2} is
+the following \cite[Theorem~7.1 and Corollary~7.4, pp.~445--446]{GH04};
+see also \cite{Car33,Ru21}:
+\begin{equation}\label{cartan}
+ \sum_{a\in A}\delta(a,f)
+ +\limsup_{r\to\infty}\frac{N_1(r,f)}{T(r,f)}\leq n+1
+\end{equation}
+for a transcendental curve of finite order. 
+Here $A$ is any set of
+hyperplanes in general position: the intersection of any \(n+1\) of them is
+empty. Such a system of hyperplanes is also called \emph{admissible}. 
+Without the
+finite-order assumption, the Second Main Theorem underlying (\ref{cartan})
+requires
+an exceptional set of finite length.
+
+The following conjecture was stated in \cite{Ere98}.
+
+\begin{conj}\label{conj:regularity}
+If a linearly non-degenerate holomorphic curve of finite lower order
+satisfies \eqref{smal}, then its order and lower order coincide and their
+common value is rational.
+\end{conj}
+
+Conclusion (b) of Theorem~\ref{thm:A} does not extend to
+target dimensions at least
+two. Examples in \cite{Ere98}
+have finite order and $N_1\equiv0$, but no
+admissible system $A$ satisfies
+\[
+ \sum_{a\in A}\delta(a,f)=n+1.
+\]
+
+If linear non-degeneracy condition is dropped, the defect relation becomes
+\[
+ \sum_{a\in A}\delta(a,f)\leq2n,
+\]
+provided the curve is nonconstant and its image is not contained in the
+union of the hyperplanes of the admissible system $A$.
+This was proved for the first time by E.~Nochka \cite{Noc83}; complete proofs
+are given in
+\cite{Voj97,Ru21}, and an alternative proof is contained in \cite{ES92}.
+In this setting, \cite{Ere98} describes the curves with maximal
+deficiency sum $2n$, in a form analogous to conclusions (a) and (b)
+of Theorem~\ref{thm:A}.
+
+We concentrate in this paper on the regularity conclusion (a).
+Our main result
+settles Conjecture~\ref{conj:regularity}. 
+
+\begin{thm}\label{thm:main}
+Let $f:\C\to\PP^{n}$ be a transcendental linearly non-degenerate
+holomorphic curve of finite lower order satisfying
+\begin{equation}\label{eq:mainhyp}
+ N_1(r,f)=o\bigl(T(r,f)\bigr).
+\end{equation}
+Then its order and lower order coincide, and their common value $\rho$
+belongs to the set
+\begin{equation}\label{ord}
+ \mathcal R_{n+1}:=\left\{1+\frac{k}{q}:\ k\in\Z_{\geq0},\
+                           q\in\Z,\ 2\leq q\leq n+1\right\}.
+\end{equation}
+Moreover,
+\begin{equation}\label{reg}
+ T(r,f)=r^\rho\ell(r),
+\end{equation}
+where $\ell$ is slowly varying. 
+\end{thm}
+
+
+The set of orders in \eqref{ord} is sharp: for every
+\(\rho\in\mathcal R_{n+1}\) there are transcendental linearly
+non-degenerate curves with \(W_{\fv}\equiv1\) and
+\[
+ T(r,\fv)\sim c r^\rho,\quad r\to\infty.
+\]
+Such curves are obtained by taking fundamental systems of solutions of
+the differential equation
+\[
+\revision{w^{(n+1)}=z^k w^{(n+1-q)}}
+\]
+as homogeneous coordinates.
+
+We also note the following corollary from the proof of Theorem~\ref{thm:A}:
+
+\begin{cor}\label{cor:zero-ratio}
+If $f:\C\to\PP^{n}$ is a transcendental linearly non-degenerate curve
+of order zero, then
+\[
+ \limsup_{r\to\infty}\frac{N_1(r,f)}{T(r,f)}\geq1.
+\]
+\end{cor}
+
+This estimate is best possible, as the example 
+$\fv=(1,z,\ldots,z^{n-1},g)$, where $g$ is an entire function of zero
+order with the property $m(r,g)\sim m(r,g^{n})$ shows.
+
+The proof of the first conclusion of Theorem~\ref{thm:main},
+that order is equal to the lower order and that both are rational
+is completed in Section~\ref{sec:indices}. But the case of zero order
+requires a separate argument. Similar difficulty arises in \cite{Ere93},
+where the result of D. Shea \cite{She85} was used to treat the zero order case.
+
+In this paper, the case of zero order is
+covered in Section~\ref{sec:smallorder},
+where
+the proof of Corollary~\ref{cor:zero-ratio} is given in
+Proposition~\ref{prop:zero-order-ramification} below.
+
+The argument of F.~Nevanlinna described above has been generalized to
+holomorphic curves by V.~P.~Petrenko \cite{Pet84}. We recall it because it
+motivates our proof of Theorem~\ref{thm:main}. Suppose that
+$\fv=(f_0,\ldots,f_{n})$ is a reduced representation
+and $W_{\fv}$ is free of zeros. By expanding the determinant in
+\[
+ \begin{vmatrix}
+ w&f_0&\cdots&f_{n}\\
+ w'&f_0'&\cdots&f_{n}'\\
+ \vdots&\vdots&&\vdots\\
+ w^{(n+1)}&f_0^{(n+1)}&\cdots&f_{n}^{(n+1)}
+ \end{vmatrix}=0
+\]
+along the first column, the coefficient at $w^{(n+1)}$ is
+$(-1)^{{n+1}+2}W_{\fv}$. Division by this coefficient gives a monic differential
+equation
+\begin{equation}\label{oper}
+ w^{(n+1)}+a_1w^{(n)}+\cdots+a_nw'+a_{n+1}w=0
+\end{equation}
+with entire coefficients and fundamental system $f_0,\ldots,f_{n}$.
+For a curve of finite order, one can choose a reduced representation whose
+all coordinates have finite order. M. Frei's theorem \cite{Fre53} then implies
+that the coefficients are polynomials. 
+Asymptotic integration \cite{Was65}
+then gives coincident order and lower order, with a value in
+$\mathcal R_{n+1}$ in the transcendental case, and the regular growth
+of $T(r)$. 
+
+Our proof extends this differential equation approach to the case
+when the differential equation has infinitely many singularities. 
+Three features are important:
+\begin{enumerate}[label=(\arabic*)]
+\item
+The poles of the coefficients of the differential equation
+must be controlled collectively,
+with estimates that do not deteriorate when poles coalesce.
+
+\item
+We rescale at P\'olya peaks and study the resulting distributional limits
+of logarithms of moduli, following the potential-theoretic approach
+developed in
+\cite{Ere89a,Ere89b,ES91,ES92,Ere93}. A new ingredient is the
+convergence in measure of suitably rescaled logarithmic derivatives,
+proved in Lemma~\ref{lem:logderivlimit}.
+
+\item
+The algebraic part of the argument relies on universal Pl\"ucker
+coordinates recently developed by S.~Karp and K.~Purbhoo.
+We use the results in \cite{KP26},
+together with Purbhoo's fundamental operator formalism
+\cite[Proposition~2.2]{Pur23}. These results are closely related
+to the Bethe algebra correspondence developed by
+E.~Mukhin, V.~Tarasov and A.~Varchenko \cite{MTV13}. They are used in
+Proposition~\ref{prop:localcompact} to obtain the uniform estimates needed
+near the poles of the coefficients.
+\end{enumerate}
+
+
+\medskip
+\noindent\textbf{Organization of the paper.}
+Section~\ref{sec:analytic} collects the analytic preliminaries needed later.
+In Section~\ref{sec:algebra}, we establish two estimates for polynomial
+solution spaces, which are then used in Section~\ref{sec:compactness} to
+derive the local estimates and compactness results. Section~\ref{sec:indices}
+is devoted to P\'olya peaks and it ends with the proof that
+$\rho=\lambda\in\mathcal R_{n+1}\cup\{0\}$ , while
+Section~\ref{sec:smallorder} treats the case of zero order.
+In Section~\ref{sec:regular}, we prove regular variation and complete the
+proof of Theorem~\ref{thm:main}. %Finally, Section~\ref{sec:sharpness}
+%constructs examples showing the sharpness of the theorem and derives the
+%area asymptotics stated in Corollary~\ref{cor:area}.
+
+
+\medskip
+\noindent\textbf{Acknowledgments and AI tools disclosure.}
+We thank Mikhail Sodin for helpful comments.
+
+Teng Zhang is supported by the China Scholarship Council, the Young Elite
+Scientists Sponsorship Program for PhD Students (China Association for Science
+and Technology), and the Fundamental Research Funds for the Central
+Universities at Xi'an Jiaotong University (Grant No.~xzy022024045).
+
+ChatGPT was used for English-language editing, proofreading, and grammatical
+correction, and as an exploratory tool for discussing possible approaches to
+selected results under the authors' mathematical supervision and guidance.
+The authors take full responsibility for all mathematical arguments and for
+the accuracy and correctness of the final manuscript.
+
+
+\section{Preliminaries}\label{sec:analytic}
+
+This section collects the analytic tools used in the rescaling argument. We
+first normalize the characteristic and the Wronskian, and then introduce the
+differential operators analogous to (\ref{oper}).  The remaining lemmas control
+logarithmic derivatives and the compactness of normalized logarithms. Each
+statement is given in the form in which it will be used later.
+
+Throughout, we write
+\[
+D_R=\{z\in\C:|z|<R\},\qquad
+D(a,R)=\{z\in\C:|z-a|<R\},
+\]
+and \(\mathrm dA\) for planar area measure. We also use
+\[
+\Delta=\partial_x^2+\partial_y^2,\qquad
+M(r,h)=\max_{|z|\le r}|h(z)|,
+\]
+for a holomorphic function \(h\) on a neighborhood of \(\overline D_r\), and
+\[
+\log^+x=\max\{\log x,0\},\qquad
+\log^-x=\max\{-\log x,0\}\qquad(x>0).
+\]
+For a function integrable on \(|z|=r\), set
+\[
+\mean r u:=\frac1{2\pi}\int_{-\pi}^{\pi}u(re^{i\theta})\,\mathrm d\theta.
+\]
+Convergence in measure always means convergence with respect to area measure,
+locally in the indicated domain. Functions appearing in such statements are
+identified a.e.; in particular, values at isolated poles are irrelevant.
+
+
+\subsection{Jensen's formula and basic estimates of characteristics}
+
+Let \(H\not\equiv0\) be entire, and write
+\[
+H(z)=cz^{m_0}+O(z^{m_0+1}),\qquad c\ne0.
+\]
+Jensen's formula gives
+\begin{equation}\label{eq:zerojensen}
+ \mean r{\log|H|}=\NN_H(r)+\log|c|.
+\end{equation}
+Hence the small-ramification condition
+\eqref{eq:mainhyp} is equivalent to
+\[
+\NN_{W_{\fv}}(r)=o\bigl(T(r,\fv)\bigr).
+\]
+If $n_H(r)$ denotes the number of zeros of $H$ in $|z|\leq r$, counted
+with multiplicities, then for all sufficiently large \(r\) we have
+\begin{equation}\label{eq:countbound}
+ n_H(r)\log2\leq \NN_H(2r).
+\end{equation}
+
+A constant unitary change of homogeneous coordinates leaves both \(T\) and
+\(|W_{\fv}|\) unchanged. We therefore make, once and for all, a unitary change
+of coordinates such that
+\[
+\frac{\fv(0)}{\norm{\fv(0)}}=(n+1)^{-1/2}(1,\ldots,1).
+\]
+In particular, $
+f_j(0)\ne0
+$ for all $0\le j\le n$.
+
+For a meromorphic function \(h\), let
+\[
+\TN(r,h)=m(r,h)+N(r,h)
+\]
+be the usual Nevanlinna characteristic, where \(N\) counts poles and
+\(m(r,h)=\mean r{\log^+|h|}\). If \(h=f_\ell/f_j\), then
+\[
+\log^+\left|\frac{f_\ell}{f_j}\right|
+ \leq \log\norm{\fv}-\log|f_j|.
+\]
+Using \eqref{eq:zerojensen} and
+\(N(r,f_\ell/f_j)\leq\NN_{f_j}(r)\), we obtain
+\begin{equation}\label{eq:quotientbound}
+ \TN\!\left(r,\frac{f_\ell}{f_j}\right)
+ \leq T(r,\fv)+\log\norm{\fv(0)}-\log|f_j(0)|.
+\end{equation}
+We shall use this estimate repeatedly below.
+
+
+\subsection{The fundamental operator and the canonical gauge}
+
+
+We put \(D=\mathrm d/\mathrm dz\). We first give the elementary local form of the fundamental-operator construction that will be used later. For rational functions, the corresponding construction is discussed in
+\cite[Section~2, Proposition~2.2]{Pur23}.
+
+\begin{lem}\label{lem:fundamental-operator}
+Let \(U\subset\C\) be a domain and let
+\(\gv=(g_0,\ldots,g_{n})\) be holomorphic on \(U\), with
+\(W(\gv)\not\equiv0\). Set
+$
+Z=\{z\in U:W(\gv)(z)=0\}.
+$
+Then:
+\begin{enumerate}[label=\textup{(\roman*)}]
+\item On \(U\setminus Z\), there is a unique monic differential operator
+\begin{equation}\label{eq:fundamental-operator}
+L_{\gv}=D^{n+1}+\sum_{q=1}^{n+1}b_qD^{n+1-q}
+\end{equation}
+such that
+$
+L_{\gv}g_j=0, 0\le j\le n.
+$ We call \(L_{\gv}\) the \emph{fundamental operator associated with
+\(\gv\)}. 
+\item Each coefficient \(b_q\) in \eqref{eq:fundamental-operator} extends meromorphically to \(U\), with possible
+poles only at points of \(Z\).
+
+\item The coefficient of \(D^{n}\)  in \eqref{eq:fundamental-operator}  is
+$$
+b_1=-\frac{W(\gv)'}{W(\gv)}.
+$$
+\end{enumerate}
+\end{lem}
+
+
+\begin{proof}
+This is well-known and easy to prove, see the Introduction.
+\end{proof}
+
+The differential operator in (\ref{eq:fundamental-operator}) depends on
+the homogeneous representation. We want to associate a unique operator
+to a holomorphic curve. To do this we eliminate $b_1$ in
+(\ref{eq:fundamental-operator}) by the well-known gauge transformation.
+
+
+\begin{lem}\label{lem:canonical-gauge}
+Let \(\gv\) be as in Lemma~\ref{lem:fundamental-operator}, and let \(U_0\)
+be simply connected with \(W(\gv)\ne0\) on \(U_0\). Choose a branch
+\begin{equation}\label{eq:gauge-factor}
+\eta=W(\gv)^{-1/(n+1)}
+\end{equation}
+on \(U_0\), and put \(\widehat{\gv}=\eta\gv\). Then
+\begin{equation}\label{eq:wronskian-gauge}
+W(\eta\gv)=\eta^{n+1}W(\gv),\qquad
+W(\widehat{\gv})\equiv1.
+\end{equation}
+The fundamental operator of \(\widehat{\gv}\) has the form
+\begin{equation}\label{eq:canonical}
+D^{n+1}+\sum_{q=2}^{n+1}Q_q(z)D^{n+1-q}.
+\end{equation}
+In the application to \(\fv\), the coefficients \(Q_q\) are single-valued
+meromorphic functions on \(\C\), holomorphic away from the zeros of
+\(W_{\fv}\). Under the dilation \(z\mapsto tz\), they transform according to
+\begin{equation}\label{eq:scalecoeff}
+Q_q(z)\longmapsto t^qQ_q(tz),\qquad 2\le q\le n+1.
+\end{equation}
+\end{lem}
+
+\begin{proof}
+By Leibniz's rule, the Wronskian matrix of \(\eta\gv\) is obtained from that
+of \(\gv\) by left multiplication by a lower triangular matrix whose
+diagonal entries are all \(\eta\). This proves the first identity in
+\eqref{eq:wronskian-gauge}. The second follows immediately from
+\eqref{eq:gauge-factor}.
+
+By Lemma~\ref{lem:fundamental-operator}~(iii), the coefficient of \(D^{n}\) in the fundamental
+operator of \(\widehat{\gv}\) is
+\[
+\widehat b_1
+=b_1-{n+1}\frac{\eta'}{\eta}
+=-\frac{W(\gv)'}{W(\gv)}
+-{n+1}\left(-\frac1{n+1}\frac{W(\gv)'}{W(\gv)}\right)
+=0.
+\]
+Hence the normalized operator has the form \eqref{eq:canonical}.
+
+Different choices of the branch in \eqref{eq:gauge-factor} differ by a
+constant \({n+1}\)th root of unity. Multiplying all solutions by such a constant
+does not change their fundamental operator. The locally defined coefficients
+in \eqref{eq:canonical} therefore agree on overlaps. In the application to
+\(\fv\), they define single-valued meromorphic functions on \(\C\), with
+possible poles only at the zeros of \(W_{\fv}\).
+
+Finally, let \(v\) be a solution of \eqref{eq:canonical} and set
+\(u(z)=v(tz)\). Since
+\[
+ u^{(k)}(z)=t^k v^{(k)}(tz),
+\]
+substitution into \eqref{eq:canonical} shows that the coefficient of
+\(D^{n+1-q}u\) is \(t^qQ_q(tz)\). This proves \eqref{eq:scalecoeff}.
+\end{proof}
+
+
+
+\subsection{Logarithmic derivatives at a prescribed radius}
+
+The usual lemma on the logarithmic derivative is often stated
+outside an exceptional
+set of radii. We need a version of this lemma for higher
+derivatives, at a fixed radius,
+and with explicit dependence on $h(0)$. An appropriate statement
+can be found in Hiong's paper \cite{Hiong}.
+
+\begin{lem}[Nevanlinna--Hiong]\label{lem:NH}
+For every integer \(k\ge1\), there exists a constant \(C_k>0\) such that, whenever \(f\) is meromorphic in \(|z|<R\), \(0<|f(0)|<\infty\), and
+\(0<r<\rho<R\), then
+\[
+m\!\left(r,\frac{f^{(k)}}{f}\right)
+\le C_k\left\{
+1+\log^+T(\rho,f)
++\log^+\log^+\frac{1}{|f(0)|}
++\log^+\rho
++\log^+\frac{1}{\rho-r}
++\log^+\frac{1}{r}
+\right\}.
+\]
+\end{lem}
+
+Taking \(r=1\) and \(\rho=4\) in Lemma~\ref{lem:NH}, we immediately obtain
+the following.
+
+\begin{cor}\label{lem:logderivbound}
+For every integer \(k\ge1\) there is a constant \(C_k\) such that, whenever
+\(h\) is meromorphic in a neighborhood of \(\overline D_4\) and
+\(0<|h(0)|<\infty\),
+\begin{equation}\label{eq:logderivbound}
+ m\!\left(1,\frac{h^{(k)}}h\right)
+ \leq C_k\log\bigl(2+\TN(4,h)+|\log|h(0)||\bigr).
+\end{equation}
+\end{cor}
+\begin{proof}
+ Taking \(r=1\) and \(\rho=4\)
+in Lemma~\ref{lem:NH}, we obtain
+\[
+m\!\left(1,\frac{h^{(k)}}h\right)
+\le C_k\left\{
+1+\log^+\TN(4,h)
++\log^+\log^+\frac1{|h(0)|}
+\right\},
+\]
+after absorbing the terms depending only on the fixed radii into \(C_k\).
+
+Finally,
+\[
+1+\log^+x+\log^+\log^+\frac1y
+\le C\log\bigl(2+x+|\log y|\bigr),
+\qquad x\ge0,\ y>0,
+\]
+for an absolute constant \(C\).  Applying this with
+\(x=\TN(4,h)\) and \(y=|h(0)|\), and enlarging \(C_k\) if necessary,
+gives the desired estimate.
+\end{proof}
+
+
+\subsection{Limits of logarithmic derivatives}
+
+We also need a limiting form of the estimate for the logarithmic derivatives.
+After
+normalization, the first logarithmic derivative has a nontrivial limit, while
+its higher derivatives become negligible.
+
+\begin{lem}\label{lem:logderivlimit}
+Let \(\Omega\subset\C\) be a domain, let \(s_\nu\to\infty\), and let
+\(h_\nu\not\equiv0\) be holomorphic on \(\Omega\). Suppose that
+\begin{equation}\label{eq:log-limit-assumption}
+ u_\nu:=s_\nu^{-1}\log|h_\nu|
+ \longrightarrow u
+ \qquad\text{in }L^1_{\loc}(\Omega),
+\end{equation}
+where \(u\) is subharmonic and not identically \(-\infty\). Then
+\begin{equation}\label{eq:sobolev-limit}
+ u\in W^{1,a}_{\loc}(\Omega)\qquad(1\leq a<2).
+\end{equation}
+With
+$
+ \partial=\tfrac12(\partial_x-i\partial_y),
+$
+and with \(\partial u\) represented by its a.e.-defined Sobolev function,
+one has, for every fixed integer \(k\ge1\),
+\begin{equation}\label{eq:logderivlimit}
+ \frac{h_\nu^{(k)}}{s_\nu^kh_\nu}
+ \convmeas (2\partial u)^k
+ \qquad\text{locally in }\Omega.
+\end{equation}
+\end{lem}
+
+\begin{rem}\label{rem:measurable-products}
+All products in \eqref{eq:logderivlimit} and in the limiting differential
+equations below are products of measurable functions, not of distributions.
+In particular,
+\[
+(\partial u)^k\in L^p_{\loc}
+ \qquad
+ \left(0<p<\frac2k\right),
+\]
+but local \(L^1\)-integrability may fail for \(k\ge2\). For example, if
+\(u(z)=\log|z|\), then
+\[
+ 2\partial u=\frac1z
+ \qquad\text{a.e.},
+\]
+whereas \(1/z^2\notin L^1_{\loc}\).
+
+We shall also use the elementary fact that if \(a_\nu\to0\) in measure and
+\(b_\nu\) is bounded in measure, then \(a_\nu b_\nu\to0\) in measure.
+\end{rem}
+
+\begin{proof}{Proof of Lemma~\ref{lem:logderivlimit}}
+
+\medskip\noindent
+\emph{{Step 1. The Riesz measures and localization:}}
+Set $
+\mu_\nu:=\Delta u_\nu/(2\pi).$
+Since
+$
+u_\nu=\log|h_\nu|/{s_\nu},
+$
+the measure \(\mu_\nu\) is the zero-counting measure of \(h_\nu\),
+divided by \(s_\nu\). By \eqref{eq:log-limit-assumption},
+\(u_\nu\to u\) in \(L^1_{\loc}(\Omega)\), hence also in the sense of
+distributions. Therefore
+\begin{equation}\label{eq:riesz-measure-limit}
+ \mu_\nu\longrightarrow
+ \mu:=\frac1{2\pi}\Delta u
+\end{equation}
+weakly on compact subsets of \(\Omega\). In particular, for every
+\(K_1\Subset\Omega\),
+\begin{equation}\label{eq:riesz-mass-bound}
+ \sup_\nu \mu_\nu(K_1)<\infty.
+\end{equation}
+
+Fix \(K\Subset\Omega\). Choose
+\(\chi\in C_c^\infty(\Omega)\) such that
+\[
+0\leq\chi\leq1,
+\qquad
+\chi\equiv1
+\quad\text{on a neighborhood of }K,
+\]
+and define
+\begin{equation}\label{eq:localized-potentials}
+ v_\nu(z)
+ :=
+ \int\chi(a)\log|z-a|\,\mathrm d\mu_\nu(a),
+ \qquad
+ v(z)
+ :=
+ \int\chi(a)\log|z-a|\,\mathrm d\mu(a).
+\end{equation}
+Put
+$
+H_\nu:=u_\nu-v_\nu$
+and $
+H:=u-v.
+$
+Since
+\[
+\frac1{2\pi}\Delta v_\nu=\chi\mu_\nu,
+\qquad
+\frac1{2\pi}\Delta v=\chi\mu,
+\]
+and \(\chi=1\) near \(K\), the functions \(H_\nu\) and \(H\) are
+harmonic on a fixed neighborhood of \(K\).
+
+We shall use the decomposition
+\begin{equation}\label{eq:potential-harmonic-decomposition}
+ u_\nu=v_\nu+H_\nu,
+ \qquad
+ u=v+H
+\end{equation}
+in the proof below.
+
+\medskip\noindent
+\emph{{Step 2. The first logarithmic derivative:}}
+We first prove convergence of the derivatives of the logarithmic
+potentials. Let \(1\leq p<2\). Since
+\[
+2\partial\log|z-a|=\frac1{z-a},
+\]
+we have formally
+\[
+2\partial v_\nu(z)
+ =
+ \int\frac{\chi(a)}{z-a}\,\mathrm d\mu_\nu(a).
+\]
+To justify passage to the limit, truncate the kernel
+\((z-a)^{-1}\) smoothly at distance \(\delta>0\) from the diagonal.
+For fixed \(\delta\), the truncated kernel is bounded and continuous
+on compact sets, so \eqref{eq:riesz-measure-limit} gives convergence
+of the corresponding truncated integrals.
+
+For the part removed by the truncation, Minkowski's inequality and
+\eqref{eq:riesz-mass-bound} give
+\begin{equation}\label{eq:kernel-truncation-bound}
+ \left\|
+ \int_{|z-a|<2\delta}
+ \frac{\chi(a)}{z-a}\,\mathrm d\mu_\nu(a)
+ \right\|_{L^p(K)}
+ \leq C_{K,p}\delta^{(2-p)/p},
+\end{equation}
+uniformly in \(\nu\). The same estimate
+\eqref{eq:kernel-truncation-bound} holds with \(\mu\) in place of
+\(\mu_\nu\). Since $(2-p)/p>0$, letting
+\(\delta\downarrow0\) gives
+\begin{equation}\label{eq:potential-derivative-limit}
+ \partial v_\nu\longrightarrow\partial v
+ \qquad\text{in }L^p(K),
+ \qquad 1\leq p<2.
+\end{equation}
+As \(K\Subset\Omega\) was arbitrary, this is local convergence in
+\(\Omega\).
+
+The same truncation argument, now applied to the kernel
+\(\log|z-a|\), gives
+\[
+v_\nu\longrightarrow v
+\qquad\text{in }L^1_{\loc}(\Omega).
+\]
+Together with \eqref{eq:log-limit-assumption}, this yields
+\begin{equation}\label{eq:harmonic-part-limit}
+ H_\nu\longrightarrow H
+ \qquad\text{in }L^1_{\loc}
+\end{equation}
+on a neighborhood of \(K\). Since all these functions are harmonic
+there, the usual interior estimates imply convergence of all their
+derivatives on smaller compact subsets. In particular,
+\begin{equation}\label{eq:harmonic-derivative-limit}
+ \partial H_\nu\longrightarrow\partial H
+ \qquad\text{locally uniformly near }K.
+\end{equation}
+
+Away from the zeros of \(h_\nu\),
+\[
+2\partial u_\nu
+ =
+ \frac{h_\nu'}{s_\nu h_\nu}.
+\]
+The zeros form a set of area zero, so this identity holds almost
+everywhere. Combining
+\eqref{eq:potential-harmonic-decomposition},
+\eqref{eq:potential-derivative-limit}, and
+\eqref{eq:harmonic-derivative-limit}, we obtain
+\begin{equation}\label{eq:first-logderiv-limit}
+ \frac{h_\nu'}{s_\nu h_\nu}
+ =
+ 2\partial u_\nu
+ \longrightarrow
+ 2\partial u
+ \qquad\text{in }L^p_{\loc}(\Omega),
+ \qquad 1\leq p<2.
+\end{equation}
+Since \(u\) is real-valued, control of \(\partial u\) gives control of
+the full weak gradient. Thus
+\[
+u\in W^{1,p}_{\loc}(\Omega),
+\qquad
+1\leq p<2,
+\]
+which proves \eqref{eq:sobolev-limit}.
+
+\medskip\noindent
+\emph{{Step 3. Higher derivatives of the logarithmic derivative:}}
+Put $
+L_\nu:={h_\nu'}/{h_\nu}.$
+We claim the convergence in \eqref{eq:higher-logderiv-goal} for every
+fixed \(j\geq1\):
+\begin{equation}\label{eq:higher-logderiv-goal}
+ \frac{L_\nu^{(j)}}{s_\nu^{j+1}}
+ \convmeas0
+ \qquad\text{locally in }\Omega.
+\end{equation}
+
+From \eqref{eq:localized-potentials} and the fact that
+\(\mu_\nu\) is the zero-counting measure divided by \(s_\nu\), we have
+near \(K\)
+\[
+2s_\nu\partial v_\nu(z)
+ =
+ \sum_a
+ \frac{\chi(a)\ord_a(h_\nu)}{z-a}.
+\]
+Using
+$
+L_\nu=2s_\nu\partial u_\nu
+     =2s_\nu\partial v_\nu+2s_\nu\partial H_\nu,
+$
+and differentiating \(j\) times, we obtain
+\begin{equation}\label{eq:singular-logderivative}
+ L_\nu^{(j)}(z)
+ =
+ (-1)^j j!
+ \sum_a
+ \frac{\chi(a)\ord_a(h_\nu)}
+ {(z-a)^{j+1}}
+ +
+ R_{\nu,j}(z),
+\end{equation}
+where
+\[
+R_{\nu,j}(z)
+ :=
+ 2s_\nu\partial^{j+1}H_\nu(z).
+\]
+By \eqref{eq:harmonic-part-limit} and the interior estimates for
+harmonic functions,
+\begin{equation}\label{eq:harmonic-remainder-bound}
+ \sup_K|R_{\nu,j}|
+ \leq C_{K,j}s_\nu.
+\end{equation}
+
+On the other hand, \eqref{eq:riesz-mass-bound} gives
+\begin{equation}\label{eq:local-zero-number}
+ \sum_{a\in\supp\chi}\ord_a(h_\nu)
+ =
+ s_\nu\mu_\nu(\supp\chi)
+ =
+ O(s_\nu).
+\end{equation}
+
+Choose
+\begin{equation}\label{eq:alpha-choice}
+ \frac1{j+1}
+ <
+ \alpha_j
+ <
+ \min\left\{1,\frac2{j+1}\right\}.
+\end{equation}
+Then
+$
+(j+1)\alpha_j<2,
+$
+so
+$
+|z-a|^{-(j+1)\alpha_j}
+$
+is locally integrable with respect to planar area measure. Moreover,
+\(\alpha_j<1\), and therefore
+\[
+\left(\sum_\ell x_\ell\right)^{\alpha_j}
+\leq
+\sum_\ell x_\ell^{\alpha_j},
+\qquad x_\ell\geq0.
+\]
+Listing the zeros with multiplicity, and using
+\eqref{eq:singular-logderivative},
+\eqref{eq:harmonic-remainder-bound}, and
+\eqref{eq:local-zero-number}, we obtain
+\begin{equation}\label{eq:higher-logderiv-Lalpha}
+\begin{aligned}
+ \int_K
+ \left|
+ \frac{L_\nu^{(j)}}{s_\nu^{j+1}}
+ \right|^{\alpha_j}\mathrm dA
+ &\leq
+ C_{K,j}
+ \frac1{s_\nu^{(j+1)\alpha_j}}
+ \sum_a
+ \int_K
+ \frac{\mathrm dA(z)}
+ {|z-a|^{(j+1)\alpha_j}}
+ +C_{K,j}s_\nu^{-j\alpha_j}
+ \\
+ &\leq
+ C_{K,j}s_\nu^{\,1-(j+1)\alpha_j}
+ +C_{K,j}s_\nu^{-j\alpha_j}.
+\end{aligned}
+\end{equation}
+By \eqref{eq:alpha-choice},
+\[
+1-(j+1)\alpha_j<0,
+\]
+and both terms on the right-hand side of
+\eqref{eq:higher-logderiv-Lalpha} tend to zero. Consequently,
+\[
+\frac{L_\nu^{(j)}}{s_\nu^{j+1}}
+\longrightarrow0
+\qquad\text{in }L^{\alpha_j}_{\loc},
+\]
+and hence
+\begin{equation}\label{eq:higher-logderiv-measure}
+ \frac{L_\nu^{(j)}}{s_\nu^{j+1}}
+ \convmeas0
+ \qquad(j\geq1)
+\end{equation}
+locally in \(\Omega\).
+
+\medskip\noindent
+\emph{{Step 4. The differential-polynomial expansion:}}
+Repeated differentiation of
+$
+h_\nu'=L_\nu h_\nu
+$
+gives, for every \(k\geq1\),
+\begin{equation}\label{eq:differential-polynomial}
+ \frac{h_\nu^{(k)}}{h_\nu}
+ =
+ \sum_{\substack{m_0,\ldots,m_{k-1}\ge0\\
+                  \sum_{j=0}^{k-1}(j+1)m_j=k}}
+ C_{\mathbf m}
+ \prod_{j=0}^{k-1}
+ \bigl(L_\nu^{(j)}\bigr)^{m_j},
+\end{equation}
+where the constants \(C_{\mathbf m}\) depend only on the multi-index
+$
+\mathbf m=(m_0,\ldots,m_{k-1}).
+$
+The weight condition in \eqref{eq:differential-polynomial},
+\(\sum_{j=0}^{k-1}(j+1)m_j=k\), gives
+\begin{equation}\label{eq:normalized-monomial}
+ \frac1{s_\nu^k}
+ \prod_{j=0}^{k-1}
+ \bigl(L_\nu^{(j)}\bigr)^{m_j}
+ =
+ \prod_{j=0}^{k-1}
+ \left(
+ \frac{L_\nu^{(j)}}{s_\nu^{j+1}}
+ \right)^{m_j}.
+\end{equation}
+
+The term corresponding to
+\[
+m_0=k,
+\qquad
+m_1=\cdots=m_{k-1}=0,
+\]
+is \(L_\nu^k\). Every other term in
+\eqref{eq:differential-polynomial} contains at least one factor
+\(L_\nu^{(j)}\) with \(j\geq1\).
+
+\medskip\noindent
+\emph{{Step 5. Passage to the limit:}}
+Define
+\[
+X_{\nu,0}:=\frac{L_\nu}{s_\nu},
+\qquad
+X_{\nu,j}
+ :=
+ \frac{L_\nu^{(j)}}{s_\nu^{j+1}}
+ \quad(j\geq1).
+\]
+By \eqref{eq:first-logderiv-limit},
+\begin{equation}\label{eq:X0-limit}
+ X_{\nu,0}
+ \convmeas
+ 2\partial u,
+\end{equation}
+while by \eqref{eq:higher-logderiv-measure},
+\begin{equation}\label{eq:Xj-limit}
+ X_{\nu,j}\convmeas0
+ \qquad(j\geq1).
+\end{equation}
+In particular, every sequence \(X_{\nu,j}\) is bounded in measure.
+
+Consider a monomial on the right-hand side of
+\eqref{eq:normalized-monomial}. If it is the distinguished term
+\(m_0=k\), then \eqref{eq:X0-limit} gives
+\begin{equation}\label{eq:leading-monomial-limit}
+ X_{\nu,0}^k
+ \convmeas
+ (2\partial u)^k.
+\end{equation}
+For every other monomial there is some \(j_0\geq1\) with
+\(m_{j_0}>0\). The corresponding factor
+\(X_{\nu,j_0}^{m_{j_0}}\) tends to zero in measure by
+\eqref{eq:Xj-limit}, while all the remaining factors are bounded in
+measure. Hence the whole monomial tends to zero in measure.
+
+Since the sum in \eqref{eq:differential-polynomial} contains only
+finitely many terms, \eqref{eq:normalized-monomial} and
+\eqref{eq:leading-monomial-limit} yield
+\[
+ \frac{h_\nu^{(k)}}{s_\nu^kh_\nu}
+ \convmeas
+ (2\partial u)^k
+\]
+locally in \(\Omega\). This is precisely
+\eqref{eq:logderivlimit}, and the proof is complete.
+\end{proof}
+
+\subsection{Consequences for the Wronskian and compactness}
+
+Set
+\[
+\kappa:=\sum_{i=0}^{n}i=\frac{n(n+1)}2.
+\]
+Thus \(\kappa\) is the sum of the orders of derivatives
+in an $(n+1)\times(n+1)$
+Wronskian.
+
+\begin{lem}\label{lem:sum}
+Let \(s_\nu\to\infty\), and let
+\(\hv_\nu=(h_{\nu,0},\ldots,h_{\nu,n})\) be holomorphic on a domain
+\(\Omega\). Suppose that, for every \(j\),
+\begin{equation}\label{eq:component-log-limits}
+ s_\nu^{-1}\log|h_{\nu,j}|
+ \longrightarrow v_j
+ \qquad\text{in }L^1_{\loc}(\Omega),
+\end{equation}
+where \(v_j\) is subharmonic and not identically \(-\infty\), and suppose that
+\begin{equation}\label{eq:small-wronskian-local}
+ s_\nu^{-1}\log|W(\hv_\nu)|
+ \convmeas0
+ \qquad\text{locally in }\Omega.
+\end{equation}
+Then
+\begin{equation}\label{eq:sum-positive}
+ \sum_{j=0}^{n}v_j\ge0
+ \qquad\text{a.e.\ on }\Omega.
+\end{equation}
+\end{lem}
+
+\begin{proof}
+
+\medskip\noindent
+\emph{{Step 1. Normalize the Wronskian:}}
+Away from the zeros of the components \(h_{\nu,j}\), we may factor
+\(h_{\nu,j}\) from the \(j\)-th column of the Wronskian. Since the
+\(i\)-th row contains derivatives of order \(i\), we obtain
+\begin{equation}\label{eq:normalized-wronskian}
+ \frac{W(\hv_\nu)}
+ {s_\nu^\kappa\prod_{j=0}^{n}h_{\nu,j}}
+ =
+ \det\left(
+ \frac{h_{\nu,j}^{(i)}}
+ {s_\nu^ih_{\nu,j}}
+ \right)_{0\leq i,j\le n}.
+\end{equation}
+The identity holds almost everywhere, which is sufficient for what follows,
+since the zeros of the components form a set of area zero.
+
+Put
+\[
+D_\nu:=
+\det\left(
+ \frac{h_{\nu,j}^{(i)}}
+ {s_\nu^ih_{\nu,j}}
+ \right)_{0\leq i,j\le n}.
+\]
+
+\medskip\noindent
+\emph{{Step 2. Control the normalized determinant:}}
+For \(i=0\), the corresponding matrix entry is identically \(1\). For
+\(i\geq1\), Lemma~\ref{lem:logderivlimit}, applied to
+\(h_{\nu,j}\), gives
+\[
+ \frac{h_{\nu,j}^{(i)}}
+ {s_\nu^ih_{\nu,j}}
+ \convmeas
+ (2\partial v_j)^i
+\]
+locally in \(\Omega\). In particular, every matrix entry is bounded in
+measure. Since the determinant is a finite sum of products of these
+entries, \(D_\nu\) is also bounded in measure.
+
+We claim that
+\begin{equation}\label{eq:determinant-log-small}
+ \frac{\log^+|D_\nu|}{s_\nu}
+ \convmeas0
+ \qquad\text{locally in }\Omega.
+\end{equation}
+Indeed, fix \(K\Subset\Omega\) and \(\varepsilon>0\). Then
+\[
+ \left\{
+ z\in K:
+ \frac{\log^+|D_\nu(z)|}{s_\nu}>\varepsilon
+ \right\}
+ \subset
+ \left\{
+ z\in K:
+ |D_\nu(z)|>e^{\varepsilon s_\nu}
+ \right\}.
+\]
+Since \(s_\nu\to\infty\), the threshold \(e^{\varepsilon s_\nu}\) tends
+to infinity. The boundedness of \(D_\nu\) in measure therefore implies
+that the area of the set on the right tends to zero. This proves
+\eqref{eq:determinant-log-small}.
+
+\medskip\noindent
+\emph{{Step 3. Take logarithms:}}
+Taking absolute values and logarithms in
+\eqref{eq:normalized-wronskian} gives, almost everywhere,
+\[
+ \frac{\log|W(\hv_\nu)|}{s_\nu}
+ -
+ \frac{\kappa\log s_\nu}{s_\nu}
+ -
+ \sum_{j=0}^{n}
+ \frac{\log|h_{\nu,j}|}{s_\nu}
+ =
+ \frac{\log|D_\nu|}{s_\nu}.
+\]
+Hence
+\[
+ \sum_{j=0}^{n}
+ \frac{\log|h_{\nu,j}|}{s_\nu}
+ =
+ \frac{\log|W(\hv_\nu)|}{s_\nu}
+ -
+ \frac{\kappa\log s_\nu}{s_\nu}
+ -
+ \frac{\log|D_\nu|}{s_\nu}.
+\]
+Using $
+-\log|D_\nu|\geq-\log^+|D_\nu|,
+$
+we obtain
+\begin{equation}\label{eq:wronskian-lower-bound}
+ \sum_{j=0}^{n}
+ \frac{\log|h_{\nu,j}|}{s_\nu}
+ \geq
+ \frac{\log|W(\hv_\nu)|}{s_\nu}
+ -
+ \frac{\kappa\log s_\nu}{s_\nu}
+ -
+ \frac{\log^+|D_\nu|}{s_\nu}.
+\end{equation}
+
+\medskip\noindent
+\emph{{Step 4. Pass to the limit:}}
+By \eqref{eq:component-log-limits}, after passing to a subsequence we
+may assume that
+\[
+ \frac{\log|h_{\nu,j}|}{s_\nu}
+ \longrightarrow v_j
+ \qquad\text{a.e.}
+\]
+simultaneously for \(0\leq j\leq n\). By
+\eqref{eq:small-wronskian-local} and
+\eqref{eq:determinant-log-small}, we may pass to a further subsequence
+such that
+\[
+ \frac{\log|W(\hv_\nu)|}{s_\nu}\longrightarrow0,
+ \qquad
+ \frac{\log^+|D_\nu|}{s_\nu}\longrightarrow0
+\]
+almost everywhere. Finally,
+\[
+\frac{\kappa\log s_\nu}{s_\nu}\longrightarrow0.
+\]
+Passing to the limit in \eqref{eq:wronskian-lower-bound} therefore gives
+\[
+ \sum_{j=0}^{n}v_j\geq0
+ \qquad\text{a.e.\ on }\Omega,
+\]
+which is \eqref{eq:sum-positive}.
+\end{proof}
+
+If
+$
+U:=\max\limits_{0\leq j\le n}v_j,
+$
+then \eqref{eq:sum-positive} gives
+\begin{equation}\label{eq:sandwich}
+ U\ge0,\qquad
+ -nU\leq v_j\leq U
+ \qquad\text{a.e.}
+\end{equation}
+We shall use the bounds in \eqref{eq:sandwich} in the compactness
+argument below.
+
+We shall use the compactness theorem for subharmonic functions.
+
+\begin{lem}[{\cite[Theorem~4.1.9(a),(b)]{Hor03}}]\label{lem:subharmonic-compactness}
+Let \((u_\nu)\) be a sequence of subharmonic functions on a domain
+\(\Omega\), locally uniformly bounded above. Then every subsequence has a
+further subsequence for which one of the following alternatives holds:
+\begin{enumerate}[label=\textup{(\roman*)}]
+\item \(u_\nu\to-\infty\) locally uniformly on \(\Omega\);
+\item \(u_\nu\to u\) in \(L^1_{\loc}(\Omega)\), where \(u\) is subharmonic
+and \(u\not\equiv-\infty\).
+\end{enumerate}
+In the second case, the corresponding Riesz measures converge weakly on
+compact subsets. Moreover, if \(u_\nu\to u\) in \(L^1_{\loc}(\Omega)\) and
+$
+ K\Subset U_0\Subset\Omega,
+$
+then
+\[
+\limsup_{\nu\to\infty}\sup_Ku_\nu
+ \leq\sup_{U_0}u.
+\]
+\end{lem}
+
+For logarithms of the norms we shall frequently use this inequality:
+\[
+0\leq
+ \log\norm{\hv}
+ -\max_{0\leq j\le n}\log|h_j|
+ \leq\frac12\log {n+1}.
+\]
+
+\section{Estimates for polynomial solution spaces}\label{sec:algebra}
+
+In this section we derive two estimates for finite-dimensional spaces of
+polynomials. The first one controls the coefficients of the fundamental
+differential operator in terms of the zeros of the Wronskian. The second
+controls a normalized basis. 
+
+Our only use of the representation-theoretic results of Karp--Purbhoo
+\cite{KP26} is through their universal Pl\"ucker-coordinate formula.
+We first translate the part of their
+result that is needed here into the language of the minors of derivatines
+After
+this translation, the two estimates follow by elementary linear algebra
+and the Taylor expansion.
+
+\subsection{Minors of derivatives and Pl\"ucker coordinates}
+\label{sec:derivative-minors}
+
+Let \(V\subset\C[z]\) be an \({n+1}\)-dimensional space of polynomials, and
+let \(v_0,\ldots,v_{n}\) be a basis of \(V\). We use polynomial
+coordinates in the factorial basis
+\[
+1,\ z,\ \frac{z^2}{2!},\ \frac{z^3}{3!},\ldots.
+\]
+The advantage of this normalization is that the coefficient of
+\(z^r/r!\) in \(v_j(a+z)\) is exactly \(v_j^{(r)}(a)\).
+
+Let
+$
+\tau=(\tau_1\geq\cdots\geq\tau_{n+1}\geq0)
+$
+be a partition, where trailing zeros are allowed. Set
+\[
+i_k=k-1+\tau_{n+2-k},
+\qquad 1\leq k\leq n+1,
+\]
+and define the minor of derivatives
+\begin{equation}\label{eq:derivative-minor}
+ \Delta^\tau(V;a)
+ :=
+ \det\bigl(v_j^{(i_k)}(a)\bigr)_{
+                  1\leq k\leq n+1,\ 0\leq j\leq n}.
+\end{equation}
+For the empty partition, that is when all $\tau_j=0$, we have
+\[
+\Delta^\varnothing(V;a)
+=
+W(v_0,\ldots,v_{n})(a).
+\]
+A change of basis of \(V\) multiplies every determinant
+\(\Delta^\tau(V;a)\) by the same nonzero constant. Hence the ratios
+\[
+\frac{\Delta^\tau(V;a)}
+     {\Delta^\varnothing(V;a)}
+\]
+are independent of the chosen basis.
+
+To relate the minors at \(a\) to the Pl\"ucker coordinates
+used in \cite{KP26}, we translate the point \(a\) to the origin. Set
+\[
+V_a:=\{p(a+z):p\in V\}\subset\C[z].
+\]
+For each basis element \(v_j\), its Taylor expansion at \(a\) is
+\[
+v_j(a+z)
+=
+\sum_{r\geq0}v_j^{(r)}(a)\frac{z^r}{r!}.
+\]
+Hence, with respect to the factorial basis
+$
+1,\ z,\ {z^2}/{2!},\ldots,
+$
+the coefficient of \(z^r/r!\) in \(v_j(a+z)\) is exactly
+\(v_j^{(r)}(a)\).
+
+The minor \(\Delta^\tau(V;a)\) in
+\eqref{eq:derivative-minor} uses the derivative orders
+\[
+i_k=k-1+\tau_{n+2-k},
+\qquad 1\leq k\leq n+1.
+\]
+Thus, in the coefficient matrix of the translated space \(V_a\), it
+corresponds to the columns
+\[
+i_k+1=k+\tau_{n+2-k},
+\qquad 1\leq k\leq n+1.
+\]
+By the partition convention in \cite[equation~(2.5)]{KP26}, this is
+precisely the column set indexed by \(\tau\). Therefore
+\(\Delta^\tau(V;a)\) is the Pl\"ucker-coordinate minor of \(V_a\)
+indexed by \(\tau\), up to transposition of the matrix. Since
+transposition does not change the determinant, the two minors agree
+exactly; in particular, no additional sign or factorial factor occurs.
+
+Let \(P\) be the monic polynomial proportional to the Wronskian of
+\(V\), and write
+\begin{equation}\label{eq:monic-wronskian}
+ P(z)=\prod_{\ell=1}^M(z-a_\ell),
+\end{equation}
+where the roots are repeated according to multiplicity. The same roots
+appear in the universal minors identity \eqref{eq:universal-minors}.
+We use the normalization \(P\) in \eqref{eq:monic-wronskian}
+throughout this section\footnote{The notation of \cite{KP26} uses separate symbols for the dimension of
+the polynomial space and the degree of its Wronskian. In the present
+paper these quantities are \(n+1\) and \(M\), respectively; we keep this
+notation throughout.}.
+
+
+
+
+\subsection{The universal minors estimate}
+\label{sec:universal-minors}
+
+We now state the only consequence of the Karp--Purbhoo theory that will
+be needed below. The point of the result is that a derivative minor of
+weight \(s\), divided by the Wronskian, is a sum of products of \(s\)
+simple factors \((a-a_\ell)^{-1}\), with coefficients bounded in
+terms of \(s\). In particular, the estimate remains uniform when
+Wronskian zeros collide.
+
+\begin{lem}\label{lem:universal-minors}
+If \(M=0\), the assertion is immediate, with
+\(\mathfrak S_0=\{e\}\); hence assume \(M\geq1\) below.
+There exist a finite-dimensional unitary representation
+\[
+\pi:\mathfrak S_M\longrightarrow U(\mathcal H)
+\]
+and a unit vector \(\ev\in\mathcal H\). For a fixed \(V\), choose this
+vector once and for all, independently of the center \(a\), of the
+partition below, and of the point at which the estimate is evaluated.
+The following identity then holds.
+
+Suppose that \(P(a)\ne0\), let
+\(\tau=(\tau_1,\ldots,\tau_{n+1})\) be a partition (trailing zeros
+allowed), and put
+$
+s=|\tau|.
+$
+Assume first that \(s\leq M\). If \(s>M\), then
+\(\tau\not\subseteq\nu\), because \(|\nu|=M\). The corresponding
+Pl\"ucker coordinate is zero, and
+\cite[Theorem~1.3(v)]{KP26} gives \(\beta^\tau=0\) on the relevant
+eigenspace. Thus both sides of \eqref{eq:universal-minors} vanish when
+\(s>M\). Identify \(\mathfrak S_I\) with \(\mathfrak S_s\) through the
+increasing ordering of \(I\).
+Then
+\begin{equation}\label{eq:universal-minors}
+ \frac{\Delta^\tau(V;a)}{\Delta^\varnothing(V;a)}
+ =
+ \sum_{\substack{I\subset\{1,\ldots,M\}\\|I|=s}}
+ \frac{\langle C_I^\tau\ev,\ev\rangle}
+      {\prod_{\ell\in I}(a-a_\ell)},
+\end{equation}
+where
+\begin{equation}\label{eq:CI-definition}
+ C_I^\tau
+ :=
+ \sum_{\sigma\in\mathfrak S_I}
+ \chi^\tau(\sigma)\pi(\sigma).
+\end{equation}
+Here \(\mathfrak S_I\subset\mathfrak S_M\) is the subgroup which
+permutes \(I\) and fixes its complement, and \(\chi^\tau\) is the
+irreducible character indexed by \(\tau\).
+
+Moreover,
+\begin{equation}\label{eq:projectionbound}
+ \bigl|\langle C_I^\tau\ev,\ev\rangle\bigr|
+ \leq s!,
+\end{equation}
+and consequently
+\begin{equation}\label{eq:minor-es-bound}
+ \left|
+ \frac{\Delta^\tau(V;a)}{\Delta^\varnothing(V;a)}
+ \right|
+ \leq
+ s!\,
+ e_s\bigl(
+ |a-a_1|^{-1},\ldots,|a-a_M|^{-1}
+ \bigr),
+\end{equation}
+where
+$
+e_s(x_1,\ldots,x_M)
+=
+\sum_{\substack{I\subset\{1,\ldots,M\}\\|I|=s}}
+\prod_{\ell\in I}x_\ell,
+e_0=1,
+$
+and \(e_s=0\) for \(s>M\).
+\end{lem}
+
+\begin{proof}
+
+\medskip\noindent
+\emph{{Step 1. Place \(V\) in a fiber of the Wronski map:}}
+Choose \(m\) larger than every degree occurring in a basis of \(V\),
+put \(d=n+1\), and regard \(V\) as a point of
+\(\operatorname{Gr}(d,\mathbb C_{m-1}[u])\), where
+\(\mathbb C_{m-1}[u]\) denotes the polynomials of degree at most
+\(m-1\). Let \(\nu\) be the Schubert-cell index of \(V\). In the
+factorial basis convention of \cite{KP26},
+\[
+|\nu|=\deg\operatorname{Wr}(V)=M.
+\]
+Set \(z_\ell=-a_\ell\), \(1\leq\ell\leq M\). By
+\cite[Theorem~1.3(v)]{KP26}, there is a joint eigenspace
+\(E\subseteq\mathsf M^\nu\) of the Bethe algebra
+\(\mathcal B_M(z_1,\ldots,z_M)\) corresponding to \(V\), and the
+eigenvalues of the operators \(\beta^\tau(0)\) on \(E\) are the
+normalized Pl\"ucker coordinates of \(V\). Thus
+\[
+P(u)=\prod_{\ell=1}^M(u+z_\ell).
+\]
+
+Equip the Specht module containing \(E\) with an invariant Hermitian
+inner product, and let
+\[
+\pi:\mathfrak S_M\longrightarrow U(\mathcal H)
+\]
+be the resulting unitary representation. Choose a unit vector
+$
+\ev\in E.
+$
+
+\medskip\noindent
+\emph{{Step 2. Translate the center:}}
+For \(a\in\C\), recall
+\[
+V_a=\{p(a+z):p\in V\}\subset\C[z].
+\]
+The raw derivative minors \(\Delta^\tau(V;a)\) and the normalized
+Pl\"ucker coordinates of \(V_a\) differ by a nonzero scalar \(c(a)\)
+which is independent of \(\tau\). Consequently, their ratios are
+equal. By \cite[Proposition~2.9]{KP26}, the normalized Pl\"ucker
+coordinates of the translated space \(V_a\) are obtained from those of
+\(V\) by a triangular translation formula. By
+\cite[Theorem~1.3(ii)]{KP26}, the operators \(\beta^\tau(t)\) satisfy
+the same transformation law. Hence \(E\) remains a joint eigenspace,
+and the eigenvalue of \(\beta^\tau(a)\) on \(E\) is the normalized
+\(\tau\)-coordinate of \(V_a\).
+
+It follows that, whenever \(P(a)\ne0\),
+\begin{equation}\label{eq:minor-beta-ratio}
+ \frac{\Delta^\tau(V;a)}
+      {\Delta^\varnothing(V;a)}
+ =
+ \frac{\langle\beta^\tau(a)\ev,\ev\rangle}
+      {\langle\beta^\varnothing(a)\ev,\ev\rangle}.
+\end{equation}
+
+\medskip\noindent
+\emph{{Step 3. Expand the universal Pl\"ucker operator:}}
+By \cite[equation~(1.2)]{KP26},
+\[
+\beta^\tau(a)
+=
+\sum_{\substack{I\subset\{1,\ldots,M\}\\|I|=s}}
+\left(
+ \sum_{\sigma\in\mathfrak S_I}
+ \chi^\tau(\sigma)\pi(\sigma)
+\right)
+\prod_{\ell\notin I}(z_\ell+a).
+\]
+With the notation \eqref{eq:CI-definition} and
+\(z_\ell=-a_\ell\), this becomes
+\begin{equation}\label{eq:beta-tau-expanded}
+ \beta^\tau(a)
+ =
+ \sum_{|I|=s}
+ C_I^\tau
+ \prod_{\ell\notin I}(a-a_\ell).
+\end{equation}
+For the empty partition,
+\[
+\beta^\varnothing(a)
+=
+\left(
+\prod_{\ell=1}^M(a-a_\ell)
+\right)\operatorname{Id}
+=
+P(a)\operatorname{Id}.
+\]
+Substituting this and \eqref{eq:beta-tau-expanded} into
+\eqref{eq:minor-beta-ratio} gives
+\[
+\begin{aligned}
+\frac{\Delta^\tau(V;a)}
+     {\Delta^\varnothing(V;a)}
+&=
+\frac1{P(a)}
+\sum_{|I|=s}
+\langle C_I^\tau\ev,\ev\rangle
+\prod_{\ell\notin I}(a-a_\ell)\\
+&=
+\sum_{|I|=s}
+\frac{\langle C_I^\tau\ev,\ev\rangle}
+     {\prod_{\ell\in I}(a-a_\ell)}.
+\end{aligned}
+\]
+This proves \eqref{eq:universal-minors}.
+
+\medskip\noindent
+\emph{{Step 4. Bound the coefficients:}}
+Let \(f^\tau\) denote the number of standard Young tableaux of shape
+\(\tau\). By \cite[Proposition~2.16]{KP26}, applied to the restriction
+of \(\pi\) to \(\mathfrak S_I\),
+$
+{f^\tau\,C_I^\tau}/{s!}
+$
+is an orthogonal projection. Therefore
+\[
+\|C_I^\tau\|
+\leq
+\frac{s!}{f^\tau}
+\leq s!.
+\]
+Since \(\|\ev\|=1\),
+\[
+\bigl|\langle C_I^\tau\ev,\ev\rangle\bigr|
+\leq
+\|C_I^\tau\|
+\leq s!,
+\]
+which proves \eqref{eq:projectionbound}.
+
+\medskip\noindent
+\emph{{Step 5. Sum over the Wronskian zeros:}}
+Taking absolute values in \eqref{eq:universal-minors} and using
+\eqref{eq:projectionbound}, we obtain
+\[
+\begin{aligned}
+\left|
+\frac{\Delta^\tau(V;a)}
+     {\Delta^\varnothing(V;a)}
+\right|
+&\leq
+s!
+\sum_{|I|=s}
+\prod_{\ell\in I}|a-a_\ell|^{-1}\\
+&=
+s!\,
+e_s\bigl(
+|a-a_1|^{-1},\ldots,|a-a_M|^{-1}
+\bigr).
+\end{aligned}
+\]
+This is \eqref{eq:minor-es-bound}. The identity is first obtained
+when the roots \(a_1,\ldots,a_M\) are pairwise distinct. After
+multiplication by \(P(a)\), both sides are polynomial expressions in the
+roots, so the identity extends to repeated roots by continuity.
+\end{proof}
+
+\begin{rem}\label{rem:universal-minors-use}
+Lemma~\ref{lem:universal-minors} is the only place in the proof where
+the representation-theoretic description of the Wronski map is used.
+For the rest of the paper, the important point is simply the following:
+a derivative minor of weight \(s\), divided by the Wronskian, is a sum
+of products of \(s\) factors \((a-a_\ell)^{-1}\), and the coefficients
+of these products are bounded by \(s!\). The bound is independent of
+the positions of the zeros \(a_\ell\).
+\end{rem}
+
+
+\subsection{Coefficients of the fundamental differential operator}
+\label{sec:polynomial-coefficients}
+
+We first apply Lemma~\ref{lem:universal-minors} to the differential
+equation whose solution space is \(V\).
+
+\begin{prop}\label{prop:polynomialcoeff}
+Let \(V\subset\C[z]\) have dimension \({n+1}\), and let
+\(a_1,\ldots,a_M\) be the zeros of its Wronskian, repeated according
+to multiplicity. Write its monic fundamental operator as
+\[
+L_V
+=
+D^{n+1}+\sum_{q=1}^{n+1} b_q(z)D^{n+1-q}.
+\]
+Then
+\begin{equation}\label{eq:productformula}
+ b_q(z)
+ =
+ (-1)^q
+ \sum_{\substack{I\subset\{1,\ldots,M\}\\|I|=q}}
+ \frac{\gamma_{q,I}}
+      {\prod_{i\in I}(z-a_i)},
+ \qquad
+ |\gamma_{q,I}|\leq q!,
+ \qquad
+ 1\leq q\leq n+1,
+\end{equation}
+where the constants \(\gamma_{q,I}\) are independent of \(z\).
+\end{prop}
+
+\begin{proof}
+
+\medskip\noindent
+\emph{{Step 1. Express \(b_q\) by Cramer's rule:}}
+Let \(v_0,\ldots,v_{n}\) be a basis of \(V\). At a point where the
+Wronskian does not vanish, the equations
+\[
+v_j^{(n+1)}
++
+b_1v_j^{(n)}
++\cdots+
+b_{n+1}v_j
+=0,
+\qquad
+0\leq j\leq n,
+\]
+form a nonsingular linear system for
+\(b_1,\ldots,b_{n+1}\).
+
+For \(b_q\), Cramer's rule replaces the derivative row of order
+\({n+1}-q\) by the row of order \({n+1}\). After arranging the derivative
+orders increasingly, they are
+\[
+0,1,\ldots,{n+1}-q-1,
+{n+1}-q+1,\ldots,{n+1}.
+\]
+By the convention in \eqref{eq:derivative-minor}, this is the
+partition
+\[
+(1^q)
+=
+(\underbrace{1,\ldots,1}_{q\text{ times}}).
+\]
+Keeping track of the row permutation gives
+\begin{equation}\label{eq:cramer-minor}
+ b_q(z)
+ =
+ (-1)^q
+ \frac{\Delta^{(1^q)}(V;z)}
+      {\Delta^\varnothing(V;z)}.
+\end{equation}
+
+\medskip\noindent
+\emph{{Step 2. Apply Lemma~\ref{lem:universal-minors}:}}
+The partition \((1^q)\) has size \(q\). Hence
+\eqref{eq:universal-minors} gives
+\begin{equation}\label{eq:q-minor-expansion}
+\frac{\Delta^{(1^q)}(V;z)}
+     {\Delta^\varnothing(V;z)}
+=
+\sum_{|I|=q}
+\frac{\gamma_{q,I}}
+     {\prod_{i\in I}(z-a_i)},
+\end{equation}
+where
+$
+\gamma_{q,I}
+=
+\langle C_I^{(1^q)}\ev,\ev\rangle.
+$
+By \eqref{eq:projectionbound},
+\[
+|\gamma_{q,I}|\leq q!.
+\]
+Substituting \eqref{eq:q-minor-expansion} into
+\eqref{eq:cramer-minor} proves \eqref{eq:productformula}. The coefficients \(\gamma_{q,I}\) are
+independent of \(z\), because the representation and the vector
+\(\ev\) in Lemma~\ref{lem:universal-minors} are fixed once \(V\) is
+fixed.
+
+\medskip\noindent
+\emph{{Step 3. The case \(M=0\):}}
+Suppose that the Wronskian is constant. Choose a basis of \(V\) with
+distinct polynomial degrees
+$
+d_0<d_1<\cdots<d_{n}.
+$
+The degree of the Wronskian is
+\[
+\sum_{j=0}^{n}d_j-\frac{n(n+1)}2.
+\]
+Since this degree is zero and \(d_j\geq j\), we must have
+\[
+d_j=j,
+\qquad
+0\leq j\leq n.
+\]
+Thus \(V\) is the space of all polynomials of degree at most \(n\),
+and hence \(L_V=D^{n+1}\).
+This is exactly the empty-sum case of \eqref{eq:productformula}.
+\end{proof}
+
+\begin{rem}\label{rem:product-form}
+The product form in \eqref{eq:productformula} is important. One could
+decompose the terms further into partial fractions when the roots are
+distinct, but the resulting coefficients need not remain bounded when
+roots approach one another. In contrast,
+\[
+|\gamma_{q,I}|\leq q!
+\]
+is uniform and does not depend on the mutual distances between the
+Wronskian zeros.
+\end{rem}
+
+
+\subsection{A basis with prescribed initial derivatives}
+\label{sec:initial-basis}
+
+We next apply Lemma~\ref{lem:universal-minors} to the solutions
+themselves. The resulting estimate is again independent of the degree
+of the ambient polynomial space.
+
+\begin{prop}\label{prop:initial-basis}
+Let \(V\) and \(a_1,\ldots,a_M\) be as in
+Proposition~\ref{prop:polynomialcoeff}. Suppose that \(a\) is not a
+Wronskian zero, and let
+\(\psi_0,\ldots,\psi_{n}\in V\) satisfy
+\begin{equation}\label{eq:initial-normalization}
+ \psi_j^{(i)}(a)=\delta_{ij},
+ \qquad
+ 0\leq i,j\leq n.
+\end{equation}
+Then
+\begin{equation}\label{eq:basismajorant}
+ |\psi_j(a+z)|
+ \leq
+ \frac{|z|^j}{j!}
+ \prod_{\ell=1}^M
+ \left(
+ 1+\frac{|z|}{|a-a_\ell|}
+ \right),
+ \qquad
+ 0\leq j\leq n.
+\end{equation}
+\end{prop}
+
+\begin{proof}
+
+\medskip\noindent
+\emph{{Step 1. Express the higher derivatives as minors:}}
+By \eqref{eq:initial-normalization}, the matrix
+\[
+\bigl(\psi_j^{(i)}(a)\bigr)_{0\leq i,j\leq n}
+\]
+is the identity matrix. In particular,
+\begin{equation}\label{eq:initial-wronskian-one}
+ \Delta^\varnothing(V;a)=1.
+\end{equation}
+
+Fix \(j\in\{0,\ldots,n\}\) and \(k\geq n+1\). Replace derivative row
+\(j\) of this identity matrix by the derivative row of order \(k\).
+The determinant of the resulting matrix is
+\(\psi_j^{(k)}(a)\).
+
+After arranging the derivative orders increasingly, they become
+\[
+0,\ldots,j-1,j+1,\ldots,n,k.
+\]
+The corresponding partition is
+\begin{equation}\label{eq:derivative-partition}
+ \tau=
+ \bigl(k-n,1^{\,n-j}\bigr),
+\end{equation}
+and therefore \eqref{eq:derivative-partition} has size
+\[
+|\tau|
+=
+(k-n)+(n-j)
+=
+k-j.
+\]
+The row permutation used to put the derivative orders in increasing
+order contributes only a sign. Hence
+\begin{equation}\label{eq:higher-derivative-minor}
+ |\psi_j^{(k)}(a)|
+ =
+ |\Delta^\tau(V;a)|.
+\end{equation}
+
+\medskip\noindent
+\emph{{Step 2. Apply the universal minors estimate:}}
+Set
+\[
+x_\ell:=|a-a_\ell|^{-1},
+\qquad
+1\leq\ell\leq M.
+\]
+Using \eqref{eq:initial-wronskian-one},
+\eqref{eq:higher-derivative-minor}, and
+\eqref{eq:minor-es-bound} with \(s=k-j\), we obtain
+\[
+|\psi_j^{(k)}(a)|
+\leq
+(k-j)!\,
+e_{k-j}(x_1,\ldots,x_M).
+\]
+Therefore
+\begin{equation}\label{eq:higher-derivative-bound}
+ \frac{|\psi_j^{(k)}(a)|}{k!}
+ \leq
+ \frac{(k-j)!}{k!}
+ e_{k-j}(x_1,\ldots,x_M).
+\end{equation}
+We use \eqref{eq:higher-derivative-bound} together with
+\(k\geq n+1>j\), so that
+\[
+\frac{(k-j)!}{k!}
+=
+\frac1{k(k-1)\cdots(k-j+1)}
+\leq
+\frac1{j!}.
+\]
+Thus
+\begin{equation}\label{eq:higher-derivative-simple}
+ \frac{|\psi_j^{(k)}(a)|}{k!}
+ \leq
+ \frac1{j!}
+ e_{k-j}(x_1,\ldots,x_M),
+ \qquad k\geq n+1.
+\end{equation}
+
+\medskip\noindent
+\emph{{Step 3. Sum the Taylor series:}}
+The initial conditions \eqref{eq:initial-normalization} give
+\[
+\psi_j(a+z)
+=
+\frac{z^j}{j!}
++
+\sum_{k={n+1}}^{\infty}
+\frac{\psi_j^{(k)}(a)}{k!}z^k.
+\]
+Using \eqref{eq:higher-derivative-simple},
+\[
+\begin{aligned}
+|\psi_j(a+z)|
+&\leq
+\frac{|z|^j}{j!}
++
+\frac1{j!}
+\sum_{k={n+1}}^{\infty}
+e_{k-j}(x_1,\ldots,x_M)|z|^k\\
+&=
+\frac{|z|^j}{j!}
+\left(
+1+
+\sum_{k={n+1}}^{\infty}
+e_{k-j}(x_1,\ldots,x_M)|z|^{k-j}
+\right)\\
+&\leq
+\frac{|z|^j}{j!}
+\sum_{s\geq0}
+e_s(x_1,\ldots,x_M)|z|^s.
+\end{aligned}
+\]
+The generating identity for the elementary symmetric functions is
+\[
+\sum_{s\geq0}
+e_s(x_1,\ldots,x_M)t^s
+=
+\prod_{\ell=1}^M(1+t x_\ell).
+\]
+Taking \(t=|z|\) yields
+\[
+|\psi_j(a+z)|
+\leq
+\frac{|z|^j}{j!}
+\prod_{\ell=1}^M
+\left(
+1+\frac{|z|}{|a-a_\ell|}
+\right),
+\]
+which is \eqref{eq:basismajorant}.
+\end{proof}
+
+
+\subsection{The initial-value estimate}
+\label{sec:initial-value-bound}
+
+Proposition~\ref{prop:initial-basis} immediately yields the form that
+will be used in the local compactness argument.
+
+Let \(h\in V\). Since the basis
+\(\psi_0,\ldots,\psi_{n}\) satisfies
+\eqref{eq:initial-normalization}, we have
+\[
+h
+=
+\sum_{i=0}^{n}
+h^{(i)}(a)\psi_i.
+\]
+Applying \eqref{eq:basismajorant} gives
+\[
+|h(a+z)|
+\leq
+\left(
+\sum_{i=0}^{n}
+\frac{|h^{(i)}(a)|\,|z|^i}{i!}
+\right)
+\prod_{\ell=1}^M
+\left(
+1+\frac{|z|}{|a-a_\ell|}
+\right).
+\]
+Using \(1+x\leq e^x\), we obtain
+\begin{equation}\label{eq:initial-value-bound}
+ |h(a+z)|
+ \leq
+ \left(
+ \sum_{i=0}^{n}
+ \frac{|h^{(i)}(a)|\,|z|^i}{i!}
+ \right)
+ e^{|z|B_V(a)},
+ \qquad
+ B_V(a)
+ =
+ \sum_{\ell=1}^M|a-a_\ell|^{-1}.
+\end{equation}
+
+Both \eqref{eq:productformula} and
+\eqref{eq:initial-value-bound} are uniform with respect to collisions
+among the Wronskian zeros. This is the feature of the polynomial
+estimates that will be used in Section~\ref{sec:compactness}.
+
+\section{Local compactness}\label{sec:compactness}
+
+The estimates of Section~\ref{sec:algebra} apply to spaces
+of polynomial. 
+In this section we transfer them to spaces of holomorphic
+functions by
+Taylor approximation.
+
+We proceed in three stages. First, we prove a local compactness result
+for the coefficients of the fundamental differential operator. The main
+point is to separate the \(o(s_\nu)\) Wronskian zeros that remain in a
+fixed disk from the \(O(s_\nu)\) zeros lying outside that disk. Second,
+we construct, after rescaling the original curve, a local representation
+to which the compactness result applies. Finally, we retain the
+polynomial approximants and the estimates of their Wronskians for later
+use.
+
+
+\subsection{Compactness of the local differential coefficients}
+\label{sec:local-coefficient-compactness}
+
+We begin with a local statement. The deal with a holomorphic vector, while its
+Wronskian is assumed to be a polynomial whose degree is small compared
+with the normalization \(s_\nu\).
+
+\begin{prop}\label{prop:localcompact}
+Let \(s_\nu\to\infty\), and let
+\(\gv_\nu=(g_{\nu,0},\ldots,g_{\nu,n})\) be holomorphic on \(D_{32}\).
+Suppose that, for a fixed constant \(C\),
+\begin{equation}\label{eq:localhyp}
+% \begin{gathered}
+ \sup_{D_{32}}\log\norm{\gv_\nu}\leq Cs_\nu,
+\end{equation}
+and suppose that the Wronskian $W(\gv_\nu)$ is a monic polynomial which we denote
+by $P_\nu$, and assume that
+\begin{equation}
+ m_\nu:=\deg P_\nu=o(s_\nu).
+\end{equation}
+Let
+\(L_\nu=D^{n+1}+\sum_{q=1}^{n+1}b_{q,\nu}D^{n+1-q}\)
+be the fundamental operator of \(\gv_\nu\).
+Then the sequences \(b_{q,\nu}/s_\nu^q\), \(1\leq q\leq n+1\), are
+simultaneously relatively compact locally in measure on \(D_4\).
+Every subsequential limit is holomorphic and is bounded on \(D_1\) by
+a constant depending only on \({n+1}\) and \(C\).
+
+If \(\widehat b_{q,\nu}\) denotes the coefficient of \(D^{n+1-q}\) in
+the fundamental operator of \(P_\nu^{-1/(n+1)}\gv_\nu\), interpreted
+locally away from the zeros of \(P_\nu\) and then extended
+meromorphically, then
+\begin{equation}\label{eq:gaugecomparison}
+ \frac{\widehat b_{q,\nu}-b_{q,\nu}}{s_\nu^q}
+ \convmeas0
+ \qquad\text{locally on }D_4.
+\end{equation}
+Moreover, \(\widehat b_{1,\nu}=0\).
+\end{prop}
+
+\begin{proof}
+
+\medskip\noindent
+\emph{{Step 1. Polynomial approximation:}}
+Fix \(A>0\), to be chosen at the end of Step~2. For
+\(0\leq j\leq n\), write
+\(g_{\nu,j}(z)=\sum_{m=0}^{\infty}c_{\nu,j,m}z^m\).
+By \eqref{eq:localhyp},
+\(\sup_{D_{32}}|g_{\nu,j}|\leq e^{Cs_\nu}\).
+Cauchy's estimate on the circle \(|z|=24\) therefore gives
+\begin{equation}\label{eq:taylor-coefficient-bound}
+ |c_{\nu,j,m}|
+ \leq
+ e^{Cs_\nu}24^{-m},
+ \qquad m\geq0.
+\end{equation}
+
+For an integer \(N\geq n+1\), let
+\(p_{\nu,j}(z)=\sum_{m=0}^{N}c_{\nu,j,m}z^m\).
+If \(0\leq k\leq n+1\) and \(|z|\leq16\), then
+\[
+\begin{aligned}
+ |g_{\nu,j}^{(k)}(z)-p_{\nu,j}^{(k)}(z)|
+ &\leq
+ \sum_{m>N}
+ \frac{m!}{(m-k)!}|c_{\nu,j,m}|\,16^{m-k}  \\
+ &\leq
+ C_{n+1} e^{Cs_\nu}
+ \sum_{m>N}m^{n+1}\left(\frac23\right)^m,
+\end{aligned}
+\]
+where \eqref{eq:taylor-coefficient-bound} was used in the second
+inequality. Since
+\(\sum_{m>N}m^{n+1}(2/3)^m
+ \leq C_{n+1}(N+1)^{n+1}(2/3)^N\),
+we obtain
+\begin{equation}\label{eq:taylor-tail-bound}
+ \max_{0\leq k\leq n+1}
+ \sup_{D_{16}}
+ |g_{\nu,j}^{(k)}-p_{\nu,j}^{(k)}|
+ \leq
+ C_{n+1} e^{Cs_\nu}(N+1)^{n+1}
+ \left(\frac23\right)^N.
+\end{equation}
+
+Choose \(L=L({n+1},C,A)>0\) so that
+\(L\log(3/2)>A+C+1\), and put
+\(N_\nu=\lceil Ls_\nu\rceil\).
+Since \(\log(N_\nu+1)=o(s_\nu)\), equation
+\eqref{eq:taylor-tail-bound} gives, for all sufficiently large \(\nu\),
+\begin{equation}\label{eq:taylorerror}
+ \max_{0\leq k\leq n+1}
+ \sup_{D_{16}}
+ |p_{\nu,j}^{(k)}-g_{\nu,j}^{(k)}|
+ \leq e^{-As_\nu}.
+\end{equation}
+Thus the \(p_{\nu,j}\) have a common degree
+\(N_\nu=O_{n+1,C,A}(s_\nu)\).
+
+Put
+\[
+ \pv_\nu=(p_{\nu,0},\ldots,p_{\nu,n}),
+ \qquad
+ R_\nu:=W(\pv_\nu).
+\]
+Cauchy's estimates applied to \eqref{eq:localhyp}, followed by
+\eqref{eq:taylorerror}, give a constant \(C_1=C_1({n+1},C)\) such that
+\begin{equation}\label{eq:derivative-growth}
+ \max_{0\leq j\leq n}
+ \max_{0\leq k\leq n+1}
+ \sup_{D_{16}}
+ \left(
+ |g_{\nu,j}^{(k)}|
+ +
+ |p_{\nu,j}^{(k)}|
+ \right)
+ \leq e^{C_1s_\nu}
+\end{equation}
+for all sufficiently large \(\nu\).
+
+Each term in the difference
+\(W(\pv_\nu)-W(\gv_\nu)\) contains one factor bounded by
+\(e^{-As_\nu}\) by \eqref{eq:taylorerror}, while all remaining factors
+are bounded by \eqref{eq:derivative-growth}. Hence, after increasing
+\(A\) if necessary,
+\begin{equation}\label{eq:wronskiapprox}
+ \deg R_\nu\leq (n+1)N_\nu=O(s_\nu),
+ \qquad
+ \sup_{D_{12}}|R_\nu-P_\nu|
+ \leq e^{-Bs_\nu},
+\end{equation}
+where \(B=B(A,{n+1},C)\) and \(B\to\infty\) as \(A\to\infty\).
+
+Since \(P_\nu\) is monic of degree \(m_\nu\), Cauchy's coefficient
+estimate gives
+\[
+ \sup_{|z|\leq12}|P_\nu(z)|\geq12^{m_\nu}\geq1.
+\]
+Hence, for all sufficiently large \(\nu\),
+\[
+ \sup_{|z|\leq12}|R_\nu(z)-P_\nu(z)|<1,
+\]
+and therefore \(R_\nu\not\equiv0\). Thus the fundamental operator of
+\(\pv_\nu\) is well defined.
+
+
+Let \(\mathcal C_{q,\nu}^p\) and \(\mathcal C_{q,\nu}^g\) denote the
+Cramer numerators defining, respectively, the coefficients of the
+fundamental operators of \(\pv_\nu\) and \(\gv_\nu\). These
+determinants involve derivatives of order at most \({n+1}\). The same
+determinant expansion, using \eqref{eq:taylorerror} and
+\eqref{eq:derivative-growth}, gives
+\begin{equation}\label{eq:cramer-numerator-approx}
+ \sup_{D_{12}}
+ |\mathcal C_{q,\nu}^p-\mathcal C_{q,\nu}^g|
+ \leq e^{-Bs_\nu},
+ \qquad
+ \sup_{D_{12}}|\mathcal C_{q,\nu}^g|
+ \leq e^{C_2s_\nu},
+\end{equation}
+after decreasing \(B\) by a constant depending only on \({n+1}\) and
+\(C\). Here \(C_2=C_2({n+1},C)\).
+
+
+\medskip\noindent
+\emph{{Step 2. Comparison of the two fundamental operators:}}
+We first remove the set on which the denominator \(P_\nu\) is
+exponentially small.
+
+For a monic polynomial
+\(P(z)=\prod_{i=1}^{m}(z-a_i)\), subadditivity of \(\log^-\) gives
+\begin{equation}\label{eq:polynomial-negative-area}
+ \int_{D_{12}}\log^-|P(z)|\,\dA
+ \leq
+ \sum_{i=1}^{m}
+ \int_{\C}\log^-|z-a_i|\,\dA
+ =
+ \frac{\pi m}{2}.
+\end{equation}
+Define
+\begin{equation}\label{eq:smallvalues}
+ E_\nu
+ :=
+ \{z\in D_{12}:|P_\nu(z)|<e^{-s_\nu}\}.
+ \qquad
+ \meas(E_\nu)
+ \leq
+ \frac{\pi m_\nu}{2s_\nu}
+ \longrightarrow0.
+\end{equation}
+Indeed, \(\log^-|P_\nu|>s_\nu\) on \(E_\nu\), so the measure estimate
+follows directly from \eqref{eq:polynomial-negative-area} and
+\(m_\nu=o(s_\nu)\).
+
+On \(D_{12}\setminus E_\nu\), one has
+\(|P_\nu|\geq e^{-s_\nu}\). If \(B>1\), then
+\eqref{eq:wronskiapprox} gives, for all sufficiently large \(\nu\),
+\begin{equation}\label{eq:denominator-lower-bounds}
+ |P_\nu|\geq e^{-s_\nu},
+ \qquad
+ |R_\nu|\geq\frac12e^{-s_\nu}
+ \quad\text{on }D_{12}\setminus E_\nu.
+\end{equation}
+
+Let \(b_{q,\nu}^p\) be the coefficient of \(D^{n+1-q}\) in the
+fundamental operator of \(\pv_\nu\). Cramer's rule gives
+\(b_{q,\nu}^p=\mathcal C_{q,\nu}^p/R_\nu\) and
+\(b_{q,\nu}=\mathcal C_{q,\nu}^g/P_\nu\). Hence
+\begin{equation}\label{eq:cramer-difference-bound}
+ \left|b_{q,\nu}^p-b_{q,\nu}\right|
+ \leq
+ \frac{|\mathcal C_{q,\nu}^p-\mathcal C_{q,\nu}^g|}
+      {|R_\nu|}
+ +
+ \frac{|\mathcal C_{q,\nu}^g|\,|R_\nu-P_\nu|}
+      {|P_\nu|\,|R_\nu|}.
+\end{equation}
+Equations \eqref{eq:wronskiapprox},
+\eqref{eq:cramer-numerator-approx}, and
+\eqref{eq:denominator-lower-bounds} show that the two terms on the
+right-hand side of \eqref{eq:cramer-difference-bound} are bounded,
+respectively, by
+\(2e^{-(B-1)s_\nu}\) and
+\(2e^{-(B-C_2-2)s_\nu}\).
+
+Choose \(A\) in Step~1 so large that the corresponding \(B\) satisfies
+\(B>C_2+2\). Then
+\(b_{q,\nu}^p-b_{q,\nu}\to0\) uniformly on
+\(D_{12}\setminus E_\nu\). Since
+\(\meas(E_\nu)\to0\) by \eqref{eq:smallvalues}, we obtain
+\begin{equation}\label{eq:cramercomparison}
+ b_{q,\nu}^p-b_{q,\nu}
+ \convmeas0
+ \qquad\text{locally on }D_{12}.
+\end{equation}
+
+
+\medskip\noindent
+\emph{{Step 3. A circle separating the Wronskian zeros:}}
+Write
+\(P_\nu(z)=\prod_{i=1}^{m_\nu}(z-a_{\nu,i})\), with multiplicities.
+For every \(c\geq0\),
+\(\int_8^{10}\log^-|r-c|\,\dd r\leq2\).
+Integrating the sum over \(i\) and then choosing one radius in
+\((8,10)\), we obtain \(\eta_\nu\in(8,10)\) such that
+\begin{equation}\label{eq:separating-radius}
+ \sum_{i=1}^{m_\nu}
+ \log^-|\eta_\nu-|a_{\nu,i}||
+ \leq2m_\nu.
+\end{equation}
+
+For \(|z|=\eta_\nu\),
+\(|z-a_{\nu,i}|
+ \geq|\eta_\nu-|a_{\nu,i}||\).
+Therefore \eqref{eq:separating-radius} gives
+\begin{equation}\label{eq:P-circle-lower}
+ |P_\nu(z)|
+ \geq e^{-2m_\nu},
+ \qquad |z|=\eta_\nu.
+\end{equation}
+Since \(m_\nu=o(s_\nu)\), equations
+\eqref{eq:wronskiapprox} and \eqref{eq:P-circle-lower} imply
+\(|R_\nu-P_\nu|<|P_\nu|\) on \(|z|=\eta_\nu\) for all sufficiently
+large \(\nu\). Rouch\'e's theorem therefore gives
+\begin{equation}\label{eq:rouche-root-count}
+ n_{R_\nu}(\eta_\nu)
+ =
+ n_{P_\nu}(\eta_\nu)
+ \leq m_\nu
+ =
+ o(s_\nu).
+\end{equation}
+At the same time,
+\(\deg R_\nu=O(s_\nu)\) by \eqref{eq:wronskiapprox}.
+
+
+\medskip\noindent
+\emph{{Step 4. Interior and exterior roots:}}
+Let
+\(\zeta_{\nu,1},\ldots,\zeta_{\nu,d_\nu}\) be the zeros of \(R_\nu\),
+repeated according to multiplicity, where
+\(d_\nu=\deg R_\nu\). Define
+\[
+ \mathcal I_\nu
+ :=
+ \{r:|\zeta_{\nu,r}|<\eta_\nu\},
+ \qquad
+ \mathcal O_\nu
+ :=
+ \{1,\ldots,d_\nu\}\setminus\mathcal I_\nu,
+\]
+and
+\[
+ U_{\nu,\mathrm{in}}(z)
+ :=
+ \sum_{r\in\mathcal I_\nu}
+ \frac1{|z-\zeta_{\nu,r}|},
+ \qquad
+ U_{\nu,\mathrm{out}}(z)
+ :=
+ \sum_{r\in\mathcal O_\nu}
+ \frac1{|z-\zeta_{\nu,r}|}.
+\]
+
+There is a constant \(C_0\), independent of \(a\in\C\), such that
+\(\||z-a|^{-1}\|_{L^{3/2}(D_6)}\leq C_0\).
+By \eqref{eq:rouche-root-count},
+\(\#\mathcal I_\nu=o(s_\nu)\), and Minkowski's inequality gives
+\[
+ \left\|
+ \frac{U_{\nu,\mathrm{in}}}{s_\nu}
+ \right\|_{L^{3/2}(D_6)}
+ \leq
+ C_0\frac{\#\mathcal I_\nu}{s_\nu}
+ \longrightarrow0.
+\]
+If \(r\in\mathcal O_\nu\) and \(z\in D_6\), then
+\(|z-\zeta_{\nu,r}|\geq\eta_\nu-6>2\).
+Since \(d_\nu=O(s_\nu)\) by \eqref{eq:wronskiapprox},
+\(\sup_{D_6}U_{\nu,\mathrm{out}}\leq C s_\nu\).
+Thus
+\begin{equation}\label{eq:rootbounds}
+ \left\|
+ \frac{U_{\nu,\mathrm{in}}}{s_\nu}
+ \right\|_{L^{3/2}(D_6)}
+ \longrightarrow0,
+ \qquad
+ \sup_{D_6}
+ \frac{U_{\nu,\mathrm{out}}}{s_\nu}
+ \leq C_3.
+\end{equation}
+
+
+\medskip\noindent
+\emph{{Step 5. Coefficient contributions:}}
+Apply Proposition~\ref{prop:polynomialcoeff} to the space spanned by
+the components of \(\pv_\nu\). Multiplying
+\(R_\nu\) by a nonzero constant does not change either its zero divisor
+or the fundamental operator, so the monic normalization of \(R_\nu\)
+may be used in that proposition.
+
+For each \(q\), split the sum in \eqref{eq:productformula} into the
+terms whose root set is contained in \(\mathcal O_\nu\) and the terms
+whose root set meets \(\mathcal I_\nu\). This defines
+\begin{equation}\label{eq:splitcoeff}
+ \frac{b_{q,\nu}^p}{s_\nu^q}
+ =
+ B_{q,\nu}+F_{q,\nu}.
+\end{equation}
+The terms in \(B_{q,\nu}\) have poles only at exterior roots, hence
+\(B_{q,\nu}\) is holomorphic on \(D_8\). By
+\eqref{eq:productformula} and the second estimate in
+\eqref{eq:rootbounds},
+\begin{equation}\label{eq:B-bound}
+ \sup_{D_6}|B_{q,\nu}|
+ \leq C_q.
+\end{equation}
+
+Every term in \(F_{q,\nu}\) contains at least one interior root.
+For \(q\ge2\), using \(|\gamma_{q,I}|\leq q!\) from
+\eqref{eq:productformula} and estimating subsets by ordered
+\(q\)-tuples gives
+\begin{equation}\label{eq:F-bound}
+ |F_{q,\nu}|
+ \leq
+ C_q
+ \frac{U_{\nu,\mathrm{in}}}{s_\nu}
+ \left(
+ \frac{U_{\nu,\mathrm{in}}+U_{\nu,\mathrm{out}}}{s_\nu}
+ \right)^{q-1}.
+\end{equation}
+
+Set \(A_\nu=U_{\nu,\mathrm{in}}/s_\nu\). For \(q=1\), the preceding
+estimate gives
+\[
+ |F_{1,\nu}|\le C_1A_\nu,
+ \qquad
+ \int_{D_6}|F_{1,\nu}|^{3/2}\,\dA
+ \le C_1^{3/2}\int_{D_6}A_\nu^{3/2}\,\dA
+ \longrightarrow0
+\]
+by \eqref{eq:rootbounds}. Hence assume \(q\ge2\) below and set
+\[
+G_\nu=\frac{U_{\nu,\mathrm{in}}+U_{\nu,\mathrm{out}}}{s_\nu},
+\qquad p=\frac{3}{2q}.
+\]
+Raising \eqref{eq:F-bound} to the power \(p\) and applying H\"older's
+inequality with exponents \(q\) and \(q/(q-1)\) gives
+\[
+ \int_{D_6}|F_{q,\nu}|^p\,\dA
+ \leq
+ C_q
+ \left(
+ \int_{D_6}A_\nu^{3/2}\,\dA
+ \right)^{1/q}
+ \left(
+ \int_{D_6}G_\nu^{3/2}\,\dA
+ \right)^{(q-1)/q}.
+\]
+The first factor tends to zero by \eqref{eq:rootbounds}, while the
+second remains bounded by the same equation. Hence
+\begin{equation}\label{eq:errorvanish}
+ \int_{D_6}|F_{q,\nu}|^{3/(2q)}\,\dA
+ \longrightarrow0.
+\end{equation}
+When \(3/(2q)<1\), \eqref{eq:errorvanish} is only an estimate for an
+integral of a positive power; no Banach-space assertion is being made.
+
+By \eqref{eq:B-bound}, the families \(B_{q,\nu}\) are normal on
+\(D_6\). Since there are only finitely many values of \(q\), Montel's
+theorem gives a common subsequence on which all \(B_{q,\nu}\)
+converge locally uniformly on \(D_6\). Equations
+\eqref{eq:splitcoeff} and \eqref{eq:errorvanish} then show that
+\(b_{q,\nu}^p/s_\nu^q\) converge locally in measure on \(D_4\) to
+holomorphic limits. Finally, \eqref{eq:cramercomparison} gives
+\[
+ \frac{b_{q,\nu}^p-b_{q,\nu}}{s_\nu^q}
+ \convmeas0
+ \qquad\text{locally on }D_4,
+\]
+because \(s_\nu\to\infty\). Therefore
+\(b_{q,\nu}/s_\nu^q\) have the same subsequential limits. This proves
+the compactness and holomorphy assertions of the proposition.
+The bound on \(D_1\) follows from \eqref{eq:B-bound}; after the choice
+of \(A\) in Step~2 has been fixed in terms of \({n+1}\) and \(C\), the
+bound depends only on \({n+1}\) and \(C\).
+
+
+\medskip\noindent
+\emph{{Step 6. Passage to the canonical gauge:}}
+By Lemma~\ref{lem:fundamental-operator}(iii) and
+\(W(\gv_\nu)=P_\nu\),
+\(b_{1,\nu}=-P_\nu'/P_\nu\).
+Set
+\(\ell_\nu=P_\nu'/((n+1)P_\nu)\).
+If the zeros of \(P_\nu\) are listed with multiplicity, then
+\[
+ \ell_\nu(z)
+ =
+ \frac1{n+1}\sum_{i=1}^{m_\nu}\frac1{z-a_{\nu,i}},
+ \qquad
+ \ell_\nu^{(j)}(z)
+ =
+ \frac{(-1)^j j!}{{n+1}}
+ \sum_{i=1}^{m_\nu}
+ \frac1{(z-a_{\nu,i})^{j+1}}
+ \quad(j\geq1).
+\]
+
+For \(j=0\), the uniform \(L^{3/2}\)-estimate used in Step~4 gives
+\(\|\ell_\nu/s_\nu\|_{L^{3/2}(K)}
+ \leq C_Km_\nu/s_\nu\to0\)
+for every \(K\Subset D_4\).
+
+For \(j\geq1\), choose
+\(1/(j+1)<\alpha<\min\{1,2/(j+1)\}\).
+Since \(\alpha<1\), subadditivity of \(x^\alpha\), together with local
+integrability of
+\(|z-a|^{-(j+1)\alpha}\), gives
+\[
+ \int_K
+ \left|
+ \frac{\ell_\nu^{(j)}}{s_\nu^{j+1}}
+ \right|^\alpha
+ \dA
+ \leq
+ C_{K,j}
+ \frac{m_\nu}{s_\nu^{(j+1)\alpha}}.
+\]
+Here \(m_\nu=o(s_\nu)\) by \eqref{eq:localhyp}, while
+\((j+1)\alpha>1\). Therefore
+\begin{equation}\label{eq:gaugesmall}
+ \frac{\ell_\nu^{(j)}}{s_\nu^{j+1}}
+ \convmeas0
+ \qquad\text{locally on }D_4,
+ \qquad j\geq0.
+\end{equation}
+
+The fundamental operator of \(P_\nu^{-1/(n+1)}\gv_\nu\) is
+\(P_\nu^{-1/(n+1)}L_\nu P_\nu^{1/{n+1}}\). Since
+\(P_\nu^{-1/(n+1)}DP_\nu^{1/{n+1}}=D+\ell_\nu\), it is obtained from
+\(L_\nu\) by replacing \(D\) with \(D+\ell_\nu\). The coefficient of
+\(D^{n}\) is therefore
+\(b_{1,\nu}+{n+1}\ell_\nu=0\), so
+\(\widehat b_{1,\nu}=0\).
+
+For \(q\geq2\), repeated use of
+\(D\phi=\phi D+\phi'\) shows that
+\(\widehat b_{q,\nu}-b_{q,\nu}\) is a finite sum of monomials of the
+form
+\begin{equation}\label{eq:gauge-monomial}
+ C
+ \prod_{r=1}^{q-1}b_{r,\nu}^{\,m_r}
+ \prod_{j=0}^{q-1}
+ \bigl(\ell_\nu^{(j)}\bigr)^{k_j},
+ \qquad
+ \sum_{r=1}^{q-1}r\,m_r
+ +
+ \sum_{j=0}^{q-1}(j+1)k_j
+ =
+ q,
+ \qquad
+ \sum_{j=0}^{q-1}k_j\geq1.
+\end{equation}
+The normalized factors \(b_{r,\nu}/s_\nu^r\) are bounded in measure
+by Step~5, while every normalized factor
+\(\ell_\nu^{(j)}/s_\nu^{j+1}\) tends to zero in measure by
+\eqref{eq:gaugesmall}. Dividing each monomial in
+\eqref{eq:gauge-monomial} by \(s_\nu^q\) therefore makes it tend to
+zero in measure. Since only finitely many monomials occur, this proves
+\eqref{eq:gaugecomparison}.
+\end{proof}
+
+The distinction between the two groups of roots in Steps~3--5 is
+essential. Equation \eqref{eq:rouche-root-count} gives only
+\(o(s_\nu)\) interior roots, and every term in \(F_{q,\nu}\) contains
+at least one of them. The exterior roots are not discarded: their
+number can be \(O(s_\nu)\), but their distance from \(D_6\) is bounded
+below, and the corresponding terms form the holomorphic part
+\(B_{q,\nu}\).
+
+
+\subsection{A local representation of the curve}
+\label{sec:representation}
+
+We next show that the hypotheses of
+Proposition~\ref{prop:localcompact} arise after rescaling the original
+curve. The scalar gauge is chosen so that the local Wronskian becomes a
+polynomial with \(o(s_\nu)\) zeros. We also need control of the value
+of the gauge at the origin and of the negative part of
+\(\log\norm{\gv_\nu}\).
+
+\begin{prop}\label{prop:representation}
+Let \(\fv\) be a curve as defined in Section~\ref{sec:intro}, and make
+the fixed unitary coordinate change for which
+\(f_j(0)\ne0\), \(0\leq j\leq n\).
+Suppose that \(t_\nu,s_\nu\to\infty\) and, for a fixed \(C\),
+\begin{equation}\label{eq:scalehyp}
+ \log t_\nu=o(s_\nu),
+ \qquad
+ T(256t_\nu,\fv)\leq Cs_\nu,
+ \qquad
+ \NN(256t_\nu,0,W_\nu)=o(s_\nu).
+\end{equation}
+After omitting finitely many terms, there are holomorphic vectors
+\(\gv_\nu\) on \(D_{64}\) and monic polynomials \(P_\nu\) such that
+\begin{equation}\label{eq:representationbounds}
+ \begin{gathered}
+ W(\gv_\nu)=P_\nu,
+ \qquad
+ \deg P_\nu=o(s_\nu),\\
+ \sup_{D_{32}}\log\norm{\gv_\nu}
+ \leq(5C+1)s_\nu,\\
+ s_\nu^{-1}\log|g_{\nu,j}(0)|
+ \longrightarrow0,
+ \qquad
+ 0\leq j\leq n.
+ \end{gathered}
+\end{equation}
+For \(0<R<64\),
+\begin{equation}\label{eq:meanidentity}
+ \mean R{\log\norm{\gv_\nu}}
+ =
+ T(Rt_\nu,\fv)+c_\nu,
+ \qquad
+ c_\nu=o(s_\nu),
+\end{equation}
+where \(c_\nu\) is independent of \(R\).
+
+The functions
+\begin{equation}\label{eq:scaledcompact}
+ \left(\frac{t_\nu}{s_\nu}\right)^qQ_q(t_\nu z),
+ \qquad
+ 2\leq q\leq n+1,
+\end{equation}
+are simultaneously relatively compact locally in measure on \(D_4\).
+Every subsequential limit is holomorphic, and its restriction to
+\(D_1\) is bounded by a constant depending only on \({n+1}\) and \(C\).
+\end{prop}
+
+\begin{proof}
+
+\medskip\noindent
+\emph{{Step 1. Normalization of the local Wronskian divisor:}}
+Recall that
+\(\kappa=n(n+1)/2\), and write
+\(W_{\fv}(z)=w_0z^{m_0}+O(z^{m_0+1})\), \(w_0\ne0\).
+
+Let \(P_\nu\) be the monic polynomial whose zeros are the points
+\(a/t_\nu\), where \(a\) runs through the zeros of \(W_{\fv}\) in
+\(D_{64t_\nu}\), with the same multiplicities. Put
+\(m_\nu=\deg P_\nu\). By \eqref{eq:countbound},
+\[
+ m_\nu\log2
+ \leq
+ \NN_{W_{\fv}}(128t_\nu)
+ \leq
+ \NN_{W_{\fv}}(256t_\nu).
+\]
+The last term is \(o(s_\nu)\) by \eqref{eq:scalehyp}; hence
+\begin{equation}\label{eq:local-P-degree}
+ m_\nu=o(s_\nu).
+\end{equation}
+
+The function
+\(t_\nu^\kappa W_{\fv}(t_\nu z)/P_\nu(z)\)
+is holomorphic and zero-free on \(D_{64}\). Since \(D_{64}\) is simply
+connected, there is a holomorphic \(H_\nu\) on \(D_{64}\) such that
+\begin{equation}\label{eq:localgauge}
+ e^{(n+1)H_\nu(z)}
+ =
+ \frac{t_\nu^\kappa W_{\fv}(t_\nu z)}{P_\nu(z)},
+ \qquad
+ \gv_\nu(z)
+ =
+ e^{-H_\nu(z)}\fv(t_\nu z).
+\end{equation}
+The Wronskian multiplication and scaling formulas applied to
+\eqref{eq:localgauge} give
+\begin{equation}\label{eq:local-wronskian-normalization}
+ W(\gv_\nu)=P_\nu.
+\end{equation}
+
+
+\medskip\noindent
+\emph{{Step 2. The value of the gauge at the origin:}}
+The zero of \(P_\nu\) at the origin has multiplicity \(m_0\). For every
+nonzero zero \(a\) of \(W_{\fv}\) with \(|a|<64t_\nu\), the
+corresponding factor of \(P_\nu\) contributes
+\(\log(t_\nu/|a|)\) to the logarithm of the quotient in
+\eqref{eq:localgauge} at the origin. Jensen's formula
+\eqref{eq:zerojensen} therefore gives
+\begin{equation}\label{eq:centeridentity}
+ (n+1)\Ree H_\nu(0)
+ =
+ \kappa\log t_\nu
+ +
+ \NN_{W_{\fv}}(64t_\nu)
+ -
+ m_\nu\log64
+ +
+ \log|w_0|.
+\end{equation}
+By \eqref{eq:scalehyp} and \eqref{eq:local-P-degree}, every term on
+the right-hand side of \eqref{eq:centeridentity}, except the fixed
+constant \(\log|w_0|\), is \(o(s_\nu)\). Hence
+\begin{equation}\label{eq:H-center-small}
+ \Ree H_\nu(0)=o(s_\nu).
+\end{equation}
+
+Since \(f_j(0)\ne0\) is fixed,
+\(\log|g_{\nu,j}(0)|
+ =\log|f_j(0)|-\Ree H_\nu(0)\).
+Equation \eqref{eq:H-center-small} therefore gives
+\begin{equation}\label{eq:center-component-normalization}
+ s_\nu^{-1}\log|g_{\nu,j}(0)|
+ \longrightarrow0,
+ \qquad
+ 0\leq j\leq n.
+\end{equation}
+
+Taking logarithms of the norm in \eqref{eq:localgauge} gives
+\(\log\norm{\gv_\nu(z)}
+ =\log\norm{\fv(t_\nu z)}-\Ree H_\nu(z)\).
+Since \(\Ree H_\nu\) is harmonic, its circular mean equals
+\(\Ree H_\nu(0)\). By the definition of the characteristic,
+\[
+ \mean R{\log\norm{\fv(t_\nu\cdot)}}
+ =
+ T(Rt_\nu,\fv)+\log\norm{\fv(0)}.
+\]
+Consequently \eqref{eq:meanidentity} holds with
+\begin{equation}\label{eq:cnu-definition}
+ c_\nu
+ :=
+ \log\norm{\fv(0)}-\Ree H_\nu(0)
+ =
+ o(s_\nu),
+\end{equation}
+where the last equality follows from \eqref{eq:H-center-small}; thus
+the constant in \eqref{eq:meanidentity} is the \(c_\nu\) in
+\eqref{eq:cnu-definition}.
+
+
+\medskip\noindent
+\emph{{Step 3. Control of the negative part of the norm:}}
+For \(0\leq j\leq n\), let \(E_{\nu,j}\) be the set of points at
+which
+\(|g_{\nu,j}|=\max_\ell|g_{\nu,\ell}|\); ties may be resolved by taking
+the smallest index. These sets cover \(D_{64}\) up to a set of area
+zero.
+
+Fix \(j\). On \(E_{\nu,j}\), put
+\[
+ h_\ell
+ :=
+ \frac{g_{\nu,\ell}}{g_{\nu,j}}
+ =
+ \frac{f_\ell(t_\nu z)}{f_j(t_\nu z)}.
+\]
+Then \(h_j=1\) and \(|h_\ell|\leq1\) on \(E_{\nu,j}\).
+The Wronskian multiplication formula gives
+\(P_\nu=g_{\nu,j}^{n+1}W(h_0,\ldots,h_{n})\).
+Expanding the latter Wronskian along the column \(h_j=1\), and then
+factoring \(h_\ell\) from the remaining columns, gives
+\begin{equation}\label{eq:negativedeterminant}
+ \frac{|P_\nu|}{\norm{\gv_\nu}^{n+1}}
+ \leq
+ \left|
+ \det\left(
+ \frac{h_\ell^{(i)}}{h_\ell}
+ \right)_{
+ 1\leq i\leq n,\ \ell\ne j}
+ \right|
+ \qquad\text{on }E_{\nu,j}.
+\end{equation}
+
+For fixed \(j\ne\ell\), set
+\[
+ H_{\nu,j,\ell}(z)
+ :=
+ \frac{f_\ell(48t_\nu z)}{f_j(48t_\nu z)}.
+\]
+Then
+\[
+ H_{\nu,j,\ell}(0)=\frac{f_\ell(0)}{f_j(0)}
+\]
+is fixed and nonzero, independently of \(\nu\). By
+\eqref{eq:quotientbound} and \eqref{eq:scalehyp},
+\[
+ \TN(4,H_{\nu,j,\ell})
+ \leq
+ T(192t_\nu,\fv)+O(1)
+ \leq
+ Cs_\nu+O(1).
+\]
+Since there are only finitely many pairs \((j,\ell)\), the fixed center
+values \(f_\ell(0)/f_j(0)\) can be absorbed uniformly into the constant in
+\revision{Corollary~\ref{lem:logderivbound}. Thus, for \(1\leq i\leq n\),}
+\[
+ m\!\left(1,
+ \frac{H_{\nu,j,\ell}^{(i)}}{H_{\nu,j,\ell}}\right)
+ \leq
+ C_{i,n,\fv(0)}
+ \log\!\left(2+\TN(4,H_{\nu,j,\ell})\right)
+ \leq
+ C_{n+1,C,\fv(0)}(\log s_\nu+1).
+\]
+After rescaling the derivatives by the fixed factor \(48\), we obtain
+\begin{equation}\label{eq:ratio-logderiv-48}
+ m\left(
+ 48,\frac{h_\ell^{(i)}}{h_\ell}
+ \right)
+ \leq
+ C_{n+1,C,\fv(0)}(\log s_\nu+1)
+ =
+ o(s_\nu).
+\end{equation}
+
+
+Expanding the determinant in \eqref{eq:negativedeterminant} into its
+finitely many permutation terms, and applying
+\eqref{eq:ratio-logderiv-48} to every factor, gives
+\begin{equation}\label{eq:determinant-proximity}
+ \mean{48}{
+ \log^+
+ \left|
+ \det\left(
+ \frac{h_\ell^{(i)}}{h_\ell}
+ \right)_{
+ 1\leq i\leq n,\ \ell\ne j}
+ \right|
+ }
+ =
+ o(s_\nu),
+\end{equation}
+uniformly in \(j\).
+
+All roots of \(P_\nu\) lie in \(D_{64}\), and
+\(\deg P_\nu=m_\nu\). Since
+\(\sup_{a\in\C}\mean{48}{\log^-|z-a|}<\infty\),
+subadditivity of \(\log^-\) gives
+\begin{equation}\label{eq:P-negative-circle}
+ \mean{48}{\log^-|P_\nu|}
+ \leq
+ C_4m_\nu
+ =
+ o(s_\nu),
+\end{equation}
+where \eqref{eq:local-P-degree} is used in the last equality.
+
+Taking logarithms in \eqref{eq:negativedeterminant} gives on
+\(E_{\nu,j}\)
+\[
+ {n+1}\log^-\norm{\gv_\nu}
+ \leq
+ \log^-|P_\nu|
+ +
+ \log^+
+ \left|
+ \det\left(
+ \frac{h_\ell^{(i)}}{h_\ell}
+ \right)
+ \right|.
+\]
+Integrating this inequality over the sets \(E_{\nu,j}\cap\{|z|=48\}\),
+summing over \(j\), and using
+\eqref{eq:determinant-proximity} and
+\eqref{eq:P-negative-circle}, we obtain
+\begin{equation}\label{eq:negativepart}
+ \mean{48}{\log^-\norm{\gv_\nu}}
+ =
+ o(s_\nu).
+\end{equation}
+
+
+\medskip\noindent
+\emph{{Step 4. Uniform upper bound for the local frame:}}
+At \(R=48\), equation \eqref{eq:meanidentity} and
+\eqref{eq:scalehyp} give
+\(\mean{48}{\log\norm{\gv_\nu}}\leq Cs_\nu+o(s_\nu)\).
+Since
+\(\log x=\log^+x-\log^-x\),
+equation \eqref{eq:negativepart} yields
+\begin{equation}\label{eq:positivepart}
+ \mean{48}{\log^+\norm{\gv_\nu}}
+ \leq
+ Cs_\nu+o(s_\nu).
+\end{equation}
+
+The function \(\log\norm{\gv_\nu}\) is subharmonic. For
+\(|z|\leq32\), the Poisson kernel of \(D_{48}\) is bounded by
+\((48+32)/(48-32)=5\). Hence \eqref{eq:positivepart} gives
+\[
+ \sup_{D_{32}}\log\norm{\gv_\nu}
+ \leq
+ 5Cs_\nu+o(s_\nu)
+ \leq
+ (5C+1)s_\nu
+\]
+for all sufficiently large \(\nu\). Together with
+\eqref{eq:local-P-degree},
+\eqref{eq:local-wronskian-normalization}, and
+\eqref{eq:center-component-normalization}, this proves
+\eqref{eq:representationbounds}.
+
+
+\medskip\noindent
+\emph{{Step 5. Compactness of the rescaled canonical coefficients:}}
+By \eqref{eq:localgauge}, after multiplication by a constant
+\((n+1)\)st root of unity,
+\[
+ P_\nu^{-1/(n+1)}\gv_\nu
+ =
+ t_\nu^{-\kappa/{n+1}}
+ \bigl(W_{\fv}^{-1/(n+1)}\fv\bigr)(t_\nu z).
+\]
+Multiplication of all solutions by a nonzero constant does not change
+their fundamental operator.
+
+By \eqref{eq:representationbounds},
+Proposition~\ref{prop:localcompact} applies to \(\gv_\nu\). Let
+\(\widehat b_{q,\nu}\) be the coefficients of the fundamental operator
+of \(P_\nu^{-1/(n+1)}\gv_\nu\). The scaling rule
+\eqref{eq:scalecoeff} then gives
+\begin{equation}\label{eq:canonical-coefficient-identification}
+ \widehat b_{q,\nu}(z)
+ =
+ t_\nu^qQ_q(t_\nu z),
+ \qquad
+ 2\leq q\leq n+1.
+\end{equation}
+Therefore
+\[
+ \frac{\widehat b_{q,\nu}}{s_\nu^q}
+ =
+ \left(\frac{t_\nu}{s_\nu}\right)^qQ_q(t_\nu z).
+\]
+The compactness and uniform bounds in
+Proposition~\ref{prop:localcompact} now give exactly the assertion
+\eqref{eq:scaledcompact}.
+\end{proof}
+
+The bound in the last assertion depends only on \({n+1}\) and \(C\), and
+is uniform over all sequences satisfying \eqref{eq:scalehyp}. This
+uniformity will later allow us to replace \(t_\nu\) by an arbitrary
+fixed multiple of \(t_\nu\).
+
+
+\subsection{Polynomial data retained from the approximation}
+\label{sec:replacement}
+
+Later we shall use the polynomial spaces
+$V_\nu={\mathrm{span}}\{ p_{\nu,0},\dots,p_{\nu,n}\}\subset\C[z]$
+constructed in the proof of
+Proposition~\ref{prop:localcompact}, not only their differential
+operators. The following lemma collects the properties needed later.
+\begin{lem}\label{lem:replacement}
+Under \eqref{eq:scalehyp}, let \(\gv_\nu\) be the vectors constructed
+in Proposition~\ref{prop:representation}. They admit polynomial
+approximants \(\pv_\nu\) of degree \(O(s_\nu)\) satisfying
+\eqref{eq:taylorerror}, for any fixed sufficiently large \(A\).
+
+If \(R_\nu=W(\pv_\nu)\), then there are
+\(\eta_\nu\in(8,10)\) such that
+\begin{equation}\label{eq:replacement-data}
+ \begin{gathered}
+ \deg R_\nu=O(s_\nu),
+ \qquad
+ n_{R_\nu}(\eta_\nu)=o(s_\nu),\\
+ s_\nu^{-1}\log|R_\nu|
+ \convmeas0
+ \qquad\text{locally on }D_4.
+ \end{gathered}
+\end{equation}
+If \(b_{q,\nu}^p\) are the fundamental coefficients of \(\pv_\nu\),
+then
+\begin{equation}\label{eq:polynomial-coefficients}
+ \frac{b_{1,\nu}^p}{s_\nu}
+\convmeas0,
+ \qquad
+ \frac{b_{q,\nu}^p}{s_\nu^q}
+ -
+ \left(\frac{t_\nu}{s_\nu}\right)^qQ_q(t_\nu z)
+ \convmeas0,
+ \qquad
+ 2\leq q\leq n+1,
+\end{equation}
+locally on \(D_4\).
+\end{lem}
+
+\begin{proof}
+
+\medskip\noindent
+\emph{{Step 1. The normalized logarithm of \(P_\nu\):}}
+All roots of \(P_\nu\) lie in \(D_{64}\), and
+\(\deg P_\nu=o(s_\nu)\) by \eqref{eq:local-P-degree}.
+Fix \(R>0\). Since \(P_\nu\) is monic,
+\(\log^+|P_\nu(z)|
+ \leq(\deg P_\nu)\log(R+64)\)
+for \(|z|\leq R\). Moreover,
+\eqref{eq:polynomial-negative-area}, with \(D_R\) in place of
+\(D_{12}\), gives
+\(\int_{D_R}\log^-|P_\nu|\,\dA
+ \leq C_R\deg P_\nu\).
+Consequently
+\begin{equation}\label{eq:small-polynomial-log}
+ s_\nu^{-1}\log|P_\nu|
+ \longrightarrow0
+ \qquad\text{in }L^1_{\loc}(\C).
+\end{equation}
+
+
+\medskip\noindent
+\emph{{Step 2. Transfer from \(P_\nu\) to \(R_\nu\):}}
+Equation \eqref{eq:wronskiapprox} gives
+\[
+ \sup_{D_{12}}|R_\nu-P_\nu|
+ \leq e^{-Bs_\nu},
+\]
+where \(B>0\) is fixed.
+
+Choose \(0<\epsilon<B\), and define
+\(E_{\nu,\epsilon}
+ :=\{z\in D_{12}:|P_\nu(z)|<e^{-\epsilon s_\nu}\}\).
+Since
+\(\log^-|P_\nu|>\epsilon s_\nu\) on this set,
+\eqref{eq:polynomial-negative-area} and
+\eqref{eq:local-P-degree} give
+\begin{equation}\label{eq:replacement-exceptional-set}
+ \meas(E_{\nu,\epsilon})
+ \leq
+ \frac{C\,\deg P_\nu}{\epsilon s_\nu}
+ \longrightarrow0.
+\end{equation}
+
+On \(D_{12}\setminus E_{\nu,\epsilon}\),
+\[
+ \left|\frac{R_\nu}{P_\nu}-1\right|
+ \leq
+ e^{-(B-\epsilon)s_\nu}.
+\]
+It follows that
+\(s_\nu^{-1}\log|R_\nu/P_\nu|\to0\) uniformly on
+\(D_{12}\setminus E_{\nu,\epsilon}\). Equation
+\eqref{eq:replacement-exceptional-set} and the convergence in
+\eqref{eq:small-polynomial-log} therefore imply
+\begin{equation}\label{eq:R-log-measure}
+ s_\nu^{-1}\log|R_\nu|
+ \convmeas0
+ \qquad\text{locally on }D_4.
+\end{equation}
+
+The functions \(s_\nu^{-1}\log|R_\nu|\) are subharmonic and locally
+uniformly bounded above: this follows directly from
+\eqref{eq:wronskiapprox} and the pointwise upper bound for
+\(\log^+|P_\nu|\) used in Step~1. Hence
+Lemma~\ref{lem:subharmonic-compactness} and
+\eqref{eq:R-log-measure} give
+\[
+ s_\nu^{-1}\log|R_\nu|
+ \longrightarrow0
+ \qquad\text{in }L^1_{\loc}(D_4).
+\]
+
+The degree estimate in \eqref{eq:replacement-data} is the first
+assertion of \eqref{eq:wronskiapprox}, while the zero-counting estimate
+is exactly \eqref{eq:rouche-root-count}. Thus all assertions in
+\eqref{eq:replacement-data} are proved.
+
+\emph{{Step 3. Comparison of the differential coefficients:}}
+Let \(b_{q,\nu}\) be the fundamental coefficients of \(\gv_\nu\), and
+let \(\widehat b_{q,\nu}\) be those of
+\(P_\nu^{-1/(n+1)}\gv_\nu\).
+
+Equation \eqref{eq:cramercomparison} gives
+\[
+ \frac{b_{q,\nu}^p-b_{q,\nu}}{s_\nu^q}
+ \convmeas0,
+\]
+and \eqref{eq:gaugecomparison} gives
+\[
+ \frac{b_{q,\nu}-\widehat b_{q,\nu}}{s_\nu^q}
+ \convmeas0.
+\]
+For \(q=1\), Proposition~\ref{prop:localcompact} gives
+\(\widehat b_{1,\nu}=0\). Hence
+\(b_{1,\nu}^p/s_\nu\convmeas0\).
+
+For \(2\leq q\leq n+1\), equation
+\eqref{eq:canonical-coefficient-identification} gives
+\[
+ \frac{\widehat b_{q,\nu}}{s_\nu^q}
+ =
+ \left(\frac{t_\nu}{s_\nu}\right)^qQ_q(t_\nu z).
+\]
+Therefore
+\[
+ \frac{b_{q,\nu}^p}{s_\nu^q}
+ -
+ \left(\frac{t_\nu}{s_\nu}\right)^qQ_q(t_\nu z)
+ =
+ \frac{b_{q,\nu}^p-b_{q,\nu}}{s_\nu^q}
+ +
+ \frac{b_{q,\nu}-\widehat b_{q,\nu}}{s_\nu^q},
+\]
+and each term on the right tends to zero in measure by
+\eqref{eq:cramercomparison} and \eqref{eq:gaugecomparison}. This is
+\eqref{eq:polynomial-coefficients}.
+\end{proof}
+\section{Growth indices}\label{sec:indices}
+
+To pass from selected radii to arbitrary radii, we use the full interval
+of P\'olya peak orders. This is more convenient than working only with
+the lower and upper orders.
+
+\subsection{Drasin--Shea indices and P\'olya peaks}
+\label{sec:polya-peaks}
+
+Let \(T\) be a positive, unbounded, nondecreasing function. Its
+Drasin--Shea indices \cite{DS72} are
+\begin{equation}\label{eq:strong-indices}
+\begin{split}
+ \rho^*(T)
+ &=
+ \sup\left\{
+ p\in\R:
+ \limsup_{x,t\to\infty}
+ \frac{T(xt)}{x^pT(t)}
+ =
+ \infty
+ \right\},\\
+ \rho_*(T)
+ &=
+ \inf\left\{
+ p\in\R:
+ \liminf_{x,t\to\infty}
+ \frac{T(xt)}{x^pT(t)}
+ =
+ 0
+ \right\}.
+\end{split}
+\end{equation}
+The limits in \eqref{eq:strong-indices} are joint limits as
+\(x,t\to\infty\). For the characteristic of a holomorphic curve,
+\[
+0\leq
+\rho_*(T)
+\leq
+\lambda(\fv)
+\leq
+\rho(\fv)
+\leq
+\rho^*(T).
+\]
+
+For later use, we need a form of the P\'olya-peak theorem that is
+uniform for all fixed multipliers \(t>0\) and includes the endpoint
+orders. 
+
+\begin{lem}[\cite{DS72}, \cite{Ere93}]
+\label{lem:peaks}
+Let \(T\) be a positive, unbounded, nondecreasing function. For every
+finite \(\mu>0\) belonging to
+\([\rho_*(T),\rho^*(T)]\) and every
+\(0<\delta<\min\{\mu,1\}\), there exist
+\(r_\nu\to\infty\) and a constant \(C_{T,\mu,\delta}>0\) such that,
+with \(S_\nu=T(r_\nu)\),
+\begin{equation}\label{eq:peak}
+ \limsup_{\nu\to\infty}
+ \frac{T(tr_\nu)}{S_\nu}
+ \leq
+ C_{T,\mu,\delta}
+ \max\{t^{\mu-\delta},t^{\mu+\delta}\},
+ \qquad t>0.
+\end{equation}
+\end{lem}
+
+For \(0<t\leq\varepsilon_0\), the first estimate applies for all
+sufficiently large \(\nu\), because \(\varepsilon_\nu\to0\). For
+\(t\geq\varepsilon_0^{-1}\), the second estimate applies. If
+\(\varepsilon_0<t<1\), monotonicity gives
+\[
+ \frac{T(tr_\nu)}{T(r_\nu)}\leq1
+ \leq
+ \varepsilon_0^{-(\mu-\delta)}t^{\mu-\delta}.
+\]
+If \(1<t<\varepsilon_0^{-1}\), monotonicity and the second estimate at
+the endpoint give
+\[
+ \frac{T(tr_\nu)}{T(r_\nu)}
+ \leq
+ \varepsilon_0^{-(\mu+\delta)}
+ \leq
+ \varepsilon_0^{-(\mu+\delta)}t^{\mu+\delta}.
+\]
+Thus \eqref{eq:peak} holds with
+\[
+ C_{T,\mu,\delta}
+ =
+ \max\{1,\varepsilon_0^{-(\mu-\delta)},
+           \varepsilon_0^{-(\mu+\delta)}\}.
+\]
+
+
+\subsection{Collapse of the interval of growth indices}
+\label{sec:index-collapse}
+
+We now determine the interval under the small-ramification hypothesis:
+$
+[\rho_*(T),\rho^*(T)].
+$
+
+\begin{prop}\label{prop:indices}
+Suppose that
+\[
+\lambda(\fv)<\infty,
+\qquad
+N(r,0,W_{\revision{\fv}})=o(T(r,\fv)),
+\qquad
+\log r=o(T(r,\fv)).
+\]
+Then, with \(T(r)=T(r,\fv)\),
+\begin{equation}\label{eq:indices-collapse}
+ \revision{\rho_*(T)}
+ =
+ \lambda(\fv)
+ =
+ \rho(\fv)
+ =
+ \rho^*(T)
+ \in
+ \{0\}\cup\Gn.
+\end{equation}
+\end{prop}
+
+%Here stopped inserting red.
+\begin{proof}
+
+If \(\rho^*(T)=0\), then
+\[
+0\leq
+\rho_*(T)
+\leq
+\lambda(\fv)
+\leq
+\rho(\fv)
+\leq
+\rho^*(T)=0,
+\]
+and \eqref{eq:indices-collapse} follows. We therefore assume
+\(\rho^*(T)>0\).
+
+Fix
+$
+0<\mu\in[\rho_*(T),\rho^*(T)].
+$
+We shall prove that \(\mu\in\Gn\).
+Assume, to the contrary, that \(\mu\notin\Gn\). Since
+\(2\leq q\leq n+1\) takes only finitely many values, we may choose
+\(0<\delta<\min\{\mu,1\}\) so small that
+\begin{equation}\label{eq:no-integer-window}
+ [q(\mu-1-\delta),q(\mu-1+\delta)]
+ \cap\Z_{\geq0}
+ =
+ \varnothing,
+ \qquad
+ 2\leq q\leq n+1.
+\end{equation}
+Let \(r_\nu\) be the sequence supplied by
+Lemma~\ref{lem:peaks}, put \(S_\nu=T(r_\nu)\), and abbreviate
+\(M(t)=M_{\mu,\delta}(t)\).
+
+
+\medskip\noindent
+\emph{{Step 1. The local compactness theorem applies at every fixed scale:}}
+Fix \(R>0\). We apply Proposition~\ref{prop:representation} with
+the scale \(Rr_\nu\) and the normalization \(M(R)S_\nu\).
+
+First, since \(\log r=o(T(r))\),
+\[
+\frac{\log(Rr_\nu)}{M(R)S_\nu}\longrightarrow0.
+\]
+Next, \eqref{eq:peak} at the fixed multiplier \(256R\) gives, for all
+sufficiently large \(\nu\),
+\[
+T(256Rr_\nu)
+\leq
+2C_{\mu,\delta}M(256R)S_\nu.
+\]
+Since
+\(M(256R)\leq256^{\mu+\delta}M(R)\), we obtain
+\begin{equation}\label{eq:peak-characteristic-scale}
+ \frac{T(256Rr_\nu)}{M(R)S_\nu}
+ \leq
+ C_0,
+ \qquad
+ C_0:=2C_{\mu,\delta}256^{\mu+\delta}.
+\end{equation}
+The constant \(C_0\) is independent of \(R\).
+
+Finally,
+\[
+\frac{N(256Rr_\nu,0,W_{\revision{\fv}})}{M(R)S_\nu}
+=
+\frac{N(256Rr_\nu,0,W_{\revision{\fv}})}
+     {T(256Rr_\nu)}
+\,
+\frac{T(256Rr_\nu)}
+     {M(R)S_\nu}.
+\]
+The first factor tends to zero by the small-ramification hypothesis,
+while the second is bounded by \eqref{eq:peak-characteristic-scale}.
+Hence
+\begin{equation}\label{eq:peak-representation-hypotheses}
+ \frac{\log(Rr_\nu)}{M(R)S_\nu}\longrightarrow0,
+ \qquad
+ \frac{N(256Rr_\nu,0,W_{\revision{\fv}})}
+      {M(R)S_\nu}
+ \longrightarrow0.
+\end{equation}
+Thus \eqref{eq:peak-representation-hypotheses} verifies all hypotheses
+of Proposition~\ref{prop:representation},
+with a characteristic bound independent of \(R\).
+
+
+
+\medskip\noindent
+\emph{{Step 2. Limits of the rescaled differential coefficients:}}
+For \(2\leq q\leq n+1\), define
+\begin{equation}\label{eq:peak-scaled-coefficients}
+ A_{q,\nu}(z)
+ :=
+ \left(\frac{r_\nu}{S_\nu}\right)^q
+ Q_q(r_\nu z).
+\end{equation}
+
+For fixed \(R>0\), Proposition~\ref{prop:representation}, applied as in
+Step~1, gives relative compactness locally in measure of
+\[
+\left(
+\frac{Rr_\nu}{M(R)S_\nu}
+\right)^q
+Q_q(Rr_\nu z)
+\]
+on \(D_4\). The relation with \eqref{eq:peak-scaled-coefficients} is
+\begin{equation}\label{eq:peak-rescaling-relation}
+ A_{q,\nu}(Rz)
+ =
+ \left(\frac{M(R)}{R}\right)^q
+ \left(
+ \frac{Rr_\nu}{M(R)S_\nu}
+ \right)^q
+ Q_q(Rr_\nu z).
+\end{equation}
+
+Apply Proposition~\ref{prop:representation} successively for
+\(R=1,2,3,\ldots\), and take a diagonal subsequence. Then, for
+\(2\leq q\leq n+1\),
+\[
+A_{q,\nu}\longrightarrow a_q
+\]
+locally in measure on \(\C\), where every \(a_q\) is entire.
+The limits obtained on different disks agree because limits in measure
+are unique.
+
+The uniform bound in Proposition~\ref{prop:representation}, together
+with \eqref{eq:peak-rescaling-relation}, gives
+\begin{equation}\label{eq:peak-coefficient-bound}
+ \sup_{|z|\leq R}|a_q(z)|
+ \leq
+ K_{n+1,\mu,\delta}
+ \max\{
+ R^{q(\mu-1-\delta)},
+ R^{q(\mu-1+\delta)}
+ \},
+ \qquad
+ R>0.
+\end{equation}
+Here \(K_{n+1,\mu,\delta}\) is independent of \(R\).
+
+
+\medskip\noindent
+\emph{{Step 3. The limiting differential operator is nontrivial:}}
+We claim that
+\[
+(a_2,\ldots,a_{n+1})\not\equiv(0,\ldots,0).
+\]
+Suppose otherwise.
+
+Apply Proposition~\ref{prop:representation} with
+\(t_\nu=r_\nu\) and \(s_\nu=S_\nu\). This is the case \(R=1\) of
+Step~1. Let
+\(\gv_\nu=(g_{\nu,0},\ldots,g_{\nu,n})\)
+be the resulting local frames, and put
+\(u_{\nu,j}=S_\nu^{-1}\log|g_{\nu,j}|\).
+
+By \eqref{eq:representationbounds}, the functions \(u_{\nu,j}\) are
+locally uniformly bounded above on \(D_{32}\), and
+\(u_{\nu,j}(0)\to0\). Lemma~\ref{lem:subharmonic-compactness} therefore
+allows us, after passing to a further subsequence, to assume
+\begin{equation}\label{eq:peak-component-limits}
+ u_{\nu,j}
+ \longrightarrow
+ u_j
+ \qquad\text{in }L^1_{\loc}(D_4),
+ \qquad
+ 0\leq j\leq n,
+\end{equation}
+where no \(u_j\) is identically \(-\infty\).
+
+Let \(\widehat b_{q,\nu}\) be the coefficients after the canonical
+gauge. By the scaling rule used in
+Proposition~\ref{prop:representation},
+\begin{equation}\label{eq:peak-canonical-coefficients}
+ \widehat b_{1,\nu}=0,
+ \qquad
+ \frac{\widehat b_{q,\nu}}{S_\nu^q}
+ =
+ A_{q,\nu},
+ \qquad
+ 2\leq q\leq n+1.
+\end{equation}
+Under the assumption \(a_q\equiv0\), equations
+\eqref{eq:peak-canonical-coefficients} and
+\eqref{eq:gaugecomparison} give
+\begin{equation}\label{eq:peak-unnormalized-coefficients}
+ \frac{b_{q,\nu}}{S_\nu^q}
+ \convmeas0
+ \qquad\text{locally on }D_4,
+ \qquad
+ 1\leq q\leq n+1.
+\end{equation}
+
+Each \(g_{\nu,j}\) satisfies the differential equation with coefficients
+\(b_{q,\nu}\). Away from the zeros of \(g_{\nu,j}\), divide this
+equation by \(S_\nu^{n+1}g_{\nu,j}\). We obtain
+\begin{equation}\label{eq:normalized-peak-equation}
+ \frac{g_{\nu,j}^{(n+1)}}{S_\nu^{n+1}g_{\nu,j}}
+ +
+ \sum_{q=1}^{n+1}
+ \frac{b_{q,\nu}}{S_\nu^q}
+ \frac{g_{\nu,j}^{({n+1}-q)}}
+      {S_\nu^{{n+1}-q}g_{\nu,j}}
+ =
+ 0.
+\end{equation}
+By Lemma~\ref{lem:logderivlimit} and
+\eqref{eq:peak-component-limits},
+the first term in \eqref{eq:normalized-peak-equation} converges in
+measure to \((2\partial u_j)^{n+1}\), while each logarithmic-derivative
+factor in the sum is bounded in measure. Equation
+\eqref{eq:peak-unnormalized-coefficients} therefore makes every term
+in the sum tend to zero in measure. Hence
+\[
+(2\partial u_j)^{n+1}=0
+\qquad\text{a.e.\ on }D_4.
+\]
+By the Sobolev conclusion of Lemma~\ref{lem:logderivlimit},
+\(\partial u_j=0\) almost everywhere, and thus every \(u_j\) is
+constant on \(D_4\).
+
+Set
+\(U_\nu=S_\nu^{-1}\log\norm{\gv_\nu}\).
+Since
+\[
+0\leq
+S_\nu^{-1}\log\norm{\gv_\nu}
+-
+\max_j u_{\nu,j}
+\leq
+\frac{\log {n+1}}{2S_\nu},
+\]
+equation \eqref{eq:peak-component-limits} implies
+\begin{equation}\label{eq:constant-norm-limit}
+ U_\nu\longrightarrow c
+ \qquad\text{in }L^1_{\loc}(D_4)
+\end{equation}
+for some constant \(c\).
+
+By \eqref{eq:meanidentity},
+\[
+\mean t{U_\nu}
+=
+\frac{T(tr_\nu)}{S_\nu}+o(1),
+\qquad
+0<t<4,
+\]
+where the error is independent of \(t\). Put
+\(F_\nu(t)=T(tr_\nu)/S_\nu\). Integrating over an annulus and using
+\eqref{eq:constant-norm-limit} gives
+\begin{equation}\label{eq:annular-characteristic-limit}
+ \frac{2}{b^2-a^2}
+ \int_a^b F_\nu(t)t\,\dd t
+ \longrightarrow c,
+ \qquad
+ 0<a<b<4.
+\end{equation}
+
+Take \(0<b<1\) and \(a=b/2\). Since \(F_\nu\) is nondecreasing,
+\eqref{eq:annular-characteristic-limit} gives
+\(c\leq\limsup_\nu F_\nu(b)\). By \eqref{eq:peak},
+\[
+c
+\leq
+C_{\mu,\delta}M(b)
+=
+C_{\mu,\delta}b^{\mu-\delta}.
+\]
+Since \(\mu-\delta>0\), letting \(b\downarrow0\) gives \(c\leq0\).
+
+On the other hand, if \(2<a<b<3\), then
+\(F_\nu(t)\geq F_\nu(1)=1\) for \(a<t<b\). Equation
+\eqref{eq:annular-characteristic-limit} therefore gives \(c\geq1\).
+This contradiction proves that at least one \(a_q\) is nonzero.
+
+
+\medskip\noindent
+\emph{{Step 4. The peak order belongs to \(\Gn\):}}
+Write
+\(a_q(z)=\sum_{m=0}^{\infty}c_{q,m}z^m\), and set
+\[
+\alpha_{q,-}=q(\mu-1-\delta),
+\qquad
+\alpha_{q,+}=q(\mu-1+\delta).
+\]
+Cauchy's estimate and \eqref{eq:peak-coefficient-bound} give
+\begin{equation}\label{eq:peak-Taylor-coefficient-bound}
+ |c_{q,m}|
+ \leq
+ \begin{cases}
+ K_{n+1,\mu,\delta}R^{\alpha_{q,-}-m},
+     &0<R\leq1,\\[2mm]
+ K_{n+1,\mu,\delta}R^{\alpha_{q,+}-m},
+     &R\geq1.
+ \end{cases}
+\end{equation}
+
+If \(m<\alpha_{q,-}\), let \(R\downarrow0\) in the first inequality
+of \eqref{eq:peak-Taylor-coefficient-bound}; then \(c_{q,m}=0\).
+If \(m>\alpha_{q,+}\), let \(R\to\infty\) in the second inequality;
+again \(c_{q,m}=0\).
+
+By \eqref{eq:no-integer-window}, every nonnegative integer \(m\) lies
+outside
+\([\alpha_{q,-},\alpha_{q,+}]\). Hence every Taylor coefficient of
+every \(a_q\) vanishes. Thus \(a_q\equiv0\) for all \(q\), contradicting
+Step~3.
+
+The contradiction proves
+\begin{equation}\label{eq:positive-index-in-Rn}
+ [\rho_*(T),\rho^*(T)]
+ \cap(0,\infty)
+ \subset\Gn.
+\end{equation}
+
+
+\medskip\noindent
+\emph{{Step 5. Collapse of the index interval:}}
+The set \(\Gn\) is locally finite. Indeed, on every bounded interval,
+\(2\leq q\leq n+1\) gives only finitely many possible integers \(k\) in
+\(1+k/q\).
+
+The set
+\([\rho_*(T),\rho^*(T)]\cap(0,\infty)\), however, is an interval.
+If this interval contained two distinct finite points, then a nonempty
+open subinterval would be contained in the locally finite set \(\Gn\) by
+\eqref{eq:positive-index-in-Rn}, which is impossible. The same argument
+rules out \(\rho^*(T)=+\infty\), because in that case the interval would
+contain two distinct finite points. Hence
+\([\rho_*(T),\rho^*(T)]\) is a singleton. Its value is finite, since
+\[
+\rho_*(T)\leq\lambda(\fv)<\infty.
+\]
+
+Finally,
+\[
+\rho_*(T)
+\leq
+\lambda(\fv)
+\leq
+\rho(\fv)
+\leq
+\rho^*(T),
+\]
+so all four quantities are equal. This proves
+\eqref{eq:indices-collapse}.
+\end{proof}
+
+So we proved that $\rho=\lambda\in {\mathcal R_{n+1}}\cup\{0\}$.
+\revision{The possibility that $\rho=0$ will be eliminated in}
+Section~\ref{sec:smallorder}.
+
+
+\subsection{Two-sided power bounds}
+\label{sec:power-bounds}
+
+The equality of the two Drasin--Shea indices gives uniform control of
+\(T(tr)/T(r)\) at every fixed scale. Regular variation will require an
+additional argument in Section~\ref{sec:regular}.
+
+\begin{lem}\label{lem:power-bounds}
+Suppose that
+$
+\rho_*(T)=\rho^*(T)=\rho\in(0,\infty).
+$
+For every \(0<\epsilon<\rho\), there are
+\(C_\epsilon\geq1\) and \(r_\epsilon>0\) such that
+\begin{equation}\label{eq:power-bounds}
+ C_\epsilon^{-1}
+ \min\{t^{\rho-\epsilon},t^{\rho+\epsilon}\}
+ \leq
+ \frac{T(tr)}{T(r)}
+ \leq
+ C_\epsilon
+ \max\{t^{\rho-\epsilon},t^{\rho+\epsilon}\},
+ \qquad
+ r,tr\geq r_\epsilon.
+\end{equation}
+\end{lem}
+
+\begin{proof}
+
+Put
+$
+p_-=\rho-\epsilon,
+$ and $
+p_+=\rho+\epsilon.
+$
+Since \(p_+>\rho^*(T)\), the definition of \(\rho^*(T)\) in
+\eqref{eq:strong-indices} gives
+\[
+\limsup_{x,r\to\infty}
+\frac{T(xr)}{x^{p_+}T(r)}
+<\infty.
+\]
+Since \(p_-<\rho_*(T)\), the definition of \(\rho_*(T)\) gives
+\[
+\liminf_{x,r\to\infty}
+\frac{T(xr)}{x^{p_-}T(r)}
+>0.
+\]
+Consequently there are \(c,C>0\) and \(X,r_0\geq1\) such that
+\begin{equation}\label{eq:large-multiplier-power-bounds}
+ c\,x^{\rho-\epsilon}
+ \leq
+ \frac{T(xr)}{T(r)}
+ \leq
+ C\,x^{\rho+\epsilon},
+ \qquad
+ x\geq X,\quad r\geq r_0.
+\end{equation}
+
+We first extend \eqref{eq:large-multiplier-power-bounds} to
+\(1\leq x\leq X\). By monotonicity,
+\(T(xr)\leq T(Xr)\), and applying the upper bound in
+\eqref{eq:large-multiplier-power-bounds} with multiplier \(X\) gives
+\[
+\frac{T(xr)}{T(r)}
+\leq
+CX^{\rho+\epsilon}.
+\]
+Since \(x\geq1\), this is bounded by
+\(CX^{\rho+\epsilon}x^{\rho+\epsilon}\).
+For the lower bound, monotonicity gives
+\(T(xr)/T(r)\geq1\), and
+\(1\geq X^{-(\rho-\epsilon)}x^{\rho-\epsilon}\).
+After enlarging one constant, there are
+\(C_1\geq1\) and \(r_1\geq r_0\) such that
+\begin{equation}\label{eq:multiplier-at-least-one}
+ C_1^{-1}x^{\rho-\epsilon}
+ \leq
+ \frac{T(xr)}{T(r)}
+ \leq
+ C_1x^{\rho+\epsilon},
+ \qquad
+ x\geq1,\quad r\geq r_1.
+\end{equation}
+
+Now let \(0<x<1\), and assume \(r,xr\geq r_1\). Apply
+\eqref{eq:multiplier-at-least-one} at the base radius \(xr\) with
+multiplier \(1/x\). This gives
+\[
+C_1^{-1}x^{-(\rho-\epsilon)}
+\leq
+\frac{T(r)}{T(xr)}
+\leq
+C_1x^{-(\rho+\epsilon)}.
+\]
+After inversion,
+\begin{equation}\label{eq:multiplier-less-than-one}
+ C_1^{-1}x^{\rho+\epsilon}
+ \leq
+ \frac{T(xr)}{T(r)}
+ \leq
+ C_1x^{\rho-\epsilon},
+ \qquad
+ 0<x<1,\quad r,xr\geq r_1.
+\end{equation}
+
+For \(x\geq1\), the minimum and maximum in
+\eqref{eq:power-bounds} are respectively
+\(x^{\rho-\epsilon}\) and \(x^{\rho+\epsilon}\);
+for \(0<x<1\), they are respectively
+\(x^{\rho+\epsilon}\) and \(x^{\rho-\epsilon}\).
+Thus \eqref{eq:multiplier-at-least-one} and
+\eqref{eq:multiplier-less-than-one} give
+\eqref{eq:power-bounds}, with
+\(C_\epsilon=C_1\) and \(r_\epsilon=r_1\).
+\end{proof}
+
+
+\section{The case of order less than one}\label{sec:smallorder}
+
+Proposition~\ref{prop:indices} leaves open the possibility that the
+common growth index is zero. In fact, the argument in this section
+applies in the larger range \(\rho(\fv)<1\) and does not require
+P\'olya peaks.
+
+The main point is that Proposition~\ref{prop:initial-basis}, which was
+proved for polynomial solution spaces, has an analogue for entire
+solution spaces of order less than one. Here the order of a
+nonconstant entire function \(h\) is
+\[
+ \rho(h)
+ :=
+ \limsup_{r\to\infty}
+ \frac{\log^+\log^+M(r,h)}{\log r}.
+\]
+
+
+\subsection{An entire version of the initial basis estimate}
+
+We first pass from polynomial spaces to finite-dimensional spaces of
+entire functions of order less than one.
+
+\begin{lem}\label{lem:entire-majorant}
+Let \(\yv=(y_0,\ldots,y_{n})\) be a vector of entire functions of
+orders less than one, and suppose that
+\(y_j^{(i)}(0)=\delta_{ij}\) for \(0\leq i,j\leq n\).
+Let \((a_\ell)\) be the zeros of \(W(\yv)\), repeated according to
+multiplicity. Then
+\begin{equation}\label{eq:entire-majorant}
+ |y_j(z)|
+ \leq
+ \frac{|z|^j}{j!}
+ \prod_\ell
+ \left(1+\frac{|z|}{|a_\ell|}\right),
+ \qquad
+ 0\leq j\leq n.
+\end{equation}
+The product in \eqref{eq:entire-majorant} converges because
+\(\sum_\ell|a_\ell|^{-1}<\infty\).
+
+If
+\[
+ H_{\yv}(r)
+ :=
+ \log\max_{0\leq j\leq n}M(r,y_j),
+ \qquad
+ N_{\yv}(r)
+ :=
+ \sum_\ell\log^+\frac{r}{|a_\ell|},
+\]
+then
+\begin{equation}\label{eq:convolution}
+ H_{\yv}(r)
+ \leq
+ n\log^+r
+ +
+ r\int_0^\infty
+ \frac{N_{\yv}(t)}{(r+t)^2}\,\dd t.
+\end{equation}
+\end{lem}
+
+\begin{proof}
+
+\medskip\noindent
+\emph{{Step 1. Taylor polynomial approximations:}}
+Choose \(\sigma\in(0,1)\) larger than the orders of all the
+\(y_j\). Then, after increasing a constant if necessary,
+\begin{equation}\label{eq:small-order-component-growth}
+ \log M(r,y_j)\leq C r^\sigma,
+ \qquad
+ r\geq1,\quad 0\leq j\leq n.
+\end{equation}
+
+Write \(y_j(z)=\sum_{m=0}^\infty c_{j,m}z^m\), and let
+\(p_{j,N}(z)=\sum_{m=0}^Nc_{j,m}z^m\), where \(N\geq n\).
+Cauchy's estimate for the coefficients on \(|z|=2t\) gives
+\[
+ M(t,p_{j,N})
+ \leq
+ M(2t,y_j)\sum_{m=0}^N2^{-m}
+ \leq
+ 2M(2t,y_j).
+\]
+Applying the preceding estimate with \(2t\) in place of \(t\), and
+then applying Cauchy's derivative estimate on \(D_{2t}\), gives
+\[
+ M(t,p_{j,N}^{(k)})
+ \leq
+ C_k t^{-k}M(2t,p_{j,N})
+ \leq
+ 2C_k t^{-k}M(4t,y_j),
+ \qquad 0\leq k\leq n.
+\]
+Hence, by \eqref{eq:small-order-component-growth},
+\[
+ \log^+M(t,p_{j,N}^{(k)})
+ \leq C_1t^\sigma,
+ \qquad t\geq1,
+\]
+where \(C_1\) is independent of \(N\).
+
+Put
+\(W_N=W(p_{0,N},\ldots,p_{n,N})\).
+Expanding this determinant into its \({n+1}!\) terms gives
+\begin{equation}\label{eq:WN-growth}
+ \log M(t,W_N)\leq C_2t^\sigma,
+ \qquad
+ t\geq1,
+\end{equation}
+with \(C_2\) independent of \(N\).
+
+The normalization at the origin is preserved by Taylor truncation:
+\(p_{j,N}^{(i)}(0)=\delta_{ij}\) for
+\(0\leq i,j\leq n\). Hence \(W_N(0)=1\).
+
+
+\medskip\noindent
+\emph{{Step 2. Uniform control of the zeros of \(W_N\):}}
+Let \(n_{W_N}(t)\) denote the number of zeros of \(W_N\) in \(D_t\),
+counted with multiplicity. Jensen's formula applied at radius \(2t\),
+together with \(W_N(0)=1\) and \eqref{eq:WN-growth}, gives
+\begin{equation}\label{eq:WN-zero-count}
+ n_{W_N}(t)
+ \leq
+ \frac{\log M(2t,W_N)}{\log2}
+ \leq
+ C_3t^\sigma,
+ \qquad
+ t\geq1,
+\end{equation}
+where \(C_3\) is independent of \(N\).
+
+Let \((a_{N,\ell})\) be the zeros of \(W_N\), repeated according to
+multiplicity. Integration by parts for the counting function gives
+\[
+ \sum_{|a_{N,\ell}|>R}\frac1{|a_{N,\ell}|}
+ \leq
+ \int_R^\infty
+ \frac{n_{W_N}(t)}{t^2}\,\dd t.
+\]
+Using \eqref{eq:WN-zero-count}, we obtain the uniform tail estimate
+\begin{equation}\label{eq:reciprocal-tail}
+ \sum_{|a_{N,\ell}|>R}\frac1{|a_{N,\ell}|}
+ \leq
+ C_4R^{\sigma-1},
+ \qquad
+ R\geq1.
+\end{equation}
+
+
+\medskip\noindent
+\emph{{Step 3. Passage to the entire system:}}
+The vectors \(\pv_N=(p_{0,N},\ldots,p_{n,N})\) are linearly
+independent. Their first \(n+1\) derivative rows at the origin form the
+identity matrix. Proposition~\ref{prop:initial-basis}, applied at
+\(a=0\), therefore gives
+\begin{equation}\label{eq:taylor-section-majorant}
+ |p_{j,N}(z)|
+ \leq
+ \frac{|z|^j}{j!}
+ \prod_\ell
+ \left(1+\frac{|z|}{|a_{N,\ell}|}\right).
+\end{equation}
+
+As \(N\to\infty\), the functions \(p_{j,N}\) and all their derivatives
+converge locally uniformly to \(y_j\). Hence \(W_N\to W(\yv)\) locally uniformly. Since \(W(\yv)(0)=1\), none of the zeros of \(W(\yv)\) is zero, and no zero of \(W_N\) approaches the origin. If \(R>0\) is chosen so that
+\(W(\yv)\) has no zero on \(|z|=R\), Rouch\'e's theorem shows that the
+zeros of \(W_N\) in \(D_R\) converge, with multiplicities, to the zeros
+of \(W(\yv)\) in \(D_R\).
+
+For fixed \(r>0\), the contribution of the zeros of \(W_N\) outside
+\(D_R\) satisfies, by \(\log(1+x)\leq x\) and
+\eqref{eq:reciprocal-tail},
+\begin{equation}\label{eq:product-tail}
+ \sum_{|a_{N,\ell}|>R}
+ \log\left(1+\frac{r}{|a_{N,\ell}|}\right)
+ \leq
+ C_4rR^{\sigma-1}.
+\end{equation}
+First let \(N\to\infty\) in \eqref{eq:taylor-section-majorant} with
+\(R\) fixed, using the local convergence of the zeros. Then let
+\(R\to\infty\) in \eqref{eq:product-tail}. Since \(\sigma<1\), the
+right-hand side of \eqref{eq:product-tail} tends to zero. This proves
+\eqref{eq:entire-majorant}.
+
+The same argument, or Fatou's lemma applied to
+\eqref{eq:reciprocal-tail}, gives
+\begin{equation}\label{eq:entire-reciprocal-sum}
+ \sum_\ell\frac1{|a_\ell|}<\infty.
+\end{equation}
+
+
+\medskip\noindent
+\emph{{Step 4. The convolution estimate:}}
+Taking the maximum over \(j\) in \eqref{eq:entire-majorant} gives
+\[
+ H_{\yv}(r)
+ \leq
+ n\log^+r
+ +
+ \sum_\ell
+ \log\left(1+\frac{r}{|a_\ell|}\right).
+\]
+For every \(a\ne0\), direct integration gives
+\begin{equation}\label{eq:kernel-identity}
+ r\int_0^\infty
+ \frac{\log^+(t/|a|)}{(r+t)^2}\,\dd t
+ =
+ \log\left(1+\frac r{|a|}\right).
+\end{equation}
+By \eqref{eq:entire-reciprocal-sum}, the sum on the right is finite.
+Tonelli's theorem \cite[Theorem~2.37(a), p.~67]{Fol99} applied to
+\eqref{eq:kernel-identity} therefore gives
+\[
+ \sum_\ell
+ \log\left(1+\frac r{|a_\ell|}\right)
+ =
+ r\int_0^\infty
+ \frac{N_{\yv}(t)}{(r+t)^2}\,\dd t.
+\]
+Substitution into the estimate for \(H_{\yv}(r)\) proves
+\eqref{eq:convolution}.
+\end{proof}
+
+
+\subsection{A sequence of useful radii}
+
+The convolution estimate \eqref{eq:convolution} will be applied at
+radii for which \(H(3t)\) can be compared with \(H(r)\). The following
+elementary lemma provides such radii.
+
+\begin{lem}\label{lem:envelope}
+Let \(H\) be continuous, nonnegative, and nondecreasing, and suppose
+that \(H(r)>0\) for all sufficiently large \(r\). If
+\(H(r)=o(r^\alpha)\) for some \(0<\alpha<1\), then there are
+\(r_\nu\to\infty\) such that
+\begin{equation}\label{eq:envelope}
+ r_\nu\int_0^\infty
+ \frac{H(3t)}{(r_\nu+t)^2}\,\dd t
+ \leq
+ I_\alpha H(r_\nu),
+ \qquad
+ I_\alpha
+ :=
+ \int_0^\infty
+ \frac{\max\{1,(3u)^\alpha\}}{(1+u)^2}\,\dd u.
+\end{equation}
+Moreover, \(I_\alpha<\infty\) for \(0<\alpha<1\), and
+\(I_\alpha\to1\) as \(\alpha\downarrow0\).
+\end{lem}
+
+\begin{proof}
+
+\medskip\noindent
+\emph{{Step 1. Choice of the radii:}}
+Choose any sequence \(R_\nu\to\infty\). Since
+\(H(t)/t^\alpha\to0\), the continuous function
+\(H(t)/t^\alpha\) attains its maximum on \([R_\nu,\infty)\).
+Choose \(r_\nu\geq R_\nu\) at which this maximum is attained. Then
+\(r_\nu\to\infty\), and
+\begin{equation}\label{eq:envelope-maximizer}
+ \frac{H(t)}{t^\alpha}
+ \leq
+ \frac{H(r_\nu)}{r_\nu^\alpha},
+ \qquad
+ t\geq r_\nu.
+\end{equation}
+
+If \(3u\leq1\), monotonicity gives
+\(H(3r_\nu u)\leq H(r_\nu)\). If \(3u\geq1\), apply
+\eqref{eq:envelope-maximizer} with \(t=3r_\nu u\). Thus, for every
+\(u>0\),
+\begin{equation}\label{eq:envelope-pointwise}
+ H(3r_\nu u)
+ \leq
+ H(r_\nu)\max\{1,(3u)^\alpha\}.
+\end{equation}
+
+
+\medskip\noindent
+\emph{{Step 2. Integration:}}
+In the left-hand side of \eqref{eq:envelope}, make the change of
+variables \(t=r_\nu u\). Equation
+\eqref{eq:envelope-pointwise} then gives exactly
+\eqref{eq:envelope}.
+
+For large \(u\), the integrand defining \(I_\alpha\) is
+\(O(u^{\alpha-2})\), so \(I_\alpha<\infty\) because \(\alpha<1\).
+Fix \(0<\alpha_0<1\). For \(0<\alpha\leq\alpha_0\), the integrand is
+bounded by
+\(\max\{1,(3u)^{\alpha_0}\}/(1+u)^2\), which is integrable. Since the
+integrand tends pointwise to \((1+u)^{-2}\) as \(\alpha\downarrow0\),
+dominated convergence gives
+\(I_\alpha\to\int_0^\infty(1+u)^{-2}\,\dd u=1\).
+\end{proof}
+
+
+\subsection{Classification when the order is less than one}
+
+We now apply Lemmas~\ref{lem:entire-majorant} and
+\ref{lem:envelope} to the curve. We use the following form of a
+rational normal curve:
+\begin{equation}\label{eq:rationalnormal}
+ [\fv(z)]
+ =
+ [(1,z,\ldots,z^{n})A],
+ \qquad
+ A\in\operatorname{GL}_{n+1}(\C).
+\end{equation}
+Thus \eqref{eq:rationalnormal} is a statement about the projective
+curve and not about a particular reduced representation.
+
+\begin{prop}\label{prop:small-order}
+Let \(f=[\fv]\) be linearly non-degenerate. If \(\rho(\fv)<1\) and
+\(N_1(r,\fv)=o(T(r,\fv))\), then \([\fv]\) has the form
+\eqref{eq:rationalnormal}.
+\end{prop}
+\begin{proof}
+
+\medskip\noindent
+\emph{{Step 1. A representation whose components have order less than one:}}
+After a constant change of homogeneous coordinates, assume
+\(f_0(0)\ne0\). Fix
+\(\beta\) with \(\rho(\fv)<\beta<1\). By the definition of
+\(\rho(\fv)\), \(T(r,\fv)=O(r^\beta)\). Jensen's formula and the
+standard coordinate estimate give
+\[
+ N(r,0,f_0)
+ \leq
+ T(r,\fv)+O(1)
+ =
+ O(r^\beta).
+\]
+If \(n_{f_0}(r)\) denotes the number of zeros of \(f_0\) in \(D_r\),
+then
+\(n_{f_0}(r)\log2\leq N(2r,0,f_0)\), so
+\(n_{f_0}(r)=O(r^\beta)\). Since \(\beta<1\), this implies
+\[
+ \sum_{f_0(a)=0}\frac1{|a|}<\infty.
+\]
+Thus the genus-zero canonical product
+\(P(z)=\prod_{f_0(a)=0}(1-z/a)\) converges.
+
+
+For \(|a|\leq r\),
+\(\log(1+r/|a|)
+ \leq\log2+\log(r/|a|)\), while for \(|a|>r\),
+\(\log(1+r/|a|)\leq r/|a|\). Using
+\(N(r,0,f_0)=O(r^\beta)\) for the first group and
+\(n_{f_0}(t)=O(t^\beta)\) for the second gives
+\begin{equation}\label{eq:canonical-product-growth}
+ \log M(r,P)\leq C_\beta r^\beta,
+ \qquad
+ r\geq1.
+\end{equation}
+
+
+Since \(P\) and \(f_0\) have the same zeros with the same
+multiplicities, \(f_0/P\) is zero-free. Hence
+\(f_0=Pe^G\) for an entire function \(G\). Put
+\(\gv=e^{-G}\fv\). Then \(g_0=P\), and for every \(j\),
+\(g_j=P(f_j/f_0)\) is entire.
+
+By the product inequality for the Nevanlinna characteristic,
+\eqref{eq:quotientbound}, and \eqref{eq:canonical-product-growth},
+\[
+ \TN(r,g_j)
+ \leq
+ \TN(r,P)
+ +
+ \TN\left(r,\frac{f_j}{f_0}\right)
+ +O(1)
+ =
+ O(r^\beta).
+\]
+Applying the Poisson estimate to \(\log|g_j|\) on \(D_{2r}\) gives
+\begin{equation}\label{eq:gauge-component-growth}
+ \log M(r,g_j)
+ \leq
+ 3\TN(2r,g_j)
+ =
+ O(r^\beta).
+\end{equation}
+Since \(\beta>\rho(\fv)\) was arbitrary, every \(g_j\) has order at
+most \(\rho(\fv)\), and hence order less than one.
+
+The transformation \(\fv\mapsto e^{-G}\fv\) does not change the
+projective curve. Moreover,
+\(W(\gv)=e^{-(n+1)G}W(\fv)\), so it does not change the zero divisor of
+the Wronskian.
+
+
+\medskip\noindent
+\emph{{Step 2. Normalization at an ordinary point:}}
+Choose \(b\in\C\) such that \(W(\gv)(b)\ne0\), and put \(B=|b|\).
+Since the matrix
+\((g_j^{(i)}(b))_{0\leq i,j\leq n}\) is invertible, a constant
+change of basis in the components of \(\gv(b+z)\) gives an entire
+vector
+\(\yv=(y_0,\ldots,y_{n})\) satisfying
+\[
+ y_j^{(i)}(0)=\delta_{ij},
+ \qquad
+ 0\leq i,j\leq n.
+\]
+Constant changes of basis and translations preserve the property of
+having order less than one, so Lemma~\ref{lem:entire-majorant} applies
+to \(\yv\).
+
+Let \(H_{\yv}\) and \(N_{\yv}\) be as in
+Lemma~\ref{lem:entire-majorant}. Norm equivalence under the fixed
+change of basis, together with
+\(|z-b|\leq s+B\) for \(|z|=s\), gives
+\begin{equation}\label{eq:small-order-T}
+ T(s,\fv)
+ \leq
+ H_{\yv}(s+B)+C,
+ \qquad
+ s\geq1.
+\end{equation}
+Notice also that \(H_{\yv}(r)\geq0\), because \(y_0(0)=1\). Since
+\(y_1'(0)=1\), Cauchy's estimate gives \(M(r,y_1)\geq r\), and hence
+\begin{equation}\label{eq:H-lower-log}
+ H_{\yv}(r)\geq\log r,
+ \qquad
+ r\geq1.
+\end{equation}
+
+
+\medskip\noindent
+\emph{{Step 3. Translated Wronskian zeros:}}
+The Wronskian \(W(\gv)\) also has order less than one. Its determinant
+expansion involves only derivatives and finite products of the functions
+\(g_j\), all of which have order less than one by
+\eqref{eq:gauge-component-growth}. Jensen's formula therefore gives
+\begin{equation}\label{eq:wronskian-reciprocal-sum}
+ \sum_{\substack{W(\gv)(a)=0\\ a\ne0}}
+ \frac1{|a|}
+ <\infty.
+\end{equation}
+
+
+The zeros of \(W(\yv)\) are the numbers \(a-b\), where \(a\) runs
+through the zeros of \(W(\gv)\), with multiplicities preserved.
+For \(|a|>2B\),
+\[
+ \log^+\frac{t}{|a-b|}
+ \leq
+ \log^+\frac{t+B}{|a|}
+ +
+ \log^+\frac{|a|}{|a-b|}
+ \leq
+ \log^+\frac{t+B}{|a|}+\frac{2B}{|a|}.
+\]
+The last terms are summable by
+\eqref{eq:wronskian-reciprocal-sum}. For each of the finitely many nonzero zeros with
+\(0<|a|\leq2B\), put \(c_a=|a-b|>0\). The elementary inequality
+\[
+ \log^+\frac{t}{c_a}
+ \leq
+ \log^+\frac{t+B}{|a|}
+ +\log^+\frac{|a|}{c_a}
+\]
+shows that its contribution is bounded by the corresponding term in
+\(N(t+B,0,W_{\revision{\fv}})\) plus a constant. A zero at the origin is
+handled using the standard \(n(0)\log t\) term in the Nevanlinna
+counting function. Since the gauge in Step~1
+does not change the Wronskian zero divisor, we obtain
+\begin{equation}\label{eq:translated-count}
+ N_{\yv}(t)
+ \leq
+ N(t+B,0,W_{\revision{\fv}})+C_b,
+ \qquad
+ t\geq1.
+\end{equation}
+
+By \(N_1(r,\fv)=N(r,0,W_{\revision{\fv}})+O(1)\) and the hypothesis of the
+proposition,
+\(N(r,0,W_{\revision{\fv}})=o(T(r,\fv))\). For sufficiently large \(t\),
+\(t+2B\leq3t\), and \eqref{eq:small-order-T} gives
+\[
+ T(t+B,\fv)
+ \leq
+ H_{\yv}(t+2B)+C
+ \leq
+ H_{\yv}(3t)+C.
+\]
+Equations \eqref{eq:translated-count} and \eqref{eq:H-lower-log}
+therefore imply
+\[
+ N_{\yv}(t)
+ =
+ o(H_{\yv}(3t)).
+\]
+Consequently, for every \(\varepsilon>0\), there is a constant
+\(C_\varepsilon\) such that
+\begin{equation}\label{eq:small-order-divisor-majorant}
+ N_{\yv}(t)
+ \leq
+ \varepsilon H_{\yv}(3t)+C_\varepsilon,
+ \qquad
+ t>0.
+\end{equation}
+
+
+\medskip\noindent
+\emph{{Step 4. Absorption of the Wronskian contribution:}}
+Choose \(\alpha\in(0,1)\) larger than the orders of all the \(y_j\).
+Then \(H_{\yv}(r)=o(r^\alpha)\), so
+Lemma~\ref{lem:envelope} gives a sequence \(r_\nu\to\infty\)
+satisfying \eqref{eq:envelope}.
+
+Substitute \eqref{eq:small-order-divisor-majorant} into
+\eqref{eq:convolution}. The term containing \(H_{\yv}(3t)\) is
+bounded by \(\varepsilon I_\alpha H_{\yv}(r_\nu)\) by
+\eqref{eq:envelope}, while
+\(r_\nu\int_0^\infty(r_\nu+t)^{-2}\,\dd t=1\).
+Thus
+\begin{equation}\label{eq:absorption}
+ (1-\varepsilon I_\alpha)H_{\yv}(r_\nu)
+ \leq
+ n\log r_\nu+C_\varepsilon.
+\end{equation}
+
+Choose \(\varepsilon>0\) so that
+\(0<\varepsilon I_\alpha<1/{n+1}\), and put
+\(\gamma=n/(1-\varepsilon I_\alpha)\). Then \(\gamma<{n+1}\), and
+\eqref{eq:absorption} gives
+\begin{equation}\label{eq:small-order-polynomial-growth}
+ M(r_\nu,y_j)
+ \leq
+ C r_\nu^\gamma,
+ \qquad
+ 0\leq j\leq n.
+\end{equation}
+
+For every integer \(k\geq n+1\), Cauchy's estimate and
+\eqref{eq:small-order-polynomial-growth} give
+\[
+ \frac{|y_j^{(k)}(0)|}{k!}
+ \leq
+ \frac{M(r_\nu,y_j)}{r_\nu^k}
+ \leq
+ C r_\nu^{\gamma-k}
+ \longrightarrow0.
+\]
+Hence \(y_j^{(k)}(0)=0\) for every \(k\geq n+1\). Thus each \(y_j\) is
+a polynomial of degree at most \(n\). The normalization
+\(y_j^{(i)}(0)=\delta_{ij}\) now gives
+\(y_j(z)=z^j/j!\).
+
+Undoing the translation, the constant changes of basis, and the
+zero-free gauge proves \eqref{eq:rationalnormal}.
+\end{proof}
+
+
+\subsection{A lower bound of ramification for zero order}
+
+The same argument gives a quantitative conclusion for transcendental
+curves of order zero, without assuming small ramification. Recall that
+\(N_1(r,\fv)=N(r,0,W_{\revision{\fv}})+O(1)\). Since
+\(T(r,\fv)\to\infty\) for a linearly nondegenerate curve, replacing
+\(N_1(r,\fv)\) by \(N(r,0,W_{\revision{\fv}})\) does not change the following
+upper limit.
+
+
+\begin{prop}\label{prop:zero-order-ramification}
+Let \(\fv\) be a linearly nondegenerate transcendental curve of order
+zero. Then
+\begin{equation}\label{eq:zero-order-ramification}
+ \limsup_{r\to\infty}
+ \frac{N_1(r,\fv)}{T(r,\fv)}
+ \geq1.
+\end{equation}
+\end{prop}
+
+\begin{proof}
+
+\medskip\noindent
+\emph{{Step 1. Reduction to the normalized entire system:}}
+Suppose, to the contrary, that the left-hand side of
+\eqref{eq:zero-order-ramification} is less than one. Choose \(c\) such
+that
+\[
+ \limsup_{r\to\infty}
+ \frac{N_1(r,\fv)}{T(r,\fv)}
+ <c<1.
+\]
+Since \(N_1(r,\fv)=N(r,0,W_{\revision{\fv}})+O(1)\) and
+\(T(r,\fv)\to\infty\), there is \(r_0\) such that
+\begin{equation}\label{eq:zero-order-counting-assumption}
+ N(r,0,W_{\revision{\fv}})
+ \leq
+ c\,T(r,\fv),
+ \qquad
+ r\geq r_0.
+\end{equation}
+
+Apply the constructions in Steps~1 and~2 of the proof of
+Proposition~\ref{prop:small-order}. These steps use only
+\(\rho(\fv)<1\), not the small-ramification hypothesis. Since now
+\(\rho(\fv)=0\), the resulting normalized functions
+\(y_0,\ldots,y_{n}\) all have order zero. In particular,
+\(H_{\yv}(r)=o(r^\alpha)\) for every \(\alpha>0\).
+
+The estimates \eqref{eq:small-order-T} and
+\eqref{eq:translated-count} remain valid. Applying
+\eqref{eq:zero-order-counting-assumption} at \(t+B\), and then using
+\eqref{eq:small-order-T}, gives, after increasing a constant to cover
+bounded \(t\),
+\begin{equation}\label{eq:zero-order-divisor-majorant}
+ N_{\yv}(t)
+ \leq
+ c\,H_{\yv}(3t)+C,
+ \qquad
+ t>0.
+\end{equation}
+
+
+\medskip\noindent
+\emph{{Step 2. The convolution estimate forces polynomial growth:}}
+By Lemma~\ref{lem:envelope},
+\(I_\alpha\to1\) as \(\alpha\downarrow0\). Since \(c<1\), choose
+\(\alpha\in(0,1)\) so small that
+\(cI_\alpha<1\). Because every \(y_j\) has order zero,
+\(H_{\yv}(r)=o(r^\alpha)\), and Lemma~\ref{lem:envelope} supplies
+\(r_\nu\to\infty\).
+
+Substituting \eqref{eq:zero-order-divisor-majorant} into
+\eqref{eq:convolution}, using \eqref{eq:envelope}, and using
+\(r_\nu\int_0^\infty(r_\nu+t)^{-2}\,\dd t=1\), gives
+\begin{equation}\label{eq:zero-order-absorption}
+ (1-cI_\alpha)H_{\yv}(r_\nu)
+ \leq
+ n\log r_\nu+C.
+\end{equation}
+By \eqref{eq:zero-order-absorption}, with
+\(\Gamma=n/(1-cI_\alpha)<\infty\),
+\begin{equation}\label{eq:zero-order-polynomial-growth}
+ M(r_\nu,y_j)
+ \leq
+ C_1r_\nu^\Gamma,
+ \qquad
+ 0\leq j\leq n.
+\end{equation}
+
+Choose an integer \(k>\Gamma\). Cauchy's estimate and
+\eqref{eq:zero-order-polynomial-growth} give
+\[
+ \frac{|y_j^{(k)}(0)|}{k!}
+ \leq
+ C_1r_\nu^{\Gamma-k}
+ \longrightarrow0.
+\]
+The same argument applies to every integer larger than \(\Gamma\), so
+each \(y_j\) is a polynomial. Therefore the projective curve
+\([\fv]\) is rational, contradicting the assumption that it is
+transcendental.
+
+This proves \eqref{eq:zero-order-ramification}.
+\end{proof}
+
+\section{Regular variation}\label{sec:regular}
+
+Throughout this section we assume that
+\(N(r,0,W_{\revision{\fv}})=o(T(r,\fv))\) and
+\[
+\rho_*(T)=\rho^*(T)=\rho\in\Gn,
+\qquad
+T(r):=T(r,\fv).
+\]
+Since
+\(\rho_*(T)\leq\lambda(\fv)\leq\rho(\fv)\leq\rho^*(T)\),
+both the lower and upper orders of \(\fv\) are equal to \(\rho>0\).
+In particular, \(\log r=o(T(r))\).
+
+
+The proof has three parts. We begin with an arbitrary sequence of
+radii and construct limiting differential coefficients and a limiting
+norm profile. We then show that this profile is homogeneous of degree
+\(\rho\). Finally, the homogeneity determines every subsequential limit
+of \(T(cr)/T(r)\), which yields regular variation.
+
+
+\subsection{Limits along arbitrary radii}
+
+Fix an arbitrary sequence \(r_\nu\to\infty\), and put
+\(s_\nu=T(r_\nu)\).
+
+\medskip\noindent
+\emph{{Step 1. Limits of the differential coefficients:}}
+Fix \(0<\epsilon<\rho\), and write
+\[
+M_\epsilon(R)
+:=
+\max\{R^{\rho-\epsilon},R^{\rho+\epsilon}\},
+\qquad R>0.
+\]
+Lemma~\ref{lem:power-bounds} gives constants
+\(C_\epsilon\geq1\) and \(r_\epsilon>0\) such that
+\begin{equation}\label{eq:regular-power-upper}
+ \frac{T(Rr)}{T(r)}
+ \leq
+ C_\epsilon M_\epsilon(R)
+ \qquad
+ (r,Rr\geq r_\epsilon).
+\end{equation}
+
+Fix \(R>0\). We apply Proposition~\ref{prop:representation} with
+\(t_\nu=Rr_\nu\) and
+\(s_{\nu,R}=M_\epsilon(R)s_\nu\).
+The logarithmic condition follows from
+\(\log r=o(T(r))\). Moreover, applying
+\eqref{eq:regular-power-upper} with multiplier \(256R\) gives
+\[
+\frac{T(256Rr_\nu)}{M_\epsilon(R)s_\nu}
+\leq
+C_\epsilon
+\frac{M_\epsilon(256R)}{M_\epsilon(R)}
+\leq
+C_\epsilon256^{\rho+\epsilon}.
+\]
+Thus the characteristic bound required in
+Proposition~\ref{prop:representation} is independent of \(R\).
+Furthermore,
+\[
+\frac{N(256Rr_\nu,0,W_{\revision{\fv}})}
+     {M_\epsilon(R)s_\nu}
+=
+\frac{N(256Rr_\nu,0,W_{\revision{\fv}})}
+     {T(256Rr_\nu)}
+\frac{T(256Rr_\nu)}
+     {M_\epsilon(R)s_\nu},
+\]
+and the first factor tends to zero while the second is bounded by the
+estimate just obtained. Hence the ramification hypothesis of
+Proposition~\ref{prop:representation} also holds.
+
+
+For \(2\leq q\leq n+1\), set
+\begin{equation}\label{eq:arbitrary-scaled-coefficients}
+ A_{q,\nu}(z)
+ :=
+ \left(\frac{r_\nu}{s_\nu}\right)^q
+ Q_q(r_\nu z).
+\end{equation}
+At the scale \(Rr_\nu\), the coefficient appearing in
+Proposition~\ref{prop:representation} is related to
+\eqref{eq:arbitrary-scaled-coefficients} by
+\begin{equation}\label{eq:arbitrary-scaling-relation}
+ A_{q,\nu}(Rz)
+ =
+ \left(\frac{M_\epsilon(R)}{R}\right)^q
+ \left(
+ \frac{Rr_\nu}{M_\epsilon(R)s_\nu}
+ \right)^q
+ Q_q(Rr_\nu z).
+\end{equation}
+
+Apply Proposition~\ref{prop:representation} successively with
+\(R=1,2,3,\ldots\), and take a diagonal subsequence. Equation
+\eqref{eq:arbitrary-scaling-relation} gives entire functions
+\(a_q\), \(2\leq q\leq n+1\), such that
+\begin{equation}\label{eq:arbitrary-coefficients}
+ A_{q,\nu}\longrightarrow a_q
+ \qquad\text{locally in measure on }\C.
+\end{equation}
+The uniqueness of limits in measure shows that the limits obtained on
+overlapping disks agree.
+
+The uniform bound in
+Proposition~\ref{prop:representation}, applied in
+\eqref{eq:arbitrary-scaling-relation}, gives
+\begin{equation}\label{eq:arbitrary-coefficient-growth}
+ \sup_{|z|\leq R}|a_q(z)|
+ \leq
+ K_{{n+1},\rho,\epsilon}
+ \max\{
+ R^{q(\rho-1-\epsilon)},
+ R^{q(\rho-1+\epsilon)}
+ \},
+ \qquad R>0.
+\end{equation}
+
+
+\medskip\noindent
+\emph{{Step 2. The limiting coefficients are monomials:}}
+Although \(\epsilon\) was fixed above to obtain compactness, the limit
+\(a_q\) is independent of that choice. Indeed, once
+\eqref{eq:arbitrary-coefficients} holds, for any
+\(0<\epsilon'<\rho\) the same application of
+Proposition~\ref{prop:representation} at a fixed scale \(R\), together with
+uniqueness of limits in measure, yields
+\eqref{eq:arbitrary-coefficient-growth} with \(\epsilon'\) in place of
+\(\epsilon\). Thus the latter estimate may be used with arbitrarily small
+positive \(\epsilon\).
+
+Write
+\(a_q(z)=\sum_{m=0}^{\infty}c_{q,m}z^m\).
+For \(R\geq1\), Cauchy's estimate and
+\eqref{eq:arbitrary-coefficient-growth} give
+\[
+|c_{q,m}|
+\leq
+K_{{n+1},\rho,\epsilon}
+R^{q(\rho-1+\epsilon)-m}.
+\]
+If \(m>q(\rho-1)\), choose \(\epsilon>0\) so small that
+\(m>q(\rho-1+\epsilon)\), and let \(R\to\infty\). Then
+\(c_{q,m}=0\).
+
+For \(0<R\leq1\), equation
+\eqref{eq:arbitrary-coefficient-growth} instead gives
+\[
+|c_{q,m}|
+\leq
+K_{{n+1},\rho,\epsilon}
+R^{q(\rho-1-\epsilon)-m}.
+\]
+If \(m<q(\rho-1)\), choose \(\epsilon>0\) so small that
+\(m<q(\rho-1-\epsilon)\), and let \(R\downarrow0\). Again
+\(c_{q,m}=0\).
+
+Thus a Taylor coefficient can be nonzero only when
+\(m=q(\rho-1)\). Consequently
+\begin{equation}\label{eq:monomial-coefficients}
+ a_q(z)
+ =
+ c_qz^{q(\rho-1)},
+ \qquad
+ c_q=0
+ \quad\text{if }q(\rho-1)\notin\Z_{\geq0}.
+\end{equation}
+The constants \(c_q\) may depend on the chosen subsequence.
+
+
+\medskip\noindent
+\emph{{Step 3. Construction of the limiting norm profile:}}
+Apply Proposition~\ref{prop:representation} with
+\(t_\nu=r_\nu\) and \(s_\nu=T(r_\nu)\), and let
+\(\gv_\nu=(g_{\nu,0},\ldots,g_{\nu,n})\) and \(P_\nu\) be the
+resulting local data.
+
+The bounds in \eqref{eq:representationbounds} imply that the
+subharmonic functions
+\(s_\nu^{-1}\log|g_{\nu,j}|\) are locally uniformly bounded above.
+Their values at the origin remain bounded from below by
+\eqref{eq:representationbounds}. After passing to a subsequence,
+Lemma~\ref{lem:subharmonic-compactness} therefore gives
+\[
+s_\nu^{-1}\log|g_{\nu,j}|
+\longrightarrow u_j
+\qquad\text{in }L^1_{\loc}(D_4),
+\]
+where no \(u_j\) is identically \(-\infty\).
+
+Since
+\[
+0\leq
+\log\norm{\gv_\nu}
+-
+\max_j\log|g_{\nu,j}|
+\leq
+\frac12\log {n+1},
+\]
+we also obtain
+\begin{equation}\label{eq:norm-limit}
+ U_\nu
+ :=
+ s_\nu^{-1}\log\norm{\gv_\nu}
+ \longrightarrow
+ U:=\max_j u_j
+ \qquad\text{in }L^1_{\loc}(D_4).
+\end{equation}
+
+All roots of \(P_\nu\) lie in \(D_{64}\), and
+\(\deg P_\nu=o(s_\nu)\). Hence
+\eqref{eq:small-polynomial-log} gives
+\(s_\nu^{-1}\log|P_\nu|\to0\) in \(L^1_{\loc}\).
+Lemma~\ref{lem:sum}, applied to the limits \(u_j\), yields
+\(\sum_j u_j\geq0\) almost everywhere. Since
+\(U=\max_j u_j\), it follows that
+\begin{equation}\label{eq:U-nonnegative}
+ U\geq0
+ \qquad\text{on }D_4.
+\end{equation}
+
+Dividing \eqref{eq:meanidentity} by \(s_\nu=T(r_\nu)\) gives
+\begin{equation}\label{eq:radial-mean}
+ \mean t{U_\nu}
+ =
+ \frac{T(tr_\nu)}{T(r_\nu)}
+ +
+ o(1),
+ \qquad
+ 0<t<4,
+\end{equation}
+where the error term is independent of \(t\).
+
+
+\medskip\noindent
+\emph{{Step 4. Behavior of \(U\) at the origin:}}
+Fix \(0<\epsilon<\rho\). We first estimate the area integral of \(U\)
+over small disks.
+
+Let \(0<R<1/2\). By \eqref{eq:radial-mean},
+\[
+\int_{D_R}U_\nu\,\dA
+=
+2\pi
+\int_0^R
+\frac{T(tr_\nu)}{T(r_\nu)}t\,\dd t
++
+o(1).
+\]
+For \(tr_\nu\geq r_\epsilon\),
+Lemma~\ref{lem:power-bounds} gives
+\(T(tr_\nu)/T(r_\nu)\leq
+C_\epsilon t^{\rho-\epsilon}\).
+For \(tr_\nu<r_\epsilon\), monotonicity gives
+\(T(tr_\nu)\leq T(r_\epsilon)\), and
+\(T(r_\epsilon)/T(r_\nu)\to0\).
+Passing to the limit in \eqref{eq:norm-limit} therefore gives
+\begin{equation}\label{eq:origin-area-bound}
+ \int_{D_R}U\,\dA
+ \leq
+ C_\epsilon R^{2+\rho-\epsilon},
+ \qquad
+ 0<R<\frac12.
+\end{equation}
+
+Let \(0<|z|<1/4\). The submean inequality, the nonnegativity
+\eqref{eq:U-nonnegative}, and
+\(D(z,|z|)\subset D_{2|z|}\) give
+\[
+U(z)
+\leq
+\frac1{\pi|z|^2}
+\int_{D_{2|z|}}U\,\dA.
+\]
+Using \eqref{eq:origin-area-bound} with \(R=2|z|\) yields
+\[
+U(z)\leq C_\epsilon|z|^{\rho-\epsilon}.
+\]
+The same estimate at \(z=0\), followed by \(R\downarrow0\), gives
+\(U(0)=0\). Thus
+\begin{equation}\label{eq:origin-bound}
+ 0\leq
+ U(z)
+ \leq
+ C_\epsilon|z|^{\rho-\epsilon},
+ \qquad
+ |z|<\frac14.
+\end{equation}
+
+
+\medskip\noindent
+\emph{{Step 5. Polynomial approximation of the norm profile:}}
+Let \(\pv_\nu\) be the polynomial approximants from
+Lemma~\ref{lem:replacement}, and put
+\(R_\nu=W(\pv_\nu)\).
+We claim that
+\begin{equation}\label{eq:polynomial-norm}
+ s_\nu^{-1}\log\norm{\pv_\nu}
+ \longrightarrow U
+ \qquad\text{in }L^1_{\loc}(D_4).
+\end{equation}
+
+Fix a compact set \(K\Subset D_4\) and \(\eta>0\). By
+\eqref{eq:norm-limit} and \eqref{eq:U-nonnegative},
+\[
+\meas\{
+z\in K:\norm{\gv_\nu(z)}<e^{-\eta s_\nu}
+\}
+\longrightarrow0.
+\]
+Choose the constant \(A\) in \eqref{eq:taylorerror} with \(A>\eta\).
+Outside this exceptional set,
+\[
+\frac{\norm{\pv_\nu-\gv_\nu}}
+     {\norm{\gv_\nu}}
+\leq
+C e^{-(A-\eta)s_\nu},
+\]
+and hence
+\[
+s_\nu^{-1}
+ \bigl|\log\norm{\pv_\nu}-\log\norm{\gv_\nu}\bigr|\longrightarrow0
+\]
+uniformly there. It follows from \eqref{eq:norm-limit} that
+\[
+s_\nu^{-1}\log\norm{\pv_\nu}\longrightarrow U
+\]
+in measure on \(K\).
+
+The functions \(s_\nu^{-1}\log\norm{\pv_\nu}\) are subharmonic and
+locally uniformly bounded above by \eqref{eq:taylorerror} and
+\eqref{eq:representationbounds}. Lemma~\ref{lem:subharmonic-compactness},
+together with uniqueness of the limit in measure, proves
+\eqref{eq:polynomial-norm}.
+
+
+\medskip\noindent
+\emph{{Step 6. Choice of good centers:}}
+For the Wronskians \(R_\nu\), Lemma~\ref{lem:replacement} gives
+\begin{equation}\label{eq:R-log-good}
+ \frac{\log|R_\nu|}{s_\nu}
+ \convmeas0
+ \qquad\text{locally on }D_4.
+\end{equation}
+After passing to a subsequence, the convergence in
+\eqref{eq:R-log-good} holds almost everywhere.
+
+Let
+\[
+B_\nu(a)
+:=
+\sum_{R_\nu(\zeta)=0}\frac1{|a-\zeta|},
+\]
+with zeros repeated according to multiplicity.
+Choose the separating radius from Lemma~\ref{lem:replacement} and split
+\(B_\nu\) into the contributions of the interior and exterior
+roots. By \eqref{eq:rootbounds}, the
+interior part divided by \(s_\nu\) tends to zero in
+\(L^{3/2}(D_4)\), while the exterior part divided by \(s_\nu\) is
+uniformly bounded on \(D_4\). After one further extraction, the
+interior part tends to zero almost everywhere.
+
+We may therefore choose a set
+\(E\subset D_2\setminus\{0\}\) of full measure such that
+\begin{equation}\label{eq:good-centers}
+ \frac{\log|R_\nu(a)|}{s_\nu}\longrightarrow0,
+ \qquad
+ \limsup_{\nu\to\infty}
+ \frac{B_\nu(a)}{s_\nu}<\infty,
+ \qquad
+ a\in E.
+\end{equation}
+We also remove from \(E\) the countable union of the zero sets of the
+polynomials \(R_\nu\), so that \(R_\nu(a)\ne0\) for every
+\(a\in E\) and every \(\nu\).
+
+
+\subsection{Choice of basis at a point}
+
+At a fixed good center we now choose a basis whose limiting component
+logarithms are balanced at that point. The unitary nature of the basis
+change is important because it leaves the Euclidean norm unchanged.
+
+\begin{lem}\label{lem:basis-at-point}
+For every \(a\in E\), there are a further subsequence and constant
+unitary matrices \(V_\nu\) such that, with
+\(\hv_\nu=\pv_\nu V_\nu\),
+\[
+s_\nu^{-1}\log|h_{\nu,j}|
+\longrightarrow v_j
+\qquad\text{in }L^1_{\loc}(D_4),
+\qquad
+0\leq j\leq n,
+\]
+where the \(v_j\) are subharmonic and not identically \(-\infty\), and
+\begin{equation}\label{eq:point-balance}
+ U=\max_jv_j,
+ \qquad
+ \sum_{j=0}^{n}v_j\geq0,
+ \qquad
+ \sum_{j=0}^{n}v_j(a)=0.
+\end{equation}
+The first two relations in \eqref{eq:point-balance} hold on \(D_4\),
+with the sum inequality understood almost everywhere.
+\end{lem}
+
+\begin{proof}
+
+\medskip\noindent
+\emph{{Step 1. Orthogonalize the normalized initial derivatives:}}
+Define the normalized jet matrix
+\[
+J_\nu(a)
+:=
+\bigl(
+s_\nu^{-i}p_{\nu,j}^{(i)}(a)
+\bigr)_{0\leq i,j\leq n}.
+\]
+Choose a unitary matrix \(V_\nu\) by singular value decomposition so
+that the columns of \(J_\nu(a)V_\nu\) are orthogonal. Denote their
+lengths by
+\(\sigma_{\nu,0},\ldots,\sigma_{\nu,n}>0\).
+
+The local upper bound for \(\pv_\nu\), obtained from
+\eqref{eq:taylorerror} and \eqref{eq:representationbounds}, and
+Cauchy's derivative estimate give
+\(\sigma_{\nu,j}\leq e^{Cs_\nu}\) for a constant \(C\) independent of
+\(\nu\) and \(j\).
+
+Since \(V_\nu\) is unitary,
+\[
+\prod_{j=0}^{n}\sigma_{\nu,j}
+=
+|\det J_\nu(a)|
+=
+s_\nu^{-\kappa}|R_\nu(a)|,
+\qquad
+\kappa=\frac{n(n+1)}2.
+\]
+By \eqref{eq:good-centers},
+\begin{equation}\label{eq:singular-product}
+ \frac1{s_\nu}
+ \log
+ \prod_{j=0}^{n}\sigma_{\nu,j}
+ \longrightarrow0.
+\end{equation}
+The upper bounds
+\(\sigma_{\nu,j}\leq e^{Cs_\nu}\), together with
+\eqref{eq:singular-product}, give a finite exponential lower bound for
+each \(\sigma_{\nu,j}\). After passing to a further subsequence, we may
+therefore assume
+\begin{equation}\label{eq:singular-exponents}
+ \frac{\log\sigma_{\nu,j}}{s_\nu}
+ \longrightarrow
+ \lambda_j\in\R,
+ \qquad
+ \sum_{j=0}^{n}\lambda_j=0.
+\end{equation}
+
+
+\medskip\noindent
+\emph{{Step 2. Limits of the new component logarithms:}}
+Put \(\hv_\nu=\pv_\nu V_\nu\).
+Since \(V_\nu\) is unitary,
+\(\norm{\hv_\nu}=\norm{\pv_\nu}\). Hence
+\eqref{eq:polynomial-norm} gives
+\[
+s_\nu^{-1}\log\norm{\hv_\nu}
+\longrightarrow U
+\qquad\text{in }L^1_{\loc}(D_4).
+\]
+
+For each \(j\), the functions
+\(s_\nu^{-1}\log|h_{\nu,j}|\) are locally uniformly bounded above.
+They cannot converge locally uniformly to \(-\infty\): if they did,
+Cauchy's derivative estimates at \(a\) would imply that every entry in
+the \(j\)-th column of \(J_\nu(a)V_\nu\) has logarithmic size divided
+by \(s_\nu\) tending to \(-\infty\), contradicting
+\eqref{eq:singular-exponents}.
+
+Lemma~\ref{lem:subharmonic-compactness} therefore gives, after another
+subsequence,
+\[
+s_\nu^{-1}\log|h_{\nu,j}|
+\longrightarrow v_j
+\qquad\text{in }L^1_{\loc}(D_4).
+\]
+Since
+\[
+0\leq
+\log\norm{\hv_\nu}
+-
+\max_j\log|h_{\nu,j}|
+\leq
+\frac12\log {n+1},
+\]
+equation \eqref{eq:polynomial-norm} gives
+\(U=\max_jv_j\).
+
+Moreover,
+\(W(\hv_\nu)=(\det V_\nu)R_\nu\), so
+\(|W(\hv_\nu)|=|R_\nu|\). Equation
+\eqref{eq:R-log-good}, together with Lemma~\ref{lem:sum}, gives
+\(\sum_jv_j\geq0\) almost everywhere.
+
+
+\medskip\noindent
+\emph{{Step 3. Upper bound for the values \(v_j(a)\):}}
+By construction of the singular values,
+\[
+|h_{\nu,j}^{(i)}(a)|
+\leq
+s_\nu^i\sigma_{\nu,j},
+\qquad
+0\leq i\leq n.
+\]
+Apply \eqref{eq:initial-value-bound} to \(h_{\nu,j}\) at the point
+\(a\). Since \(B_\nu(a)\) is defined in
+\eqref{eq:good-centers}, we obtain
+\begin{equation}\label{eq:point-initial-upper}
+ |h_{\nu,j}(a+z)|
+ \leq
+ \sigma_{\nu,j}
+ \left(
+ \sum_{i=0}^{n}
+ \frac{(s_\nu|z|)^i}{i!}
+ \right)
+ e^{|z|B_\nu(a)}.
+\end{equation}
+
+Let
+\(C_a>\limsup_\nu B_\nu(a)/s_\nu\).
+Taking logarithms in \eqref{eq:point-initial-upper}, dividing by
+\(s_\nu\), and using \eqref{eq:singular-exponents}, we obtain in the
+limit
+\[
+v_j(a+z)\leq\lambda_j+C_a|z|
+\]
+for almost every sufficiently small \(z\). The subharmonic
+representative satisfies the same inequality by the submean property.
+At \(z=0\), this gives
+\begin{equation}\label{eq:point-value-upper}
+ v_j(a)\leq\lambda_j.
+\end{equation}
+
+
+\medskip\noindent
+\emph{{Step 4. Reverse inequality at \(a\):}}
+For fixed \(r>0\) with
+\(\overline{D(a,2r)}\Subset D_4\), Cauchy's estimate gives
+\[
+|h_{\nu,j}^{(i)}(a)|
+\leq
+\frac{i!}{r^i}
+M(r,h_{\nu,j}(a+\cdot)).
+\]
+Using the definition of \(\sigma_{\nu,j}\), we obtain
+\begin{equation}\label{eq:singular-value-cauchy}
+ \sigma_{\nu,j}
+ \leq
+ M(r,h_{\nu,j}(a+\cdot))
+ \left(
+ \sum_{i=0}^{n}
+ \frac{(i!)^2}{(s_\nu r)^{2i}}
+ \right)^{1/2}.
+\end{equation}
+For fixed \(r\), the logarithm of the last factor in
+\eqref{eq:singular-value-cauchy}, divided by \(s_\nu\), tends to zero.
+The upper-bound part of
+Lemma~\ref{lem:subharmonic-compactness} gives
+\[
+\limsup_{\nu\to\infty}
+\sup_{|z-a|\leq r}
+s_\nu^{-1}\log|h_{\nu,j}(z)|
+\leq
+\sup_{|z-a|<2r}v_j(z).
+\]
+Using this inequality in \eqref{eq:singular-value-cauchy}, together
+with \eqref{eq:singular-exponents}, gives
+\[
+\lambda_j
+\leq
+\sup_{|z-a|<2r}v_j(z).
+\]
+Letting \(r\downarrow0\) and using upper semicontinuity of \(v_j\)
+gives \(\lambda_j\leq v_j(a)\). Together with
+\eqref{eq:point-value-upper}, this proves
+\begin{equation}\label{eq:point-values}
+ v_j(a)=\lambda_j,
+ \qquad
+ 0\leq j\leq n.
+\end{equation}
+Finally, summing \eqref{eq:point-values} and using
+\eqref{eq:singular-exponents} gives
+\(\sum_jv_j(a)=0\), completing the proof of
+\eqref{eq:point-balance}.
+\end{proof}
+
+The matrices \(V_\nu\) and the extracted subsequence may depend on the
+chosen point \(a\). The limit \(U\), however, is fixed by
+\eqref{eq:norm-limit} and is independent of this choice.
+
+
+\subsection{Homogeneity of the norm limit}
+
+We use the following consequence of
+Bergkvist--Rullg{\aa}rd \cite[Corollary~1]{BR02}.
+
+\begin{lem}[\cite{BR02}]\label{lem:finite-gradient-convex}
+Let \(G\subset\C\) be convex and let \(A\subset\C\) be finite. If
+\(v\) is subharmonic on \(G\) and the measurable representative of
+\(2\partial v\) belongs to \(A\) almost everywhere, then \(v\) is
+convex.
+\end{lem}
+
+\begin{prop}\label{prop:homogeneity}
+The limit \(U\) in \eqref{eq:norm-limit} satisfies
+\begin{equation}\label{eq:homogeneity}
+ U(tz)=t^\rho U(z)
+ \qquad
+ (t>0,\ z,tz\in D_2).
+\end{equation}
+\end{prop}
+
+\begin{proof}
+
+\medskip\noindent
+\emph{{Step 1. The limiting first-order equation:}}
+Let \(a\in E\), and let \(v\) be any one of the component limits
+obtained from Lemma~\ref{lem:basis-at-point}. The corresponding
+component \(h_\nu\) of \(\hv_\nu\) satisfies the polynomial
+fundamental equation
+\[
+h_\nu^{(n+1)}
++
+\sum_{q=1}^{n+1}
+b_{q,\nu}^p h_\nu^{({n+1}-q)}
+=
+0.
+\]
+After division by \(s_\nu^{n+1}h_\nu\), this becomes
+\begin{equation}\label{eq:normalized-polynomial-equation}
+ \frac{h_\nu^{(n+1)}}{s_\nu^{n+1}h_\nu}
+ +
+ \sum_{q=1}^{n+1}
+ \frac{b_{q,\nu}^p}{s_\nu^q}
+ \frac{h_\nu^{({n+1}-q)}}{s_\nu^{{n+1}-q}h_\nu}
+ =
+ 0.
+\end{equation}
+
+For \(q=1\), \eqref{eq:polynomial-coefficients} gives
+\(b_{1,\nu}^p/s_\nu\convmeas0\). For \(q\geq2\),
+\eqref{eq:polynomial-coefficients},
+\eqref{eq:arbitrary-coefficients}, and
+\eqref{eq:monomial-coefficients} give
+\[
+\frac{b_{q,\nu}^p}{s_\nu^q}
+\convmeas
+c_qz^{q(\rho-1)}.
+\]
+Lemma~\ref{lem:logderivlimit} gives, for
+\(0\leq k\leq n+1\),
+\[
+\frac{h_\nu^{(k)}}{s_\nu^kh_\nu}
+\convmeas
+(2\partial v)^k.
+\]
+Passing to the limit in
+\eqref{eq:normalized-polynomial-equation} yields
+\begin{equation}\label{eq:gradient-equation}
+ (2\partial v)^{n+1}
+ +
+ \sum_{q=2}^{n+1}
+ c_qz^{q(\rho-1)}
+ (2\partial v)^{{n+1}-q}
+ =
+ 0
+ \qquad\text{a.e.}
+\end{equation}
+
+
+\medskip\noindent
+\emph{{Step 2. Continuity of \(U\) away from the origin:}}
+Fix a compact set
+\(K\Subset D_4\setminus\{0\}\).
+The coefficients of the monic polynomial in
+\eqref{eq:gradient-equation} are uniformly bounded on \(K\).
+The standard root bound for a monic polynomial therefore gives a
+constant \(C_K\) such that
+\[
+|2\partial v(z)|\leq C_K
+\qquad\text{for a.e. }z\in K.
+\]
+Since \(v\) is real-valued, its full weak gradient is locally bounded.
+Thus \(v\in W^{1,\infty}_{\loc}(D_4\setminus\{0\})\), and its
+Sobolev representative is locally Lipschitz there.
+
+Choose one point \(a_0\in E\) and the corresponding functions
+\(v_0,\ldots,v_{n}\) from
+Lemma~\ref{lem:basis-at-point}. By the conclusion just obtained, all
+the \(v_j\) are locally Lipschitz on
+\(D_4\setminus\{0\}\). Equation \eqref{eq:point-balance} gives
+\(U=\max_jv_j\) almost everywhere. The function \(U\) is subharmonic,
+and the right-hand side is continuous. Since the two representatives agree
+almost everywhere, their upper-semicontinuous representatives agree
+everywhere. Hence
+\[
+U=\max_jv_j
+\qquad\text{on }D_4\setminus\{0\},
+\]
+and \(U\) is continuous there. Equation \eqref{eq:origin-bound} gives
+\(U(z)\to0=U(0)\) as \(z\to0\). Thus \(U\) is continuous on \(D_4\).
+
+
+\medskip\noindent
+\emph{{Step 3. Straightening the radial coefficients:}}
+Fix \(a\in E\), and choose the functions
+\(v_0,\ldots,v_{n}\) supplied by
+Lemma~\ref{lem:basis-at-point} at this point.
+
+Choose a sufficiently narrow sector \(S\subset D_2\) with vertex at
+the origin and containing \(a\), such that a branch of
+\[
+w=\frac{z^\rho}{\rho}
+\]
+is single-valued and injective on \(S\), and such that its image
+\(\Omega\) is convex. Define
+\(V_j(w)=v_j(z(w))\).
+
+Since the change of variables is conformal, each \(V_j\) is
+subharmonic. The weak chain rule gives
+\(2\partial_zv_j=z^{\rho-1}2\partial_wV_j\).
+Substitution into \eqref{eq:gradient-equation} gives
+\begin{equation}\label{eq:constant-gradient-equation}
+ (2\partial_wV_j)^{n+1}
+ +
+ \sum_{q=2}^{n+1}
+ c_q(2\partial_wV_j)^{{n+1}-q}
+ =
+ 0
+ \qquad\text{a.e.\ on }\Omega.
+\end{equation}
+Indeed, every term contains the common factor
+\(z^{{n+1}(\rho-1)}\). Since the calculation is performed on the fixed
+sector \(S\), where the chosen branch of \(z^\rho\) is single-valued,
+this common factor may be cancelled there. No further integrality
+assertion about the individual exponents is needed.
+
+Let \(A\) be the finite set of roots of
+\[
+\xi^{n+1}+\sum_{q=2}^{n+1}c_q\xi^{{n+1}-q}.
+\]
+Equation \eqref{eq:constant-gradient-equation} says that
+\(2\partial_wV_j\in A\) almost everywhere. Therefore
+Lemma~\ref{lem:finite-gradient-convex} shows that every \(V_j\) is
+convex on \(\Omega\).
+
+
+\medskip\noindent
+\emph{{Step 4. Equality on radial segments:}}
+From \(U=\max_jv_j\) and
+\(\sum_jv_j\geq0\), we have, wherever the latter inequality holds,
+\[
+v_j
+\geq
+-\sum_{k\ne j}v_k
+\geq
+-nU.
+\]
+By continuity away from the origin, this extends throughout the
+sector. Hence
+\begin{equation}\label{eq:component-sandwich}
+ -nU(z)
+ \leq
+ v_j(z)
+ \leq
+ U(z).
+\end{equation}
+Equation \eqref{eq:origin-bound} and
+\eqref{eq:component-sandwich} show that
+\(v_j(z)\to0\) as \(z\to0\) inside \(S\). Thus \(V_j\) extends
+continuously to the vertex \(w=0\), with \(V_j(0)=0\).
+
+Put \(w_0=a^\rho/\rho\). By convexity,
+\[
+V_j(tw_0)
+\leq
+tV_j(w_0),
+\qquad
+0<t<1.
+\]
+Equation \eqref{eq:point-balance} gives
+\(\sum_jV_j(w_0)=0\). The inequality
+\(\sum_jv_j\geq0\), together with continuity, also gives
+\(\sum_jV_j(tw_0)\geq0\). Therefore
+\[
+0
+\leq
+\sum_jV_j(tw_0)
+\leq
+t\sum_jV_j(w_0)
+=
+0.
+\]
+Thus equality holds in every convexity inequality:
+\(V_j(tw_0)=tV_j(w_0)\). Taking the maximum over \(j\) and using
+\(U=\max_jv_j\) gives
+\[
+U(t^{1/\rho}a)=tU(a),
+\qquad
+0<t<1.
+\]
+Writing \(s=t^{1/\rho}\), we obtain
+\begin{equation}\label{eq:homogeneity-on-E}
+ U(sa)=s^\rho U(a),
+ \qquad
+ a\in E,\quad 0<s<1.
+\end{equation}
+
+The set \(E\) has full measure and is therefore dense in \(D_2\).
+Continuity of \(U\) extends
+\eqref{eq:homogeneity-on-E} to every \(a\in D_2\).
+For \(s>1\) with \(a,sa\in D_2\), apply the already proved relation
+with multiplier \(1/s\) at the point \(sa\). This proves
+\eqref{eq:homogeneity}.
+\end{proof}
+
+
+\subsection{Convergence of the characteristic ratios}
+
+We now show that the homogeneous norm profile determines the
+characteristic ratio.
+
+\begin{prop}\label{prop:regular-variation}
+Under the assumptions of this section,
+\begin{equation}\label{eq:ratio-limit}
+ \frac{T(cr)}{T(r)}
+ \longrightarrow
+ c^\rho
+ \qquad(r\to\infty),
+\end{equation}
+locally uniformly for \(c\in(0,\infty)\).
+\end{prop}
+
+\begin{proof}
+
+\medskip\noindent
+\emph{{Step 1. Annular averages of the characteristic ratios:}}
+Let \(r_\nu\to\infty\) be arbitrary, and perform the extractions made
+above. Put
+\(F_\nu(t)=T(tr_\nu)/T(r_\nu)\).
+
+Fix \(0<a<b<2\). Integrating \eqref{eq:radial-mean} with weight
+\(t\,\dd t\), and using that the error in
+\eqref{eq:radial-mean} is independent of \(t\), gives
+\[
+\int_a^bF_\nu(t)t\,\dd t
+=
+\frac1{2\pi}
+\int_{\{a<|z|<b\}}U_\nu(z)\,\dA
++
+o(1).
+\]
+By \eqref{eq:norm-limit}, the area integral converges to the
+corresponding integral of \(U\). By
+\eqref{eq:homogeneity}, if
+\(K:=\mean1U\), then \(\mean tU=Kt^\rho\). Hence
+\begin{equation}\label{eq:annular-ratio-limit}
+ \int_a^bF_\nu(t)t\,\dd t
+ \longrightarrow
+ K\int_a^bt^{\rho+1}\,\dd t,
+ \qquad
+ 0<a<b<2.
+\end{equation}
+
+
+\medskip\noindent
+\emph{{Step 2. Pointwise convergence for \(0<t<2\):}}
+Fix \(t\in(0,2)\), and choose \(h>0\) so small that
+\(0<t-h<t<t+h<2\).
+Since each \(F_\nu\) is nondecreasing,
+\[
+\frac{\int_{t-h}^tF_\nu(s)s\,\dd s}
+     {\int_{t-h}^ts\,\dd s}
+\leq
+F_\nu(t)
+\leq
+\frac{\int_t^{t+h}F_\nu(s)s\,\dd s}
+     {\int_t^{t+h}s\,\dd s}.
+\]
+Using \eqref{eq:annular-ratio-limit} in both quotients gives
+\[
+K
+\frac{\int_{t-h}^ts^{\rho+1}\,\dd s}
+     {\int_{t-h}^ts\,\dd s}
+\leq
+\liminf_{\nu\to\infty}F_\nu(t)
+\leq
+\limsup_{\nu\to\infty}F_\nu(t)
+\leq
+K
+\frac{\int_t^{t+h}s^{\rho+1}\,\dd s}
+     {\int_t^{t+h}s\,\dd s}.
+\]
+Letting \(h\downarrow0\) gives
+\begin{equation}\label{eq:subsequence-ratio-limit}
+ F_\nu(t)\longrightarrow Kt^\rho,
+ \qquad
+ 0<t<2.
+\end{equation}
+At \(t=1\), \(F_\nu(1)=1\) for every \(\nu\). Hence
+\eqref{eq:subsequence-ratio-limit} gives \(K=1\), and therefore
+\[
+F_\nu(t)\longrightarrow t^\rho,
+\qquad
+0<t<2.
+\]
+
+
+\medskip\noindent
+\emph{{Step 3. Removal of the subsequence:}}
+The original sequence \(r_\nu\to\infty\) was arbitrary. Suppose that
+for some \(t\in(0,2)\) the full limit
+\(T(tr)/T(r)\to t^\rho\) failed. Then there would be a sequence
+\(r_\nu\to\infty\) and an \(\eta>0\) such that
+\[
+\left|
+\frac{T(tr_\nu)}{T(r_\nu)}
+-
+t^\rho
+\right|
+\geq\eta
+\]
+for all \(\nu\). Applying Steps~1--2 to this sequence would produce a
+subsequence on which the ratio converges to \(t^\rho\), a
+contradiction. Hence
+\begin{equation}\label{eq:ratio-below-two}
+ \frac{T(tr)}{T(r)}
+ \longrightarrow t^\rho,
+ \qquad
+ 0<t<2.
+\end{equation}
+
+
+\medskip\noindent
+\emph{{Step 4. All positive multipliers and local uniformity:}}
+Let \(c\geq2\). Choose an integer \(k\geq1\) such that
+\(b=c^{1/k}\in(1,2)\). Then
+\[
+\frac{T(cr)}{T(r)}
+=
+\prod_{j=0}^{k-1}
+\frac{T(b^{j+1}r)}{T(b^jr)}.
+\]
+For every fixed \(j\), the base radius \(b^jr\) tends to infinity.
+Applying \eqref{eq:ratio-below-two} with multiplier \(b\) to each
+factor gives the limit \(b^\rho\). Hence the product tends to
+\(b^{k\rho}=c^\rho\). Together with
+\eqref{eq:ratio-below-two}, this proves \eqref{eq:ratio-limit} for
+every \(c>0\).
+
+It remains to prove local uniformity. Let
+\([a,b]\Subset(0,\infty)\) and \(\eta>0\). Since \(c^\rho\) is
+uniformly continuous on \([a,b]\), choose a partition
+\(a=c_0<c_1<\cdots<c_m=b\) so fine that
+\(c_{j+1}^\rho-c_j^\rho<\eta\).
+Pointwise convergence at the finitely many points \(c_j\) is uniform
+in \(j\) for all sufficiently large \(r\). If
+\(c_j\leq c\leq c_{j+1}\), monotonicity of \(T(cr)\) in \(c\) gives
+\[
+\frac{T(c_jr)}{T(r)}
+\leq
+\frac{T(cr)}{T(r)}
+\leq
+\frac{T(c_{j+1}r)}{T(r)}.
+\]
+Using the convergence at \(c_j,c_{j+1}\) and the choice of the
+partition proves uniform convergence on \([a,b]\). This establishes
+the local uniformity asserted in \eqref{eq:ratio-limit}.
+\end{proof}
+
+
+We can now complete the proof of Theorem~\ref{thm:main}.
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+If \(T(r,\fv)=O(\log r)\), then \(\rho(\fv)=0<1\).
+Proposition~\ref{prop:small-order}, together with the small-ramification
+hypothesis, would then imply that \([\fv]\) is a rational normal curve,
+contrary to the transcendence assumption. Hence 
+\[
+\log r=o(T(r,\fv)).
+\]
+
+Proposition~\ref{prop:indices} now gives
+\[
+\rho_*(T)
+=
+\lambda(\fv)
+=
+\rho(\fv)
+=
+\rho^*(T)
+\in
+\{0\}\cup\Gn.
+\]
+The value \(0\) is excluded once more by
+Proposition~\ref{prop:small-order} and transcendence. Thus the common
+value \(\rho\) belongs to \(\Gn\).
+
+Proposition~\ref{prop:regular-variation} gives
+\(T(cr,\fv)/T(r,\fv)\to c^\rho\), locally uniformly for
+\(c\in(0,\infty)\). Defining
+\(\ell(r)=T(r,\fv)/r^\rho\), we therefore obtain
+\[
+\frac{\ell(cr)}{\ell(r)}
+=
+c^{-\rho}
+\frac{T(cr,\fv)}{T(r,\fv)}
+\longrightarrow1
+\]
+locally uniformly for \(c\in(0,\infty)\). Thus \(\ell\) is slowly
+varying, and
+\(T(r,\fv)=r^\rho\ell(r)\), which proves \eqref{reg}.
+\end{proof}
+
+
+
+
+
+\renewcommand{\bibliofont}{\fontsize{10}{11}\selectfont}
+\begin{thebibliography}{Ere89a}
+\raggedright
+
+\bibitem[BR02]{BR02}
+T.~Bergkvist and H.~Rullg\aa rd,
+\emph{On polynomial eigenfunctions for a class of differential operators},
+Math. Res. Lett. \textbf{9} (2002), no.~2--3, 153--171.
+\doi{10.4310/MRL.2002.v9.n2.a3}.
+
+\bibitem[Car33]{Car33}
+H.~Cartan,
+\emph{Sur les z\'eros des combinaisons lin\'eaires de $p$ fonctions
+holomorphes donn\'ees},
+Mathematica (Cluj) \textbf{7} (1933), 5--31.
+
+\bibitem[Dra81]{Dra81}
+D.~Drasin,
+\emph{Quasi-conformal modifications of functions having deficiency sum two},
+Ann.\ of Math. (2) \textbf{114} (1981), no.~3, 493--518.
+\doi{10.2307/1971300}.
+
+\bibitem[Dra87]{Dra87}
+D.~Drasin,
+\emph{Proof of a conjecture of F.~Nevanlinna concerning functions which
+have deficiency sum two},
+Acta Math. \textbf{158} (1987), no.~1--2, 1--94.
+\doi{10.1007/BF02392256}.
+
+\bibitem[DS72]{DS72}
+D.~Drasin and D.~F.~Shea,
+\emph{P\'olya peaks and the oscillation of positive functions},
+Proc. Amer. Math. Soc. \textbf{34} (1972), no.~2, 403--411.
+\doi{10.1090/S0002-9939-1972-0294580-X}.
+
+\bibitem[Ere89a]{Ere89a}
+A.~Eremenko,
+\emph{A new proof of the Drasin theorem on meromorphic functions of finite
+order with a maximal sum of defects.~I},
+Teor. Funktsii Funktsional. Anal.\ i Prilozhen. No.~51 (1989), 107--116
+(Russian); English translation, J. Soviet Math. \textbf{52} (1990),
+no.~6, 3522--3529.
+
+\bibitem[Ere89b]{Ere89b}
+A.~Eremenko,
+\emph{A new proof of the Drasin theorem on meromorphic functions of finite
+order with a maximal sum of defects.~II},
+Teor. Funktsii Funktsional. Anal.\ i Prilozhen. No.~52 (1989), 69--77
+(Russian); English translation, J. Soviet Math. \textbf{52} (1990),
+no.~5, 3397--3403.
+\doi{10.1007/BF01099906}.
+
+\bibitem[Ere93]{Ere93}
+A.~Eremenko,
+\emph{Meromorphic functions with small ramification},
+Indiana Univ. Math. J. \textbf{42} (1993), no.~4, 1193--1218.
+\doi{10.1512/iumj.1993.42.42055}.
+
+\bibitem[Ere98]{Ere98}
+A.~Eremenko,
+\emph{Extremal holomorphic curves for defect relations},
+J. Anal. Math. \textbf{74} (1998), 307--323.
+\doi{10.1007/BF02819454}.
+
+\bibitem[Ere02]{Ere02}
+A.~Eremenko,
+\emph{Value distribution and potential theory},
+Proceedings of the International Congress of Mathematicians
+(Beijing, 2002), vol.~II, Higher Education Press, Beijing, 2002,
+pp.~681--690.
+
+%\bibitem[Ere14]{Ere14}
+%A.~Eremenko,
+%\emph{On the second main theorem of Cartan},
+%Ann. Acad. Sci. Fenn. Math. \textbf{39} (2014), no.~2, 859--871.
+%\doi{10.5186/aasfm.2014.3937}.
+
+%\bibitem[Ere15a]{Ere15a}
+%A.~Eremenko,
+%\emph{Correction to the paper ``On the second main theorem of Cartan''},
+%Ann. Acad. Sci. Fenn. Math. \textbf{40} (2015), no.~1, 503--506.
+%\doi{10.5186/aasfm.2015.4030}.
+
+\bibitem[Ere15b]{Ere15b}
+A.~Eremenko,
+\emph{Holomorphic curves with few inflection points},
+unpublished problem note, April~4, 2015, 2~pp.
+\url{https://www.math.purdue.edu/~eremenko/dvi/wronsk.pdf}.
+
+\bibitem[ES91]{ES91}
+A.~Eremenko and M.~Sodin,
+\emph{Meromorphic functions of finite order with a maximum sum of defects},
+Teor. Funktsii Funktsional. Anal.\ i Prilozhen. No.~55 (1991), 84--95
+(Russian); English translation, \emph{Meromorphic functions of finite
+order with maximal deficiency sum}, J. Soviet Math. \textbf{59} (1992),
+no.~1, 643--651.
+\doi{10.1007/BF01102487}.
+
+\bibitem[ES92]{ES92}
+A.~Eremenko and M.~Sodin,
+\emph{Distribution of values of meromorphic functions and meromorphic
+curves from the standpoint of potential theory},
+St. Petersburg Math. J. \textbf{3} (1992), no.~1, 109--136;
+Russian original, Algebra i Analiz \textbf{3} (1991), no.~1, 131--164.
+
+\bibitem[Fol99]{Fol99}
+G.~B.~Folland,
+\emph{Real analysis: Modern techniques and their applications},
+2nd ed., Wiley-Interscience, New York, 1999.
+
+\bibitem[Fre53]{Fre53}
+M.~Frei,
+\emph{Sur l'ordre des solutions enti\`eres d'une \'equation diff\'erentielle
+lin\'eaire},
+C. R. Acad. Sci. Paris \textbf{236} (1953), 38--40.
+
+\bibitem[GH04]{GH04}
+G.~G.~Gundersen and W.~K.~Hayman,
+\emph{The strength of Cartan's version of Nevanlinna theory},
+Bull. London Math. Soc. \textbf{36} (2004), no.~4, 433--454.
+\doi{10.1112/S0024609304003418}.
+
+\bibitem[Hay64]{Hay64}
+W.~K.~Hayman,
+\emph{Meromorphic functions},
+Clarendon Press, Oxford, 1964.
+
+\bibitem[Hiong]{Hiong} 
+K.-L.~Hiong,
+\emph{Sur les fonctions holomorphes dont les d\'eriv\'ees admettent
+une valeur exceptionnelle},
+Ann. Sci. \'Ecole Norm. Sup. (3) \textbf{72} (1955), 165--197.
+\doi{10.24033/asens.1035}
+
+
+\bibitem[Hor03]{Hor03}
+L.~H\"ormander,
+\emph{The analysis of linear partial differential operators.~I:
+Distribution theory and Fourier analysis},
+Classics in Mathematics, Springer-Verlag, Berlin, 2003,
+reprint of the second (1990) edition.
+\doi{10.1007/978-3-642-61497-2}.
+
+\bibitem[KP26]{KP26}
+S.~N.~Karp and K.~Purbhoo,
+\emph{Universal Pl\"ucker coordinates for the Wronski map and positivity
+in real Schubert calculus},
+J.~Amer.~Math.~Soc. (2026), in press.
+\doi{10.1090/jams/1087}.
+
+\bibitem[MTV13]{MTV13}
+E.~Mukhin, V.~Tarasov, and A.~Varchenko,
+\emph{Bethe subalgebras of the group algebra of the symmetric group},
+Transform. Groups \textbf{18} (2013), no.~3, 767--801.
+\doi{10.1007/s00031-013-9232-y}.
+
+\bibitem[Nev30]{Nev30}
+F.~Nevanlinna,
+\emph{\"Uber eine Klasse meromorpher Funktionen},
+Septi\`eme Congr\`es des Math\'ematiciens Scandinaves
+(Oslo, 1929), A.~W.~Br\o ggers Boktrykkeri, Oslo, 1930, pp.~81--83.
+
+\bibitem[Noc83]{Noc83}
+E.~I.~Nochka,
+\emph{On the theory of meromorphic functions},
+Dokl. Akad. Nauk SSSR \textbf{269} (1983), no.~3, 547--552 (Russian);
+English translation under the title \emph{On the theory of meromorphic curves},
+Soviet Math. Dokl. \textbf{27} (1983), no.~2, 377--381.
+
+\bibitem[Pet84]{Pet84}
+V.~P.~Petrenko,
+\emph{Entire curves},
+Vyshcha Shkola, Kharkov, 1984 (Russian).
+
+\bibitem[Pfl46]{Pfl46}
+A.~Pfluger,
+\emph{Zur Defektrelation ganzer Funktionen endlicher Ordnung},
+Comment. Math. Helv. \textbf{19} (1946), 91--104.
+\doi{10.1007/BF02565950}.
+
+\bibitem[Pur23]{Pur23}
+K.~Purbhoo,
+\emph{An identity in the Bethe subalgebra of $\C[\mathfrak S_n]$},
+Proc. Lond. Math. Soc. (3) \textbf{127} (2023), no.~5, 1247--1267.
+\doi{10.1112/plms.12560}.
+
+\bibitem[Ru21]{Ru21}
+M.~Ru,
+\emph{Nevanlinna theory and its relation to Diophantine approximation},
+2nd ed., World Scientific Publishing Co., Hackensack, NJ, 2021.
+\doi{10.1142/12188}.
+
+\bibitem[She85]{She85}
+D.~F.~Shea,
+\emph{On the frequency of multiple values of a meromorphic function of
+small order},
+Michigan Math. J. \textbf{32} (1985), no.~1, 109--116.
+\doi{10.1307/mmj/1029003137}.
+
+\bibitem[Voj97]{Voj97}
+P.~Vojta,
+\emph{On Cartan's theorem and Cartan's conjecture},
+Amer. J. Math. \textbf{119} (1997), no.~1, 1--17.
+\doi{10.1353/ajm.1997.0009}.
+
+\bibitem[Was65]{Was65}
+W.~Wasow,
+\emph{Asymptotic expansions for ordinary differential equations},
+John Wiley \& Sons, New York, 1965.
+
+\bibitem[Wei69]{Wei69}
+A.~Weitsman,
+\emph{Meromorphic functions with maximal deficiency sum and a conjecture
+of F.~Nevanlinna},
+Acta Math. \textbf{123} (1969), 115--139.
+\doi{10.1007/BF02392387}.
+
+\end{thebibliography}
+\appendix
+\section{A differential polynomial identity}\label{app:differential-polynomial}
+The following differential-polynomial identity is used in the proof of Lemma~\ref{lem:logderivbound}.
+
+\begin{lem}\label{lem:differential-polynomial}
+Let \(h\) be meromorphic and put
+$
+L={h'}/{h}.
+$
+Then, for every integer \(k\ge1\),
+\begin{equation}\label{eq:bell-polynomial}
+P_k:=\frac{h^{(k)}}{h}=
+\sum_{\substack{m_0,\ldots,m_{k-1}\ge0\\
+\sum_{j=0}^{k-1}(j+1)m_j=k}}
+C_{\mathbf m}
+\prod_{j=0}^{k-1}
+\bigl(L^{(j)}\bigr)^{m_j},
+\end{equation}
+where
+$
+C_{\mathbf m}
+=
+{k!}/
+{\Big(\displaystyle\prod_{j=0}^{k-1}
+m_j!\,((j+1)!)^{m_j}\Big)}.
+$
+The multi-index is \(\mathbf m=(m_0,\ldots,m_{k-1})\).
+\end{lem}
+
+\begin{proof}
+Fix a point \(z\) which is neither a zero nor a pole of \(h\), and choose
+a local branch \(G=\log h\) near \(z\). Then
+$$
+G'=L,\qquad
+G^{(j+1)}=L^{(j)},\qquad j\ge0.
+$$
+For sufficiently small \(t\),
+$$
+\frac{h(z+t)}{h(z)}
+=
+\exp\bigl(G(z+t)-G(z)\bigr).
+$$
+Expanding \(G\) at \(z\), we obtain
+$$
+G(z+t)-G(z)
+=
+\sum_{j\ge0}
+\frac{L^{(j)}(z)}{(j+1)!}\,t^{j+1},
+$$
+and therefore
+\begin{equation}\label{eq:generating-differential-polynomial}
+\frac{h(z+t)}{h(z)}
+=
+\prod_{j\ge0}
+\exp\left(
+ \frac{L^{(j)}(z)}{(j+1)!}\,t^{j+1}
+\right).
+\end{equation}
+For each \(j\),
+$$
+\exp\left(
+\frac{L^{(j)}(z)}{(j+1)!}\,t^{j+1}
+\right)
+=
+\sum_{m_j\ge0}
+\frac{\bigl(L^{(j)}(z)\bigr)^{m_j}}
+{m_j!\,((j+1)!)^{m_j}}
+t^{(j+1)m_j}.
+$$
+Hence the coefficient of \(t^k\) on the right-hand side of
+\eqref{eq:generating-differential-polynomial} is
+$$
+\sum_{\substack{m_0,\ldots,m_{k-1}\ge0\\
+\sum_{j=0}^{k-1}(j+1)m_j=k}}
+\frac{\displaystyle
+\prod_{j=0}^{k-1}
+\bigl(L^{(j)}(z)\bigr)^{m_j}}
+{\displaystyle
+\prod_{j=0}^{k-1}
+m_j!\,((j+1)!)^{m_j}}.
+$$
+
+On the other hand, Taylor expansion of the left-hand side gives
+$$
+\frac{h(z+t)}{h(z)}
+=
+\sum_{k\ge0}
+\frac{h^{(k)}(z)}{k!\,h(z)}t^k.
+$$
+Comparing the coefficients of \(t^k\) and multiplying by \(k!\) proves
+\eqref{eq:bell-polynomial} at every point which is neither a zero nor a
+pole of \(h\). Since both sides of \eqref{eq:bell-polynomial} are
+meromorphic, the identity holds everywhere by meromorphic continuation.
+\end{proof}
+
+\end{document}

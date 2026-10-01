@@ -1,0 +1,334 @@
+AUDIT PASSED: 2279 declarations, including 1948 theorem declarations.
+Actual logical dependencies: [Quot.sound, Classical.choice, propext].
+'FewInflection.fundamental_last_coefficient_eq_neg_deriv_div' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FewInflection.exists_canonical_gauge' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FewInflection.quotient_characteristic_le_curve' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.characteristic_abs_sub_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.Paper.eq_zerojensen' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.Paper.eq_countbound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.Paper.eq_quotientbound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.Paper.eq_zero_count_definition' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.ramification_eq_integralZeroCounting' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.characteristic_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.Paper.lem_fundamental_operator' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.canonical_gauge_coefficients_independent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.canonicalCoefficient_eq_normalized' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.meromorphicAt_canonicalCoefficient' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.canonicalCoefficient_last_eq_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.canonicalCoefficient_scalar_mul' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.canonicalCoefficient_matrix' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.Paper.eq_scalecoeff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.Paper.lem_canonical_gauge' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.curve_wronskian_nontrivial' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.linear_relation_of_wronskian_eq_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.LocalLpConvergence.inMeasure' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.LocalLpConvergence.compactlySupported_test_integral' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ModifiedCartan.memLp_cauchyKernel_on_compact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.integral_norm_neg_rpow_tendsto_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.integrableOn_log_norm_on_compact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.memLp_logKernel_on_compact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.integral_shifted_norm_neg_rpow_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.eLpNorm_sum_nearCauchyKernel_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.uniform_cauchy_truncation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.LocalMeasureConvergence.exists_seq_tendsto_ae' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ModifiedCartan.LocalLpConvergence.exists_seq_tendsto_ae' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.memLp_logDeriv_on_compact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.memLp_log_norm_on_compact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.eLpNorm_integral_finite_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.eLpNorm_integral_nearCauchyKernel_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.ae_integrable_nearCauchyKernel' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.uniform_cauchy_truncation_measures' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.ae_integrable_cauchyKernel' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.eLpNorm_cauchyTransform_sub_regularized_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.memLp_cauchyTransform_on_compact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.cauchyTransform_tendsto_eLpNorm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.cauchyTransform_localLpConvergence' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.eLpNorm_cappedLogPotential_sub_regularized_le' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ModifiedCartan.memLp_cappedLogPotential_on_compact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.ae_mem_closed_of_weak_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.logPotential_localL1Convergence' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.integral_logKernel_mul_fderiv_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.integral_logKernel_mul_fderiv_I' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.integrable_prod_logKernel_mul_test' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.integrable_prod_test_smul_cauchyKernel' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.integral_logPotential_mul_fderiv_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.integral_logPotential_mul_fderiv_I' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.memLp_logPotential_of_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.logPotential_hasWeakComplexGradient' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.logPotential_memW1pLoc' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.HasWeakComplexGradient.of_localL1_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.integral_logGradientPair' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.integral_logKernel_mul_laplacian' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.integral_logPotential_mul_laplacian' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.integral_harmonic_mul_laplacian_test' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.LocalLpConvergence.laplacian_test_integral' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.integral_logNorm_mul_laplacian_eq_divisor' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.integral_logNorm_mul_laplacian_on_ball' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.logNorm_eq_logPotential_add_harmonic_on_ball' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.exists_smooth_disk_cutoff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.localizedZeroMeasure_mass_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.LocalLpConvergence.localizedZeroMeasure_mass_tendsto' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ModifiedCartan.LocalLpConvergence.localizedZeroMeasure_mass_bounded' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ModifiedCartan.finiteMeasure_tendsto_subseq_of_compact_support' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ModifiedCartan.LocalLpConvergence.localizedZeroMeasure_tendsto_subseq' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ModifiedCartan.LocalLpConvergence.localizedZeroMeasure_potentials_subseq' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ModifiedCartan.logNorm_eq_localized_potential_add_harmonic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.integral_radial_mul_harmonic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.radialKernel_contDiff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.radialKernel_integral' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.scalarConvolution_radialKernel_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.scalarConvolution_tendstoUniformly' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.scalarConvolution_fderiv_tendstoUniformly' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.scalarConvolution_laplacian_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.LocalLpConvergence.sub' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.LocalLpConvergence.congr_ae' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.LocalLpConvergence.integral_norm_sub_tendsto_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ModifiedCartan.LocalLpConvergence.harmonic_representative_on_interior' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ModifiedCartan.LocalLpConvergence.harmonic_representative_on_ball' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ModifiedCartan.LocalLpConvergence.log_limit_representation_on_ball' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ModifiedCartan.LocalLpConvergence.exists_log_potential_harmonic_on_ball' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ModifiedCartan.contDiff_hasWeakComplexGradient' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.MemW1pLoc.congr_ae' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.HasWeakComplexGradient.add' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.LocalLpConvergence.log_limit_memW1pLoc_on_ball' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ModifiedCartan.HasWeakComplexGradient.unique' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.scalarConvolution_iteratedFDeriv_tendstoUniformly' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ModifiedCartan.LocalLpConvergence.harmonic_representative_all_derivatives_on_ball' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ModifiedCartan.LocalLpConvergence.log_limit_locally_memW1pLoc' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ModifiedCartan.exists_finite_smooth_test_decomposition' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.HasWeakComplexGradient.of_locally' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.MemW1pLoc.of_locally' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.LocalLpConvergence.log_limit_memW1pLoc' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.LocalLpConvergence.log_limit_weak_gradient' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.localLpConvergence_of_tendstoUniformlyOn' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.localLpConvergence_of_subseq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.classicalComplexGradient_log_norm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.contDiffOn_hasWeakComplexGradient' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.HasWeakComplexGradient.const_mul' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.logNorm_hasWeakComplexGradient' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.harmonicGradient_localLpConvergence' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.localLpConvergence_of_locally' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.LocalLpConvergence.logDeriv_subseq_on_ball' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.LocalLpConvergence.logDeriv_localLpConvergence' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ModifiedCartan.Paper.eq_first_logderiv_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.tendstoInMeasure_continuous_map₂' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.LocalMeasureConvergence.continuous_map₂' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.integral_norm_weighted_poles_rpow_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.harmonicGradient_iteratedDeriv_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.iteratedDeriv_eqOn_of_ae_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.LocalLpConvergence.zero_fractional_mass_bounded' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ModifiedCartan.cauchyTransform_localizedZeroMeasure' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.iteratedDeriv_finite_cauchy_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.normalized_weighted_poles_tendstoInMeasure' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.normalized_iterated_logDeriv_singular_ae' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.localMeasureConvergence_of_locally' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.uniform_diverging_scale_tendstoInMeasure' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.LocalLpConvergence.higher_logDeriv_subseq_on_ball' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ModifiedCartan.Paper.eq_higher_logderiv_measure' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.tendstoInMeasure_finsetProd' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.tendstoInMeasure_finsetSum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.iteratedDeriv_div_eq_partition' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.partitionPolynomial_constant_jet' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.normalized_iteratedDeriv_eq_partition' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.LocalLpConvergence.iteratedDeriv_div_localMeasure' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ModifiedCartan.Paper.lem_logderivlimit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.LocalERealLpConvergence.normalizedLog_nontrivial' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ModifiedCartan.LocalERealMeasureConvergence.normalizedLog_eventually_nontrivial' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ModifiedCartan.normalizedWronskian_eq_div' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.normalizedWronskian_localMeasure' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.tendstoInMeasure_scaled_logPlus' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.LocalLpConvergence.real_sum_localMeasure' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.wronskian_log_sum_lower_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.Paper.lem_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.Paper.eq_sandwich' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.IsSubharmonicOn.ae_finite_on_ball' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.IsSubharmonicOn.integrableOn_toReal_ball' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.IsSubharmonicOn.ae_finite' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.IsSubharmonicOn.locallyIntegrableOn_toReal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.IsSubharmonicOn.le_diskAverage' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.IsSubharmonicOn.le_diskAverage_of_ae_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.Paper.lem_subharmonic_compactness_upper_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ModifiedCartan.IsSubharmonicOn.le_of_ae_le_upperSemicontinuous' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ModifiedCartan.IsSubharmonicOn.eqOn_of_ae_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.IsSubharmonicOn.integral_norm_le_of_lower_anchor' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ModifiedCartan.IsSubharmonicOn.l1_bound_of_anchor_in_ball' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.subharmonic_exists_subsequence_one_disk_l1_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ModifiedCartan.subharmonic_uniform_l1_locally_of_one_open_set' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ModifiedCartan.subharmonic_uniform_l1_on_compacts_of_one_open_set' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ModifiedCartan.subharmonic_collapse_or_l1_bounded_subsequence' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ModifiedCartan.norm_diskAverage_sub_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.LocalLpConvergence.diskAverage_tendstoUniformlyOn' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ModifiedCartan.diskAverage_eq_scalarConvolution' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.integral_diskAverage' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.integral_mul_diskAverage' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.norm_diskAverage_le_of_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.lipschitz_norm_diskAverage_twice_sub_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.integral_mul_diskAverage_twice' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.norm_integral_mul_diskAverage_twice_sub_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.norm_disk_integral_sub_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.diskAverage_twice_lipschitzWith' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.integral_norm_diskAverage_twice_sub_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.IsSubharmonicOn.toReal_le_diskAverage_twice' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.exists_lipschitz_cutoff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.subharmonic_uniform_averaging_approximation_on_disk' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ModifiedCartan.exists_uniformly_convergent_subsequence_of_lipschitz' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ModifiedCartan.totallyBounded_range_of_uniform_approximation' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ModifiedCartan.totallyBounded_of_cauchy_subsequences' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.uniformCauchySeqOn_toL1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.totallyBounded_l1_range_diskAverage_twice' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.subharmonic_l1_subsequence_on_disk' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.exists_common_l1_subsequence' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.exists_localL1_limit_of_countable_cover' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.subharmonic_localL1_subsequence' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.exists_compact_disk_neighborhood' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.continuous_diskAverage' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.continuousAt_diskAverage_of_locallyIntegrableOn' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ModifiedCartan.ae_tendsto_diskAverage_of_locallyIntegrableOn' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ModifiedCartan.upperSemicontinuousOn_submeanEnvelope' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.ae_le_diskAverage_of_subharmonic_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.isSubharmonicOn_of_real_disk_means' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.submeanEnvelope_ae_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.exists_nontrivial_subharmonic_representative_of_localL1_limit' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ModifiedCartan.Paper.lem_subharmonic_compactness' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.Paper.lem_subharmonic_compactness_upper_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ModifiedCartan.derivative_polynomialDerivativeMinor' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.rowLen_addPartitionBox' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.derivative_partitionPolynomialMinor' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.partitionSize_eq_sum_rowLen' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.strictMono_skew_iff_row_column' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.standardSkewTableauCount_self' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.StandardSkewTableau.firstBox_addable' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.iterate_derivative_partitionPolynomialMinor' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.StandardSkewTableau.initialDiagramCells_isLowerSet' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ModifiedCartan.StandardSkewTableau.initialDiagram_succ_at_label' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ModifiedCartan.minorGrowthBoxes_index_le_of_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.minorGrowthTableau_label' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.skewCells_card_addPartitionBox' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.StandardSkewTableau.tailTableau_label' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.StandardSkewTableau.prependTableau_first_label' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ModifiedCartan.StandardSkewTableau.firstBoxEquiv' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.StandardSkewTableau.firstAddition_eq_iff_label_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ModifiedCartan.standardSkewTableauCount_rec' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.legalMinorRowSkewAdditionEquiv' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.minorGrowthCount_succ' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.minorGrowthCount_eq_standardSkewTableauCount' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.exists_order_above_permuted_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.iterate_derivative_partitionPolynomialMinor_tableaux' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ModifiedCartan.partitionPolynomialMinor_eq_zero_of_not_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.partitionPolynomialMinor_natDegree_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.partitionPolynomialMinor_top_eval_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.standardSkewTableauCount_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.iterate_derivative_partitionPolynomialMinor_subpartitions' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ModifiedCartan.partitionPolynomialMinor_translation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.normalizedPartitionMinor_translation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.partitionPolynomialMinor_basis_change' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.polynomialWronskian_natDegree_eq_partitionSize' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ModifiedCartan.normalizedSchubertCoordinate_eq_basis' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.Paper.lem_plucker_translation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.characterWeightedOperator_commutes' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.characterWeightedOperator_on_irreducible' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.characterProjector_apply_intertwiner' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.linearMap_eq_zero_of_group_simples' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.characterProjector_fixed_on_isotypic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.groupSubmoduleIntertwiner' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.groupSubmoduleRepresentationIrreducible' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.characterProjector_range_eq_isotypic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.characterProjector_idempotent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.characterProjector_preserves_orthogonal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.characterProjector_eq_starProjection' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.representationIsotypic_eq_sum_copies' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.norm_characterWeightedOperator_expectation_le_card' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ModifiedCartan.Paper.lem_character_projection' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.permutation_character_expectation_bound' depends on axioms: [propext, Classical.choice, Quot.sound]

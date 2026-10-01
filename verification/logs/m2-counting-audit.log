@@ -1,0 +1,9 @@
+AUDIT PASSED: 900 declarations, including 749 theorem declarations.
+Actual logical dependencies: [Quot.sound, Classical.choice, propext].
+'FewInflection.fundamental_last_coefficient_eq_neg_deriv_div' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FewInflection.exists_canonical_gauge' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FewInflection.quotient_characteristic_le_curve' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.characteristic_abs_sub_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.Paper.eq_zerojensen' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.Paper.eq_countbound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ModifiedCartan.Paper.eq_quotientbound' depends on axioms: [propext, Classical.choice, Quot.sound]

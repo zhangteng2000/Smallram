@@ -1,0 +1,8 @@
+# Portable source line endings
+* text=auto eol=lf
+
+# Preserve the exact submitted manuscript bytes used by the SHA256 gate
+/paper/*.tex -text
+
+# Preserve frozen verification transcripts byte for byte
+/verification/logs/*.log -text

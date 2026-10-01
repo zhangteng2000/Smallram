@@ -1,0 +1,36 @@
+# Lake dependencies and generated compiler artifacts
+/.lake/
+
+# Local proof experiments and scratch files
+/work/
+/tmp/
+
+# Editor and operating-system files
+/.vscode/
+/.idea/
+.DS_Store
+Thumbs.db
+*.swp
+*~
+
+# Local credentials and configuration
+.env
+.env.*
+*.pem
+*.key
+
+# Manuscript compiler artifacts
+/paper/*.aux
+/paper/*.log
+/paper/*.toc
+/paper/*.out
+/paper/*.synctex.gz
+/paper/original.pdf
+
+# Regenerated verification output; frozen milestone logs are tracked
+/verification/logs/build.log
+/verification/logs/all-declarations.log
+/verification/logs/latest-run.log
+/verification/logs/placeholder-scan.log
+/verification/logs/submitted-completion.log
+/verification/logs/submitted-completion-draft.log
