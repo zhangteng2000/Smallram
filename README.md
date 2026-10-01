@@ -7,11 +7,12 @@ by **Alexandre Eremenko and Teng Zhang**.
 [version 1](https://arxiv.org/abs/2609.38032v1) ·
 [DOI](https://doi.org/10.48550/arXiv.2609.38032).
 
-本仓库是上述论文的 Lean 4 形式化。对应用户提交原稿的 **35 个带标签结果**均有经过
-Lean 内核检查的定理声明，包括完整标量定理 A、主定理及两个尖锐性命题。
-论文与证明的逐项对应见 [PAPER_RESULTS.md](PAPER_RESULTS.md)。
+This repository formalizes the paper in Lean 4. All **35 labelled results** in the
+submitted manuscript have kernel-checked theorem declarations, including the full
+scalar Theorem A, the main theorem, and both sharpness propositions. See
+[PAPER_RESULTS.md](PAPER_RESULTS.md) for the theorem-by-theorem correspondence.
 
-## Build and verify / 构建与核验
+## Build and verify
 
 Prerequisites: Git, Lean's `elan` toolchain manager, PowerShell 7 (`pwsh`), and ripgrep (`rg`).
 The Lean version is selected by `lean-toolchain`; dependency commits are pinned by `lake-manifest.json`.
@@ -35,7 +36,7 @@ theorems to their exact registered targets and runs `#print axioms` for every la
 **No user-declared mathematical axioms or proof placeholders are used.**
 The only permitted foundational dependencies are `Classical.choice`, `propext`, and `Quot.sound`.
 
-## Proof entry points / 主要证明入口
+## Proof entry points
 
 | Manuscript result | Lean declaration | Source |
 | --- | --- | --- |
@@ -52,7 +53,7 @@ The only permitted foundational dependencies are `Classical.choice`, `propext`, 
 - [PAPER_RESULTS.md](PAPER_RESULTS.md): original statements and stable Lean names.
 - [Frozen final verification log](verification/logs/submitted-paper-complete-latest-run.log).
 
-## Verification record / 核验记录
+## Verification record
 
 The final mathematical build completed **5332 jobs**. The recursive audit covered **9026 declarations**,
 including **7863 theorem declarations**; all **35 labelled results** passed the completion gate.
